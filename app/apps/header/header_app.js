@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require("app");
-  var _header = require("text!apps/header/templates/header.html")
+  var _header = require("text!apps/header/templates/_header.html")
 
   return Moonrakr.module('HeaderApp', function(HeaderApp){
     this.startWithParent = true;

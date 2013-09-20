@@ -6,6 +6,7 @@ v0.0.1
 
 Todos
 ----
+- .html templates inside app/apps/** /*.html dont seem to get watched
 - check if styles living in app/styles is a dependency
 - dry up grunt copy tasks (need to learn more grunt-fu to do this)
 
@@ -18,11 +19,11 @@ Getting Started
 If you'd like to develop a project using this template be sure to git clone the repo, remove the .git file, and start a new git repositiory.
 
 1. `git clone git@git-lab.evolvingmedia.org:sacrum.git` clones the repo down to your box
-2. `cd sacrum && rm -rf .git` deletes the folder '.git' with flags -r for recursive and -f for force (a lot of files in .git don't like to be deleted) 
+2. `cd sacrum && rm -rf .git` deletes the folder '.git' with flags -r for recursive and -f for force (a lot of files in .git don't like to be deleted)
 3. `mv ../sacrum ../new-name` essentially renames the folder to "new-name"
 4. `git init` creates a new git repo (you can also follow the git-lab instructions)
 
-Running the Builder - First Steps - Advanced 
+Running the Builder - First Steps - Advanced
 --------------------------------------------
 After you have renamed the project for your own uses or if you wanna just try it out as is:
 
@@ -31,7 +32,7 @@ After you have renamed the project for your own uses or if you wanna just try it
 
 The second command should automatically open up a tab in your default browser to the port that is servering the app.
 
-Running the Builder - Very First Steps - Beginner Mac OS 
+Running the Builder - Very First Steps - Beginner Mac OS
 --------------------------------------------------------
 - do you have XCode installed?
 - do you have homebrew installed?
@@ -41,7 +42,7 @@ Running the Builder - Very First Steps - Beginner Mac OS
 
 Once you can answer yes to every item move on to 'First Steps - Advanced'
 
-Running the Builder - Very First Steps - Beginner Linux OS 
+Running the Builder - Very First Steps - Beginner Linux OS
 ----------------------------------------------------------
 If you are cool enough to be running a distro of Linux then you don't need me to hold your hand through this. One thing, are you using nvm? Might want to get that tho it is not a strict requirement.
 
@@ -96,19 +97,19 @@ vendor/
   The .tmp folder is constructed by the builder when running the developer and testing tasks. This folder is not tracked in the git repo.
 
 ### app/
-  The app folder is where you writing all your application code.  The builder only has one opinion on the folder topography of this directory.  The "app" folder must contain the index.html file in an assets, namely "app/assets/". you should also organize all your static assets in a reasonable way within this folder - images, fonts, etc. 
+  The app folder is where you writing all your application code.  The builder only has one opinion on the folder topography of this directory.  The "app" folder must contain the index.html file in an assets, namely "app/assets/". you should also organize all your static assets in a reasonable way within this folder - images, fonts, etc.
 
 ### dist/
   The dist folder is where the built app is placed. This folder can be rsync'ed to the server where this app is hosted.  A bash script "deploy.sh" has been added to this project to template what your rsync script might look like. This folder is not tracked in the git repo.
 
 ### node_modules/
   The node_modules folder contains all the node modules used by the builder (grunt).  This folder and its contents are added once you run `npm install'.  This folder is not tracked in the git repo.
-  
+
 ### test/
   The test folder is set up to conduct jasmine tests and the Gruntfile is also configured to support this.  All the test suites are written in files named "*Spec.js" and should be kept in the "test/spec/" folder.  You can create whatever folder structure you would like in there.  The builder will reach recursively down and pull out all files that match the node glob pattern "*Spec.js".
 
 ### vendor/
-  The vendor folder contains all the vendor scripts and styles you want to use.  The "vendor/js/" folder is already filled with many useful libraries. This folder gets copied into ".tmp/js/vendor/" during developement.  And during the dist build process these files are momentarily placed in "dist/js/vendor/" for requirejs to concatenate afterwhich the files are removed.  
+  The vendor folder contains all the vendor scripts and styles you want to use.  The "vendor/js/" folder is already filled with many useful libraries. This folder gets copied into ".tmp/js/vendor/" during developement.  And during the dist build process these files are momentarily placed in "dist/js/vendor/" for requirejs to concatenate afterwhich the files are removed.
 
 * * *
 
