@@ -9,11 +9,14 @@ define(function(require){
         //// get posts collection
         var posts = Moonrakr.request("post:entities");
 
-        console.log(posts);
-
         //// create a view for the collection
         var postsListView = new List.Posts({
           collection: posts
+        });
+
+        postsListView.on('itemview:post:show', function(childView, model){
+          // console.log('received itemview:post:show event on model ', model);
+          Moonrakr.PostsApp.Show.Controller.showPost(model);
         });
 
         //// show this view

@@ -1,7 +1,8 @@
 define(function(require){
 
   var Moonrakr = require("app");
-  var hmm = require('apps/posts/list/list_controller')
+  var hmm = require('apps/posts/list/list_controller');
+  var hmm2 = require('apps/posts/show/show_controller');
 
   return Moonrakr.module("PostsApp",function(PostsApp){
 
@@ -13,7 +14,6 @@ define(function(require){
 
     var API = {
       listPosts: function(){
-        console.log("route to list contacts was triggered");
         PostsApp.List.Controller.listPosts();
       }
     }
