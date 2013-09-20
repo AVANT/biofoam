@@ -10,7 +10,9 @@ define(function(require){
 
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');
-    // Moonrakr.Header.Show.Controller.showHeader();
+    if(Backbone.history){
+      Backbone.history.start();
+    }
   })
 
   return Moonrakr;
