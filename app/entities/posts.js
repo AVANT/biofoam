@@ -14,9 +14,9 @@ define(function(require){
 
     var initializePosts = function(){
       posts = new Entities.PostCollection([
-        {id: 1, title: 'made up title', excerpt: 'short thingy here'},
-        {id: 2, title: 'made up title', excerpt: 'short thingy here'},
-        {id: 3, title: 'made up title', excerpt: 'short thingy here'},
+        {id: 1, title: 'made up title', excerpt: 'short thingy here', body: 'here is some body text'},
+        {id: 2, title: 'made up title', excerpt: 'short thingy here', body: 'here is some body text'},
+        {id: 3, title: 'made up title', excerpt: 'short thingy here', body: 'here is some body text'},
       ]);
     };
 
@@ -27,11 +27,11 @@ define(function(require){
         }
         return posts;
       }
-    }
+    };
 
     Moonrakr.reqres.setHandler("post:entities", function(){
       return API.getPostEntities();
-    })
+    });
   });
 
 });
