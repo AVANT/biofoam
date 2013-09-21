@@ -7,21 +7,23 @@ define(function(require){
 
     Show.Controller = {
       showPost: function(id){
-        var model = Moonrakr.request('post:entity', id);
-        var postView;
+        var fetchingPost = Moonrakr.request('post:entity', id);
+        $.when(fetchingPost).done(function(post){
+          var postView;
 
-        // check for the model doesnt exist error
-        if (model !== undefined){
-          postView = new Show.Post({
-            model: model
+          if (post !== undefined){
+            postView = new Show.Post({
+              model: post
+            });
+          }
+          else {
+            postView = new Show.MissingPost();
+          }
+
+          Moonrakr.secondRegion.show( postView );
+
           });
-        }
-        else {
-          postView = new Show.MissingPost();
-        }
-
-        Moonrakr.secondRegion.show( postView );
-      }
+      } // showPost
     };
 
 

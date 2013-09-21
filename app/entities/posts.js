@@ -44,8 +44,15 @@ define(function(require){
       },
       getPostEntity: function(postId){
         var post = new Entities.Post({id: postId});
-        post.fetch();
-        return post;
+        var defer = $.Deferred();
+        setTimeout(function(){
+          post.fetch({
+            success: function(data){
+              defer.resolve(data);
+            }
+          });
+        }, 2000);
+        return defer.promise();
       }
     };
 
