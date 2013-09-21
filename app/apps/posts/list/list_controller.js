@@ -16,7 +16,7 @@ define(function(require){
 
         postsListView.on('itemview:post:show', function(childView, model){
           // console.log('received itemview:post:show event on model ', model);
-          Moonrakr.PostsApp.Show.Controller.showPost(model);
+          Moonrakr.PostsApp.trigger('post:show', model.get('id'));
         });
 
         //// show this view

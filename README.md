@@ -6,6 +6,7 @@ v0.0.1
 
 Todos
 ----
+- concerning jshint gutter sublime package, the package doesnt seem to respect the .jshintrc file!
 - .html templates inside app/apps/** /*.html dont seem to get watched
 - check if styles living in app/styles is a dependency
 - dry up grunt copy tasks (need to learn more grunt-fu to do this)

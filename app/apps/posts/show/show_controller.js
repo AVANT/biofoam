@@ -6,10 +6,20 @@ define(function(require){
   return Moonrakr.module('PostsApp.Show', function(Show){
 
     Show.Controller = {
-      showPost: function(model){
-        var postView = new Show.Post({
-          model: model
-        });
+      showPost: function(id){
+        var posts = Moonrakr.request('post:entities');
+        var model = posts.get(id);
+        var postView;
+
+        // check for the model doesnt exist error
+        if (model !== undefined){
+          postView = new Show.Post({
+            model: model
+          });
+        }
+        else {
+          postView = new Show.MissingPost();
+        }
 
         Moonrakr.secondRegion.show( postView );
       }

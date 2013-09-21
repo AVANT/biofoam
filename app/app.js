@@ -25,7 +25,7 @@ define(function(require){
       Backbone.history.start();
 
       if (this.getCurrentRoute() === ""){
-        Moonrakr.trigger('posts:list');
+        Moonrakr.PostsApp.trigger('posts:list');
       }
     }
   });

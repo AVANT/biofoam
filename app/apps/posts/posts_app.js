@@ -8,25 +8,34 @@ define(function(require){
 
     PostsApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
-        "posts": "listPosts"
+        "posts": "listPosts",
+        "posts/:id": "showPost"
       }
     });
 
     var API = {
       listPosts: function(){
         PostsApp.List.Controller.listPosts();
+      },
+      showPost: function(id){
+        PostsApp.Show.Controller.showPost(id);
       }
     };
+
+    Moonrakr.PostsApp.on('posts:list', function(){
+      Moonrakr.navigate('posts');
+      API.listPosts();
+    });
+
+    Moonrakr.PostsApp.on('post:show', function(id){
+      Moonrakr.navigate('posts/' + id);
+      API.showPost(id);
+    });
 
     Moonrakr.addInitializer(function(){
       new PostsApp.Router({
         controller: API
       });
-    });
-
-    Moonrakr.on('posts:list', function(){
-      Moonrakr.navigate('posts');
-      API.listPosts();
     });
 
   }); // return the module

@@ -5,7 +5,8 @@ require.config({
     handlebars: 'vendor/handlebars-1.0.0',
     backbone: 'vendor/backbone-1.0.0',
     marionette: 'vendor/marionette-1.0.3',
-    text: 'vendor/text-2.0.7'
+    text: 'vendor/text-2.0.7',
+    'backbone.localstorage': 'vendor/backbone.localstorage'
   },
   shim: {
     underscore: {
