@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  var hmm = require('apps/posts/show/show_view');
+  var Show = require('apps/posts/show/show_view');
 
   return Moonrakr.module('PostsApp.Show', function(Show){
 
@@ -10,10 +10,11 @@ define(function(require){
         var postView = new Show.Post({
           model: model
         });
+
+        Moonrakr.secondRegion.show( postView );
       }
     };
 
-    Moonrakr.secondRegion.show( postView );
 
   });
 

@@ -4,9 +4,8 @@ define(function(require){
   var Moonrakr = require('app');
   var _post = require('text!apps/posts/list/templates/post.html');
 
-  return Moonrakr.module("PostsApp.List", function(List){
+  return Moonrakr.module('PostsApp.List', function(List){
 
-    //// postListItemView
     List.Post = Marionette.ItemView.extend({
       tagName: 'article',
       template: Handlebars.compile(_post),
@@ -19,7 +18,6 @@ define(function(require){
       }
     })
 
-    //// postListView
     List.Posts = Marionette.CollectionView.extend({
       tagName: 'div',
       itemView: List.Post

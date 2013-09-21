@@ -16,12 +16,17 @@ define(function(require){
       listPosts: function(){
         PostsApp.List.Controller.listPosts();
       }
-    }
+    };
 
     Moonrakr.addInitializer(function(){
       new PostsApp.Router({
         controller: API
       });
+    });
+
+    Moonrakr.on('posts:list', function(){
+      Moonrakr.navigate('posts');
+      API.listPosts();
     });
 
   }); // return the module
