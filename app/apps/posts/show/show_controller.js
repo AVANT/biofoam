@@ -7,8 +7,7 @@ define(function(require){
 
     Show.Controller = {
       showPost: function(id){
-        var posts = Moonrakr.request('post:entities');
-        var model = posts.get(id);
+        var model = Moonrakr.request('post:entity', id);
         var postView;
 
         // check for the model doesnt exist error

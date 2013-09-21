@@ -41,11 +41,20 @@ define(function(require){
           return initializePosts();
         }
         return posts;
+      },
+      getPostEntity: function(postId){
+        var post = new Entities.Post({id: postId});
+        post.fetch();
+        return post;
       }
     };
 
     Moonrakr.reqres.setHandler("post:entities", function(){
       return API.getPostEntities();
+    });
+
+    Moonrakr.reqres.setHandler("post:entity", function(id){
+      return API.getPostEntity(id);
     });
   });
 
