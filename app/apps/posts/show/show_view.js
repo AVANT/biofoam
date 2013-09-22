@@ -14,7 +14,15 @@ define(function(require){
 
     Show.Post = Marionette.ItemView.extend({
       tagName: 'article',
-      template: Handlebars.compile(_post)
-    });
+      template: Handlebars.compile(_post),
+      events: {
+        'click a.js-edit': 'editClicked'
+      },
+
+      editClicked: function(e){
+        e.preventDefault();
+        this.trigger('post:edit', this.model);
+      }
+    }); // Show.Post
   });
 });

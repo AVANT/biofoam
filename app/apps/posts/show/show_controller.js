@@ -23,6 +23,10 @@ define(function(require){
             postView = new Show.Post({
               model: post
             });
+
+            postView.on('post:edit', function(post){
+              Moonrakr.PostsApp.trigger('post:edit', post.get('id'));
+            });
           }
           else {
             postView = new Show.MissingPost();
