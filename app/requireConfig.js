@@ -6,7 +6,8 @@ require.config({
     backbone: 'vendor/backbone-1.0.0',
     marionette: 'vendor/marionette-1.0.3',
     text: 'vendor/text-2.0.7',
-    'backbone.localstorage': 'vendor/backbone.localstorage'
+    'backbone.localstorage': 'vendor/backbone.localstorage-1.1.6',
+    spinner: 'vendor/spin-1.3.2'
   },
   shim: {
     underscore: {

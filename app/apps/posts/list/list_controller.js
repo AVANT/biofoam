@@ -1,27 +1,29 @@
 define(function(require){
   var Moonrakr = require('app');
-  var hmm = require('apps/posts/list/list_view');
+  require('apps/posts/list/list_view');
+  require('apps/_common/views');
 
   return Moonrakr.module('PostsApp.List', function(List){
     List.Controller = {
       listPosts: function(){
+        var loadingView = new Moonrakr.Common.Views.Loading();
+        Moonrakr.secondRegion.show( loadingView );
 
-        //// get posts collection
-        var posts = Moonrakr.request('post:entities');
+        var fetchingPosts = Moonrakr.request('post:entities');
 
-        //// create a view for the collection
-        var postsListView = new List.Posts({
-          collection: posts
-        });
+        $.when(fetchingPosts).done(function(posts){
+          var postsListView = new List.Posts({
+            collection: posts
+          });
 
-        postsListView.on('itemview:post:show', function(childView, model){
-          // console.log('received itemview:post:show event on model ', model);
-          Moonrakr.PostsApp.trigger('post:show', model.get('id'));
-        });
+          postsListView.on('itemview:post:show', function(childView, model){
+            Moonrakr.PostsApp.trigger('post:show', model.get('id'));
+          });
 
-        //// show this view
-        Moonrakr.secondRegion.show( postsListView );
-      }
-    };
-  });
-});
+          Moonrakr.secondRegion.show( postsListView );
+        }); // when...done
+
+      } // listPosts
+    }; // List.Controller
+  }); // return sub-module
+}); // define require

@@ -2,7 +2,7 @@ require(['requireConfig'],function(){
 
   require([
     'app',
-    'entities/posts',
+    'apps/_entities/posts',
     'apps/header/header_app',
     'apps/posts/posts_app'
     ], function(Moonrakr){

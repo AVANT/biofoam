@@ -1,7 +1,7 @@
 define(function(require){
 
-  var Backbone = require('backbone');
-  var hmm = require('backbone.localstorage');
+  require('backbone');
+  require('backbone.localstorage');
 
   var Moonrakr = require('app');
 

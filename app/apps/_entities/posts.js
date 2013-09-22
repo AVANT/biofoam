@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  var hmm = require('entities/localstorage');
+  require('apps/_entities/localstorage');
 
   return Moonrakr.module('Entities', function(Entities){
 
@@ -29,18 +29,27 @@ define(function(require){
       posts.forEach(function(post){
         post.save();
       });
-      return posts;
+      return posts.models;
     };
 
     var API = {
       getPostEntities: function(){
         var posts = new Entities.PostCollection();
-        posts.fetch();
-        if(posts.length === 0){
-          // if we dont have any contacts yet, create some for convenience
-          return initializePosts();
-        }
-        return posts;
+        var defer = $.Deferred();
+        posts.fetch({
+          success: function(data){
+            defer.resolve(data);
+          }
+        });
+        var promise = defer.promise();
+        $.when(promise).done(function(posts){
+          if(posts.length === 0){
+            // if we dont have any contacts yet, create some for convenience
+            var models = initializePosts();
+            posts.reset(models);
+          }
+        });
+        return promise;
       },
       getPostEntity: function(postId){
         var post = new Entities.Post({id: postId});
@@ -49,6 +58,9 @@ define(function(require){
           post.fetch({
             success: function(data){
               defer.resolve(data);
+            },
+            error: function(data){
+              defer.resolve(undefined);
             }
           });
         }, 2000);

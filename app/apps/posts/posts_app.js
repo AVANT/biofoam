@@ -1,8 +1,8 @@
 define(function(require){
 
   var Moonrakr = require("app");
-  var hmm = require('apps/posts/list/list_controller');
-  var hmm2 = require('apps/posts/show/show_controller');
+  require('apps/posts/list/list_controller');
+  require('apps/posts/show/show_controller');
 
   return Moonrakr.module("PostsApp",function(PostsApp){
 
