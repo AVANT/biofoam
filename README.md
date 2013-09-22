@@ -1,10 +1,18 @@
-Sacrum Documentation
+Avant Documentation
+===================
+
+TODOS
+-----
+- figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
+-
+
+Coccyx Documentation
 ====================
 
 v0.0.1
 ----
 
-Todos
+DEV OPS Todos
 ----
 - concerning jshint gutter sublime package, the package doesnt seem to respect the .jshintrc file!
 - .html templates inside app/apps/** /*.html dont seem to get watched
