@@ -4,7 +4,7 @@ Avant Documentation
 TODOS
 -----
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
--
+- add a base view type for moonrakr, which includes animation abilities
 
 Coccyx Documentation
 ====================
