@@ -6,7 +6,22 @@ define(function(require){
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
-      url: "posts"
+      url: "posts",
+      validate: function(attrs, options){
+        var errors = {};
+        if (! attrs.title){
+          errors.title = "can't be blank";
+        }
+        if (! attrs.excerpt){
+          errors.excerpt = "can't be blank";
+        }
+        if (! attrs.body){
+          errors.body = "can't be blank";
+        }
+        if(! _.isEmpty(errors)){
+          return errors;
+        }
+      }
     });
     // SETTING UP MODEL TO USE LOCAL STORAGE
     Entities.configureStorage(Entities.Post);

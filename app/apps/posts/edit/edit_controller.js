@@ -25,8 +25,12 @@ define(function(require){
             });
 
             view.on('form:submit', function(data){
-              post.save(data);
-              Moonrakr.PostsApp.trigger('post:show', post.get('id'));
+              if(post.save(data)){
+                Moonrakr.PostsApp.trigger('post:show', post.get('id'));
+              }
+              else {
+                view.triggerMethod('form:data:invalid', post.validationError);
+              }
             });
 
           }
