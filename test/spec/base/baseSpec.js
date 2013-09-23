@@ -1,6 +1,4 @@
-/* you can delete this file */
-
-describe('The vendor scripts', function(){
+describe('Moonrakr app...', function(){
 
   it('has jquery defined', function(){
     expect(typeof($)).toBe('function');
@@ -26,6 +24,7 @@ describe('The vendor scripts', function(){
 
   it('has text defined', function(){
     expect(typeof(Text)).toBe('object');
+    // expect(typeof(Text)).toBe('function');
   });
 
 });
