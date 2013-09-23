@@ -7,7 +7,8 @@ require.config({
     marionette: 'vendor/marionette-1.0.3',
     text: 'vendor/text-2.0.7',
     'backbone.localstorage': 'vendor/backbone.localstorage-1.1.6',
-    spinner: 'vendor/spin-1.3.2'
+    spinner: 'vendor/spin-1.3.2',
+    'backbone.syphon': 'vendor/backbone.syphon-0.4.1'
   },
   shim: {
     underscore: {

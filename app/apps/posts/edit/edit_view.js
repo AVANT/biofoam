@@ -1,6 +1,7 @@
 define(function(require){
 
   var Handlebars = require('handlebars');
+  require('backbone.syphon');
 
   var Moonrakr = require('app'),
       _edit = require('text!apps/posts/edit/templates/edit.html');
@@ -16,7 +17,8 @@ define(function(require){
 
       submitClicked: function(e){
         e.preventDefault();
-        console.log('edit post');
+        var data = Backbone.Syphon.serialize(this);
+        this.trigger('form:submit', data);
       }
     });
 

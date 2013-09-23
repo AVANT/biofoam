@@ -23,6 +23,12 @@ define(function(require){
             view = new Edit.Post({
               model: post
             });
+
+            view.on('form:submit', function(data){
+              post.save(data);
+              Moonrakr.PostsApp.trigger('post:show', post.get('id'));
+            });
+
           }
           else {
             view = new Moonrakr.PostsApp.Show.MissingPost();

@@ -63,7 +63,7 @@ define(function(require){
               defer.resolve(undefined);
             }
           });
-        }, 2000);
+        }, 1000);
         return defer.promise();
       }
     };
