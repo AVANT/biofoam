@@ -90,6 +90,7 @@ define(function(require){
     Moonrakr.reqres.setHandler("post:entity", function(id){
       return API.getPostEntity(id);
     });
+
   });
 
 });

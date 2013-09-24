@@ -32,6 +32,10 @@ define(function(require){
             Moonrakr.PostsApp.trigger('post:show', model.get('id'));
           });
 
+          postsListPanel.on('post:new', function(){
+            Moonrakr.PostsApp.trigger('post:new');
+          });
+
           Moonrakr.secondRegion.show( postsListLayout );
 
         }); // when...done

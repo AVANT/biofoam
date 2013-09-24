@@ -18,7 +18,7 @@
     // CUSTOM GLOBAL VARIABLES
   "globals": {
     "console": false,
-    "define": true,
+    "define": false,
     "Marionette": false
   }
 }

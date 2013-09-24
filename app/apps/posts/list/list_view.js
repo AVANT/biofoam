@@ -41,8 +41,12 @@ define(function(require){
       }
     })
 
+    // BUTTON PANEL
     List.Panel = Marionette.ItemView.extend({
-      template: Handlebars.compile( _postsPanel )
+      template: Handlebars.compile( _postsPanel ),
+      triggers: {
+        'click button.js-new': 'post:new'
+      }
     })
 
   });
