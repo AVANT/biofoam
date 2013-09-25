@@ -11,6 +11,17 @@ define(function(require){
     Views.Form = Marionette.ItemView.extend({
       template: Handlebars.compile( _postForm ),
 
+      // DEFAULT DESTROY BUTTON TITLE //
+      destroy_action: 'Delete',
+
+      // PASS DESTROY BUTTON TITLE TO TEMPLATE //
+      serializeData: function(){
+        var data = this.model.toJSON();
+        data.destroy_action = this.destroy_action;
+
+        return data;
+      },
+
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked'

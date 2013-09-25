@@ -4,7 +4,9 @@ define(function(require){
   require('apps/posts/_common/views');
 
   return Moonrakr.module('PostsApp.New', function(New){
-    New.Post = Moonrakr.PostsApp.Common.Views.Form.extend();
+    New.Post = Moonrakr.PostsApp.Common.Views.Form.extend({
+      destroy_action: 'Cancel'
+    });
   });
 
 });
