@@ -18,6 +18,12 @@ define(function(require){
           model: newPost
         });
 
+        // DELETE HANDLER //
+        view.on('post:delete', function(model){
+          Moonrakr.PostsApp.trigger('posts:list');
+        });
+
+        // SAVE HANDLER //
         view.on('form:submit', function(data){
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server

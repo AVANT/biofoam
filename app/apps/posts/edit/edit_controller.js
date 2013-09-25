@@ -24,6 +24,7 @@ define(function(require){
               model: post
             });
 
+            // SAVE HANDLER //
             view.on('form:submit', function(data){
               if(post.save(data)){
                 Moonrakr.PostsApp.trigger('post:show', post.get('id'));
@@ -33,6 +34,11 @@ define(function(require){
               }
             });
 
+            // DELETE HANDLER //
+            view.on('post:delete', function(model){
+              model.destroy();
+              Moonrakr.PostsApp.trigger('posts:list');
+            });
           }
           else {
             view = new Moonrakr.PostsApp.Show.MissingPost();

@@ -12,9 +12,11 @@ define(function(require){
       template: Handlebars.compile( _postForm ),
 
       events: {
-        'click button.js-submit': 'submitClicked'
+        'click button.js-submit': 'submitClicked',
+        'click button.js-delete': 'deleteClicked'
       },
 
+      // SUBMIT HANDLERS //
       submitClicked: function(e){
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);
@@ -44,6 +46,12 @@ define(function(require){
 
         clearFormErrors();
         _.each(errors, markErrors);
+      },
+
+      // DELETE HANDLERS //
+      deleteClicked: function(e){
+        e.preventDefault();
+        this.trigger('post:delete', this.model);
       }
 
     });
