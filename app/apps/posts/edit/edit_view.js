@@ -9,7 +9,11 @@ define(function(require){
 
   return Moonrakr.module('PostsApp.Edit', function(Edit){
 
-    Edit.Post = Moonrakr.PostsApp.Common.Views.Form.extend();
+    Edit.Post = Moonrakr.PostsApp.Common.Views.Form.extend({
+      onRender: function(){
+        this.$('.js-submit').text('Update Post');
+      }
+    });
 
   }); // return
 
