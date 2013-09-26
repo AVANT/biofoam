@@ -10,11 +10,13 @@ define(function(require){
 
     Views.Form = Marionette.ItemView.extend({
       template: Handlebars.compile( _postForm ),
+      confirmDelete: 'Are you sure you want to delete this post?',
 
       // UI EVENTS
       events: {
         'click button.js-submit': 'submitClicked',
-        'click button.js-delete': 'deleteClicked'
+        'click button.js-delete': 'deleteClicked',
+        'focus input': 'setLeaveAlert'
       },
 
       // SUBMIT HANDLERS //
@@ -52,7 +54,27 @@ define(function(require){
       // DELETE HANDLERS //
       deleteClicked: function(e){
         e.preventDefault();
-        this.trigger('post:delete', this.model);
+        var result = confirm( this.confirmDelete );
+        if (result){
+          this.trigger('post:delete', this.model);
+        }
+      },
+
+      // LEAVING WITHOUT SAVING ALERT //
+      setLeaveAlert: function(e){
+        // console.log('a leave alert was set');
+
+        // CHECK TO SEE IF ANY FORM INFO CHANGED
+
+        // CATCH FOR CLOSING THE WINDOW
+        // window.onbeforeunload = function(){return 'Any changes you made will be lost.';};
+
+        // CATCH FOR USING BACK OR FORWARD BUTTONS
+        // window.onpopstate = function(event) {
+        //   event.preventDefault();
+        //   alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+        // };
+        // end to clean up popstate if they choose to move on
       }
 
     });
