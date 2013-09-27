@@ -36,10 +36,14 @@ Running the Builder - First Steps - Advanced
 --------------------------------------------
 After you have renamed the project for your own uses or if you wanna just try it out as is:
 
-1.`npm install`
-2.`grunt dev:server`
+1.`git pull origin master`
+2.`nvm install 0.10.1`
+3.`nvm use 0.10.1`
+4.`npm install`
+5.`npm install -g grunt-cli`
+6.`grunt dev:server`
 
-The second command should automatically open up a tab in your default browser to the port that is servering the app.
+The last command should automatically open up a tab in your default browser to the port that is servering the app.
 
 Running the Builder - Very First Steps - Beginner Mac OS
 --------------------------------------------------------
