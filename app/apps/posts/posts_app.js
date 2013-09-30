@@ -1,6 +1,6 @@
 define(function(require){
 
-  var Moonrakr = require("app");
+  var Moonrakr = require('app');
   require('apps/posts/list/list_controller');
   require('apps/posts/show/show_controller');
   require('apps/posts/edit/edit_controller');

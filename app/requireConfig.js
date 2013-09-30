@@ -8,7 +8,8 @@ require.config({
     text: 'vendor/text-2.0.7',
     'backbone.localstorage': 'vendor/backbone.localstorage-1.1.6',
     spinner: 'vendor/spin-1.3.2',
-    'backbone.syphon': 'vendor/backbone.syphon-0.4.1'
+    'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
+    'backbone.picky': 'vendor/backbone.picky-0.2.0.js'
   },
   shim: {
     underscore: {
