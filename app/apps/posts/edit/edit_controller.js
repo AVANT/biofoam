@@ -27,7 +27,7 @@ define(function(require){
             // SAVE HANDLER //
             view.on('form:submit', function(data){
               if(post.save(data)){
-                Moonrakr.PostsApp.trigger('post:show', post.get('id'));
+                Moonrakr.trigger('post:show', post.get('id'));
               }
               else {
                 view.triggerMethod('form:data:invalid', post.validationError);
@@ -37,7 +37,7 @@ define(function(require){
             // DELETE HANDLER //
             view.on('post:delete', function(model){
               model.destroy();
-              Moonrakr.PostsApp.trigger('posts:list');
+              Moonrakr.trigger('posts:list');
             });
           }
           else {

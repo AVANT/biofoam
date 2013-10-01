@@ -3,6 +3,9 @@ Avant Documentation
 
 TODOS
 -----
+- add backbone picky functionality into the header app
+- set up new user route
+- set up user login route
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
 - add a base view type for moonrakr, which includes animation abilities
 

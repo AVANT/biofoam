@@ -20,34 +20,38 @@ define(function(require){
     var API = {
       listPosts: function(){
         PostsApp.List.Controller.listPosts();
+        Moonrakr.execute('set:active:header', 'posts');
       },
       showPost: function(id){
         PostsApp.Show.Controller.showPost(id);
+        Moonrakr.execute('set:active:header', 'posts');
       },
       editPost: function(id){
         PostsApp.Edit.Controller.editPost(id);
+        Moonrakr.execute('set:active:header', 'posts');
       },
       newPost: function(){
         PostsApp.New.Controller.newPost();
+        Moonrakr.execute('set:active:header', 'posts');
       }
     };
 
-    Moonrakr.PostsApp.on('posts:list', function(){
+    Moonrakr.on('posts:list', function(){
       Moonrakr.navigate('posts');
       API.listPosts();
     });
 
-    Moonrakr.PostsApp.on('post:show', function(id){
+    Moonrakr.on('post:show', function(id){
       Moonrakr.navigate('posts/' + id);
       API.showPost(id);
     });
 
-    Moonrakr.PostsApp.on('post:edit', function(id){
+    Moonrakr.on('post:edit', function(id){
       Moonrakr.navigate('posts/' + id + '/edit');
       API.editPost(id);
     });
 
-    Moonrakr.PostsApp.on('post:new', function(){
+    Moonrakr.on('post:new', function(){
       Moonrakr.navigate('posts/new');
       API.newPost();
     })

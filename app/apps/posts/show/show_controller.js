@@ -25,7 +25,7 @@ define(function(require){
             });
 
             postView.on('post:edit', function(post){
-              Moonrakr.PostsApp.trigger('post:edit', post.get('id'));
+              Moonrakr.trigger('post:edit', post.get('id'));
             });
           }
           else {

@@ -20,7 +20,7 @@ define(function(require){
 
         // DELETE HANDLER //
         view.on('post:delete', function(model){
-          Moonrakr.PostsApp.trigger('posts:list');
+          Moonrakr.trigger('posts:list');
         });
 
         // SAVE HANDLER //
@@ -34,7 +34,7 @@ define(function(require){
             highestId = highestId.get('id');
             data.id = highestId + 1
             if(newPost.save(data)){
-              Moonrakr.PostsApp.trigger('post:show', newPost.get('id'));
+              Moonrakr.trigger('post:show', newPost.get('id'));
             }
             else {
               view.triggerMethod('form:data:invalid', newPost.validationError);

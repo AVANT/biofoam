@@ -1,5 +1,7 @@
 define(function(require){
 
+  // require('backbone.picky');
+
   var Moonrakr = require('app');
   require('apps/header/list/list_view');
 
@@ -10,10 +12,28 @@ define(function(require){
         var links = Moonrakr.request('header:entities');
         var headers = new List.Headers({collection: links});
 
+        headers.on('logo:clicked', function(){
+          Moonrakr.trigger('posts:list');
+        });
+
+        headers.on('itemview:navigate', function(childView, model){
+          var trigger = model.get('navigationTrigger');
+          Moonrakr.trigger( trigger );
+        });
+
         Moonrakr.headerRegion.show(headers);
+      },
+
+      setActiveHeader: function(headerUrl){
+        window.links = Moonrakr.request('header:entities');
+        var headerToSelect = links.find(function(header){
+          return header.get('url') === headerUrl;
+        });
+        headerToSelect.select();
+        links.trigger('reset');
       }
     };
 
-  }); // return module
+  });
 
-}); // define
+});

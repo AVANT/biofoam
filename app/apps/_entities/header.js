@@ -23,8 +23,8 @@ define(function(require){
 
     var initializeHeaders = function(){
       Entities.headers = new Entities.HeaderCollection([
-        { name: 'Posts', url: 'posts' },
-        { name: 'About', url: 'about' }
+        { name: 'Posts', url: 'posts', navigationTrigger: 'posts:list' },
+        { name: 'About', url: 'about', navigationTrigger: 'about:show' }
       ]);
     };
 

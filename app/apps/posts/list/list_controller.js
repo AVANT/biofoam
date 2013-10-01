@@ -29,11 +29,11 @@ define(function(require){
           });
 
           postsListView.on('itemview:post:show', function(childView, model){
-            Moonrakr.PostsApp.trigger('post:show', model.get('id'));
+            Moonrakr.trigger('post:show', model.get('id'));
           });
 
           postsListPanel.on('post:new', function(){
-            Moonrakr.PostsApp.trigger('post:new');
+            Moonrakr.trigger('post:new');
           });
 
           Moonrakr.secondRegion.show( postsListLayout );

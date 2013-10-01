@@ -11,14 +11,34 @@ define(function(require){
 
     List.Header = Marionette.ItemView.extend({
       template: Handlebars.compile( _headerLink ),
-      tagName: 'li'
+      tagName: 'li',
+      events: {
+        'click a': 'navigate'
+      },
+      navigate: function(e){
+        e.preventDefault();
+        this.trigger('navigate', this.model);
+      },
+      onRender: function(){
+        if(this.model.selected){
+          this.$el.addClass('active');
+        };
+      }
     });
 
     List.Headers = Marionette.CompositeView.extend({
       template: Handlebars.compile( _header ),
       className: 'navbar',
       itemView: List.Header,
-      itemViewContainer: 'ul'
+      itemViewContainer: 'ul',
+      events: {
+        'click a.logo': 'logoClicked'
+      },
+
+      logoClicked: function(e){
+        e.preventDefault();
+        this.trigger('logo:clicked');
+      }
     });
 
   }); // return module

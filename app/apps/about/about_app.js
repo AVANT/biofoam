@@ -14,6 +14,7 @@ define(function(require){
     var API = {
       showAbout: function(){
         AboutApp.Show.Controller.showAbout();
+        Moonrakr.execute('set:active:header', 'about');
       }
     };
 
