@@ -2,7 +2,10 @@ require(['requireConfig'],function(){
 
   require([
     'app',
+
     'apps/_entities/posts',
+    'apps/_entities/header',
+
     'apps/header/header_app',
     'apps/about/about_app',
     'apps/users/users_app',

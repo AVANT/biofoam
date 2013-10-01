@@ -5,6 +5,7 @@ define(function(require){
   var Moonrakr = new Marionette.Application();
 
   Moonrakr.addRegions({
+    headerRegion: '#header',
     mainRegion: '#main',
     secondRegion: '#second'
   });

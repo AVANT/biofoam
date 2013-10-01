@@ -3,7 +3,6 @@ define(function(require){
   require('backbone.picky');
 
   var Moonrakr = require('app');
-  require('apps/_entities/header');
 
   return Moonrakr.module('Entities', function(Entities){
 

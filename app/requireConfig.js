@@ -9,7 +9,7 @@ require.config({
     'backbone.localstorage': 'vendor/backbone.localstorage-1.1.6',
     spinner: 'vendor/spin-1.3.2',
     'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
-    'backbone.picky': 'vendor/backbone.picky-0.2.0.js'
+    'backbone.picky': 'vendor/backbone.picky-0.2.0'
   },
   shim: {
     underscore: {
@@ -25,6 +25,9 @@ require.config({
     marionette: {
       deps: ['backbone'],
       exports: 'Backbone.Marionette'
+    },
+    'backbone.picky':{
+      deps: ['backbone']
     }
   }
 });

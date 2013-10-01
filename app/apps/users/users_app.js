@@ -7,7 +7,7 @@ define(function(require){
     UsersApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
         'login': 'loginUser',
-        'users/new': 'newUser'
+        'users/new': 'newUser',
         'users': 'listUsers',
       }
     });
