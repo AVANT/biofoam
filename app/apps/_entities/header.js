@@ -24,6 +24,7 @@ define(function(require){
     var initializeHeaders = function(){
       Entities.headers = new Entities.HeaderCollection([
         { name: 'Posts', url: 'posts', navigationTrigger: 'posts:list' },
+        { name: 'Users', url: 'users', navigationTrigger: 'users:list' },
         { name: 'About', url: 'about', navigationTrigger: 'about:show' }
       ]);
     };
