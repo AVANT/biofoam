@@ -55,7 +55,7 @@ define(function(require){
       getUserEntity: function(userId){
         var user = new Entities.User({id: userId});
         var defer = $.Deferred();
-        post.fetch({
+        user.fetch({
           success: function(data){
             defer.resolve(data);
           },
@@ -71,8 +71,8 @@ define(function(require){
       return API.getUserEntities();
     });
 
-    Moonrakr.reqres.setHandler('user:entity', function(){
-      return API.getUserEntity();
+    Moonrakr.reqres.setHandler('user:entity', function(id){
+      return API.getUserEntity(id);
     });
 
   });  // return module

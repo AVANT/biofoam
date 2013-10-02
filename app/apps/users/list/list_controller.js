@@ -19,8 +19,8 @@ define(function(require){
             collection: users
           });
 
-          usersListView.on('itemview:post:show', function(childView, model){
-            Moonrakr.trigger('post:show', model.get('id'));
+          usersListView.on('itemview:user:show', function(childView, model){
+            Moonrakr.trigger('user:show', model.get('id'));
           });
 
           Moonrakr.mainRegion.show( usersListView );

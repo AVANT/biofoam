@@ -3,6 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/users/new/new_controller');
   require('apps/users/list/list_controller');
+  require('apps/users/show/show_controller');
 
   return Moonrakr.module('UsersApp', function(UsersApp){
 
@@ -29,9 +30,8 @@ define(function(require){
         UsersApp.List.Controller.listUsers();
         Moonrakr.execute('set:active:header', 'users');
       },
-      showUser: function(){
-        console.log('show user route fired');
-        // UsersApp.Show.Controller.showUser();
+      showUser: function(id){
+        UsersApp.Show.Controller.showUser(id);
         Moonrakr.execute('set:active:header', 'users');
       },
       editUser: function(){
@@ -64,7 +64,7 @@ define(function(require){
 
     Moonrakr.on('user:show', function(id){
       Moonrakr.navigate('users/' + id);
-      API.showUser();
+      API.showUser(id);
     });
 
     Moonrakr.on('user:edit', function(id){
