@@ -8,7 +8,7 @@ define(function(require){
 
     // DEFINE ROUTES
     AuthApp.Router = Marionette.AppRouter.extend({
-      appRouter : {
+      appRoutes : {
         'login': 'loginUser',
         'signup': 'signupUser'
       }

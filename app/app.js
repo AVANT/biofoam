@@ -2,12 +2,12 @@ define(function(require){
 
   var Marionette = require('marionette');
 
+  // window.Moonrakr = new Marionette.Application();
   var Moonrakr = new Marionette.Application();
 
   Moonrakr.addRegions({
     headerRegion: '#header',
-    mainRegion: '#main',
-    secondRegion: '#second'
+    mainRegion: '#main'
   });
 
   // IDEA ABOUT CLEANING THIS UP ON PAGE 212
