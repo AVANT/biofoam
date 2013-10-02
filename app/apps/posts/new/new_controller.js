@@ -12,8 +12,6 @@ define(function(require){
 
         // No need for loading view since we are not make a server request with this prototype now
 
-        // normally we would get a new model from the server with the proper id set
-
         var view = new New.Post({
           model: newPost
         });
@@ -27,7 +25,7 @@ define(function(require){
         view.on('form:submit', function(data){
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          var fetchingPosts = Moonrakr.request('post:entities')
+          var fetchingPosts = Moonrakr.request('post:entities');
           $.when(fetchingPosts).done(function(posts){
 
             var highestId = posts.max(function(c){ return c.id });
@@ -43,7 +41,7 @@ define(function(require){
           }); // when
         }); // view.on
 
-        Moonrakr.secondRegion.show(view);
+        Moonrakr.mainRegion.show(view);
 
       }
 

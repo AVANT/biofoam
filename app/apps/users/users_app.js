@@ -1,6 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/users/new/new_controller');
 
   return Moonrakr.module('UsersApp', function(UsersApp){
 
@@ -9,6 +10,7 @@ define(function(require){
         'login': 'loginUser',
         'users/new': 'newUser',
         'users': 'listUsers',
+        'users/:id': 'showUser'
       }
     });
 
@@ -24,6 +26,10 @@ define(function(require){
       listUsers: function(){
         console.log('list users route fired');
         // UsersApp.List.Controller.listUsers();
+      },
+      showUser: function(){
+        console.log('show user route fired');
+        // UsersApp.Show.Controller.showUser();
       }
     }
 
@@ -33,9 +39,14 @@ define(function(require){
       });
     });
 
-    Moonrakr.UsersApp.on('users:new', function(){
+    Moonrakr.on('user:new', function(){
       Moonrakr.navigate('users/new');
       API.newUser();
+    });
+
+    Moonrakr.on('user:show', function(id){
+      Moonrakr.navigate('users/' + id);
+      API.showUser();
     });
 
   }); // return usersApp

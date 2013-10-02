@@ -10,7 +10,7 @@ define(function(require){
       listPosts: function(){
 
         var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.secondRegion.show( loadingView );
+        Moonrakr.mainRegion.show( loadingView );
 
         var fetchingPosts = Moonrakr.request('post:entities');
 
@@ -36,7 +36,7 @@ define(function(require){
             Moonrakr.trigger('post:new');
           });
 
-          Moonrakr.secondRegion.show( postsListLayout );
+          Moonrakr.mainRegion.show( postsListLayout );
 
         }); // when...done
 

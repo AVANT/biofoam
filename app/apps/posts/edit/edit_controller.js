@@ -12,7 +12,7 @@ define(function(require){
           title: 'Artificial Loading Delay',
           message: 'Data loading is delayed to demonstrate how connectivity lag is handled.'
         });
-        Moonrakr.secondRegion.show( loadingView );
+        Moonrakr.mainRegion.show( loadingView );
 
         // get post model defer
         var fetchingContact = Moonrakr.request('post:entity', id);
@@ -45,7 +45,7 @@ define(function(require){
           }
 
           // show the edit view
-          Moonrakr.secondRegion.show( view );
+          Moonrakr.mainRegion.show( view );
         });
 
       } // editPost

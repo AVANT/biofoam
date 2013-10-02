@@ -8,7 +8,7 @@ define(function(require){
     Show.Controller = {
       showAbout: function(){
         var view = new Show.Message();
-        Moonrakr.secondRegion.show( view );
+        Moonrakr.mainRegion.show( view );
       }
     }
 
