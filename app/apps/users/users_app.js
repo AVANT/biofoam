@@ -9,25 +9,20 @@ define(function(require){
 
     UsersApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
-        'login': 'loginUser',
-        'users/new': 'newUser',
         'users': 'listUsers',
+        'users/new': 'newUser',
         'users/:id': 'showUser',
         'users/:id/edit': 'editUser'
       }
     });
 
     var API = {
-      loginUser: function(){
-        // UsersApp.Login.Controller.loginUser();
+      listUsers: function(){
+        UsersApp.List.Controller.listUsers();
         Moonrakr.execute('set:active:header', 'users');
       },
       newUser: function(){
         UsersApp.New.Controller.newUser();
-        Moonrakr.execute('set:active:header', 'users');
-      },
-      listUsers: function(){
-        UsersApp.List.Controller.listUsers();
         Moonrakr.execute('set:active:header', 'users');
       },
       showUser: function(id){
@@ -47,19 +42,14 @@ define(function(require){
       });
     });
 
-    Moonrakr.on('user:login', function(){
-      Moonrakr.navigate('login');
-      API.loginUser();
+    Moonrakr.on('users:list', function(id){
+      Moonrakr.navigate('users');
+      API.listUsers();
     });
 
     Moonrakr.on('user:new', function(){
       Moonrakr.navigate('users/new');
       API.newUser();
-    });
-
-    Moonrakr.on('users:list', function(id){
-      Moonrakr.navigate('users');
-      API.listUsers();
     });
 
     Moonrakr.on('user:show', function(id){
