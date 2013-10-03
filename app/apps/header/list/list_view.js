@@ -32,12 +32,18 @@ define(function(require){
       itemView: List.Header,
       itemViewContainer: 'ul',
       events: {
-        'click a.logo': 'logoClicked'
+        'click a.logo': 'logoClicked',
+        'click a.login': 'loginClicked'
       },
 
       logoClicked: function(e){
         e.preventDefault();
         this.trigger('logo:clicked');
+      },
+
+      loginClicked: function(e){
+        e.preventDefault();
+        this.trigger('login:clicked');
       }
     });
 

@@ -1,8 +1,8 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  // require('apps/auth/login/login_controller');
-  // require('apps/auth/signup/signup_controller');
+  require('apps/auth/login/login_controller');
+  require('apps/auth/signup/signup_controller');
 
   return Moonrakr.module('AuthApp', function(AuthApp){
 
@@ -16,13 +16,12 @@ define(function(require){
 
     // DEFINE ROUTES HANDLERS
     var API = {
-      loginUser: function(){
-        console.log( 'login route called' );
-        // AuthApp.Login.Controller.loginUser();
+      loginUser: function( route ){
+        AuthApp.Login.Controller.loginUser( route );
       },
-      signupUser: function(){
+      signupUser: function( route ){
         console.log( 'signup route called' );
-        // AuthApp.Signup.Controller.signupUser();
+        AuthApp.Signup.Controller.signupUser( route );
       },
     };
 
@@ -34,17 +33,17 @@ define(function(require){
     });
 
     // OPEN API UP TO ALL SUB APPS (ALSO USED BY THIS APP'S CONTROLLERS)
-    Moonrakr.on('auth:login', function(){
+    Moonrakr.on('auth:login', function( route ){
       // consider 'function( previousRoute )' so that the app could then route the user back to whatever they were doing before they were prompted to login
       // this may not be necessary if the login is done as modal only
       Moonrakr.navigate('login');
-      API.loginUser();
+      API.loginUser( route );
     });
 
-    Moonrakr.on('auth:signup', function(){
+    Moonrakr.on('auth:signup', function( route ){
       // same consideration as above 'function( previousRoute )' in this case would be used when a user is prompted to signup while trying to make a comment
       Moonrakr.navigate('signup');
-      API.signupUser();
+      API.signupUser( route );
     })
 
   });

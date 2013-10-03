@@ -16,6 +16,11 @@ define(function(require){
           Moonrakr.trigger('posts:list');
         });
 
+        headers.on('login:clicked', function(){
+          // get current route and pass that along to the login call
+          Moonrakr.trigger( 'auth:login', Moonrakr.getCurrentRoute() );
+        });
+
         headers.on('itemview:navigate', function(childView, model){
           var trigger = model.get('navigationTrigger');
           Moonrakr.trigger( trigger );

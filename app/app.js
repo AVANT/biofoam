@@ -20,6 +20,10 @@ define(function(require){
     return Backbone.history.fragment;
   };
 
+  Moonrakr.getCurrentTrigger = function(){
+    var routeStr = Backbone.history.fragment;
+  };
+
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');
     if(Backbone.history){
