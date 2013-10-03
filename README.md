@@ -3,11 +3,13 @@ Avant Documentation
 
 TODOS
 -----
-- stub out auth sub app
+- figure out auth subapp with backend
+
+- flesh out editing and deleting in users app
+
+- add redactor wysiwyg to the about page for admin custimization of that page
 
 - abstract main app navigate functionality to another level up (see book)
-
-- add a full wysiwyg editor for the about page (later abstract the about app to be static page serving app?)
 
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
 

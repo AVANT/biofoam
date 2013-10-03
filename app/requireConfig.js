@@ -9,7 +9,8 @@ require.config({
     'backbone.localstorage': 'vendor/backbone.localstorage-1.1.6',
     spinner: 'vendor/spin-1.3.2',
     'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
-    'backbone.picky': 'vendor/backbone.picky-0.2.0'
+    'backbone.picky': 'vendor/backbone.picky-0.2.0',
+    redactor: 'vendor/redactor-8.2.2'
   },
   shim: {
     underscore: {
@@ -26,8 +27,11 @@ require.config({
       deps: ['backbone'],
       exports: 'Backbone.Marionette'
     },
-    'backbone.picky':{
+    'backbone.picky': {
       deps: ['backbone']
+    },
+    redactor: {
+      deps: ['jquery']
     }
   }
 });
