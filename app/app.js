@@ -2,8 +2,8 @@ define(function(require){
 
   var Marionette = require('marionette');
 
-  // window.Moonrakr = new Marionette.Application();
-  var Moonrakr = new Marionette.Application();
+  window.Moonrakr = new Marionette.Application();
+  // var Moonrakr = new Marionette.Application();
 
   Moonrakr.addRegions({
     headerRegion: '#header',

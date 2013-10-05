@@ -1,5 +1,5 @@
 define(function(require){
-  require('redactor');
+  window.rHandle = require('jquery.redactor');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   var _edit_form = require('text!apps/about/edit/templates/edit_form.html');
@@ -12,10 +12,24 @@ define(function(require){
         'click button.js-submit': 'submitClicked'
       },
       onRender: function(){
-        this.$('#redactor').redactor();
+        // console.log( 'is it defined here: ', $('#redactor').redactor() );
+        // window.rHandle = this.redactorHandle = this.$('#redactor').redactor({
+        window.view = this;
+        this.$('#redactor').redactor({
+          initCallback: function(){
+            console.log( 'redactor has been initialized' );
+          }
+        });
       },
-      submitClicked: function(){
-        console.log( $('#formID').serialize() );
+      submitClicked: function(e){
+        e.preventDefault();
+        var data = {'content': this.$('#redactor').redactor('get')}
+        console.log( this.$('#redactor').redactor('get') );
+        console.log( data );
+        this.trigger('form:submit', data);
+      },
+      onFormDataInvalid: function(errors){
+        console.log(errors);
       }
     });
 

@@ -7,8 +7,34 @@ define(function(require){
 
     Show.Controller = {
       showAbout: function(){
-        var view = new Show.Message();
-        Moonrakr.mainRegion.show( view );
+        var loadingView = new Moonrakr.Common.Views.Loading({
+          title: 'Loading',
+          message: ''
+        });
+        Moonrakr.mainRegion.show( loadingView );
+
+        var aboutShowLayout = new Show.Layout();
+        var aboutShowPanel = new Show.Panel();
+
+        var fetchingAbout = Moonrakr.request('about:entity');
+        $.when(fetchingAbout).done(function(about){
+
+          var aboutShowView = new Show.About({
+            model: about
+          });
+
+          aboutShowLayout.on('show', function(){
+            aboutShowLayout.panelRegion.show( aboutShowPanel );
+            aboutShowLayout.aboutRegion.show( aboutShowView );
+          })
+
+          aboutShowPanel.on('about:edit', function(){
+            Moonrakr.trigger('about:edit');
+          });
+
+          Moonrakr.mainRegion.show( aboutShowLayout );
+
+        });
       }
     }
 

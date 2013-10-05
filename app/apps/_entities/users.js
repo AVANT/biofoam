@@ -61,6 +61,7 @@ define(function(require){
           },
           error: function(data){
             defer.resolve(undefined);
+            // instead perhaps try passing the server errors thru?
           }
         });
         return defer.promise();

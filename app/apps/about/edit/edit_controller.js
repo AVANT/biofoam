@@ -6,9 +6,27 @@ define(function(require){
 
     Edit.Controller = {
       editAbout: function(){
-        var view = new Edit.AboutView();
+        var loadingView = new Moonrakr.Common.Views.Loading();
+        Moonrakr.mainRegion.show( loadingView );
 
-        Moonrakr.mainRegion.show( view );
+        var fetchingAbout = Moonrakr.request('about:entity');
+        $.when(fetchingAbout).done(function(about){
+
+          var view = new Edit.AboutView({
+            model: about
+          });
+
+          view.on('form:submit', function(data){
+            if(about.save(data)){
+              Moonrakr.trigger('about:show');
+            }
+            else {
+              view.triggerMethod('form:data:invalid', about.validationError);
+            }
+          });
+
+          Moonrakr.mainRegion.show( view );
+        });
       }
     }
 

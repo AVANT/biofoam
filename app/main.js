@@ -3,8 +3,9 @@ require(['requireConfig'],function(){
   require([
     'app',
 
-    'apps/_entities/posts',
     'apps/_entities/header',
+    'apps/_entities/about',
+    'apps/_entities/posts',
     'apps/_entities/users',
 
     'apps/header/header_app',

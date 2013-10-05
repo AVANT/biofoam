@@ -37,7 +37,7 @@ define(function(require){
 
     Moonrakr.on('about:edit', function(){
       Moonrakr.navigate('about/edit');
-      API.showAbout();
+      API.editAbout();
     });
 
   });

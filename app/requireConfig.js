@@ -10,7 +10,7 @@ require.config({
     spinner: 'vendor/spin-1.3.2',
     'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
     'backbone.picky': 'vendor/backbone.picky-0.2.0',
-    redactor: 'vendor/redactor-8.2.2'
+    'jquery.redactor': 'vendor/redactor-9.1.5'
   },
   shim: {
     underscore: {
@@ -30,7 +30,7 @@ require.config({
     'backbone.picky': {
       deps: ['backbone']
     },
-    redactor: {
+    'jquery.redactor': {
       deps: ['jquery']
     }
   }
