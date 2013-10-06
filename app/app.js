@@ -2,11 +2,12 @@ define(function(require){
 
   var Marionette = require('marionette');
 
-  var Moonrakr = new Marionette.Application();
+  window.Moonrakr = new Marionette.Application();
+  // var Moonrakr = new Marionette.Application();
 
   Moonrakr.addRegions({
-    mainRegion: '#main',
-    secondRegion: '#second'
+    headerRegion: '#header',
+    mainRegion: '#main'
   });
 
   // IDEA ABOUT CLEANING THIS UP ON PAGE 212
@@ -19,13 +20,17 @@ define(function(require){
     return Backbone.history.fragment;
   };
 
+  Moonrakr.getCurrentTrigger = function(){
+    var routeStr = Backbone.history.fragment;
+  };
+
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');
     if(Backbone.history){
       Backbone.history.start();
 
       if (this.getCurrentRoute() === ""){
-        Moonrakr.PostsApp.trigger('posts:list');
+        Moonrakr.trigger('posts:list');
       }
     }
   });

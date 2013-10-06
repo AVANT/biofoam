@@ -58,7 +58,7 @@ module.exports = function (grunt){
         tasks: ['copy:styles2tmp']
       },
       copyVendor: {
-        files: ['vendor/**/*.js', 'vendor/**/*.css'],
+        files: ['vendor/**/*.js', 'vendor/**/*.css', 'vendor/**/*.scss'],
         tasks: ['copy:vendor2tmp']
       },
       jasmine: {
@@ -278,6 +278,13 @@ module.exports = function (grunt){
             expand: true, dot: true, flatten: true,
             cwd: 'vendor',
             src: 'css/**/*.css',
+            dest: '.tmp/css/vendor'
+          },
+          ,
+          {
+            expand: true, dot: true, flatten: true,
+            cwd: 'vendor',
+            src: 'css/**/*.scss',
             dest: '.tmp/css/vendor'
           }
         ]

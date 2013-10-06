@@ -1,9 +1,7 @@
 define(function(require){
 
   var Handlebars = require('handlebars');
-
   var Moonrakr = require('app');
-
   var _postForm = require('text!apps/posts/_common/templates/post-form.html')
 
   return Moonrakr.module('PostsApp.Common.Views', function(Views){

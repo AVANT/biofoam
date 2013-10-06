@@ -3,8 +3,22 @@ Avant Documentation
 
 TODOS
 -----
+- figure out auth subapp with backend
+
+- flesh out editing and deleting in users app
+- - fix the bug that the newest created user does not show up on the list view without refresh
+
+- create common inherited view for every view
+
+- could I bake the loading view in the apps common view?
+
+- abstract main app navigate functionality to another level up (see book)
+
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
+
 - add a base view type for moonrakr, which includes animation abilities
+
+- theres a little bug with initializing the about page for new users
 
 Coccyx Documentation
 ====================

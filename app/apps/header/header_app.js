@@ -1,29 +1,23 @@
 define(function(require){
 
   var Moonrakr = require("app");
-  var _header = require("text!apps/header/templates/_header.html")
+  require('apps/header/list/list_controller');
 
   return Moonrakr.module('HeaderApp', function(HeaderApp){
     this.startWithParent = true;
 
+    var API = {
+      listHeader: function(){
+        HeaderApp.List.Controller.listHeader();
+      }
+    };
 
-    HeaderApp.Header = Marionette.ItemView.extend({
-      template: _header
+    Moonrakr.commands.setHandler('set:active:header', function(name){
+      Moonrakr.HeaderApp.List.Controller.setActiveHeader(name);
     });
 
-    HeaderApp.Controller = {
-      showHeader: function(){
-        // new view with correct template
-        // show view
-        console.log('got this far');
-        var headerView = new HeaderApp.Header();
-        Moonrakr.mainRegion.show( headerView );
-      }
-    }
-
     HeaderApp.on("start", function(){
-      console.log("Header started");
-      HeaderApp.Controller.showHeader();
+      API.listHeader();
     });
   });
 });

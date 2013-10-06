@@ -6,7 +6,7 @@ define(function(require){
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
-      url: "posts",
+      url: 'posts',
       validate: function(attrs, options){
         var errors = {};
         if (! attrs.title){
@@ -27,7 +27,7 @@ define(function(require){
     Entities.configureStorage(Entities.Post);
 
     Entities.PostCollection = Backbone.Collection.extend({
-      url: "posts",
+      url: 'posts',
       model: Entities.Post,
       comparator: 'title'
     });

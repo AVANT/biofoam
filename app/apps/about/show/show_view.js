@@ -2,12 +2,29 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _aboutMessage = require('text!apps/about/show/templates/aboutMessage.html');
+  var _about = require('text!apps/about/show/templates/about.html');
+  var _aboutLayout = require('text!apps/about/show/templates/about_layout.html');
+  var _aboutPanel = require('text!apps/about/show/templates/about_panel.html');
 
   return Moonrakr.module('AboutApp.Show', function(Show){
 
-    Show.Message = Marionette.ItemView.extend({
-      template: Handlebars.compile( _aboutMessage )
+    Show.About = Marionette.ItemView.extend({
+      template: Handlebars.compile( _about )
+    });
+
+    Show.Layout = Marionette.Layout.extend({
+      template: Handlebars.compile( _aboutLayout ),
+      regions: {
+        panelRegion: '#panel-region',
+        aboutRegion: '#about-region'
+      }
+    });
+
+    Show.Panel = Marionette.ItemView.extend({
+      template: Handlebars.compile( _aboutPanel ),
+      triggers: {
+        'click button.js-edit' : 'about:edit'
+      }
     });
 
   });

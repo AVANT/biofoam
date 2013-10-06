@@ -1,7 +1,7 @@
 define(function(require){
 
-  var Moonrakr = require('app'),
-      Show = require('apps/posts/show/show_view');
+  var Moonrakr = require('app');
+  require('apps/posts/show/show_view');
 
   require('apps/_common/views');
 
@@ -13,7 +13,7 @@ define(function(require){
           title: 'Artificial Loading Delay',
           message: 'Data loading is delayed to demonstrate how connectivity lag is handled.'
         });
-        Moonrakr.secondRegion.show( loadingView );
+        Moonrakr.mainRegion.show( loadingView );
 
         var fetchingPost = Moonrakr.request('post:entity', id);
         $.when(fetchingPost).done(function(post){
@@ -25,16 +25,16 @@ define(function(require){
             });
 
             postView.on('post:edit', function(post){
-              Moonrakr.PostsApp.trigger('post:edit', post.get('id'));
+              Moonrakr.trigger('post:edit', post.get('id'));
             });
           }
           else {
             postView = new Show.MissingPost();
           }
 
-          Moonrakr.secondRegion.show( postView );
+          Moonrakr.mainRegion.show( postView );
 
-          });
+        });
       }
     };
 

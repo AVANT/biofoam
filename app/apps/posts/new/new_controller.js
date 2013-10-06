@@ -12,29 +12,27 @@ define(function(require){
 
         // No need for loading view since we are not make a server request with this prototype now
 
-        // normally we would get a new model from the server with the proper id set
-
         var view = new New.Post({
           model: newPost
         });
 
         // DELETE HANDLER //
         view.on('post:delete', function(model){
-          Moonrakr.PostsApp.trigger('posts:list');
+          Moonrakr.trigger('posts:list');
         });
 
         // SAVE HANDLER //
         view.on('form:submit', function(data){
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          var fetchingPosts = Moonrakr.request('post:entities')
+          var fetchingPosts = Moonrakr.request('post:entities');
           $.when(fetchingPosts).done(function(posts){
 
             var highestId = posts.max(function(c){ return c.id });
             highestId = highestId.get('id');
             data.id = highestId + 1
             if(newPost.save(data)){
-              Moonrakr.PostsApp.trigger('post:show', newPost.get('id'));
+              Moonrakr.trigger('post:show', newPost.get('id'));
             }
             else {
               view.triggerMethod('form:data:invalid', newPost.validationError);
@@ -43,7 +41,7 @@ define(function(require){
           }); // when
         }); // view.on
 
-        Moonrakr.secondRegion.show(view);
+        Moonrakr.mainRegion.show(view);
 
       }
 

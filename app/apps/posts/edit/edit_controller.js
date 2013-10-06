@@ -12,11 +12,11 @@ define(function(require){
           title: 'Artificial Loading Delay',
           message: 'Data loading is delayed to demonstrate how connectivity lag is handled.'
         });
-        Moonrakr.secondRegion.show( loadingView );
+        Moonrakr.mainRegion.show( loadingView );
 
         // get post model defer
-        var fetchingContact = Moonrakr.request('post:entity', id);
-        $.when(fetchingContact).done(function(post){
+        var fetchingPost = Moonrakr.request('post:entity', id);
+        $.when(fetchingPost).done(function(post){
           // put model in the edit view
           var view;
           if(post !== undefined){
@@ -27,7 +27,7 @@ define(function(require){
             // SAVE HANDLER //
             view.on('form:submit', function(data){
               if(post.save(data)){
-                Moonrakr.PostsApp.trigger('post:show', post.get('id'));
+                Moonrakr.trigger('post:show', post.get('id'));
               }
               else {
                 view.triggerMethod('form:data:invalid', post.validationError);
@@ -37,7 +37,7 @@ define(function(require){
             // DELETE HANDLER //
             view.on('post:delete', function(model){
               model.destroy();
-              Moonrakr.PostsApp.trigger('posts:list');
+              Moonrakr.trigger('posts:list');
             });
           }
           else {
@@ -45,7 +45,7 @@ define(function(require){
           }
 
           // show the edit view
-          Moonrakr.secondRegion.show( view );
+          Moonrakr.mainRegion.show( view );
         });
 
       } // editPost
