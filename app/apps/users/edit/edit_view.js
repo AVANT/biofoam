@@ -5,7 +5,12 @@ define(function(require){
 
   return Moonrakr.module('UsersApp.Edit', function(Edit){
 
-    Edit.User = Moonrakr.UsersApp.Common.Views.Form.extend({});
+    Edit.User = Moonrakr.UsersApp.Common.Views.Form.extend({
+      templateHelpers: {
+        submitText: 'Save User',
+        titleText: 'Edit User'
+      }
+    });
 
   });
 

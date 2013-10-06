@@ -6,9 +6,9 @@ define(function(require){
   return Moonrakr.module('PostsApp.New', function(New){
     New.Post = Moonrakr.PostsApp.Common.Views.Form.extend({
       confirmDelete: 'Are you sure you want to cancel creating this post?',
-      onRender: function(){
-        this.$('.js-submit').text('Create Post');
-        this.$('.js-destroy').text('Cancel');
+      templateHelpers: {
+        titleText: 'New Post',
+        submitText: 'Create Post'
       }
     });
   });

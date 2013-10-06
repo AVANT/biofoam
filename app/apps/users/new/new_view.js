@@ -7,10 +7,11 @@ define(function(require){
   return Moonrakr.module('UsersApp.New', function(New){
 
     New.User = Moonrakr.UsersApp.Common.Views.Form.extend({
-      onRender: function(){
-        this.$('.js-submit').text('Create User');
-        this.$('h1').text('New User'); // dirty hack
+      templateHelpers: {
+        submitText: 'Create User',
+        titleText: 'New User'
       }
+
     });
 
   });

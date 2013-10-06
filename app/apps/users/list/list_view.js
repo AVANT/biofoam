@@ -15,7 +15,6 @@ define(function(require){
         'click': 'showClicked'
       },
       showClicked: function(e){
-        console.log('alrvhelher');
         e.preventDefault();
         this.trigger('user:show', this.model);
       }
