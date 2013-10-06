@@ -10,16 +10,14 @@ define(function(require){
     });
     Entities.configureStorage(Entities.About);
 
-    var initializeAbout = function(){
+    Entities.initializeAbout = function(){
       console.log('about entity initialized');
 
       var about = new Entities.About({
         id: 1,
         content: '<h1>About Page</h1><p>Lorem ipsum sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
       });
-      window.aaa = about;
       about.save();
-      window.aaa2 = about;
       return about;
     };
 
@@ -30,16 +28,14 @@ define(function(require){
 
         about.fetch({
           success: function(data){
-            window.ccc = data;
             defer.resolve(data);
           }
         });
 
-        window.bbb = about;
-
         // HANDLE THE CASE WHERE THERE IS NO ABOUT PAGE YET
         $.when(defer.promise()).done(function(about){
-          if(about.attributes.content == undefined){
+          window.aaa = about;
+          if(about.attributes.id !== 1){
             var about = initializeAbout();
           }
         })

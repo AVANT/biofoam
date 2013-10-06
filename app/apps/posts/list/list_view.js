@@ -1,10 +1,7 @@
 define(function(require){
 
-  // VENDOR
   var Handlebars = require('handlebars');
-  // APPS
   var Moonrakr = require('app');
-  // TEMPLATES
   var _post = require('text!apps/posts/list/templates/post.html'),
   _postsLayout = require('text!apps/posts/list/templates/post-layout.html');
   _postsPanel = require('text!apps/posts/list/templates/post-panel.html');

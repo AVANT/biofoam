@@ -1,0 +1,33 @@
+<h1>Edit User</h1>
+<form>
+  <div class="form-group">
+    <label for="user-username" class="form-label">
+      Username:
+    </label>
+    <input id="user-username" name="username" type="text" value="{{ username }}">
+  </div>
+
+  <div class="form-group">
+    <label for="user-email" class="form-label">
+      Email:
+    </label>
+    <input id="user-email" name="email" type="text" value="{{ email }}">
+  </div>
+
+  <div class="form-group">
+    <label for="user-password" class="form-label">
+      Password:
+    </label>
+    <input id="user-password" name="password" type="password" value="">
+  </div>
+
+  <div class="form-group">
+    <label for="user-password-confirm" class="form-label">
+      Confirm Password:
+    </label>
+    <input id="user-password-confirm" name="password-confirm" type="password" value="">
+  </div>
+
+  <button class="js-submit">Save User</button>
+  <button class="js-delete">Delete User</button>
+</form>

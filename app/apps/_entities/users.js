@@ -19,6 +19,7 @@ define(function(require){
     Entities.configureStorage(Entities.UserCollection);
 
     var initializeUsers = function(){
+      console.log('user entities initialized')
       var users = new Entities.UserCollection([
         {id:1, username: 'Ced'},
         {id:2, username: 'Che'},

@@ -4,6 +4,7 @@ define(function(require){
   require('apps/users/new/new_controller');
   require('apps/users/list/list_controller');
   require('apps/users/show/show_controller');
+  require('apps/users/edit/edit_controller')
 
   return Moonrakr.module('UsersApp', function(UsersApp){
 
@@ -29,9 +30,8 @@ define(function(require){
         UsersApp.Show.Controller.showUser(id);
         Moonrakr.execute('set:active:header', 'users');
       },
-      editUser: function(){
-        console.log('edit user route fired');
-        // UsersApp.Edit.Controller.editUser();
+      editUser: function(id){
+        UsersApp.Edit.Controller.editUser(id);
         Moonrakr.execute('set:active:header', 'users');
       }
     }

@@ -15,8 +15,8 @@ define(function(require){
         Moonrakr.mainRegion.show( loadingView );
 
         // get post model defer
-        var fetchingContact = Moonrakr.request('post:entity', id);
-        $.when(fetchingContact).done(function(post){
+        var fetchingPost = Moonrakr.request('post:entity', id);
+        $.when(fetchingPost).done(function(post){
           // put model in the edit view
           var view;
           if(post !== undefined){
