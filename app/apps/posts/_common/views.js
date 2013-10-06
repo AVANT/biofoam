@@ -17,6 +17,11 @@ define(function(require){
         'focus input': 'setLeaveAlert'
       },
 
+      // REDACTOR HANDLERS //
+      onRender: function(){
+        this.$('.redactor').redactor();
+      },
+
       // SUBMIT HANDLERS //
       submitClicked: function(e){
         e.preventDefault();

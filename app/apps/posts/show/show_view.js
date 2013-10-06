@@ -7,12 +7,12 @@ define(function(require){
 
   return Moonrakr.module('PostsApp.Show', function(Show){
 
-    Show.MissingPost = Marionette.ItemView.extend({
+    Show.MissingPost = Moonrakr.Common.Views.ItemView.extend({
       tagName: 'article',
       template: Handlebars.compile(_missingPost)
     });
 
-    Show.Post = Marionette.ItemView.extend({
+    Show.Post = Moonrakr.Common.Views.ItemView.extend({
       tagName: 'article',
       template: Handlebars.compile(_post),
       events: {

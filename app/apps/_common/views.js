@@ -8,6 +8,12 @@ define(function(require){
 
   return Moonrakr.module("Common.Views", function(Views){
 
+    Views.ItemView = Marionette.ItemView.extend({
+      initialize: function(){
+        console.log("I'm a base view now");
+      }
+    });
+
     Views.Loading = Marionette.ItemView.extend({
       template: Handlebars.compile( _loadingView ),
 

@@ -12,9 +12,6 @@ define(function(require){
         'click button.js-submit': 'submitClicked'
       },
       onRender: function(){
-        // console.log( 'is it defined here: ', $('#redactor').redactor() );
-        // window.rHandle = this.redactorHandle = this.$('#redactor').redactor({
-        window.view = this;
         this.$('#redactor').redactor({
           initCallback: function(){
             console.log( 'redactor has been initialized' );
@@ -24,8 +21,6 @@ define(function(require){
       submitClicked: function(e){
         e.preventDefault();
         var data = {'content': this.$('#redactor').redactor('get')}
-        console.log( this.$('#redactor').redactor('get') );
-        console.log( data );
         this.trigger('form:submit', data);
       },
       onFormDataInvalid: function(errors){
