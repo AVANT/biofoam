@@ -1,4 +1,6 @@
 define(function(require){
+  var loadImage = require('loadImage');
+  require('jquery.jcrop');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   var _userForm = require('text!apps/users/_common/templates/user_form.html');
@@ -13,6 +15,42 @@ define(function(require){
         'click button.js-delete': 'deleteClicked'
       },
 
+        ///////////////////////////
+       // IMAGE UPLOAD HANDLERS //
+      ///////////////////////////
+      onShow: function(){
+        // init image uploader and cropper
+        document.getElementById('user-image').onchange = function(e){
+          loadImage(
+            e.target.files[0],
+            function(img){
+              document.body.appendChild(img);
+            }
+          );
+        }
+        $('#crop').on('click', function (event) {
+          event.preventDefault();
+          var img = result.find('img, canvas')[0];
+          if (img && coordinates) {
+            replaceResults(loadImage.scale(img, {
+              left: coordinates.x,
+              top: coordinates.y,
+              sourceWidth: coordinates.w,
+              sourceHeight: coordinates.h,
+              minWidth: result.width()
+            }));
+            coordinates = null;
+          }
+        });
+      },
+
+      cropHandler: function(){
+
+      },
+
+        /////////////////////////////////////
+       // FORM SUBMIT AND DELETE HANDLERS //
+      /////////////////////////////////////
       submitClicked: function(e){
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);
