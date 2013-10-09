@@ -12,40 +12,75 @@ define(function(require){
       template: Handlebars.compile( _userForm ),
       events: {
         'click button.js-submit': 'submitClicked',
-        'click button.js-delete': 'deleteClicked'
+        'click button.js-delete': 'deleteClicked',
+
+        'click button.js-imageSubmit': 'imageSubmitClicked'
       },
 
         ///////////////////////////
        // IMAGE UPLOAD HANDLERS //
       ///////////////////////////
       onShow: function(){
+        this.initImageLoad();
+      },
+
+      initImageLoad: function(){
+        var that = this;
         // init image uploader and cropper
-        document.getElementById('user-image').onchange = function(e){
+        this.$('#user-image').get(0).onchange = function(e){
           loadImage(
             e.target.files[0],
             function(img){
-              document.body.appendChild(img);
-            }
+              this.$('#image-ui').get(0).appendChild(img);
+              that.initJcrop();
+            },
+            // OPTIONS //
+            {maxWidth: 600,
+            canvas: true}
           );
         }
-        $('#crop').on('click', function (event) {
-          event.preventDefault();
-          var img = result.find('img, canvas')[0];
-          if (img && coordinates) {
-            replaceResults(loadImage.scale(img, {
-              left: coordinates.x,
-              top: coordinates.y,
-              sourceWidth: coordinates.w,
-              sourceHeight: coordinates.h,
-              minWidth: result.width()
-            }));
+      },
+
+      initJcrop: function(){
+        var that = this;
+        var img = this.$('canvas').get(0);
+
+        this.$('canvas').Jcrop({
+          setSelect: [40, 40 , 140, 140],
+          onSelect: function (coords) {
+            that.coordinates = coords;
+          },
+          onRelease: function () {
             coordinates = null;
-          }
+          },
+          aspectRatio: 1/1
         });
       },
 
-      cropHandler: function(){
+      imageSubmitClicked: function(e){
+        e.preventDefault();
+        this.cropHandler();
+      },
 
+      cropHandler: function(){
+        var that = this;
+        var img = this.$('canvas')[0];
+        console.log( img );
+        console.log( this.coordinates );
+        if (img && this.coordinates){
+          console.log('here');
+          this.replaceResults(loadImage.scale(img, {
+            left: that.coordinates.x,
+            right: that.coordinates.y,
+            sourceWidth: that.coordinates.w,
+            sourceHeight: that.coordinates.h
+          }));
+        }
+      },
+
+      replaceResults: function(img){
+        console.log( img );
+        this.$('#image-ui').append(img);
       },
 
         /////////////////////////////////////
