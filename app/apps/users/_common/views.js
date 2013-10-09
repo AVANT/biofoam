@@ -20,6 +20,9 @@ define(function(require){
         ///////////////////////////
        // IMAGE UPLOAD HANDLERS //
       ///////////////////////////
+
+      // NEED TO DISABLE UPLOAD BUTTON AFTER ONE PHOTO
+
       onShow: function(){
         this.initImageLoad();
       },
@@ -35,8 +38,10 @@ define(function(require){
               that.initJcrop();
             },
             // OPTIONS //
-            {maxWidth: 600,
-            canvas: true}
+            {
+            maxWidth: 600,
+            canvas: true
+            }
           );
         }
       },
@@ -47,14 +52,25 @@ define(function(require){
 
         this.$('canvas').Jcrop({
           setSelect: [40, 40 , 140, 140],
-          onSelect: function (coords) {
-            that.coordinates = coords;
+          onChange: function(coords){
+            that.updateCoords(coords, that);
+          },
+          onSelect: function(coords){
+            that.updateCoords(coords, that);
           },
           onRelease: function () {
-            coordinates = null;
+            // disable submit button
           },
           aspectRatio: 1/1
+        }, function(){
+          var bounds = this.getBounds();
+          console.log( 'bounds [x,y]: ', bounds[0], bounds[1] );
         });
+      },
+
+      updateCoords: function(c, that){
+        console.log('update coords', c);
+        that.coordinates = c;
       },
 
       imageSubmitClicked: function(e){
@@ -65,15 +81,16 @@ define(function(require){
       cropHandler: function(){
         var that = this;
         var img = this.$('canvas')[0];
-        console.log( img );
-        console.log( this.coordinates );
+        // console.log( img );
+        // console.log( this.coordinates );
         if (img && this.coordinates){
-          console.log('here');
+          console.log( 'about to call loadImage', that.coordinates );
           this.replaceResults(loadImage.scale(img, {
             left: that.coordinates.x,
-            right: that.coordinates.y,
+            top: that.coordinates.y,
             sourceWidth: that.coordinates.w,
             sourceHeight: that.coordinates.h
+            // minWidth: img.width
           }));
         }
       },
