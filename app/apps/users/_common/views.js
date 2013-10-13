@@ -35,7 +35,7 @@ define(function(require){
       deleteClicked: function(e){
         var that = this;
         e.preventDefault();
-        bootbox.confirm('Are you sure you want to delete this User?', function(result){
+        bootbox.confirm('Are you sure you want to delete this user?', function(result){
           if(result){
             that.trigger('user:delete', that.model);
           }

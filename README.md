@@ -4,7 +4,7 @@ Avant Documentation
 TODOS
 -----
 
-- make are you sure you wanna delete stuff app specific modal
+- modal confirm delete of post
 
 - figure out auth subapp with backend
 

@@ -17,16 +17,27 @@ define(function(require){
         'focus input': 'setLeaveAlert'
       },
 
-      // REDACTOR HANDLERS //
+      // REDACTOR HANDLER //
       onRender: function(){
         this.$('.redactor').redactor();
       },
 
-      // SUBMIT HANDLERS //
+      // SUBMIT HANDLER //
       submitClicked: function(e){
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);
         this.trigger('form:submit', data);
+      },
+
+      // DELETE HANDLER //
+      deleteClicked: function(e){
+        var that = this;
+        e.preventDefault();
+        bootbox.confirm('Are you sure you want to delete this post?', function(result){
+          if(result){
+            that.trigger('post:delete', that.model);
+          }
+        });
       },
 
       onFormDataInvalid: function(errors){
@@ -52,15 +63,6 @@ define(function(require){
 
         clearFormErrors();
         _.each(errors, markErrors);
-      },
-
-      // DELETE HANDLERS //
-      deleteClicked: function(e){
-        e.preventDefault();
-        var result = confirm( this.confirmDelete );
-        if (result){
-          this.trigger('post:delete', this.model);
-        }
       },
 
       // LEAVING WITHOUT SAVING ALERT //
