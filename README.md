@@ -3,7 +3,6 @@ Avant Documentation
 
 TODOS
 -----
-- modularize image upload-n-crop view
 
 - make are you sure you wanna delete stuff app specific modal
 

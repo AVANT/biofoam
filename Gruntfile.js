@@ -42,7 +42,7 @@ module.exports = function (grunt){
         tasks: ['compass:dev']
       },
       copyAssets: {
-        files: ['<%= sacrum.app %>/assets/**/*.{png,jpg,jepg,gif,webp,svg,html}'],
+        files: ['<%= sacrum.app %>/assets/**/*.{png,jpg,jepg,gif,webp,svg,html,eot,ttf,woff}'],
         tasks: ['copy:assets2tmp']
       },
       copyScripts: {
