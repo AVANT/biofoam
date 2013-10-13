@@ -14,31 +14,36 @@ define(function(require){
         var fetchingUser = Moonrakr.request('user:entity', id);
         $.when(fetchingUser).done(function(user){
 
-          var view;
+          var layoutView;
           if(user !== undefined){
-            view = new Edit.User({
+            layoutView = new Edit.User({
               model: user
             });
+            var imageUploader = new Moonrakr.Common.Views.ImageUploadView();
 
-            view.on('form:submit', function(data){
+            layoutView.on('show', function(){
+              layoutView.imageUploadRegion.show( imageUploader );
+            });
+
+            layoutView.on('form:submit', function(data){
               if(user.save(data)){
                 Moonrakr.trigger('user:show', user.get('id'));
               }
               else{
-                view.triggerMethod('form:data:invalid', user.validationError);
+                layoutView.triggerMethod('form:data:invalid', user.validationError);
               }
             });
 
-            view.on('user:delete', function(user){
+            layoutView.on('user:delete', function(user){
               user.destroy();
               Moonrakr.trigger('users:list');
             });
           }
           else{
-            view = new Moonrakr.UsersApp.Show.MissingPost();
+            layoutView = new Moonrakr.UsersApp.Show.MissingPost();
           }
 
-          Moonrakr.mainRegion.show( view );
+          Moonrakr.mainRegion.show( layoutView );
 
         });
 

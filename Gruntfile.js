@@ -479,6 +479,8 @@ module.exports = function (grunt){
     'watch'
   ]);
 
+  grunt.registerTask('default',['dev:server']);
+
   grunt.registerTask('build',[
     'clean:dist',               // clear previous build
     'concurrent:distCompile',   // compile all files

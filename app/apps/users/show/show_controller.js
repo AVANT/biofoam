@@ -2,7 +2,6 @@ define(function(require){
 
   var Moonrakr = require('app');
   require('apps/users/show/show_view');
-  require('apps/_common/views');
 
   return Moonrakr.module('UsersApp.Show', function(Show){
 

@@ -4,7 +4,7 @@ define(function(require){
       Spinner = require('spinner');
 
   var Moonrakr = require('app'),
-      _loadingView = require('text!apps/_common/templates/loading-view.html');
+      _loadingView = require('text!apps/_common/templates/loading_view.html');
 
   return Moonrakr.module("Common.Views", function(Views){
 

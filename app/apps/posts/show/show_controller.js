@@ -3,8 +3,6 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/posts/show/show_view');
 
-  require('apps/_common/views');
-
   return Moonrakr.module('PostsApp.Show', function(Show){
 
     Show.Controller = {

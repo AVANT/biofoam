@@ -1,6 +1,5 @@
 define(function(require){
   var Handlebars = require('handlebars');
-
   var Moonrakr = require('app');
   var _missingPost = require('text!apps/posts/show/templates/missing-post.html');
   var _post = require('text!apps/posts/show/templates/post.html');

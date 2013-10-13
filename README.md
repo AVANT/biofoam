@@ -3,8 +3,7 @@ Avant Documentation
 
 TODOS
 -----
-
-- add personal photo upload to users edit and new (and crop ability)
+- modularize image upload-n-crop view
 
 - make are you sure you wanna delete stuff app specific modal
 
