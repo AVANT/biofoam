@@ -18,6 +18,7 @@ require.config({
     spinner: 'vendor/spin-1.3.2',
     'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
     'backbone.picky': 'vendor/backbone.picky-0.2.0',
+    bootstrap: 'vendor/bootstrap-3.0.0',
 
       /////////
      // CMS //

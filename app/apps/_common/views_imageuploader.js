@@ -9,6 +9,9 @@ define(function(require){
 
     Views.ImageUploadView = Marionette.ItemView.extend({
       template: Handlebars.compile( _imageuploadView ),
+      ui: {
+        cropButton: 'button.js-crop',
+      },
       events: {
         'click button.js-crop': 'cropClicked'
       },
@@ -23,7 +26,7 @@ define(function(require){
           loadImage(
             e.target.files[0],
             function(img){
-              this.$('#image-preview').get(0).appendChild(img);
+              that.replaceResults(img);
               that.initJcrop();
             },
             { // OPTIONS
@@ -57,11 +60,11 @@ define(function(require){
       },
 
       enableCrop: function(){
-        this.$('button.js-crop').removeAttr('disabled');
+        this.ui.cropButton.removeAttr('disabled');
       },
 
       disableCrop: function(){
-        this.$('button.js-crop').attr('disabled', 'disabled');
+        this.ui.cropButton.attr('disabled', 'disabled');
       },
 
       updateCoords: function(c, that){
