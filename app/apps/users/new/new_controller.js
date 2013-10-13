@@ -9,12 +9,18 @@ define(function(require){
       newUser: function(){
         var newUser = new Moonrakr.Entities.User();
 
-        var view = new New.User({
+        var layoutView = new New.User({
           model: newUser
         });
 
+        var imageUploader = new Moonrakr.Common.Views.ImageUploadView();
+
+        layoutView.on('show', function(){
+          layoutView.imageUploadRegion.show( imageUploader );
+        });
+
         // SAVE HANDLER //
-        view.on('form:submit', function(data){
+        layoutView.on('form:submit', function(data){
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
           var fetchingUsers = Moonrakr.request('user:entities');
           $.when(fetchingUsers).done(function(users){
@@ -25,12 +31,12 @@ define(function(require){
               Moonrakr.trigger('user:show', newUser.get('id'));
             }
             else {
-              view.triggerMethod('form:data:invalid', newUser.validationError);
+              layoutView.triggerMethod('form:data:invalid', newUser.validationError);
             }
           });
         });
 
-        Moonrakr.mainRegion.show(view);
+        Moonrakr.mainRegion.show( layoutView );
       }
     }
 
