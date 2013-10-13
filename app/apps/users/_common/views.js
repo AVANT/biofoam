@@ -2,6 +2,7 @@ define(function(require){
   var loadImage = require('loadImage');
   require('jquery.jcrop');
   var Handlebars = require('handlebars');
+  require('bootbox');
   var Moonrakr = require('app');
   var _userForm = require('text!apps/users/_common/templates/user_form.html');
 
@@ -32,11 +33,13 @@ define(function(require){
       },
 
       deleteClicked: function(e){
+        var that = this;
         e.preventDefault();
-        var result = confirm( this.confirmDelete );
-        if (result){
-          this.trigger('user:delete', this.model);
-        }
+        bootbox.confirm('Are you sure you want to delete this User?', function(result){
+          if(result){
+            that.trigger('user:delete', that.model);
+          }
+        });
       },
 
       onFormDataInvalid: function(errors){

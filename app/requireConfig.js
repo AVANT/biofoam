@@ -19,6 +19,7 @@ require.config({
     'backbone.syphon': 'vendor/backbone.syphon-0.4.1',
     'backbone.picky': 'vendor/backbone.picky-0.2.0',
     bootstrap: 'vendor/bootstrap-3.0.0',
+    bootbox: 'vendor/bootbox-4.1.0',
 
       /////////
      // CMS //
@@ -32,6 +33,7 @@ require.config({
     loadImageMeta: 'vendor/load-image-meta',
     loadImageOrientation: 'vendor/load-image-orientation',
     loadImage: 'vendor/load-image'
+
   },
   shim: {
     underscore: {
@@ -56,6 +58,12 @@ require.config({
     },
     'jquery.jcrop': {
       deps: ['jquery']
+    },
+    'bootstrap': {
+      deps: ['jquery']
+    },
+    'bootbox': {
+      deps: ['jquery', 'bootstrap']
     }
   }
 });

@@ -40,7 +40,8 @@ window.bootbox = window.bootbox || (function init($, undefined) {
   };
 
   // cache a reference to the jQueryfied body element
-  var appendTo = $("body");
+  // var appendTo = $("body");
+  var appendTo = $("#modal");
 
   var defaults = {
     // default language

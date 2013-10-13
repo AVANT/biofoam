@@ -1,5 +1,5 @@
 define(function(require){
-
+  var bootbox = require('bootbox');
   var Moonrakr = require('app');
   require('apps/users/edit/edit_view');
 

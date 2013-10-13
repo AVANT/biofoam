@@ -7,7 +7,8 @@ define(function(require){
 
   Moonrakr.addRegions({
     headerRegion: '#header',
-    mainRegion: '#main'
+    mainRegion: '#main',
+    modalRegion: '#modal'
   });
 
   // IDEA ABOUT CLEANING THIS UP ON PAGE 212

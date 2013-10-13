@@ -33,7 +33,7 @@ define(function(require){
               maxWidth: 600,
               canvas: true
             }
-          ); // loadImage
+          );
         }
       },
 
