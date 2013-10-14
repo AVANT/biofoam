@@ -4,13 +4,18 @@ Avant Documentation
 TODOS
 -----
 
-- modal confirm delete of post
+- modal confirm when navigating away from changed form
+-- got onbeforeunload
+-- got internal clicks on a tags
+-- still need to figure out back and forward button (doesnt BB grab this anyway?)
+
+- make redactor a common view in apps/_common
 
 - figure out auth subapp with backend
 
 - - fix the bug that the newest created user does not show up on the list view without refresh
 
-- create common inherited view?
+- change to pushstate with global link catcher?
 
 - could I bake the loading view in the apps common view?
 
@@ -18,7 +23,7 @@ TODOS
 
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
 
-- theres a little bug with initializing the about page for new users
+- theres a little bug with initializing the about page for new devs downloading this repo
 
 Coccyx Documentation
 ====================

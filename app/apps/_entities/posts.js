@@ -78,7 +78,7 @@ define(function(require){
               defer.resolve(undefined);
             }
           });
-        }, 1000);
+        }, 0);
         return defer.promise();
       }
     };

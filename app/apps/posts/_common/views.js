@@ -9,12 +9,52 @@ define(function(require){
     Views.Form = Marionette.ItemView.extend({
       template: Handlebars.compile( _postForm ),
       confirmDelete: 'Are you sure you want to delete this post?',
+      formChanged: false,
+      bypass: false,
 
-      // UI EVENTS
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
-        'focus input': 'setLeaveAlert'
+        'change input': 'inputChanged'
+      },
+
+      initialize: function(){
+        var that = this;
+
+        $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
+
+        $('a').bind('click', function(e){
+          that.interiorNavigtionHanlder(e, that);
+        });
+
+        $(window).bind(window, 'statechange', function(){
+          console.log('yayyyy');
+        });
+
+      },
+
+      beforeUnloadHandler: function(){
+        if (that.formChanged){
+          return( 'There are changes in the form.  Do you want to leave them unsaved?');
+        }
+      },
+
+      interiorNavigtionHanlder: function(e, that){
+        console.log( 'that', that );
+        if(!that.bypass){
+            e.preventDefault();
+            e.stopPropagation();
+            bootbox.confirm('There are changes in the form.  Do you want to leave them unsaved?', function(result){
+              if (result){
+                that.bypass = true;
+                $(e.target).trigger('click');
+              }
+            });
+          }
+      },
+
+      inputChanged: function(){
+        this.formChanged = true;
       },
 
       // REDACTOR HANDLER //
@@ -33,7 +73,7 @@ define(function(require){
       deleteClicked: function(e){
         var that = this;
         e.preventDefault();
-        bootbox.confirm('Are you sure you want to delete this post?', function(result){
+        bootbox.confirm(that.confirmDelete, function(result){
           if(result){
             that.trigger('post:delete', that.model);
           }
