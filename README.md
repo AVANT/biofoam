@@ -4,12 +4,11 @@ Avant Documentation
 TODOS
 -----
 
-- impliment data binding on post form.  that way if they leave you can just save the model for later
+- change "new post" button to reflect whether there is an active newPost model on the PostsApp.New
 
-- modal confirm when navigating away from changed form
--- got onbeforeunload
--- got internal clicks on a tags
--- still need to figure out back and forward button (doesnt BB grab this anyway?)
+- impliment continuous save on redactor on editing?
+
+- modularize redactor view
 
 - modualize the form alerts
 
@@ -22,6 +21,8 @@ TODOS
 - change to pushstate with global link catcher?
 
 - could I bake the loading view in the apps common view?
+
+- impliment save to localStorage of new post so it stays around for ever
 
 - abstract main app navigate functionality to another level up (see book)
 

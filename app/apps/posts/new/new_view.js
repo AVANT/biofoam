@@ -10,20 +10,17 @@ define(function(require){
         titleText: 'New Post',
         submitText: 'Create Post'
       },
-      bindings: {
-        '#post-title': 'title',
-        '#post-excerpt': 'excerpt'
-      },
+      // bindings: {
+      //   '#post-title': 'title',
+      //   '#post-excerpt': 'excerpt'
+      // },
       events: {
         'change input': 'inputChanged'
       },
-
       inputChanged: function(){
+        console.log('input change fired on view');
         this.trigger('input:changed');
       }
-
-
-      // on input changed, save this model to this app
     });
   });
 

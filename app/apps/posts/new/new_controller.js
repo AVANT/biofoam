@@ -22,6 +22,13 @@ define(function(require){
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 
+        view.on('redactor:content', function(data){
+          console.log('redactor save triggered on controller');
+          newPost.set( data );
+          console.log( newPost.get( 'body' ) );
+          Moonrakr.PostsApp.New.newPost = newPost;
+        });
+
         // DELETE HANDLER //
         view.on('post:delete', function(model){
           Moonrakr.trigger('posts:list');

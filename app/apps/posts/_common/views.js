@@ -10,16 +10,22 @@ define(function(require){
       template: Handlebars.compile( _postForm ),
       confirmDelete: 'Are you sure you want to delete this post?',
       formChanged: false,
-      bypass: false,
 
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
+
+        'change input': 'inputChanged'
       },
 
       bindings: {
         '#post-title': 'title',
-        '#post-excerpt': 'excerpt'
+        '#post-excerpt': 'excerpt',
+        '#post-body': 'body'
+      },
+
+      inputChanged: function(){
+        this.formChanged = true;
       },
 
       onRender: function(){
@@ -27,9 +33,26 @@ define(function(require){
         this.$('.redactor').redactor();
       },
 
+      onClose: function(){
+        window.clearInterval( this.redactorWatcherId );
+      },
+
       initialize: function(){
         var that = this;
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
+        this.setRedactorWatcher();
+      },
+
+      setRedactorWatcher: function(){
+        var that = this;
+        this.redactorWatcherId = setInterval( function(){
+          // console.log( that );
+          // console.log( that.$('.redactor').redactor('get') );
+          var data = { 'body': that.$('.redactor').redactor('get') };
+          // console.log( that );
+          // that.$('.redactor').redactor('sync');
+          that.trigger('redactor:content', data);
+        }, 1000)
       },
 
       beforeUnloadHandler: function(){
