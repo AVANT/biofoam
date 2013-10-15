@@ -9,7 +9,21 @@ define(function(require){
       templateHelpers: {
         titleText: 'New Post',
         submitText: 'Create Post'
+      },
+      bindings: {
+        '#post-title': 'title',
+        '#post-excerpt': 'excerpt'
+      },
+      events: {
+        'change input': 'inputChanged'
+      },
+
+      inputChanged: function(){
+        this.trigger('input:changed');
       }
+
+
+      // on input changed, save this model to this app
     });
   });
 

@@ -8,12 +8,18 @@ define(function(require){
     New.Controller = {
 
       newPost: function(){
-        var newPost = new Moonrakr.Entities.Post();
-
-        // No need for loading view since we are not make a server request with this prototype now
+        // GET POST MODEL FROM THIS APP OR CREATE A NEW ONE
+        console.log( Moonrakr.PostsApp.New.newPost )
+        var newPost = Moonrakr.PostsApp.New.newPost || new Moonrakr.Entities.Post();
 
         var view = new New.Post({
           model: newPost
+        });
+
+        // LOCAL SAVE HANLDER //
+        view.on('input:changed', function(){
+          console.log('local save triggered on controller');
+          Moonrakr.PostsApp.New.newPost = newPost;
         });
 
         // DELETE HANDLER //
