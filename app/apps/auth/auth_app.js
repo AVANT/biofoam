@@ -6,7 +6,6 @@ define(function(require){
 
   return Moonrakr.module('AuthApp', function(AuthApp){
 
-    // DEFINE ROUTES
     AuthApp.Router = Marionette.AppRouter.extend({
       appRoutes : {
         'login': 'loginUser',
@@ -14,7 +13,6 @@ define(function(require){
       }
     });
 
-    // DEFINE ROUTES HANDLERS
     var API = {
       loginUser: function( route ){
         AuthApp.Login.Controller.loginUser( route );
@@ -32,7 +30,6 @@ define(function(require){
       })
     });
 
-    // OPEN API UP TO ALL SUB APPS (ALSO USED BY THIS APP'S CONTROLLERS)
     Moonrakr.on('auth:login', function( route ){
       // consider 'function( previousRoute )' so that the app could then route the user back to whatever they were doing before they were prompted to login
       // this may not be necessary if the login is done as modal only

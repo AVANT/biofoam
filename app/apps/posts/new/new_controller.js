@@ -18,14 +18,11 @@ define(function(require){
 
         // LOCAL SAVE HANLDER //
         view.on('input:changed', function(){
-          console.log('local save triggered on controller');
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 
         view.on('redactor:content', function(data){
-          console.log('redactor save triggered on controller');
           newPost.set( data );
-          console.log( newPost.get( 'body' ) );
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 

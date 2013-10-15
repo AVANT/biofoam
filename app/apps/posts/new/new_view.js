@@ -10,10 +10,6 @@ define(function(require){
         titleText: 'New Post',
         submitText: 'Create Post'
       },
-      // bindings: {
-      //   '#post-title': 'title',
-      //   '#post-excerpt': 'excerpt'
-      // },
       events: {
         'change input': 'inputChanged'
       },

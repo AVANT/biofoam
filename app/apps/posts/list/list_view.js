@@ -41,6 +41,16 @@ define(function(require){
       template: Handlebars.compile( _postsPanel ),
       triggers: {
         'click button.js-new': 'post:new'
+      },
+      templateHelpers: {
+        newPostAction: function(){
+          if(Moonrakr.PostsApp.New.newPost){
+            return 'Resume Editing New Post'
+          }
+          else {
+            return 'New Post'
+          }
+        }
       }
     })
 
