@@ -10,6 +10,7 @@ require.config({
     backbone: 'vendor/backbone-1.0.0',
     marionette: 'vendor/marionette-1.0.3',
     text: 'vendor/text-2.0.7',
+    'backbone.stickit': 'vendor/backbone.stickit-bleed',
 
       //////////////////
      // SUPPLEMENTAL //
@@ -49,6 +50,9 @@ require.config({
     marionette: {
       deps: ['backbone'],
       exports: 'Backbone.Marionette'
+    },
+    'backbone.stickit': {
+      deps: ['jquery', 'underscore', 'backbone']
     },
     'backbone.picky': {
       deps: ['backbone']

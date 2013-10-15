@@ -1,5 +1,5 @@
 define(function(require){
-
+  require('backbone.stickit');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   var _postForm = require('text!apps/posts/_common/templates/post-form.html')
@@ -15,22 +15,21 @@ define(function(require){
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
-        'change input': 'inputChanged'
+      },
+
+      bindings: {
+        '#post-title': 'title',
+        '#post-excerpt': 'excerpt'
+      },
+
+      onRender: function(){
+        this.stickit( );
+        this.$('.redactor').redactor();
       },
 
       initialize: function(){
         var that = this;
-
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
-
-        $('a').bind('click', function(e){
-          that.interiorNavigtionHanlder(e, that);
-        });
-
-        $(window).bind(window, 'statechange', function(){
-          console.log('yayyyy');
-        });
-
       },
 
       beforeUnloadHandler: function(){
@@ -39,33 +38,12 @@ define(function(require){
         }
       },
 
-      interiorNavigtionHanlder: function(e, that){
-        console.log( 'that', that );
-        if(!that.bypass){
-            e.preventDefault();
-            e.stopPropagation();
-            bootbox.confirm('There are changes in the form.  Do you want to leave them unsaved?', function(result){
-              if (result){
-                that.bypass = true;
-                $(e.target).trigger('click');
-              }
-            });
-          }
-      },
-
-      inputChanged: function(){
-        this.formChanged = true;
-      },
-
-      // REDACTOR HANDLER //
-      onRender: function(){
-        this.$('.redactor').redactor();
-      },
-
       // SUBMIT HANDLER //
       submitClicked: function(e){
         e.preventDefault();
-        var data = Backbone.Syphon.serialize(this);
+        // var data = Backbone.Syphon.serialize(this);
+        // this.trigger('form:submit', data);
+        var data = { 'body': this.$('.redactor').redactor('get')}
         this.trigger('form:submit', data);
       },
 
@@ -103,23 +81,6 @@ define(function(require){
 
         clearFormErrors();
         _.each(errors, markErrors);
-      },
-
-      // LEAVING WITHOUT SAVING ALERT //
-      setLeaveAlert: function(e){
-        // console.log('a leave alert was set');
-
-        // CHECK TO SEE IF ANY FORM INFO CHANGED
-
-        // CATCH FOR CLOSING THE WINDOW
-        // window.onbeforeunload = function(){return 'Any changes you made will be lost.';};
-
-        // CATCH FOR USING BACK OR FORWARD BUTTONS
-        // window.onpopstate = function(event) {
-        //   event.preventDefault();
-        //   alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
-        // };
-        // end to clean up popstate if they choose to move on
       }
 
     });

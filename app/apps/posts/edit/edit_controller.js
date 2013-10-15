@@ -25,6 +25,8 @@ define(function(require){
             });
 
             // SAVE HANDLER //
+            // view.on('form:submit', function(data){
+              // if(post.save(data)){
             view.on('form:submit', function(data){
               if(post.save(data)){
                 Moonrakr.trigger('post:show', post.get('id'));

@@ -4,10 +4,14 @@ Avant Documentation
 TODOS
 -----
 
+- impliment data binding on post form.  that way if they leave you can just save the model for later
+
 - modal confirm when navigating away from changed form
 -- got onbeforeunload
 -- got internal clicks on a tags
 -- still need to figure out back and forward button (doesnt BB grab this anyway?)
+
+- modualize the form alerts
 
 - make redactor a common view in apps/_common
 
