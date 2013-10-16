@@ -41,7 +41,7 @@ define(function(require){
         var that = this;
         var img = this.$('canvas').get(0);
 
-        this.$('canvas').Jcrop({
+        this.$('#image-preview').find('canvas').Jcrop({
           setSelect: [40, 40, img.width - 40, img.height - 40],
           onChange: function(coords){
             that.updateCoords(coords, that);
@@ -56,6 +56,9 @@ define(function(require){
             that.coordinates = null
           },
           aspectRatio: 1/1
+        },
+        function(){
+          that.jcrop_api = this;
         });
       },
 
@@ -80,7 +83,7 @@ define(function(require){
         var that = this;
         var img = this.$('canvas')[0];
         if (img && this.coordinates){
-          this.replaceResults(loadImage.scale(img,{
+          this.cropResult(loadImage.scale(img,{
             left: that.coordinates.x,
             top: that.coordinates.y,
             sourceWidth: that.coordinates.w,
@@ -91,8 +94,25 @@ define(function(require){
 
       replaceResults: function(img){
         this.$('#image-preview').append(img);
-      }
+      },
 
+      cropResult: function(img){
+        // remove current uncropped img from the "preview" div
+        this.$('#image-preview').find('canvas')[0] = null;
+
+        // clear any images that might be in "current" div
+        this.$('#image-current').empty();
+
+        // insert new image into the current div
+        this.$('#image-current').append(img);
+
+        // disable crop button
+        this.disableCrop();
+
+        // stop jcrop
+        this.jcrop_api.destroy();
+
+      }
 
     });
 

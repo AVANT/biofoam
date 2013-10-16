@@ -32,13 +32,17 @@ define(function(require){
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
       },
 
+      onRender: function(){
+        this.stickit();
+      },
+
+        ///////////////////
+       // INIT HANLDERS //
+      ///////////////////
+
       modelChanged: function(){
         this.formChanged = true;
         this.trigger('model:changed');
-      },
-
-      onRender: function(){
-        this.stickit();
       },
 
       beforeUnloadHandler: function(){
@@ -47,7 +51,11 @@ define(function(require){
         }
       },
 
-      // SUBMIT HANDLER //
+        /////////////////
+       // UI HANLDERS //
+      /////////////////
+
+      // SUBMIT HANDLER
       submitClicked: function(e){
         e.preventDefault();
         this.trigger('form:submit');
@@ -63,6 +71,10 @@ define(function(require){
           }
         });
       },
+
+        //////////////////////////
+       // HANLDING FORM ERRORS //
+      //////////////////////////
 
       onFormDataInvalid: function(errors){
         var $view = this.$el;
