@@ -21,8 +21,9 @@ define(function(require){
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 
-        view.on('redactor:content', function(data){
-          newPost.set( data );
+        view.on('redactor:changed', function(){
+          // newPost.set( data );
+          console.log('this model body is: ', newPost.get('body'));
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 

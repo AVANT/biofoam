@@ -4,11 +4,9 @@ Avant Documentation
 TODOS
 -----
 
-- change "new post" button to reflect whether there is an active newPost model on the PostsApp.New
+- modularize redactor view
 
 - impliment continuous save on redactor on editing?
-
-- modularize redactor view
 
 - modualize the form alerts
 

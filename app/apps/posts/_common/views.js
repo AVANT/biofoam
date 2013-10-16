@@ -15,7 +15,7 @@ define(function(require){
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
 
-        'change input': 'inputChanged'
+        'change input': 'inputChanged',
       },
 
       bindings: {
@@ -29,30 +29,22 @@ define(function(require){
       },
 
       onRender: function(){
-        this.stickit( );
-        this.$('.redactor').redactor();
-      },
+        var that = this;
 
-      onClose: function(){
-        window.clearInterval( this.redactorWatcherId );
+        this.$('.redactor').redactor({
+          changeCallback: function(html){
+            that.$('.redactor').html(html);
+            that.$('.redactor').trigger('change');
+            that.trigger('redactor:changed');
+          }
+        });
+
+        that.stickit();
       },
 
       initialize: function(){
         var that = this;
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
-        this.setRedactorWatcher();
-      },
-
-      setRedactorWatcher: function(){
-        var that = this;
-        this.redactorWatcherId = setInterval( function(){
-          // console.log( that );
-          // console.log( that.$('.redactor').redactor('get') );
-          var data = { 'body': that.$('.redactor').redactor('get') };
-          // console.log( that );
-          // that.$('.redactor').redactor('sync');
-          that.trigger('redactor:content', data);
-        }, 1000)
       },
 
       beforeUnloadHandler: function(){
@@ -64,9 +56,6 @@ define(function(require){
       // SUBMIT HANDLER //
       submitClicked: function(e){
         e.preventDefault();
-        // var data = Backbone.Syphon.serialize(this);
-        // this.trigger('form:submit', data);
-        var data = { 'body': this.$('.redactor').redactor('get')}
         this.trigger('form:submit', data);
       },
 
