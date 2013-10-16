@@ -49,7 +49,7 @@ define(function(require){
       // SUBMIT HANDLER //
       submitClicked: function(e){
         e.preventDefault();
-        this.trigger('form:submit', data);
+        this.trigger('form:submit');
       },
 
       // DELETE HANDLER //

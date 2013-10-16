@@ -29,7 +29,7 @@ define(function(require){
          // SET EVENT HANDLERS //
         ////////////////////////
 
-        // SHOW REDACTOR VIEW WHEN LAYOUT VIEW IS SHOWN
+        // SHOW REDACTOR VIEW WHEN LAYOUT VIEW IS RENDERED
         layoutView.on('render', function(){
           layoutView.redactorRegion.show( redactorView );
         });
@@ -84,11 +84,10 @@ define(function(require){
       },
 
       getRedactorView: function(body){
-        var redactorView = new Moonrakr.Common.Views.Redactor({
+        return new Moonrakr.Common.Views.Redactor({
           textareaId: 'post-body',
           textareaValue: body
         });
-        return redactorView;
       }
 
     }

@@ -4,7 +4,7 @@ Avant Documentation
 
 CURRENT TASK
 ------------
-get post edit controller working again
+get post edit controller working with new form layoutview and redactor view
 
 
 GEN TODOS
