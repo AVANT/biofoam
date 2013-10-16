@@ -7,7 +7,7 @@ define(function(require){
 
   return Moonrakr.module('Common.Views', function(Views){
 
-    Views.ImageUploadView = Marionette.ItemView.extend({
+    Views.ImageUpload = Marionette.ItemView.extend({
       template: Handlebars.compile( _imageuploadView ),
       ui: {
         cropButton: 'button.js-crop',

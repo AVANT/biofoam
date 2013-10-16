@@ -11,6 +11,7 @@ define(function(require){
       formChanged: false,
 
       regions: {
+        imageUploadRegion: '#image-upload-region',
         redactorRegion: '#redactor-region'
       },
 

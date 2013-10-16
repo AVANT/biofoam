@@ -4,14 +4,16 @@ Avant Documentation
 
 CURRENT TASK
 ------------
-get post edit controller working with new form layoutview and redactor view
+- add image uploader to post edit
 
 
 GEN TODOS
 ---------
-- add image uploader to post new (and edit)
+- in imageUploader, the crop button should remove the original photo and set the crop as the new photo
+- learn to save images from the uploader into localstorage
+- leanr to resert those images back into the uploader in the div that shows the current image
+- add "current image" div into the image uploader common view
 - fix the bug that the newest created user does not show up on the list view without refresh
-- change to pushstate with global link catcher (SEO)
 
 
 MODULARIZE TODOS
@@ -29,10 +31,11 @@ BACKEND UP TODOS
 
 ICEBOX TODOS
 ------------
+- carefully consider user expirence of post editing/previewing/local saving/etc
+- change to pushstate with global link catcher (SEO)
+- consider writing those unit tests in jasmine
 - impliment save to localStorage of new post so it stays around for ever
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
-
-
 
 
 

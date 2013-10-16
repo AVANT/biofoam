@@ -37,6 +37,9 @@ define(function(require){
               model: post
             });
 
+            // init imageUpload view and insert model photo??
+            var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+
             // init redactor view and insert model.body
             var redactorView = that.getRedactorView( post.get('body') );
 
@@ -46,6 +49,7 @@ define(function(require){
 
             // show redactor view when layout view is rendered
             layoutView.on('render', function(){
+              layoutView.imageUploadRegion.show( imageUploadView );
               layoutView.redactorRegion.show( redactorView );
             });
 

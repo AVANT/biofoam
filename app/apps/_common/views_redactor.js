@@ -29,7 +29,6 @@ define(function(require){
             that.$('.redactor').html(html);
             that.$('.redactor').trigger('change');
             that.trigger('redactor:changed');
-            console.log('redactor:changed has been triggered');
           }
         });
       }

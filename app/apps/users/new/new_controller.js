@@ -7,16 +7,21 @@ define(function(require){
 
     New.Controller = {
       newUser: function(){
+
+          /////////////////////////////
+         // GET VIEWS AND THE MODEL //
+        /////////////////////////////
+
         var newUser = new Moonrakr.Entities.User();
 
         var layoutView = new New.User({
           model: newUser
         });
 
-        var imageUploader = new Moonrakr.Common.Views.ImageUploadView();
+        var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
 
         layoutView.on('show', function(){
-          layoutView.imageUploadRegion.show( imageUploader );
+          layoutView.imageUploadRegion.show( imageUploadView );
         });
 
         // SAVE HANDLER //

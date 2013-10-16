@@ -19,7 +19,7 @@ define(function(require){
             layoutView = new Edit.User({
               model: user
             });
-            var imageUploader = new Moonrakr.Common.Views.ImageUploadView();
+            var imageUploader = new Moonrakr.Common.Views.ImageUpload();
 
             layoutView.on('show', function(){
               layoutView.imageUploadRegion.show( imageUploader );

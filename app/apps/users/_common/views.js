@@ -12,7 +12,7 @@ define(function(require){
       confirmDelete: 'Are you sure you want to delete this?',
       template: Handlebars.compile( _userForm ),
       regions: {
-        imageUploadRegion: '#image-uploader-region'
+        imageUploadRegion: '#image-upload-region'
       },
       events: {
         'click button.js-submit': 'submitClicked',
