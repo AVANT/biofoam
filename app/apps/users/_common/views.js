@@ -19,10 +19,6 @@ define(function(require){
         'click button.js-delete': 'deleteClicked',
       },
 
-      initialize: function(){
-        console.log( this.imageUploadRegion );
-      },
-
         /////////////////////////////////////
        // FORM SUBMIT AND DELETE HANDLERS //
       /////////////////////////////////////

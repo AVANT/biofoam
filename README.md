@@ -1,32 +1,40 @@
 Avant Documentation
 ===================
 
-TODOS
------
 
-- modularize redactor view
+CURRENT TASK
+------------
+get post edit controller working again
 
-- impliment continuous save on redactor on editing?
 
-- modualize the form alerts
+GEN TODOS
+---------
+- add image uploader to post new (and edit)
+- fix the bug that the newest created user does not show up on the list view without refresh
+- change to pushstate with global link catcher (SEO)
 
-- make redactor a common view in apps/_common
 
-- figure out auth subapp with backend
-
-- - fix the bug that the newest created user does not show up on the list view without refresh
-
-- change to pushstate with global link catcher?
-
+MODULARIZE TODOS
+----------------
+- modualize the form alerts?
+- abstract main app navigate functionality to another level up (see book)
 - could I bake the loading view in the apps common view?
 
+
+BACKEND UP TODOS
+----------------
+- figure out auth subapp with backend
+- theres a little bug with initializing the about page for new devs downloading this repo
+
+
+ICEBOX TODOS
+------------
 - impliment save to localStorage of new post so it stays around for ever
-
-- abstract main app navigate functionality to another level up (see book)
-
 - figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
 
-- theres a little bug with initializing the about page for new devs downloading this repo
+
+
+
 
 Coccyx Documentation
 ====================

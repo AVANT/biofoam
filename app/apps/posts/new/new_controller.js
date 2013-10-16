@@ -8,32 +8,50 @@ define(function(require){
     New.Controller = {
 
       newPost: function(){
-        // GET POST MODEL FROM THIS APP OR CREATE A NEW ONE
-        console.log( Moonrakr.PostsApp.New.newPost )
-        var newPost = Moonrakr.PostsApp.New.newPost || new Moonrakr.Entities.Post();
 
-        var view = new New.Post({
+          /////////////////////////////
+         // GET VIEWS AND THE MODEL //
+        /////////////////////////////
+
+        // GET POST MODEL FROM THIS APP OR CREATE A NEW ONE
+        var newPost = this.getNewPost();
+
+        // INIT LAYOUT VIEW AND INSERT MODEL
+        var layoutView = new New.Post({
           model: newPost
         });
 
-        // LOCAL SAVE HANLDER //
-        view.on('input:changed', function(){
+        // INIT REDACTOR VIEW AND INSERT MODEL BODY
+        var redactorView = this.getRedactorView( newPost.get('body') );
+
+
+          ////////////////////////
+         // SET EVENT HANDLERS //
+        ////////////////////////
+
+        // SHOW REDACTOR VIEW WHEN LAYOUT VIEW IS SHOWN
+        layoutView.on('render', function(){
+          layoutView.redactorRegion.show( redactorView );
+        });
+
+        // ON 'localsave' EVENT, ATTACH THE NEW POST TO THIS SUB-APP
+        layoutView.on('model:changed', function(){
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 
-        view.on('redactor:changed', function(){
-          // newPost.set( data );
-          console.log('this model body is: ', newPost.get('body'));
+        // ON 'redactor:changed' EVENT, ATTACH THE NEW POST TO THIS SUB-APP
+        redactorView.on('redactor:changed', function(){
           Moonrakr.PostsApp.New.newPost = newPost;
         });
 
-        // DELETE HANDLER //
-        view.on('post:delete', function(model){
+        // ON 'post:delete' EVENT, CLEAR MODEL AND GO TO NAVIGATE TO THE HOME PAGE
+        layoutView.on('post:delete', function(model){
+          Moonrakr.PostsApp.New.newPost = null;
           Moonrakr.trigger('posts:list');
         });
 
-        // SAVE HANDLER //
-        view.on('form:submit', function(data){
+        // ON 'form:submit' EVENT, GET AN ID AND SAVE THAT SHIT
+        layoutView.on('form:submit', function(data){
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
           var fetchingPosts = Moonrakr.request('post:entities');
@@ -46,14 +64,31 @@ define(function(require){
               Moonrakr.trigger('post:show', newPost.get('id'));
             }
             else {
-              view.triggerMethod('form:data:invalid', newPost.validationError);
+              layoutView.triggerMethod('form:data:invalid', newPost.validationError);
             }
 
-          }); // when
-        }); // view.on
+          });
+        }); // layoutView.on
 
-        Moonrakr.mainRegion.show(view);
+          /////////////////////////
+         // DISPLAY *THE* VIEW  //
+        /////////////////////////
 
+        // DISPLAY THE LAYOUT VIEW ON THE MAIN REGION
+        Moonrakr.mainRegion.show(layoutView);
+
+      }, // newPost()
+
+      getNewPost: function(){
+        return Moonrakr.PostsApp.New.newPost || new Moonrakr.Entities.Post();
+      },
+
+      getRedactorView: function(body){
+        var redactorView = new Moonrakr.Common.Views.Redactor({
+          textareaId: 'post-body',
+          textareaValue: body
+        });
+        return redactorView;
       }
 
     }

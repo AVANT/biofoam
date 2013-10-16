@@ -10,6 +10,7 @@ require(['requireConfig'],function(){
 
     'apps/_common/views_loading',
     'apps/_common/views_imageuploader',
+    'apps/_common/views_redactor',
 
     'apps/header/header_app',
     'apps/about/about_app',

@@ -6,49 +6,42 @@ define(function(require){
 
   return Moonrakr.module('PostsApp.Common.Views', function(Views){
 
-    Views.Form = Marionette.ItemView.extend({
+    Views.Form = Marionette.Layout.extend({
       template: Handlebars.compile( _postForm ),
-      confirmDelete: 'Are you sure you want to delete this post?',
       formChanged: false,
+
+      regions: {
+        redactorRegion: '#redactor-region'
+      },
 
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
-
-        'change input': 'inputChanged',
       },
 
       bindings: {
         '#post-title': 'title',
         '#post-excerpt': 'excerpt',
-        '#post-body': 'body'
-      },
-
-      inputChanged: function(){
-        this.formChanged = true;
-      },
-
-      onRender: function(){
-        var that = this;
-
-        this.$('.redactor').redactor({
-          changeCallback: function(html){
-            that.$('.redactor').html(html);
-            that.$('.redactor').trigger('change');
-            that.trigger('redactor:changed');
-          }
-        });
-
-        that.stickit();
+        '#post-body': 'body' // in the redactor view
       },
 
       initialize: function(){
         var that = this;
+        this.model.on('change', this.modelChanged, this)
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
       },
 
+      modelChanged: function(){
+        this.formChanged = true;
+        this.trigger('model:changed');
+      },
+
+      onRender: function(){
+        this.stickit();
+      },
+
       beforeUnloadHandler: function(){
-        if (that.formChanged){
+        if (that.modelChanged){
           return( 'There are changes in the form.  Do you want to leave them unsaved?');
         }
       },
@@ -63,7 +56,7 @@ define(function(require){
       deleteClicked: function(e){
         var that = this;
         e.preventDefault();
-        bootbox.confirm(that.confirmDelete, function(result){
+        bootbox.confirm('Are you sure you want to delete this post?', function(result){
           if(result){
             that.trigger('post:delete', that.model);
           }

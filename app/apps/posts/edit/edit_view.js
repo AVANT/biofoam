@@ -1,6 +1,5 @@
 define(function(require){
-  var Handlebars = require('handlebars');
-  require('backbone.syphon');
+
   var Moonrakr = require('app');
   require('apps/posts/_common/views');
 
