@@ -23,13 +23,26 @@ define(function(require){
       bindings: {
         '#post-title': 'title',
         '#post-excerpt': 'excerpt',
-        '#post-body': 'body' // in the redactor view
+        '#post-body': 'body', // in the redactor view
+        '#image-current-container': {
+          observe: 'image', // in the imageUpload view
+          updateMethod: 'html',
+          onGet: function(val){
+            return '<img id="image-current" src=' + val + '>';
+          }
+        //   onSet: function($el, val, options){
+        //     console.log( 'this is the value I want to set: ', val);
+        //   },
+        //   events: ['change']
+        }
       },
 
       initialize: function(){
         var that = this;
         this.model.on('change', this.modelChanged, this)
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
+
+        // this.model.
       },
 
       onRender: function(){

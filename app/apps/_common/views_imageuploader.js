@@ -14,7 +14,7 @@ define(function(require){
         cropButton: 'button.js-crop',
         imageInputLabel: '#image-input-label',
         imagePreview: '#image-preview',
-        imageCurrent: '#image-current'
+        imageCurrentContainer: '#image-current-container'
       },
       events: {
         'click button.js-crop': 'cropClicked'
@@ -78,7 +78,7 @@ define(function(require){
 
       setImageUploadLabel: function(){
         if ( this.imagePreviewed ){
-          this.ui.imageInputLabel.text( 'Choose a differnt image to upload and crop:' );
+          this.ui.imageInputLabel.text( 'Choose a different image to upload and crop:' );
         }
         else {
           this.ui.imageInputLabel.text( 'Choose an image to upload and crop:' );
@@ -115,6 +115,7 @@ define(function(require){
           this.jcrop_api.destroy();
         }
 
+        console.log('test');
         this.ui.imagePreview.append(img);
       },
 
@@ -122,11 +123,30 @@ define(function(require){
         // remove current uncropped img from the "preview" div
         this.ui.imagePreview.find('canvas')[0] = null;
 
+        // reset previewed flag
+        this.imagePreviewed = true;
+
+        //reset upload dialog
+        this.setImageUploadLabel()
+
         // clear any images that might be in "current" div
-        this.ui.imageCurrent.empty();
+        // this.ui.imageCurrentContainer.empty();
 
         // insert new image into the current div
-        this.ui.imageCurrent.append(img);
+        // this.ui.imageCurrentContainer.append(img);
+
+        //////////////
+        // TESTING //
+        // var image = new Image;
+        var src = img.toDataURL('image/png');
+        // var src = img.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+        // var src = img.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, "")
+        // .src = src;
+        this.ui.imageCurrentContainer.find('img').attr('src', src);
+        this.ui.imageCurrentContainer.find('img').trigger('change');
+        /////////////
+
+        this.trigger('image:current', src);
 
         // disable crop button
         this.disableCrop();

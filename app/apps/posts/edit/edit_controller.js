@@ -47,6 +47,12 @@ define(function(require){
              // SET EVENT HANDLERS //
             ////////////////////////
 
+            imageUploadView.on('image:current',function( dataURL ){
+              console.log('model.image: ', post.get('image') );
+              post.set('image', dataURL);
+              console.log('model.image: ', post.get('image') );
+            });
+
             // show redactor view when layout view is rendered
             layoutView.on('render', function(){
               layoutView.imageUploadRegion.show( imageUploadView );
