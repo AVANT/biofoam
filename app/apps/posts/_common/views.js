@@ -29,11 +29,13 @@ define(function(require){
           updateMethod: 'html',
           onGet: function(val){
             return '<img id="image-current" src=' + val + '>';
-          }
-        //   onSet: function($el, val, options){
-        //     console.log( 'this is the value I want to set: ', val);
-        //   },
-        //   events: ['change']
+          },
+          onSet: function(val, options){
+            console.log( 'onSet val: ', $(val).attr('src') );
+            return $(val).attr('src');
+          },
+          updateModel: true,
+          events: ['change']
         }
       },
 

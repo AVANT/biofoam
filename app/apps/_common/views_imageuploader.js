@@ -129,22 +129,9 @@ define(function(require){
         //reset upload dialog
         this.setImageUploadLabel()
 
-        // clear any images that might be in "current" div
-        // this.ui.imageCurrentContainer.empty();
-
-        // insert new image into the current div
-        // this.ui.imageCurrentContainer.append(img);
-
-        //////////////
-        // TESTING //
-        // var image = new Image;
         var src = img.toDataURL('image/png');
-        // var src = img.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-        // var src = img.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, "")
-        // .src = src;
         this.ui.imageCurrentContainer.find('img').attr('src', src);
-        this.ui.imageCurrentContainer.find('img').trigger('change');
-        /////////////
+        this.ui.imageCurrentContainer.trigger('change');
 
         this.trigger('image:current', src);
 
