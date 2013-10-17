@@ -9,8 +9,12 @@ define(function(require){
 
     Views.ImageUpload = Marionette.ItemView.extend({
       template: Handlebars.compile( _imageuploadView ),
+      imagePreviewed: false,
       ui: {
         cropButton: 'button.js-crop',
+        imageInputLabel: '#image-input-label',
+        imagePreview: '#image-preview',
+        imageCurrent: '#image-current'
       },
       events: {
         'click button.js-crop': 'cropClicked'
@@ -27,6 +31,8 @@ define(function(require){
             e.target.files[0],
             function(img){
               that.replaceResults(img);
+              that.imagePreviewed = true;
+              that.setImageUploadLabel();
               that.initJcrop();
             },
             { // OPTIONS
@@ -41,7 +47,7 @@ define(function(require){
         var that = this;
         var img = this.$('canvas').get(0);
 
-        this.$('#image-preview').find('canvas').Jcrop({
+        this.ui.imagePreview.find('canvas').Jcrop({
           setSelect: [40, 40, img.width - 40, img.height - 40],
           onChange: function(coords){
             that.updateCoords(coords, that);
@@ -70,6 +76,15 @@ define(function(require){
         this.ui.cropButton.attr('disabled', 'disabled');
       },
 
+      setImageUploadLabel: function(){
+        if ( this.imagePreviewed ){
+          this.ui.imageInputLabel.text( 'Choose a differnt image to upload and crop:' );
+        }
+        else {
+          this.ui.imageInputLabel.text( 'Choose an image to upload and crop:' );
+        }
+      },
+
       updateCoords: function(c, that){
         that.coordinates = c;
       },
@@ -93,18 +108,25 @@ define(function(require){
       },
 
       replaceResults: function(img){
-        this.$('#image-preview').append(img);
+        if( this.ui.imagePreview.find('canvas').length ){
+        //   // destory jcrop and remove the canvas
+          this.ui.imagePreview.find('canvas')[0] = null;
+          this.disableCrop();
+          this.jcrop_api.destroy();
+        }
+
+        this.ui.imagePreview.append(img);
       },
 
       cropResult: function(img){
         // remove current uncropped img from the "preview" div
-        this.$('#image-preview').find('canvas')[0] = null;
+        this.ui.imagePreview.find('canvas')[0] = null;
 
         // clear any images that might be in "current" div
-        this.$('#image-current').empty();
+        this.ui.imageCurrent.empty();
 
         // insert new image into the current div
-        this.$('#image-current').append(img);
+        this.ui.imageCurrent.append(img);
 
         // disable crop button
         this.disableCrop();

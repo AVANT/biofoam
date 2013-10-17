@@ -4,12 +4,11 @@ Avant Documentation
 
 CURRENT TASK
 ------------
-- in imageUploader, the crop button should remove the original photo and set the crop as the new photo
-
-
-GEN TODOS
----------
 - in imageUploader, the upload button should change text and functionality when there is a image sitting in the dock
+
+
+SOME TASKS
+---------
 - learn to save images from the uploader into localstorage
 - leanr to resert those images back into the uploader in the div that shows the current image
 - add "current image" div into the image uploader common view
@@ -17,31 +16,11 @@ GEN TODOS
 - revist how form errors are handled on simple input forms
 - revist how form errors are handled in the subforms (redactor, imageUpload, etc)
 
-
-MODULARIZE TODOS
-----------------
-- modualize the form alerts?
-- abstract main app navigate functionality to another level up (see book)
-- could I bake the loading view in the apps common view?
-
-
-BACKEND UP TODOS
-----------------
-- figure out auth subapp with backend
-- theres a little bug with initializing the about page for new devs downloading this repo
-
-
-ICEBOX TODOS
-------------
-- carefully consider user expirence of post editing/previewing/local saving/etc
-- change to pushstate with global link catcher (SEO)
-- consider writing those unit tests in jasmine
-- consider the possibility of creating sub app templates? in apps/_common
-- impliment save to localStorage of new post so it stays around for ever
-- figure out how to cancel defer/promise actions once 'other' actions have been made in the app. e.g. navigate to posts/id/edit then press the browsers back button twice
+NOTE: FULL TASKS LIST IN ASANA
 
 
 
+* * *
 Coccyx Documentation
 ====================
 
