@@ -37,7 +37,6 @@ define(function(require){
       },
 
       onRender: function(){
-        console.log( Backbone.Stickit );
         this.stickit();
       },
 

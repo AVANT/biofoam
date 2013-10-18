@@ -21,7 +21,7 @@ define(function(require){
             });
             var imageUploader = new Moonrakr.Common.Views.ImageUpload();
 
-            layoutView.on('show', function(){
+            layoutView.on('render', function(){
               layoutView.imageUploadRegion.show( imageUploader );
             });
 

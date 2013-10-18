@@ -1,9 +1,9 @@
 define(function(require){
-  var loadImage = require('loadImage');
-  require('jquery.jcrop');
-  var Handlebars = require('handlebars');
+
   require('bootbox');
+  var Handlebars = require('handlebars');
   var Moonrakr = require('app');
+  require('apps/_common/stickit/custom_handlers');
   var _userForm = require('text!apps/users/_common/templates/user_form.html');
 
   return Moonrakr.module('UsersApp.Common.Views', function(Views){
@@ -11,12 +11,24 @@ define(function(require){
     Views.Form = Marionette.Layout.extend({
       confirmDelete: 'Are you sure you want to delete this?',
       template: Handlebars.compile( _userForm ),
+
       regions: {
         imageUploadRegion: '#image-upload-region'
       },
+
       events: {
         'click button.js-submit': 'submitClicked',
         'click button.js-delete': 'deleteClicked',
+      },
+
+      bindings: {
+        '#user-username': 'username',
+        '#user-email': 'email',
+        '#image-current-container': 'image' // in the imageUpload view
+      },
+
+      onRender: function(){
+        this.stickit();
       },
 
         /////////////////////////////////////
@@ -24,8 +36,8 @@ define(function(require){
       /////////////////////////////////////
       submitClicked: function(e){
         e.preventDefault();
-        var data = Backbone.Syphon.serialize(this);
-        this.trigger('form:submit', data);
+        // var data = Backbone.Syphon.serialize(this);
+        this.trigger('form:submit');
       },
 
       deleteClicked: function(e){

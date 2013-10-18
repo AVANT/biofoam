@@ -1,6 +1,5 @@
 define(function(require){
 
-  var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   require('apps/users/_common/views');
 
