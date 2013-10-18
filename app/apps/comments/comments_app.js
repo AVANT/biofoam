@@ -1,6 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/comments/show/show_controller');
 
   return Moonrakr.module('CommentsApp', function(CommentsApp){
 
@@ -10,9 +11,9 @@ define(function(require){
     CommentsApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
         'comments': 'listComments',
-        'comment/new': 'newComment',
-        'comment/:id': 'showComment',
-        'comment/:id/edit': 'editComment'
+        'comments/new': 'newComment',
+        'comments/:id': 'showComment',
+        'comments/:id/edit': 'editComment'
       }
     });
 
@@ -22,8 +23,9 @@ define(function(require){
       listComments: function(id){
         CommentsApp.List.Controller.listComments(id);
       },
-      showComment: function(){
-        CommentsApp.Show.Controller.showComment();
+      showComment: function(id){
+        console.log('here?');
+        CommentsApp.Show.Controller.showComment(id);
       },
       newComment: function(){
         CommentsApp.New.Controller.newComment();
@@ -31,7 +33,13 @@ define(function(require){
       editComment: function(){
         CommentsApp.Edit.Controller.editComment();
       }
-    }
+    };
+
+    Moonrakr.addInitializer(function(){
+      new CommentsApp.Router({
+        controller: API
+      });
+    });
 
     // * * * * * * * * * * * * //
     // 'user:comments:list' ?? //
@@ -43,7 +51,7 @@ define(function(require){
     });
     // * * * * * * * * * * * * //
 
-    Moonrakr.on('comments:show', function(id){
+    Moonrakr.on('comment:show', function(id){
       // pass in comment id
       API.showComment(id);
       // return view?

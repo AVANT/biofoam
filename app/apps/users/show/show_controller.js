@@ -8,7 +8,7 @@ define(function(require){
     Show.Controller = {
       showUser: function(id){
 
-        var loadingView = new Moonrakr.Common.Views.Loading({});
+        var loadingView = new Moonrakr.Common.Views.Loading();
         Moonrakr.mainRegion.show( loadingView );
 
         var fetchingUser = Moonrakr.request('user:entity', id);
@@ -16,7 +16,6 @@ define(function(require){
           var userView;
 
           if (user !== undefined){
-            console.log( user );
 
             userView = new Show.User({
               model: user

@@ -34,7 +34,7 @@ define(function(require){
         UsersApp.Edit.Controller.editUser(id);
         Moonrakr.execute('set:active:header', 'users');
       }
-    }
+    };
 
     Moonrakr.addInitializer(function(){
       new UsersApp.Router({

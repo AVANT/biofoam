@@ -15,6 +15,7 @@ require(['requireConfig'],function(){
     'apps/about/about_app',
     'apps/users/users_app',
     'apps/posts/posts_app',
+    'apps/comments/comments_app',
     'apps/auth/auth_app'
 
     ], function(Moonrakr){

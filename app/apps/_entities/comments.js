@@ -76,7 +76,7 @@ define(function(require){
     });
 
     Moonrakr.reqres.setHandler('comment:entity', function(id){
-      return API.getUserEntity(id)
+      return API.getCommentEntity(id)
     });
 
 
