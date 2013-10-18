@@ -18,16 +18,13 @@ define(function(require){
         'click .user-information': 'userClicked'
       },
 
-      // have the comment controller fetch the model for the comment? TRY THIS.
-
       onShow: function(){
-        // GET user model from id
         this.trigger('render:user', this.model.get('userId'));
       },
 
       userClicked: function(e){
         e.preventDefault();
-        Moonrakr.trigger('user:show', this.model.get( 'userId' ));
+        Moonrakr.trigger('user:show', this.model.get('userId'));
       }
 
     });
