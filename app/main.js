@@ -8,7 +8,7 @@ require(['requireConfig'],function(){
     'apps/_entities/posts',
     'apps/_entities/users',
 
-    'apps/_common/views/views_loading',
+    'apps/_common/views/loading',
 
     'apps/header/header_app',
     'apps/about/about_app',
