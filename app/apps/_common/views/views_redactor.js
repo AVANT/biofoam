@@ -2,7 +2,7 @@ define(function(require){
   // require('redactor') // loaded w/ jquery?
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _redactorView = require('text!apps/_common/templates/redactor_view.html')
+  var _redactorView = require('text!apps/_common/views/templates/redactor_view.html')
 
   return Moonrakr.module('Common.Views', function(Views){
 

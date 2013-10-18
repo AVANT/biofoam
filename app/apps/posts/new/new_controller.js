@@ -1,6 +1,8 @@
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/_common/views/views_imageUploader');
+  require('apps/_common/views/views_redactor');
   require('apps/posts/new/new_view');
 
   return Moonrakr.module('PostsApp.New', function(New){

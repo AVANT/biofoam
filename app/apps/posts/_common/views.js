@@ -1,5 +1,6 @@
 define(function(require){
-  require('backbone.stickit');
+
+  require('apps/_common/stickit/custom_handlers');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   var _postForm = require('text!apps/posts/_common/templates/post-form.html')
@@ -24,19 +25,7 @@ define(function(require){
         '#post-title': 'title',
         '#post-excerpt': 'excerpt',
         '#post-body': 'body', // in the redactor view
-        '#image-current-container': {
-          observe: 'image', // in the imageUpload view
-          updateMethod: 'html',
-          onGet: function(val){
-            return '<img id="image-current" src=' + val + '>';
-          },
-          onSet: function(val, options){
-            console.log( 'onSet val: ', $(val).attr('src') );
-            return $(val).attr('src');
-          },
-          updateModel: true,
-          events: ['change']
-        }
+        '#image-current-container': 'image', // in the imageUpload view
       },
 
       initialize: function(){
@@ -48,6 +37,7 @@ define(function(require){
       },
 
       onRender: function(){
+        console.log( Backbone.Stickit );
         this.stickit();
       },
 

@@ -3,7 +3,7 @@ define(function(require){
   require('jquery.jcrop');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _imageuploadView = require('text!apps/_common/templates/imageupload_view.html');
+  var _imageuploadView = require('text!apps/_common/views/templates/imageupload_view.html');
 
   return Moonrakr.module('Common.Views', function(Views){
 
