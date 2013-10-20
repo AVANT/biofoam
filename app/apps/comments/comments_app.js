@@ -2,6 +2,7 @@ define(function(require){
 
   var Moonrakr = require('app');
   require('apps/comments/show/show_controller');
+  require('apps/comments/list/list_controller');
 
   return Moonrakr.module('CommentsApp', function(CommentsApp){
 
@@ -24,7 +25,6 @@ define(function(require){
         CommentsApp.List.Controller.listComments(id);
       },
       showComment: function(id){
-        console.log('here?');
         CommentsApp.Show.Controller.showComment(id);
       },
       newComment: function(){

@@ -8,8 +8,6 @@ define(function(require){
     Show.Controller = {
       showComment: function(id){
 
-        console.log('sup?');
-
         var loadingView = new Moonrakr.Common.Views.Loading();
         Moonrakr.mainRegion.show( loadingView );
 
@@ -24,19 +22,19 @@ define(function(require){
               model: comment
             });
 
-            commentLayoutView.on('render:user', function(userId){
-              var fetchingUser = Moonrakr.request('user:entity', userId);
-              $.when(fetchingUser).done(function(user){
-                var userView;
-                if (user !== undefined){
-                  userView = new Show.User({
-                    model: user
-                  });
-                }
-                else{}
-                commentLayoutView.userInformation.show(userView);
-              }); // when
-            }); // render:user
+            // commentLayoutView.on('render:user', function(userId){
+            //   var fetchingUser = Moonrakr.request('user:entity', userId);
+            //   $.when(fetchingUser).done(function(user){
+            //     var userView;
+            //     if (user !== undefined){
+            //       userView = new Show.User({
+            //         model: user
+            //       });
+            //     }
+            //     else{}
+            //       commentLayoutView.userInformation.show(userView);
+            //   }); // when
+            // }); // render:user
 
           } // comment
           else {
