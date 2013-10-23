@@ -16,8 +16,6 @@ define(function(require){
 
         $.when(fetchingComment).done(function(comment){
           that.handleCommentPromise(comment, that);
-
-        // SUCCESS
         }).then(function(commentLayoutView){
           Moonrakr.mainRegion.show( that.commentLayoutView );
         });
@@ -28,14 +26,13 @@ define(function(require){
           Moonrakr.mainRegion.show( that.commentLayoutView );
         });
 
-      }, // showComment
+      },
 
       handleCommentPromise: function(comment, controller){
         if (comment !== undefined){
           controller.commentLayoutView = new Show.Comment({
             model: comment
           });
-          console.log( controller );
           controller.attachEventHandlers(controller);
         }
         else {
@@ -44,7 +41,6 @@ define(function(require){
       },
 
       attachEventHandlers: function(controller){
-
         // handler for the render:user event
         controller.commentLayoutView.on('render:user', function(userId){
           var fetchingUser = Moonrakr.request('user:entity', userId);
@@ -61,7 +57,6 @@ define(function(require){
               controller.commentLayoutView.userInformation.show(userView);
           }); // when
         }); // render:user
-
       }
     } // Show.Controller
 

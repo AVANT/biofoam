@@ -2,7 +2,7 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  require('apps/comments/_common/views')
+  require('apps/comments/_common/views');
   var _missingComment = require('text!apps/comments/show/templates/missing_comment.html');
 
   return Moonrakr.module('CommentsApp.Show', function(Show){

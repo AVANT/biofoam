@@ -21,8 +21,8 @@ define(function(require){
     // * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     var API = {
-      listComments: function(id){
-        CommentsApp.List.Controller.listComments(id);
+      listComments: function(){
+        CommentsApp.List.Controller.listComments();
       },
       showComment: function(id){
         CommentsApp.Show.Controller.showComment(id);
@@ -66,7 +66,6 @@ define(function(require){
       API.editComment(id);
       // will this be the editor comment editing ability
     });
-
 
   });
 
