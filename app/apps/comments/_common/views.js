@@ -33,30 +33,12 @@ define(function(require){
         'click .user-information': 'userClicked'
       },
       onShow: function(e){
-        // this.trigger('render:user', this.model.get('userId'));
-        this.renderUser( this.model.get('userId') );
+        this.trigger('render:user', this.model.get('userId'));
+        // this.renderUser( this.model.get('userId') );
       },
       userClicked: function(e){
         e.preventDefault();
         Moonrakr.trigger('user:show', this.model.get('userId'));
-      },
-
-      // * * * * * * * * * * * * //
-      renderUser: function( id ){
-        console.log('test');
-
-        var fetchingUser = Moonrakr.request('user:entity', id);
-        $.when(fetchingUser).done(function(user){
-          var userView;
-          if (user !== undefined){
-            userView = new Views.CommentUser({
-              model: user
-            })
-          }
-          else {
-            this.userInformation.show( userView );
-          }
-        });
       }
     });
 

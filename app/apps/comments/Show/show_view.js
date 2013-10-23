@@ -11,6 +11,8 @@ define(function(require){
       // wooo
     });
 
+    Show.User = Moonrakr.CommentsApp.Common.Views.CommentUser.extend();
+
     Show.MissingComment = Marionette.ItemView.extend({
       template: Handlebars.compile( _missingComment )
     });

@@ -57,6 +57,8 @@ define(function(require){
         var comment = new Entities.Comment({id: commentId});
         var defer = $.Deferred();
 
+        // defer.reject(); // DUBUG FAILURE
+
         comment.fetch({
           success: function(data){
             defer.resolve(data);
