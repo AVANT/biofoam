@@ -57,23 +57,28 @@ define(function(require){
         });
 
         // ON 'form:submit' EVENT, GET AN ID AND SAVE THAT SHIT
-        layoutView.on('form:submit', function(data){
+        layoutView.on('form:submit', function(){
+
+          console.log( newPost );
+          console.log( data );
+          newPost.save();
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          var fetchingPosts = Moonrakr.request('post:entities');
-          $.when(fetchingPosts).done(function(posts){
+          // var fetchingPosts = Moonrakr.request('post:entities');
+          // $.when(fetchingPosts).done(function(posts){
 
-            var highestId = posts.max(function(c){ return c.id });
-            highestId = highestId.get('id');
-            data.id = highestId + 1
-            if(newPost.save(data)){
-              Moonrakr.trigger('post:show', newPost.get('id'));
-            }
-            else {
-              layoutView.triggerMethod('form:data:invalid', newPost.validationError);
-            }
+          //   // var highestId = posts.max(function(c){ return c.id });
+          //   // highestId = highestId.get('id');
+          //   // data.id = highestId + 1
+          //   if(newPost.create(data)){
+          //     // Moonrakr.trigger('post:show', newPost.get('id'));
+          //     Moonrakr.trigger('post:list');
+          //   }
+          //   else {
+          //     layoutView.triggerMethod('form:data:invalid', newPost.validationError);
+          //   }
 
-          });
+          // });
         }); // layoutView.on
 
 

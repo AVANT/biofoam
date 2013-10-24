@@ -6,17 +6,21 @@ define(function(require){
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.User = Backbone.Model.extend({
-      url: 'users'
+      // url: 'users',
+      url: function(){
+        console.log(this.get('_id'));
+        return "http://192.168.1.4:9000/posts/" + this.get("_id");
+      }
     });
     // SETTING UP MODEL TO USE LOCAL STORAGE
-    Entities.configureStorage(Entities.User);
+    // Entities.configureStorage(Entities.User);
 
     Entities.UserCollection = Backbone.Collection.extend({
       url: 'users',
       model: Entities.User,
       comparator: 'lastName'
     });
-    Entities.configureStorage(Entities.UserCollection);
+    // Entities.configureStorage(Entities.UserCollection);
 
     var initializeUsers = function(){
       console.log('user entities initialized')
@@ -45,7 +49,7 @@ define(function(require){
         // HANDLE THE CASE WHERE THERE ARE NO USERS RETURNED //
         $.when(promise).done(function(users){
           if(users.length === 0){
-            var models = initializeUsers();
+            // var models = initializeUsers();
             users.reset(models);
           }
         });
@@ -54,7 +58,7 @@ define(function(require){
         return promise;
       },
       getUserEntity: function(userId){
-        var user = new Entities.User({id: userId});
+        var user = new Entities.User({_id: userId});
         var defer = $.Deferred();
         user.fetch({
           success: function(data){

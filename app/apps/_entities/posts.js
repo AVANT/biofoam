@@ -6,7 +6,11 @@ define(function(require){
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
-      url: 'posts',
+      // url: 'posts',
+      url: function(){
+        console.log(this.get('_id'));
+        return "http://192.168.1.4:9000/posts/" + this.get("_id");
+      },
       validate: function(attrs, options){
         var errors = {};
         if (! attrs.title){
@@ -24,15 +28,16 @@ define(function(require){
       }
     });
     // SETTING UP MODEL TO USE LOCAL STORAGE
-    Entities.configureStorage(Entities.Post);
+    // Entities.configureStorage(Entities.Post);
 
     Entities.PostCollection = Backbone.Collection.extend({
-      url: 'posts',
+      // url: 'posts',
+      url: 'http://192.168.1.4:9000/posts',
       model: Entities.Post,
       comparator: 'title'
     });
     // SETTING UP COLLECTION TO USE LOCAL STORAGE
-    Entities.configureStorage(Entities.PostCollection);
+    // Entities.configureStorage(Entities.PostCollection);
 
     var initializePosts = function(){
 
@@ -60,14 +65,14 @@ define(function(require){
         $.when(promise).done(function(posts){
           if(posts.length === 0){
             // if we dont have any contacts yet, create some for convenience
-            var models = initializePosts();
+            // var models = initializePosts();
             posts.reset(models);
           }
         });
         return promise;
       },
       getPostEntity: function(postId){
-        var post = new Entities.Post({id: postId});
+        var post = new Entities.Post({ _id: postId});
         var defer = $.Deferred();
         setTimeout(function(){
           post.fetch({

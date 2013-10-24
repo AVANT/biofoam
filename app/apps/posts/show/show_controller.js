@@ -22,8 +22,10 @@ define(function(require){
               model: post
             });
 
+            console.log( post );
+
             postView.on('post:edit', function(post){
-              Moonrakr.trigger('post:edit', post.get('id'));
+              Moonrakr.trigger('post:edit', post.get('_id'));
             });
           }
           else {

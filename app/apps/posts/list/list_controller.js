@@ -28,7 +28,7 @@ define(function(require){
           });
 
           postsListView.on('itemview:post:show', function(childView, model){
-            Moonrakr.trigger('post:show', model.get('id'));
+            Moonrakr.trigger('post:show', model.get('_id'));
           });
 
           postsListPanel.on('post:new', function(){
