@@ -10,6 +10,7 @@ define(function(require){
   return Moonrakr.module('CommentsApp.List', function(List){
 
     List.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend();
+
     List.User = Moonrakr.CommentsApp.Common.Views.CommentUser.extend();
 
     List.Comments = Marionette.CollectionView.extend({

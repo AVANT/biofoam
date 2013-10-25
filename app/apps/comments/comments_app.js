@@ -51,12 +51,12 @@ define(function(require){
     });
     // * * * * * * * * * * * * //
 
+    // not used in the app, simply here for debugging
     Moonrakr.on('comment:show', function(id){
-      // pass in comment id
       API.showComment(id);
-      // return view?
     });
 
+    // not used in the app, simply here for debugging
     Moonrakr.on('comment:new', function(){
       API.newComment();
       // return create comment view? (textarea or redactor?)
