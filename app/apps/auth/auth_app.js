@@ -23,6 +23,15 @@ define(function(require){
       },
     };
 
+    /***************************/
+    // setup dummy current user
+    AuthApp.currentUser = new Moonrakr.Entities.User({
+      id: 1,  // cedric
+      username: "Ced",
+      userPermissions: 0 // 0 = all access
+    });
+    /***************************/
+
     // INIT ROUTER WITH MOONRAKR STARTUP
     Moonrakr.addInitializer(function(){
       new AuthApp.Router({

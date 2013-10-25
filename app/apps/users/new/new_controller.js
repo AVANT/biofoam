@@ -32,9 +32,9 @@ define(function(require){
           $.when(fetchingUsers).done(function(users){
             var highestId = users.max(function(c){ return c.id });
             highestId = highestId.get('id');
-            id = highestId + 1;
-            if(newUser.save({'id': id})){
-              Moonrakr.trigger('user:show', newUser.get('id'));
+            _id = highestId + 1;
+            if(newUser.save({'_id': _id})){
+              Moonrakr.trigger('user:show', newUser.get('_id'));
             }
             else {
               layoutView.triggerMethod('form:data:invalid', newUser.validationError);

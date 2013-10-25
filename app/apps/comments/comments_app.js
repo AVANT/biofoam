@@ -32,6 +32,11 @@ define(function(require){
       },
       editComment: function(){
         CommentsApp.Edit.Controller.editComment();
+      },
+
+      // returns views
+      showCommentReturn: function(id){
+        return CommentsApp.Show.Controller.showCommentReturn(id);
       }
     };
 
@@ -51,12 +56,15 @@ define(function(require){
     });
     // * * * * * * * * * * * * //
 
-    // not used in the app, simply here for debugging
+
     Moonrakr.on('comment:show', function(id){
       API.showComment(id);
     });
 
-    // not used in the app, simply here for debugging
+    Moonrakr.reqres.setHandler('comment:show:return', function(id){
+      return API.showCommentReturn(id);
+    });
+
     Moonrakr.on('comment:new', function(){
       API.newComment();
       // return create comment view? (textarea or redactor?)

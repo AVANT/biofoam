@@ -8,13 +8,21 @@ define(function(require){
   return Moonrakr.module('CommentsApp.Common.Views', function(Views){
 
     Views.Comment = Marionette.Layout.extend({
-      tagName: 'div',
+      tagName: 'li',
       template: Handlebars.compile( _comment ),
       regions: {
         userInformation: '.user-information'
       },
       events: {
-        'click .user-information': 'userClicked'
+        'click': 'rerender'
+        // 'click .user-information': 'userClicked'
+      },
+      initialize: function(){
+        // rerender when user info is rendered
+      },
+      rerender: function(){
+        console.log('test');
+        this.render();
       },
       onShow: function(e){
         this.trigger('render:user', this.model.get('userId'));

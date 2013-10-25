@@ -12,8 +12,8 @@ define(function(require){
       appRoutes: {
         'users': 'listUsers',
         'users/new': 'newUser',
-        'users/:id': 'showUser',
-        'users/:id/edit': 'editUser'
+        'users/:_id': 'showUser',
+        'users/:_id/edit': 'editUser'
       }
     });
 
@@ -26,12 +26,12 @@ define(function(require){
         UsersApp.New.Controller.newUser();
         Moonrakr.execute('set:active:header', 'users');
       },
-      showUser: function(id){
-        UsersApp.Show.Controller.showUser(id);
+      showUser: function(_id){
+        UsersApp.Show.Controller.showUser(_id);
         Moonrakr.execute('set:active:header', 'users');
       },
-      editUser: function(id){
-        UsersApp.Edit.Controller.editUser(id);
+      editUser: function(_id){
+        UsersApp.Edit.Controller.editUser(_id);
         Moonrakr.execute('set:active:header', 'users');
       }
     };
@@ -42,7 +42,7 @@ define(function(require){
       });
     });
 
-    Moonrakr.on('users:list', function(id){
+    Moonrakr.on('users:list', function(_id){
       Moonrakr.navigate('users');
       API.listUsers();
     });
@@ -52,13 +52,13 @@ define(function(require){
       API.newUser();
     });
 
-    Moonrakr.on('user:show', function(id){
-      Moonrakr.navigate('users/' + id);
-      API.showUser(id);
+    Moonrakr.on('user:show', function(_id){
+      Moonrakr.navigate('users/' + _id);
+      API.showUser(_id);
     });
 
-    Moonrakr.on('user:edit', function(id){
-      Moonrakr.navigate('users/' + id + '/edit');
+    Moonrakr.on('user:edit', function(_id){
+      Moonrakr.navigate('users/' + _id + '/edit');
       API.editUser();
     });
 

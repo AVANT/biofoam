@@ -17,6 +17,7 @@ define(function(require){
 
           if (user !== undefined){
 
+            console.log( user );
             userView = new Show.User({
               model: user
             });

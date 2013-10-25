@@ -5,18 +5,21 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/comments/_common/views');
   var _commentsLayout = require('text!apps/comments/list/templates/comments_layout.html');
+  var _commentsContainer = require('text!apps/comments/list/templates/comments_container.html');
   var _newComment = require('text!apps/comments/list/templates/comment_new.html');
 
   return Moonrakr.module('CommentsApp.List', function(List){
 
-    List.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend();
-
-    List.User = Moonrakr.CommentsApp.Common.Views.CommentUser.extend();
-
-    List.Comments = Marionette.CollectionView.extend({
+  List.Comments = Marionette.CollectionView.extend({
       tagName: 'div',
-      className: 'testCollectionView',
-      itemView: List.Comment
+      template: Handlebars.compile( _commentsContainer ),
+      itemView: Moonrakr.CommentsApp.Common.Views.Comment.extend(),
+      // overwriting the default 'buildItemView' method for a CollectionView
+      buildItemView: function(item, ItemViewType, itemViewOptions){
+        var options = _.extend({model: item}, itemViewOptions);
+        return Moonrakr.request('comment:show:return', item.get('id'));
+        // return new ItemViewType(options);
+      }
     });
 
     List.NewComment = Marionette.ItemView.extend({

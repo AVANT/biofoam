@@ -7,9 +7,7 @@ define(function(require){
 
   return Moonrakr.module('CommentsApp.Show', function(Show){
 
-    Show.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend({
-      // wooo
-    });
+    Show.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend();
 
     Show.User = Moonrakr.CommentsApp.Common.Views.CommentUser.extend();
 

@@ -12,7 +12,7 @@ define(function(require){
       tagName: 'div',
       template: Handlebars.compile( _user ),
       events: {
-        'click': 'showClicked'
+        'click a': 'showClicked'
       },
       showClicked: function(e){
         e.preventDefault();

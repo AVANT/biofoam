@@ -24,13 +24,9 @@ define(function(require){
       */
 
       listComments: function(){
-
         this.cueLoading();
-
         this.initViewsModels();
-
         this.fetchComments( this.commentsLayoutView, this.newCommentView );
-
       },
 
       cueLoading: function(){
@@ -39,10 +35,7 @@ define(function(require){
       },
 
       initViewsModels: function(){
-        // init comments layout
         this.commentsLayoutView = new List.CommentsLayout();
-
-        // init new comment and new comment view
         this.newComment = new Moonrakr.Entities.Comment();
         this.newCommentView = new List.NewComment({
           model: this.newComment
@@ -58,27 +51,33 @@ define(function(require){
 
           if (comments !== undefined){
 
-            commentCollectionView = new List.Comments({
+            commentContainerView = new List.Comments({
               collection: comments
             });
 
-            // event hanlder
+            // console.log(commentContainerView);
+
+            // rendering event hanlder
             commentsLayoutView.on('show', function(){
-              commentsLayoutView.commentsRegion.show( commentCollectionView );
+
+              //*** PROBLEM HERE ***//
+              commentsLayoutView.commentsRegion.show( commentContainerView );
               commentsLayoutView.newCommentRegion.show( newCommentView );
             });
 
-            // event hanlder
+            // action event hanlder
             newCommentView.on('comment:submit', function(){
-              console.log( 'save the new comment' );
-              // get current user info
+              // get current user info from auth sup app
+              console.log( Moonrakr.AuthApp.currentUser );
+              console.log( this.model );
+              // newComment.save()
             });
 
-            // event hanlder
-            that.attachRenderUserHandler( commentCollectionView );
+            // rendering event hanlder
+            that.attachRenderUserHandler( commentContainerView );
           }
           else {
-            // handle the case where the comments come back undefined
+            // TODO handle the case where the comments come back undefined
           }
 
           // show comments layout in app main region
@@ -87,23 +86,54 @@ define(function(require){
         });
       },
 
-      attachRenderUserHandler: function( collectionView ){
-        collectionView.on('itemview:render:user', function(itemview, userId){
-          var fetchingUser = Moonrakr.request('user:entity', userId);
-          $.when(fetchingUser).done(function(user){
-            var userView;
-            if (user !== undefined){
-              userView = new List.User({
-                model: user
-              });
-            }
-            else{
-              // handle the case where fetching the user fails
-            }
-              itemview.userInformation.show(userView);
-          }); // when
+      // OLD VERSION
+      // attachRenderUserHandler: function( collectionView ){
+      //   collectionView.on('itemview:render:user', function(itemview, userId){
+      //     var fetchingUser = Moonrakr.request('user:entity', userId);
+      //     $.when(fetchingUser).done(function(user){
+      //       var userView;
+      //       if (user !== undefined){
+      //         userView = new List.User({
+      //           model: user
+      //         });
+      //       }
+      //       else{
+      //         // TODO handle the case where fetching the user fails
+      //       }
+      //         itemview.userInformation.show(userView);
+      //     });
+      //   });
+      // },
+
+      // TEST VERSION
+      attachRenderUserHandler: function( commentContainerView ){
+        commentContainerView.on('render', function(){
+          console.log( this.collection );
         });
+
+        // .on('itemview:render:user', function(itemview, userId){
+
+        //   Moonrakr.request('comment:show:return', userId);
+
+        //   var fetchingUser = Moonrakr.request('user:entity', userId);
+        //   $.when(fetchingUser).done(function(user){
+        //     var userView;
+        //     if (user !== undefined){
+        //       userView = new List.User({
+        //         model: user
+        //       });
+        //     }
+        //     else{
+        //       // TODO handle the case where fetching the user fails
+        //     }
+        //       itemview.userInformation.show(userView);
+        //   });
+
+
+
+        // });
       }
+
     }
 
   });

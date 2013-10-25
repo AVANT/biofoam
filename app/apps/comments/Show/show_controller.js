@@ -6,11 +6,25 @@ define(function(require){
   return Moonrakr.module('CommentsApp.Show', function(Show){
 
     Show.Controller = {
-      showComment: function(id){
-        var that = this;
 
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+      /*
+      *** Show Comment ***
+
+      Views: Comment Layout
+              - User View
+
+      Models: Comment
+              User
+      */
+
+      // FUCKING REFACTOR
+
+
+      showComment: function(id){
+
+        this.cueLoading();
+
+        // var that = this;
 
         var fetchingComment = Moonrakr.request('comment:entity', id);
 
@@ -28,21 +42,43 @@ define(function(require){
 
       },
 
+      // TODO this is not DRY
+      showCommentReturn: function(id){
+
+        var that = this;
+        var fetchingComment = Moonrakr.request('comment:entity', id);
+
+        $.when(fetchingComment).done(function(comment){
+          that.handleCommentPromise(comment, that);
+        })
+
+        $.when(fetchingComment).fail(function(){
+          controller.commentLayoutView = new Show.MissingComment();
+        });
+
+        return this.commentLayoutView;
+      },
+
+      cueLoading: function(){
+        var loadingView = new Moonrakr.Common.Views.Loading();
+        Moonrakr.mainRegion.show( loadingView );
+      },
+
       handleCommentPromise: function(comment, controller){
         if (comment !== undefined){
-          controller.commentLayoutView = new Show.Comment({
+          var commentLayoutView = new Show.Comment({
             model: comment
           });
-          controller.attachEventHandlers(controller);
+          controller.attachEventHandlers(commentLayoutView);
         }
         else {
           controller.commentLayoutView = new Show.MissingComment();
         }
       },
 
-      attachEventHandlers: function(controller){
+      attachEventHandlers: function(commentLayoutView){
         // handler for the render:user event
-        controller.commentLayoutView.on('render:user', function(userId){
+        commentLayoutView.on('render:user', function(userId){
           var fetchingUser = Moonrakr.request('user:entity', userId);
           $.when(fetchingUser).done(function(user){
             var userView;
@@ -50,15 +86,17 @@ define(function(require){
               userView = new Show.User({
                 model: user
               });
+              // console.log(userView);
             }
             else{
-              // handle the case where fetching the user fails
+              console.log('something failed');
+              // TODO handle the case where fetching the user fails
             }
-              controller.commentLayoutView.userInformation.show(userView);
-          }); // when
-        }); // render:user
+              commentLayoutView.userInformation.show(userView);
+          });
+        });
       }
-    } // Show.Controller
+    }
 
   });
 
