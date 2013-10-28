@@ -10,15 +10,14 @@ define(function(require){
 
   return Moonrakr.module('CommentsApp.List', function(List){
 
+  List.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend();
+
   List.Comments = Marionette.CollectionView.extend({
       tagName: 'div',
       template: Handlebars.compile( _commentsContainer ),
-      itemView: Moonrakr.CommentsApp.Common.Views.Comment.extend(),
-      // overwriting the default 'buildItemView' method for a CollectionView
+      itemView: Moonrakr.CommentsApp.Common.Views.Comment,
       buildItemView: function(item, ItemViewType, itemViewOptions){
-        var options = _.extend({model: item}, itemViewOptions);
         return Moonrakr.request('comment:show:return', item.get('id'));
-        // return new ItemViewType(options);
       }
     });
 

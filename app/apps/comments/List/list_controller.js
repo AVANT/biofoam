@@ -63,6 +63,7 @@ define(function(require){
               //*** PROBLEM HERE ***//
               commentsLayoutView.commentsRegion.show( commentContainerView );
               commentsLayoutView.newCommentRegion.show( newCommentView );
+
             });
 
             // action event hanlder
@@ -108,7 +109,7 @@ define(function(require){
       // TEST VERSION
       attachRenderUserHandler: function( commentContainerView ){
         commentContainerView.on('render', function(){
-          console.log( this.collection );
+          // console.log( this.collection );
         });
 
         // .on('itemview:render:user', function(itemview, userId){

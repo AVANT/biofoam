@@ -56,6 +56,7 @@ define(function(require){
           controller.commentLayoutView = new Show.MissingComment();
         });
 
+        // console.log('show comment return', this);
         return this.commentLayoutView;
       },
 
@@ -66,10 +67,10 @@ define(function(require){
 
       handleCommentPromise: function(comment, controller){
         if (comment !== undefined){
-          var commentLayoutView = new Show.Comment({
+          controller.commentLayoutView = new Show.Comment({
             model: comment
           });
-          controller.attachEventHandlers(commentLayoutView);
+          controller.attachEventHandlers(controller.commentLayoutView);
         }
         else {
           controller.commentLayoutView = new Show.MissingComment();
@@ -86,7 +87,7 @@ define(function(require){
               userView = new Show.User({
                 model: user
               });
-              // console.log(userView);
+              console.log(userView);
             }
             else{
               console.log('something failed');

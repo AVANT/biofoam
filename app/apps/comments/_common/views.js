@@ -17,13 +17,13 @@ define(function(require){
         'click': 'rerender'
         // 'click .user-information': 'userClicked'
       },
-      initialize: function(){
-        // rerender when user info is rendered
-      },
-      rerender: function(){
-        console.log('test');
-        this.render();
-      },
+      // initialize: function(){
+      //   // rerender when user info is rendered
+      // },
+      // rerender: function(){
+      //   console.log('test');
+      //   this.render();
+      // },
       onShow: function(e){
         this.trigger('render:user', this.model.get('userId'));
       },
