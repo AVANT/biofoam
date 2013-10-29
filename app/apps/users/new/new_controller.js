@@ -27,19 +27,15 @@ define(function(require){
 
         // SAVE HANDLER //
         layoutView.on('form:submit', function(){
-          // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          var fetchingUsers = Moonrakr.request('user:entities');
-          $.when(fetchingUsers).done(function(users){
-            var highestId = users.max(function(c){ return c.id });
-            highestId = highestId.get('id');
-            _id = highestId + 1;
-            if(newUser.save({'_id': _id})){
-              Moonrakr.trigger('user:show', newUser.get('_id'));
+
+            var id = Moonrakr.Entities.HelperFunctions.randomString(32); // not needed with live server
+            if(newUser.save({'id': id})){
+              Moonrakr.trigger('user:show', newUser.get('id'));
             }
             else {
               layoutView.triggerMethod('form:data:invalid', newUser.validationError);
             }
-          });
+
         });
 
         Moonrakr.mainRegion.show( layoutView );

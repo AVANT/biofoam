@@ -87,7 +87,6 @@ define(function(require){
               userView = new Show.User({
                 model: user
               });
-              console.log(userView);
             }
             else{
               console.log('something failed');

@@ -55,27 +55,23 @@ define(function(require){
               collection: comments
             });
 
-            // console.log(commentContainerView);
-
             // rendering event hanlder
             commentsLayoutView.on('show', function(){
-
-              //*** PROBLEM HERE ***//
               commentsLayoutView.commentsRegion.show( commentContainerView );
               commentsLayoutView.newCommentRegion.show( newCommentView );
-
             });
 
             // action event hanlder
             newCommentView.on('comment:submit', function(){
+
               // get current user info from auth sup app
-              console.log( Moonrakr.AuthApp.currentUser );
-              console.log( this.model );
-              // newComment.save()
+              var data = {
+                userId: Moonrakr.AuthApp.currentUser.get('id'),
+                id: Moonrakr.Entities.HelperFunctions.randomString(32) // not needed with live server
+              };
+              this.model.save(data);
             });
 
-            // rendering event hanlder
-            that.attachRenderUserHandler( commentContainerView );
           }
           else {
             // TODO handle the case where the comments come back undefined
@@ -85,58 +81,8 @@ define(function(require){
           Moonrakr.mainRegion.show( commentsLayoutView );
 
         });
-      },
-
-      // OLD VERSION
-      // attachRenderUserHandler: function( collectionView ){
-      //   collectionView.on('itemview:render:user', function(itemview, userId){
-      //     var fetchingUser = Moonrakr.request('user:entity', userId);
-      //     $.when(fetchingUser).done(function(user){
-      //       var userView;
-      //       if (user !== undefined){
-      //         userView = new List.User({
-      //           model: user
-      //         });
-      //       }
-      //       else{
-      //         // TODO handle the case where fetching the user fails
-      //       }
-      //         itemview.userInformation.show(userView);
-      //     });
-      //   });
-      // },
-
-      // TEST VERSION
-      attachRenderUserHandler: function( commentContainerView ){
-        commentContainerView.on('render', function(){
-          // console.log( this.collection );
-        });
-
-        // .on('itemview:render:user', function(itemview, userId){
-
-        //   Moonrakr.request('comment:show:return', userId);
-
-        //   var fetchingUser = Moonrakr.request('user:entity', userId);
-        //   $.when(fetchingUser).done(function(user){
-        //     var userView;
-        //     if (user !== undefined){
-        //       userView = new List.User({
-        //         model: user
-        //       });
-        //     }
-        //     else{
-        //       // TODO handle the case where fetching the user fails
-        //     }
-        //       itemview.userInformation.show(userView);
-        //   });
-
-
-
-        // });
       }
-
     }
-
   });
 
 });

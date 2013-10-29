@@ -8,6 +8,7 @@ require(['requireConfig'],function(){
     'apps/_entities/posts',
     'apps/_entities/users',
     'apps/_entities/comments',
+    'apps/_entities/helperFunctions',
 
     'apps/_common/views/loading',
 

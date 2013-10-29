@@ -15,7 +15,7 @@ define(function(require){
   List.Comments = Marionette.CollectionView.extend({
       tagName: 'div',
       template: Handlebars.compile( _commentsContainer ),
-      itemView: Moonrakr.CommentsApp.Common.Views.Comment,
+      itemView: List.Comment,
       buildItemView: function(item, ItemViewType, itemViewOptions){
         return Moonrakr.request('comment:show:return', item.get('id'));
       }
