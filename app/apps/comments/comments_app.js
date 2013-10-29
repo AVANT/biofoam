@@ -3,6 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/comments/show/show_controller');
   require('apps/comments/list/list_controller');
+  require('apps/comments/new/new_controller');
 
   return Moonrakr.module('CommentsApp', function(CommentsApp){
 
@@ -37,6 +38,9 @@ define(function(require){
       // returns views
       showCommentReturn: function(id){
         return CommentsApp.Show.Controller.showCommentReturn(id);
+      },
+      newCommentReturn: function(){
+        return CommentsApp.New.Controller.newCommentReturn();
       }
     };
 
@@ -67,7 +71,10 @@ define(function(require){
 
     Moonrakr.on('comment:new', function(){
       API.newComment();
-      // return create comment view? (textarea or redactor?)
+    });
+
+    Moonrakr.reqres.setHandler('comment:new:return', function(){
+      return API.newCommentReturn();
     });
 
     Moonrakr.on('comment:edit', function(id){

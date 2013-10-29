@@ -14,16 +14,8 @@ define(function(require){
         userInformation: '.user-information'
       },
       events: {
-        'click': 'rerender'
-        // 'click .user-information': 'userClicked'
+        'click .user-information': 'userClicked'
       },
-      // initialize: function(){
-      //   // rerender when user info is rendered
-      // },
-      // rerender: function(){
-      //   console.log('test');
-      //   this.render();
-      // },
       onShow: function(e){
         this.trigger('render:user', this.model.get('userId'));
       },

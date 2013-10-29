@@ -36,10 +36,7 @@ define(function(require){
 
       initViewsModels: function(){
         this.commentsLayoutView = new List.CommentsLayout();
-        this.newComment = new Moonrakr.Entities.Comment();
-        this.newCommentView = new List.NewComment({
-          model: this.newComment
-        });
+        this.newCommentView = Moonrakr.request('comment:new:return');
       },
 
       fetchComments: function( commentsLayoutView, newCommentView ){

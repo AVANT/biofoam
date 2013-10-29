@@ -1,6 +1,6 @@
 define(function(require){
 
-  require('backbone.stickit');
+  // require('backbone.stickit');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
   require('apps/comments/_common/views');

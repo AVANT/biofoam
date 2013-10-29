@@ -7,7 +7,7 @@ define(function(require){
   return Moonrakr.module('UsersApp.Edit', function(Edit){
 
     Edit.Controller = {
-      editUser: function(_id){
+      editUser: function(id){
 
         var loadingView = new Moonrakr.Common.Views.Loading();
         Moonrakr.mainRegion.show( loadingView );

@@ -9,10 +9,6 @@ define(function(require){
     New.Controller = {
       newUser: function(){
 
-          /////////////////////////////
-         // GET VIEWS AND THE MODEL //
-        /////////////////////////////
-
         var newUser = new Moonrakr.Entities.User();
 
         var layoutView = new New.User({
