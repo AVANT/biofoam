@@ -95,6 +95,12 @@ define(function(require){
               commentLayoutView.userInformation.show(userView);
           });
         });
+
+        commentLayoutView.on('comment:delete', function(){
+          // console.log( 'delete action called' );
+          this.model.destroy();
+          this.close();
+        })
       }
     }
 

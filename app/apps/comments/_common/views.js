@@ -14,7 +14,8 @@ define(function(require){
         userInformation: '.user-information'
       },
       events: {
-        'click .user-information': 'userClicked'
+        'click .user-information': 'userClicked',
+        'click .js-delete': 'deleteClicked'
       },
       onShow: function(e){
         this.trigger('render:user', this.model.get('userId'));
@@ -22,6 +23,10 @@ define(function(require){
       userClicked: function(e){
         e.preventDefault();
         Moonrakr.trigger('user:show', this.model.get('userId'));
+      },
+      deleteClicked: function(e){
+        e.preventDefault();
+        this.trigger('comment:delete');
       }
     });
 
