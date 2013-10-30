@@ -7,65 +7,56 @@ define(function(require){
 
   return Moonrakr.module('CommentsApp', function(CommentsApp){
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * //
-    // v1.0 dosent have comments getting its own router  //
-
+    // USED ONLY FOR DEVELOPMENT //
     CommentsApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
         'comments': 'listComments',
         'comments/new': 'newComment',
-        'comments/:id': 'showComment',
-        'comments/:id/edit': 'editComment'
+        'comments/:id': 'showComment'
       }
     });
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     var API = {
       listComments: function(){
         CommentsApp.List.Controller.listComments();
       },
-      showComment: function(id){
-        CommentsApp.Show.Controller.showComment(id);
-      },
-      newComment: function(){
-        CommentsApp.New.Controller.newComment();
-      },
-      editComment: function(){
-        CommentsApp.Edit.Controller.editComment();
+
+      // DEBUG CALL //
+      showPostComment: function(id){
+        CommentsApp.Show.Post.Controller.showComment(id);
       },
 
-      // returns views
-      showCommentReturn: function(id){
-        return CommentsApp.Show.Controller.showCommentReturn(id);
+
+      // RETURN CALLS //
+      showUserComment: function(id){
+        return CommentsApp.Show.User.Controller.showComment(id);
       },
+      // showPostComment: function(id){
+      //   return CommentsApp.Show.Post.Controller.showComment(id);
+      // },
+
       newCommentReturn: function(){
         return CommentsApp.New.Controller.newCommentReturn();
       }
     };
 
+
+    // init comments router with api //
     Moonrakr.addInitializer(function(){
       new CommentsApp.Router({
         controller: API
       });
     });
 
-    // * * * * * * * * * * * * //
-    // 'user:comments:list' ?? //
-    // 'post:comments:list' ?? //
+
+    // set application wide triggers //
     Moonrakr.on('comments:list', function(){
-      // pass in user id / post id ?
       API.listComments();
-      // return composite view of comments?
-    });
-    // * * * * * * * * * * * * //
-
-
-    Moonrakr.on('comment:show', function(id){
-      API.showComment(id);
     });
 
-    Moonrakr.reqres.setHandler('comment:show:return', function(id){
+
+    Moonrakr.reqres.setHandler('comment:show', function(id){
       return API.showCommentReturn(id);
     });
 
@@ -79,7 +70,6 @@ define(function(require){
 
     Moonrakr.on('comment:edit', function(id){
       API.editComment(id);
-      // will this be the editor comment editing ability
     });
 
   });

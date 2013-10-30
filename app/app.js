@@ -1,5 +1,6 @@
 define(function(require){
 
+  var config = require('config');
   var Marionette = require('marionette');
 
   window.Moonrakr = new Marionette.Application();
@@ -24,6 +25,15 @@ define(function(require){
   Moonrakr.getCurrentTrigger = function(){
     var routeStr = Backbone.history.fragment;
   };
+
+  // extend backbone sync
+  var backboneSync = Backbone.sync;
+  Backbone.sync = function (method, model, options){
+    options = _.extend(options, {
+      url: config.api.url + _.ifFunction(model.url) ? model.url() : model.url
+    });
+    backboneSync(method, model, options);
+  }
 
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');

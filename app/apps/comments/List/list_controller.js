@@ -60,10 +60,8 @@ define(function(require){
 
             // action event hanlder
             newCommentView.on('comment:submit', function(){
-
-              // get current user info from auth sup app
               var data = {
-                userId: Moonrakr.AuthApp.currentUser.get('id'),
+                userId: Moonrakr.AuthApp.currentUser.get('id'), // get current user info from auth sup app
                 id: Moonrakr.Entities.HelperFunctions.randomString(32) // not needed with live server
               };
               this.model.save(data);
@@ -71,7 +69,7 @@ define(function(require){
 
           }
           else {
-            // TODO handle the case where the comments come back undefined
+            // TODO handle the case where the comments collection comes back undefined
           }
 
           // show comments layout in app main region
