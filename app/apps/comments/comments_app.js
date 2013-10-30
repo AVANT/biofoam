@@ -1,7 +1,8 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/comments/show/show_controller');
+  // require('apps/comments/show/show_controller');
+  require('apps/comments/show/post/show_controller');
   require('apps/comments/list/list_controller');
   require('apps/comments/new/new_controller');
 
@@ -11,8 +12,8 @@ define(function(require){
     CommentsApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
         'comments': 'listComments',
-        'comments/new': 'newComment',
-        'comments/:id': 'showComment'
+        // 'comments/new': 'newComment',
+        'comments/:id': 'showPostComment'
       }
     });
 
@@ -29,12 +30,12 @@ define(function(require){
 
 
       // RETURN CALLS //
-      showUserComment: function(id){
-        return CommentsApp.Show.User.Controller.showComment(id);
-      },
-      // showPostComment: function(id){
-      //   return CommentsApp.Show.Post.Controller.showComment(id);
+      // showUserComment: function(id){
+      //   return CommentsApp.Show.User.Controller.showComment(id);
       // },
+      showPostCommentReturn: function(id){
+        return CommentsApp.Show.Post.Controller.showCommentReturn(id);
+      },
 
       newCommentReturn: function(){
         return CommentsApp.New.Controller.newCommentReturn();
@@ -56,13 +57,13 @@ define(function(require){
     });
 
 
-    Moonrakr.reqres.setHandler('comment:show', function(id){
-      return API.showCommentReturn(id);
+    Moonrakr.reqres.setHandler('comment:show:return', function(id){
+      return API.showPostCommentReturn(id);
     });
 
-    Moonrakr.on('comment:new', function(){
-      API.newComment();
-    });
+    // Moonrakr.on('comment:new', function(){
+    //   API.newComment();
+    // });
 
     Moonrakr.reqres.setHandler('comment:new:return', function(){
       return API.newCommentReturn();

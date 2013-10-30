@@ -2,10 +2,10 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _comment = require('text!apps/comments/_common/templates/comment.html');
-  var _user = require('text!apps/comments/_common/templates/user.html');
+  var _comment = require('text!apps/comments/show/_common/templates/comment.html');
+  var _missingComment = require('text!apps/comments/show/_common/templates/missing_comment.html');
 
-  return Moonrakr.module('CommentsApp.Common.Views', function(Views){
+  return Moonrakr.module('CommentsApp.Show.Common.Views', function(Views){
 
     Views.Comment = Marionette.Layout.extend({
       tagName: 'li',
@@ -30,9 +30,8 @@ define(function(require){
       }
     });
 
-    Views.CommentUser = Marionette.ItemView.extend({
-      tagName: 'span',
-      template: Handlebars.compile( _user )
+    Views.MissingComment = Marionette.ItemView.extend({
+      template: Handlebars.compile( _missingComment )
     });
 
   });

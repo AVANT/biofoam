@@ -97,10 +97,9 @@ define(function(require){
         });
 
         commentLayoutView.on('comment:delete', function(){
-          // console.log( 'delete action called' );
           this.model.destroy();
           this.close();
-        })
+        });
       }
     }
 

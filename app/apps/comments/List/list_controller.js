@@ -40,6 +40,7 @@ define(function(require){
       },
 
       fetchComments: function( commentsLayoutView, newCommentView ){
+        console.log('here');
         var that = this;
         var fetchingComments = Moonrakr.request('comment:entities');
         $.when(fetchingComments).done(function(comments){
@@ -47,6 +48,7 @@ define(function(require){
           var commentCollectionView;
 
           if (comments !== undefined){
+            console.log('here2');
 
             commentContainerView = new List.Comments({
               collection: comments
@@ -55,7 +57,7 @@ define(function(require){
             // rendering event hanlder
             commentsLayoutView.on('show', function(){
               commentsLayoutView.commentsRegion.show( commentContainerView );
-              commentsLayoutView.newCommentRegion.show( newCommentView );
+              // commentsLayoutView.newCommentRegion.show( newCommentView );
             });
 
             // action event hanlder
@@ -72,6 +74,7 @@ define(function(require){
             // TODO handle the case where the comments collection comes back undefined
           }
 
+          console.log('here3');
           // show comments layout in app main region
           Moonrakr.mainRegion.show( commentsLayoutView );
 

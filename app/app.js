@@ -26,11 +26,13 @@ define(function(require){
     var routeStr = Backbone.history.fragment;
   };
 
+  // HACKED A FIX ON FOR LOCALSTORAGE DEVING (?)
   // extend backbone sync
   var backboneSync = Backbone.sync;
   Backbone.sync = function (method, model, options){
     options = _.extend(options, {
-      url: config.api.url + _.ifFunction(model.url) ? model.url() : model.url
+      url: config.api.url + _.isFunction(model.url) ? function(){ console.log( model.url() );} : model.url // HACKED
+      // url: config.api.url + _.isFunction(model.url) ? model.url() : model.url
     });
     backboneSync(method, model, options);
   }
