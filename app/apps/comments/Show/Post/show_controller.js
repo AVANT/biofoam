@@ -17,26 +17,54 @@ define(function(require){
               User
       */
 
-      // refactor?
+      // API CALL
+      showCommentReturn: function( model ){
+        return this.getCommentView(model);
+      },
+      getCommentView: function(model){
+        var commentLayoutView = new Post.Comment({
+          model: model
+        });
+        this.setHanlders( commentLayoutView );
+        return commentLayoutView;
+      },
+      setHanlders: function( view ){
+        // handler for the render user event
+        view.on('render:user', function(userId){
+          var fetchingUser = Moonrakr.request('user:entity', userId);
+          $.when(fetchingUser).done(function(user){
+            var userView;
+            if (user !== undefined){
+              userView = new Post.User({
+                model: user
+              });
+            }
+            else{
+              console.log('something failed');
+              // TODO handle the case where fetching the user fails
+            }
+              view.userInformation.show(userView);
+          });
+        });
 
+        // handler for the comment delete event
+        view.on('comment:delete', function(){
+          this.model.destroy();
+          this.close();
+        });
+      },
+
+      // API CALL
       showComment: function(id){
-
         this.cueLoading();
-        this.getComment(id);
-
+        this.fetchComment(id);
         Moonrakr.mainRegion.show( this.commentLayoutView );
-
       },
-      showCommentReturn: function(id){
-
-        this.cueLoading();
-        this.getComment(id);
-
-        console.log(this.commentLayoutView);
-        return this.commentLayoutView;
-
+      cueLoading: function(){
+        var loadingView = new Moonrakr.Common.Views.Loading();
+        Moonrakr.mainRegion.show( loadingView );
       },
-      getComment: function(id){
+      fetchComment: function(id){
         var that = this;
 
         var fetchingComment = Moonrakr.request('comment:entity', id);
@@ -45,42 +73,12 @@ define(function(require){
             that.commentLayoutView = new Post.Comment({
               model: comment
             });
-
-            // handler for the render user event
-            that.commentLayoutView.on('render:user', function(userId){
-              var fetchingUser = Moonrakr.request('user:entity', userId);
-              $.when(fetchingUser).done(function(user){
-                var userView;
-                if (user !== undefined){
-                  userView = new Post.User({
-                    model: user
-                  });
-                }
-                else{
-                  console.log('something failed');
-                  // TODO handle the case where fetching the user fails
-                }
-                  that.commentLayoutView.userInformation.show(userView);
-              });
-            });
-
-            // handler for the comment delete event
-            that.commentLayoutView.on('comment:delete', function(){
-              this.model.destroy();
-              this.close();
-            });
-
-            return that.commentLayoutView
-
+            that.setHanlders( commentLayoutView );
           }
           else {
             that.commentLayoutView = new Post.MissingComment();
           }
         });
-      },
-      cueLoading: function(){
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
       }
     }
 

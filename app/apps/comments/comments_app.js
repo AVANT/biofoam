@@ -33,8 +33,8 @@ define(function(require){
       // showUserComment: function(id){
       //   return CommentsApp.Show.User.Controller.showComment(id);
       // },
-      showPostCommentReturn: function(id){
-        return CommentsApp.Show.Post.Controller.showCommentReturn(id);
+      showPostCommentReturn: function(model){
+        return CommentsApp.Show.Post.Controller.showCommentReturn(model);
       },
 
       newCommentReturn: function(){
@@ -57,8 +57,8 @@ define(function(require){
     });
 
 
-    Moonrakr.reqres.setHandler('comment:show:return', function(id){
-      return API.showPostCommentReturn(id);
+    Moonrakr.reqres.setHandler('comment:show', function(model){
+      return API.showPostCommentReturn(model);
     });
 
     // Moonrakr.on('comment:new', function(){

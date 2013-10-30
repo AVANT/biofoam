@@ -18,7 +18,7 @@ define(function(require){
       itemView: Moonrakr.CommentsApp.Show.Common.Views.Comment,
       buildItemView: function(item, ItemViewType, itemViewOptions){
         console.log('here4');
-        var view = Moonrakr.request('comment:show:return', item.get('id'));
+        var view = Moonrakr.request('comment:show', item);
         console.log( view );
         return view;
       }
@@ -47,6 +47,9 @@ define(function(require){
       regions: {
         newCommentRegion: '#new-comment-region',
         commentsRegion: '#comments-region'
+      },
+      onRender: function(){
+        console.log('I rendered.');
       }
     });
 
