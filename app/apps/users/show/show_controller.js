@@ -11,13 +11,15 @@ define(function(require){
         var loadingView = new Moonrakr.Common.Views.Loading();
         Moonrakr.mainRegion.show( loadingView );
 
+        var userLayout = new Show.UserLayout();
+        var commentsView = Moonrakr.request('comments:listforuser');
+
         var fetchingUser = Moonrakr.request('user:entity', id);
         $.when(fetchingUser).done(function(user){
           var userView;
 
           if (user !== undefined){
 
-            console.log( user );
             userView = new Show.User({
               model: user
             });
@@ -25,12 +27,17 @@ define(function(require){
             userView.on('user:edit', function(user){
               Moonrakr.trigger('user:edit', user.get('id'));
             });
+
+            userLayout.on('show', function(){
+              userLayout.userRegion.show( userView );
+              userLayout.commentsRegion.show( commentsView );
+            })
           }
           else {
             userView = new Show.MissingUser();
           }
 
-          Moonrakr.mainRegion.show( userView );
+          Moonrakr.mainRegion.show( userLayout );
         });
       }
     }

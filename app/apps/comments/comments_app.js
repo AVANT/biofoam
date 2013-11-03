@@ -1,11 +1,10 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  // require('apps/comments/show/show_controller');
   require('apps/comments/show/forpost/show_controller');
   require('apps/comments/show/foruser/show_controller');
   require('apps/comments/list/forpost/list_controller');
-  require('apps/comments/list/list_controller');
+  require('apps/comments/list/foruser/list_controller');
   require('apps/comments/new/new_controller');
 
   return Moonrakr.module('CommentsApp', function(CommentsApp){
@@ -13,7 +12,7 @@ define(function(require){
     // USED ONLY FOR DEVELOPMENT //
     CommentsApp.Router = Marionette.AppRouter.extend({
       appRoutes: {
-        // 'comments': 'listForPostComments'
+        // 'comments': 'listForUserComments'
         // 'comments/new': 'newComment',
         // 'comments/:id': 'showPostComment'
       }
@@ -21,13 +20,12 @@ define(function(require){
 
 
     var API = {
-      listComments: function(){
-        CommentsApp.List.Controller.listComments();
-      },
 
+      // will eventually need to handle taking in a comments/for/:id value
       listForPostComments: function(){
         return CommentsApp.List.ForPost.Controller.listComments();
       },
+      // will eventually need to handle taking in a comments/for/:id value
       listForUserComments: function(){
         return CommentsApp.List.ForUser.Controller.listComments();
       },
@@ -54,9 +52,6 @@ define(function(require){
       });
     });
 
-    Moonrakr.on('comments:list', function(){
-      API.listComments();
-    });
 
     // will eventually need to handle taking in a comments/for/:id value
     Moonrakr.reqres.setHandler('comments:listforpost', function(){

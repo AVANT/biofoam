@@ -11,17 +11,13 @@ define(function(require){
 
       // API call
       listComments: function(){
-        this.cueLoading();
         // this.initViewsModels();
         this.fetchComments()
         return this.commentContainer;
       },
-      cueLoading: function(){
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
-      },
       // initViewsModels: function(){
-      //   this.new
+      //   // new view
+      //   // layout view
       // }
       fetchComments: function(){
         var self = this;
