@@ -11,7 +11,7 @@ define(function(require){
       tagName: 'li',
       template: Handlebars.compile( _comment ),
       regions: {
-        userInformation: '.user-information'
+        addContext: '.js-add-context'
       },
       events: {
         'click .user-information': 'userClicked',
@@ -19,6 +19,7 @@ define(function(require){
       },
       onShow: function(e){
         this.trigger('render:user', this.model.get('userId'));
+        this.trigger('render:post', this.model.get('postId'));
       },
       userClicked: function(e){
         e.preventDefault();

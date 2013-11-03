@@ -40,10 +40,10 @@ define(function(require){
               });
             }
             else{
-              console.log('something failed');
+              console.log('something failed while fetching the user');
               // TODO handle the case where fetching the user fails
             }
-              view.userInformation.show(userView);
+              view.addContext.show(userView);
           });
         });
 

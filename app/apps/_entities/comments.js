@@ -20,9 +20,9 @@ define(function(require){
     var initializeComments = function(){
       console.log('comment entities initializing');
       var comments = new Entities.CommentCollection([
-        {id:1, userId:1, body: 'This will be Ced\'s comment'},
-        {id:2, userId:2, body: 'This will be Che\'s comment'},
-        {id:3, userId:3, body: 'This will be Sams\'s comment'},
+        {id:1, userId:1, postId:1, body: 'This will be Ced\'s comment'},
+        {id:2, userId:2, postId:2, body: 'This will be Che\'s comment'},
+        {id:3, userId:3, postId:3, body: 'This will be Sams\'s comment'},
       ]);
       comments.forEach(function(comment){
         comment.save();
