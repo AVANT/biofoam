@@ -13,24 +13,35 @@ define(function(require){
         });
         Moonrakr.mainRegion.show( loadingView );
 
+        var postLayout = new Show.PostLayout();
+
         var fetchingPost = Moonrakr.request('post:entity', id);
         $.when(fetchingPost).done(function(post){
           var postView;
 
           if (post !== undefined){
+
             postView = new Show.Post({
               model: post
             });
 
+            // will eventually need to pass a comments/for/:id value with this request
+            var commentsView = Moonrakr.request('comments:listforpost');
+
             postView.on('post:edit', function(post){
               Moonrakr.trigger('post:edit', post.get('id'));
+            });
+
+            postLayout.on('show', function(){
+              postLayout.postRegion.show( postView );
+              postLayout.commentsRegion.show( commentsView );
             });
           }
           else {
             postView = new Show.MissingPost();
           }
 
-          Moonrakr.mainRegion.show( postView );
+          Moonrakr.mainRegion.show( postLayout );
 
         });
       }

@@ -1,18 +1,18 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/comments/show/user/show_view');
+  require('apps/comments/show/foruser/show_view');
 
-  return Moonrakr.module('CommentsApp.Show.User', function(User){
+  return Moonrakr.module('CommentsApp.Show.ForUser', function(ForUser){
 
-    User.Controller = {
+    ForUser.Controller = {
 
       // API call
-      showCommentReturn: function(model){
+      showComment: function(model){
         return this.getCommentView(model);
       },
       getCommentView: function(model){
-        var commentLayoutView = new User.Comment({
+        var commentLayoutView = new ForUser.Comment({
           model: model
         });
         this.setHandlers( commentLayoutView );
@@ -25,7 +25,7 @@ define(function(require){
           $.when(fetchingPost).done(function(post){
             var postView;
             if (post !== undefined){
-              postView = new User.Post({
+              postView = new ForUser.Post({
                 model: post
               });
             }

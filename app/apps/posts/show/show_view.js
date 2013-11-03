@@ -1,8 +1,10 @@
 define(function(require){
+
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _missingPost = require('text!apps/posts/show/templates/missing-post.html');
+  var _missingPost = require('text!apps/posts/show/templates/missing_post.html');
   var _post = require('text!apps/posts/show/templates/post.html');
+  var _postLayout = require('text!apps/posts/show/templates/post_layout.html');
 
   return Moonrakr.module('PostsApp.Show', function(Show){
 
@@ -22,6 +24,16 @@ define(function(require){
         e.preventDefault();
         this.trigger('post:edit', this.model);
       }
-    }); // Show.Post
+    });
+
+    Show.PostLayout = Marionette.Layout.extend({
+      template: Handlebars.compile( _postLayout ),
+      regions: {
+        postRegion: '#post-region',
+        commentsRegion: '#comments-region'
+      }
+    })
+
+
   });
 });

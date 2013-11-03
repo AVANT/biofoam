@@ -12,9 +12,10 @@ define(function(require){
 
   // List.Comment = Moonrakr.CommentsApp.Common.Views.Comment.extend();
 
-    List.Comments = Marionette.CollectionView.extend({
+    List.Comments = Marionette.CompositeView.extend({
       tagName: 'div',
       template: Handlebars.compile( _commentsContainer ),
+      itemViewContainer: 'ul',
       itemView: Moonrakr.CommentsApp.Show.Common.Views.Comment,
       buildItemView: function(item, ItemViewType, itemViewOptions){
         console.log('here4');
