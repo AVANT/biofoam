@@ -4,7 +4,7 @@ define(function(require){
   var Moonrakr = require('app');
   var _commentsContainer = require('text!apps/comments/list/_common/templates/comments_container.html');
 
-  return Moonrakr.module('CommentsApp.List.Common.Views', function(Views){
+  return Moonrakr.module('Comments.List.Common.Views', function(Views){
 
     Views.Comments = Marionette.CompositeView.extend({
       tagName: 'div',

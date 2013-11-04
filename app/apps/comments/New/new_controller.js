@@ -3,7 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/comments/new/new_view');
 
-  return Moonrakr.module('CommentsApp.New', function(New){
+  return Moonrakr.module('Comments.New', function(New){
 
     New.Controller = {
       newComment: function(){

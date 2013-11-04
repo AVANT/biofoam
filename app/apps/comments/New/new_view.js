@@ -5,7 +5,7 @@ define(function(require){
   var Moonrakr = require('app');
   var _newComment = require('text!apps/comments/new/templates/comment.html');
 
-  return Moonrakr.module('CommentsApp.New', function(New){
+  return Moonrakr.module('Comments.New', function(New){
 
     New.Comment = Marionette.ItemView.extend({
       template: Handlebars.compile( _newComment ),

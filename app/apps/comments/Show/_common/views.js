@@ -5,7 +5,7 @@ define(function(require){
   var _comment = require('text!apps/comments/show/_common/templates/comment.html');
   var _missingComment = require('text!apps/comments/show/_common/templates/missing_comment.html');
 
-  return Moonrakr.module('CommentsApp.Show.Common.Views', function(Views){
+  return Moonrakr.module('Comments.Show.Common.Views', function(Views){
 
     Views.Comment = Marionette.Layout.extend({
       tagName: 'li',

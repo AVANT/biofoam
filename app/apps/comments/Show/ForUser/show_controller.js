@@ -3,7 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/comments/show/foruser/show_view');
 
-  return Moonrakr.module('CommentsApp.Show.ForUser', function(ForUser){
+  return Moonrakr.module('Comments.Show.ForUser', function(ForUser){
 
     ForUser.Controller = {
 
