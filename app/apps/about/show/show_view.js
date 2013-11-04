@@ -20,7 +20,8 @@ define(function(require){
       }
     });
 
-    Show.Panel = Marionette.ItemView.extend({
+    Show.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
+      authLevelRequired: 3, // 3=editors
       template: Handlebars.compile( _aboutPanel ),
       triggers: {
         'click button.js-edit' : 'about:edit'

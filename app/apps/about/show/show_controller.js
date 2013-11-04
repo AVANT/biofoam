@@ -7,14 +7,13 @@ define(function(require){
 
     Show.Controller = {
       showAbout: function(){
-        var loadingView = new Moonrakr.Common.Views.Loading({
-          title: 'Loading',
-          message: ''
-        });
-        Moonrakr.mainRegion.show( loadingView );
+
+        Moonrakr.Common.Controller.helper.cueLoadingView();
+
+        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
 
         var aboutShowLayout = new Show.Layout();
-        var aboutShowPanel = new Show.Panel();
+        var aboutShowPanel = authGranted ? new Show.CMSPanel() : null;
 
         var fetchingAbout = Moonrakr.request('about:entity');
         $.when(fetchingAbout).done(function(about){
@@ -24,13 +23,15 @@ define(function(require){
           });
 
           aboutShowLayout.on('show', function(){
-            aboutShowLayout.panelRegion.show( aboutShowPanel );
+            if(authGranted){aboutShowLayout.panelRegion.show( aboutShowPanel );}
             aboutShowLayout.aboutRegion.show( aboutShowView );
           })
 
-          aboutShowPanel.on('about:edit', function(){
-            Moonrakr.trigger('about:edit');
-          });
+          if(authGranted){
+            aboutShowPanel.on('about:edit', function(){
+              Moonrakr.trigger('about:edit');
+            });
+          }
 
           Moonrakr.mainRegion.show( aboutShowLayout );
 
