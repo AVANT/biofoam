@@ -8,13 +8,14 @@ define(function(require){
     List.Controller = {
       listUsers: function(){
 
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show(loadingView);
+        Moonrakr.Common.Controller.helper.cueLoadingView();
+
+        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
 
         var fetchingUsers = Moonrakr.request('user:entities');
 
         var usersListLayout = new List.Layout();
-        var usersListPanel = new List.Panel();
+        var usersListPanel = authGranted ? new List.CMSPanel() : null;
 
         $.when(fetchingUsers).done(function(users){
 
@@ -23,13 +24,15 @@ define(function(require){
           });
 
           usersListLayout.on('show', function(){
-            usersListLayout.panelRegion.show( usersListPanel );
+            if(authGranted){ usersListLayout.panelRegion.show( usersListPanel ); }
             usersListLayout.usersRegion.show( usersListView );
           });
 
-          usersListPanel.on('user:new', function(){
-            Moonrakr.trigger('user:new');
-          });
+          if(authGranted){
+            usersListPanel.on('user:new', function(){
+              Moonrakr.trigger('user:new');
+            });
+          }
 
           usersListView.on('itemview:user:show', function(childView, model){
             Moonrakr.trigger('user:show', model.get('id'));

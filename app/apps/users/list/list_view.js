@@ -33,7 +33,8 @@ define(function(require){
       }
     });
 
-    List.Panel = Marionette.ItemView.extend({
+    List.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
+      authLevelRequired: 3, // 3 = editors and admins
       template: Handlebars.compile( _usersPanel ),
       triggers: {
         'click button.js-new': 'user:new'

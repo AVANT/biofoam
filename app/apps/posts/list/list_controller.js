@@ -8,7 +8,9 @@ define(function(require){
     List.Controller = {
       // api calls
       listPosts: function(){
+
         Moonrakr.Common.Controller.helper.cueLoadingView();
+
         var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
 
         var fetchingPosts = Moonrakr.request('post:entities');
