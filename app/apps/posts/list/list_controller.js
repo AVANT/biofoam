@@ -6,15 +6,15 @@ define(function(require){
 
   return Moonrakr.module('PostsApp.List', function(List){
     List.Controller = {
+      // api calls
       listPosts: function(){
-
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+        Moonrakr.Common.Controller.helper.cueLoadingView();
+        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
 
         var fetchingPosts = Moonrakr.request('post:entities');
 
         var postsListLayout = new List.Layout();
-        var postsListPanel = new List.Panel();
+        var postsListPanel = authGranted ? new List.CMSPanel() : null;
 
         $.when(fetchingPosts).done(function(posts){
 
@@ -23,7 +23,7 @@ define(function(require){
           });
 
           postsListLayout.on('show', function(){
-            postsListLayout.panelRegion.show( postsListPanel );
+            if(authGranted){ postsListLayout.panelRegion.show( postsListPanel ); }
             postsListLayout.postsRegion.show( postsListView );
           });
 
@@ -31,9 +31,11 @@ define(function(require){
             Moonrakr.trigger('post:show', model.get('id'));
           });
 
-          postsListPanel.on('post:new', function(){
-            Moonrakr.trigger('post:new');
-          });
+          if(authGranted){
+            postsListPanel.on('post:new', function(){
+              Moonrakr.trigger('post:new');
+            });
+          }
 
           Moonrakr.mainRegion.show( postsListLayout );
 

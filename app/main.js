@@ -11,6 +11,8 @@ require(['requireConfig'],function(){
     'apps/_entities/helperFunctions',
 
     'apps/_common/views/loading',
+    'apps/_common/views/cms_panel',
+    'apps/_common/controller/helper_functions',
 
     'apps/header/header_app',
     'apps/about/about_app',

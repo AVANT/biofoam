@@ -4,24 +4,22 @@ define(function(require){
   require('apps/comments/show/forpost/show_view');
 
   return Moonrakr.module('Comments.Show.ForPost', function(ForPost){
-
     ForPost.Controller = {
-
-      /*
-      *** Show ForPost Comment ***
-
+      /*** Show ForPost Comment ***
       Views: Comment Layout
               - User View
-
+              - CMS Panel
       Models: Comment
               User
       */
 
-      // API CALL
+      // api call
       showComment: function( model ){
+        this.authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( ForPost.CMSPanel );
         return this.getCommentView(model);
       },
       getCommentView: function(model){
+        this.cmsPanel = ((this.authGranted) ? new ForPost.CMSPanel() : null);
         var commentLayoutView = new ForPost.Comment({
           model: model
         });
@@ -29,6 +27,7 @@ define(function(require){
         return commentLayoutView;
       },
       setHanlders: function( view ){
+        var self = this;
         // handler for the render user event
         view.on('render:user', function(userId){
           var fetchingUser = Moonrakr.request('user:entity', userId);
@@ -47,41 +46,20 @@ define(function(require){
           });
         });
 
+        // handler for showing cmsPanel
+        if (self.authGranted){
+          view.on('render', function(){ // weird timing bug if you use 'show'
+            view.cmsPanel.show( self.cmsPanel );
+          });
+        }
+
         // handler for the comment delete event
         view.on('comment:delete', function(){
           this.model.destroy();
           this.close();
         });
-      },
-
-      // OLD API CALL
-      // showComment: function(id){
-      //   this.cueLoading();
-      //   this.fetchComment(id);
-      //   Moonrakr.mainRegion.show( this.commentLayoutView );
-      // },
-      // cueLoading: function(){
-      //   var loadingView = new Moonrakr.Common.Views.Loading();
-      //   Moonrakr.mainRegion.show( loadingView );
-      // },
-      // fetchComment: function(id){
-      //   var that = this;
-
-      //   var fetchingComment = Moonrakr.request('comment:entity', id);
-      //   return $.when(fetchingComment).done(function(comment){
-      //     if (comment !== undefined){
-      //       that.commentLayoutView = new ForPost.Comment({
-      //         model: comment
-      //       });
-      //       that.setHanlders( commentLayoutView );
-      //     }
-      //     else {
-      //       that.commentLayoutView = new ForPost.MissingComment();
-      //     }
-      //   });
-      // }
+      }
     }
-
   });
 
 });

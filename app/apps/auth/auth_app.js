@@ -4,9 +4,9 @@ define(function(require){
   require('apps/auth/login/login_controller');
   require('apps/auth/signup/signup_controller');
 
-  return Moonrakr.module('AuthApp', function(AuthApp){
+  return Moonrakr.module('Auth', function(Auth){
 
-    AuthApp.Router = Marionette.AppRouter.extend({
+    Auth.Router = Marionette.AppRouter.extend({
       appRoutes : {
         'login': 'loginUser',
         'signup': 'signupUser'
@@ -15,26 +15,26 @@ define(function(require){
 
     var API = {
       loginUser: function( route ){
-        AuthApp.Login.Controller.loginUser( route );
+        Auth.Login.Controller.loginUser( route );
       },
       signupUser: function( route ){
         console.log( 'signup route called' );
-        AuthApp.Signup.Controller.signupUser( route );
+        Auth.Signup.Controller.signupUser( route );
       },
     };
 
     /***************************/
     // setup dummy current user
-    AuthApp.currentUser = new Moonrakr.Entities.User({
+    Auth.currentUser = new Moonrakr.Entities.User({
       id: 1,  // cedric
       username: "Ced",
-      userPermissions: 0 // 0 = all access
+      userPermissions: 999 // 999 = all access
     });
     /***************************/
 
     // INIT ROUTER WITH MOONRAKR STARTUP
     Moonrakr.addInitializer(function(){
-      new AuthApp.Router({
+      new Auth.Router({
         controller: API
       })
     });
@@ -51,6 +51,10 @@ define(function(require){
       Moonrakr.navigate('signup');
       API.signupUser( route );
     })
+
+    Moonrakr.reqres.setHandler('auth:userpermissions', function(){
+      return Auth.currentUser.get('userPermissions');
+    });
 
   });
 

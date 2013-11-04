@@ -11,6 +11,8 @@ define(function(require){
 
     ForPost.MissingComment = Moonrakr.Comments.Show.Common.Views.MissingComment.extend();
 
+    ForPost.CMSPanel = Moonrakr.Comments.Show.Common.Views.CMSPanel.extend();
+
     // the only view that is specific to the post comment is the user part
     ForPost.User = Marionette.ItemView.extend({
       tagName: 'span',

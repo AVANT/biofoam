@@ -37,7 +37,8 @@ define(function(require){
     })
 
     // BUTTON PANEL
-    List.Panel = Marionette.ItemView.extend({
+    List.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
+      authLevelRequired: 2, // 2 = authors, editors, and admins
       template: Handlebars.compile( _postsPanel ),
       triggers: {
         'click button.js-new': 'post:new'

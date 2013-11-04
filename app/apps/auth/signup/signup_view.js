@@ -3,7 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   var _signupForm = require('text!apps/auth/signup/templates/signup_form.html');
 
-  return Moonrakr.module('AuthApp.Signup', function(Signup){
+  return Moonrakr.module('Auth.Signup', function(Signup){
 
     Signup.SignupView = Marionette.ItemView.extend({
       template: Handlebars.compile( _signupForm ),

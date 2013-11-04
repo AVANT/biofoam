@@ -3,7 +3,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/auth/signup/signup_view');
 
-  return Moonrakr.module('AuthApp.Signup', function(Signup){
+  return Moonrakr.module('Auth.Signup', function(Signup){
 
     Signup.Controller = {
       signupUser: function( route ){
