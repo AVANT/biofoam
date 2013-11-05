@@ -62,11 +62,20 @@ define(function(require){
       },
 
       searchSubmitHandler: function( str ){
-        console.log( str );
+        var appSwitchCases = {
+          'post': 'posts:list',
+          'posts': 'posts:list',
+          'user': 'users:list',
+          'users': 'users:list',
+          'about': 'about:show'
+        }
         str = str.toLowerCase();
         str = $.trim(str)
-        if( str == "posts" || str == "post"){
-          Moonrakr.trigger('posts:list');
+        if( appSwitchCases[str] ){
+          Moonrakr.trigger( appSwitchCases[str] );
+        }
+        else{
+          // call out to server for search
         }
       }
     };

@@ -41,7 +41,7 @@ define(function(require){
       },
       events: {
         'click .js-submit': 'submitClicked',
-        'keypress input[type=search]': 'keypressHanlder'
+        'keypress #search-input': 'keypressHanlder'
       },
       onRender: function(){
         this.stickit();
