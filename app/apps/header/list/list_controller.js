@@ -8,25 +8,43 @@ define(function(require){
   return Moonrakr.module('HeaderApp.List', function(List){
 
     List.Controller = {
+      // api call
       listHeader: function(){
         var links = Moonrakr.request('header:entities');
-        var headers = new List.Headers({collection: links});
+        var menu = new List.Menu({collection: links});
+        var searchModel = new Moonrakr.Entities.Search();
+        var search = new List.Search({
+          model: searchModel
+        });
+        var login = new List.Login();
+        var header = new List.Header();
 
-        headers.on('logo:clicked', function(){
+
+        header.on('show', function(){
+          this.menuRegion.show(menu);
+          this.searchRegion.show(search);
+          this.loginRegion.show(login);
+        });
+
+        header.on('logo:clicked', function(){
           Moonrakr.trigger('posts:list');
         });
 
-        headers.on('login:clicked', function(){
+        login.on('login:clicked', function(){
           // get current route and pass that along to the login call
           Moonrakr.trigger( 'auth:login', Moonrakr.getCurrentRoute() );
         });
 
-        headers.on('itemview:navigate', function(childView, model){
+        menu.on('itemview:navigate', function(childView, model){
           var trigger = model.get('navigationTrigger');
           Moonrakr.trigger( trigger );
         });
 
-        Moonrakr.headerRegion.show(headers);
+        search.on('submitClicked', function( data ){
+          console.log('search text: ', data);
+        });
+
+        Moonrakr.headerRegion.show(header);
       },
 
       setActiveHeader: function(headerUrl){

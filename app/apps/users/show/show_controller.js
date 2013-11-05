@@ -8,9 +8,11 @@ define(function(require){
     Show.Controller = {
       showUser: function(id){
 
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+        Moonrakr.Common.Controller.helper.cueLoadingView();
 
+        authGranted = Moonrakr.Common.Controller.helper.getAuthFlag(Show.CMSPanel);
+
+        var cmsPanel = authGranted ? new Show.CMSPanel() : null ;
         var userLayout = new Show.UserLayout();
         var commentsView = Moonrakr.request('comments:listforuser');
 
@@ -20,15 +22,21 @@ define(function(require){
 
           if (user !== undefined){
 
+            userIsOwner = Moonrakr.Common.Controller.helper.getOwnershipFlag(user, "user");
+            cmsPanel = cmsPanel || userIsOwner ? new Show.CMSPanel() : null ;
+
             userView = new Show.User({
               model: user
             });
 
-            userView.on('user:edit', function(user){
-              Moonrakr.trigger('user:edit', user.get('id'));
-            });
+            if(authGranted || userIsOwner){
+              cmsPanel.on('user:edit', function(){
+                Moonrakr.trigger('user:edit', user.get('id'));
+              });
+            }
 
             userLayout.on('show', function(){
+              if(authGranted || userIsOwner){ userLayout.cmsRegion.show(cmsPanel); }
               userLayout.userRegion.show( userView );
               userLayout.commentsRegion.show( commentsView );
             })

@@ -7,12 +7,12 @@ define(function(require){
 
     Show.Controller = {
       showPost: function(id){
-        var loadingView = new Moonrakr.Common.Views.Loading({
-          title: 'Artificial Loading Delay',
-          message: 'Data loading is delayed to demonstrate how connectivity lag is handled.'
-        });
-        Moonrakr.mainRegion.show( loadingView );
 
+        Moonrakr.Common.Controller.helper.cueLoadingView();
+
+        authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
+
+        var cmsPanel = authGranted ? new Show.CMSPanel() : null;
         var postLayout = new Show.PostLayout();
 
         var fetchingPost = Moonrakr.request('post:entity', id);
@@ -28,14 +28,18 @@ define(function(require){
             // will eventually need to pass a comments/for/:id value with this request
             var commentsView = Moonrakr.request('comments:listforpost');
 
-            postView.on('post:edit', function(post){
-              Moonrakr.trigger('post:edit', post.get('id'));
-            });
-
             postLayout.on('show', function(){
+              if(authGranted){postLayout.cmsRegion.show(cmsPanel);}
               postLayout.postRegion.show( postView );
               postLayout.commentsRegion.show( commentsView );
             });
+
+            if(authGranted){
+              cmsPanel.on('post:edit', function(){
+                Moonrakr.trigger('post:edit', post.get('id'));
+              });
+            }
+
           }
           else {
             postView = new Show.MissingPost();

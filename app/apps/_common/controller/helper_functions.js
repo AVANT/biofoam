@@ -15,6 +15,17 @@ define(function(require){
           return false;
         }
       },
+      getOwnershipFlag: function(model, type){
+        if(type=="user"){
+          var userId = Moonrakr.request('auth:id');
+          var itemOwner = model.get('id');
+          if(userId == itemOwner){
+            return true;
+          }
+        }
+
+        return false;
+      },
       cueLoadingView: function(){
         var loadingView = new Moonrakr.Common.Views.Loading();
         Moonrakr.mainRegion.show( loadingView );

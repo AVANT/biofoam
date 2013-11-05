@@ -4,6 +4,7 @@ require(['requireConfig'],function(){
     'app',
 
     'apps/_entities/header',
+    'apps/_entities/search',
     'apps/_entities/about',
     'apps/_entities/posts',
     'apps/_entities/users',
