@@ -10,11 +10,12 @@ define(function(require){
     List.Controller = {
       // api call
       listHeader: function(){
+        var self = this;
         var links = Moonrakr.request('header:entities');
         var menu = new List.Menu({collection: links});
-        var searchModel = new Moonrakr.Entities.Search();
+        this.searchModel = new Moonrakr.Entities.Search();
         var search = new List.Search({
-          model: searchModel
+          model: this.searchModel
         });
         var login = new List.Login();
         var header = new List.Header();
@@ -40,8 +41,8 @@ define(function(require){
           Moonrakr.trigger( trigger );
         });
 
-        search.on('submitClicked', function( data ){
-          console.log('search text: ', data);
+        search.on('submitClicked', function( str ){
+          self.searchSubmitHandler(str);
         });
 
         Moonrakr.headerRegion.show(header);
@@ -54,6 +55,19 @@ define(function(require){
         });
         headerToSelect.select();
         links.trigger('reset');
+      },
+
+      setHeaderText: function(str){
+        this.searchModel.set('searchText', str);
+      },
+
+      searchSubmitHandler: function( str ){
+        console.log( str );
+        str = str.toLowerCase();
+        str = $.trim(str)
+        if( str == "posts" || str == "post"){
+          Moonrakr.trigger('posts:list');
+        }
       }
     };
 

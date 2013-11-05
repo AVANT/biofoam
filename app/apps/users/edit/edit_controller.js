@@ -22,6 +22,8 @@ define(function(require){
             });
             var imageUploader = new Moonrakr.Common.Views.ImageUpload();
 
+            Moonrakr.execute('header:set:title', 'Users: Edit: ' + user.get('username'));
+
             layoutView.on('render', function(){
               layoutView.imageUploadRegion.show( imageUploader );
             });

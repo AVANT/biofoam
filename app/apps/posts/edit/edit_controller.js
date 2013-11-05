@@ -30,6 +30,8 @@ define(function(require){
           var layoutView;
           if(post !== undefined){
 
+              Moonrakr.execute('header:set:title', 'Posts: Edit: ' + post.get('title'));
+
               ///////////////
              // GET VIEWS //
             ///////////////

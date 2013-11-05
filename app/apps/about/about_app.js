@@ -17,10 +17,12 @@ define(function(require){
       showAbout: function(){
         AboutApp.Show.Controller.showAbout();
         Moonrakr.execute('set:active:header', 'about');
+        Moonrakr.execute('header:set:title', 'About');
       },
       editAbout: function(){
         AboutApp.Edit.Controller.editAbout();
         Moonrakr.execute('set:active:header', 'about');
+        Moonrakr.execute('header:set:title', 'About: Edit');
       }
     };
 

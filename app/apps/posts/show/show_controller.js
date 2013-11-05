@@ -25,6 +25,8 @@ define(function(require){
               model: post
             });
 
+            Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
+
             // will eventually need to pass a comments/for/:id value with this request
             var commentsView = Moonrakr.request('comments:listforpost');
 

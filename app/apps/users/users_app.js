@@ -21,10 +21,12 @@ define(function(require){
       listUsers: function(){
         UsersApp.List.Controller.listUsers();
         Moonrakr.execute('set:active:header', 'users');
+        Moonrakr.execute('header:set:title', 'Users');
       },
       newUser: function(){
         UsersApp.New.Controller.newUser();
         Moonrakr.execute('set:active:header', 'users');
+        Moonrakr.execute('header:set:title', 'Users: New');
       },
       showUser: function(id){
         UsersApp.Show.Controller.showUser(id);

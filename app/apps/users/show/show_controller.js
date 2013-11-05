@@ -29,6 +29,9 @@ define(function(require){
               model: user
             });
 
+            // set page title
+            Moonrakr.execute('header:set:title', 'Users: ' + user.get('username'));
+
             if(authGranted || userIsOwner){
               cmsPanel.on('user:edit', function(){
                 Moonrakr.trigger('user:edit', user.get('id'));

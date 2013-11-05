@@ -21,6 +21,7 @@ define(function(require){
       listPosts: function(){
         PostsApp.List.Controller.listPosts();
         Moonrakr.execute('set:active:header', 'posts');
+        Moonrakr.execute('header:set:title', 'Posts');
       },
       showPost: function(id){
         PostsApp.Show.Controller.showPost(id);
@@ -33,6 +34,7 @@ define(function(require){
       newPost: function(){
         PostsApp.New.Controller.newPost();
         Moonrakr.execute('set:active:header', 'posts');
+        Moonrakr.execute('header:set:title', 'Posts: New');
       }
     };
 
