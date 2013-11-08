@@ -1,6 +1,6 @@
 define(function(require){
-  // require('redactor') // loaded w/ jquery?
 
+  require('jquery.redactor');
   var loadImage = require('loadImage');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');

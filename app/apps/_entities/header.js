@@ -25,7 +25,7 @@ define(function(require){
       Entities.headers = new Entities.HeaderCollection([
         { name: 'Posts', url: 'posts', navigationTrigger: 'posts:list' },
         { name: 'Users', url: 'users', navigationTrigger: 'users:list' },
-        { name: 'About', url: 'about', navigationTrigger: 'about:show' }
+        { name: 'About', url: 'pages/about', navigationTrigger: 'pages:show', navigationString:'about' }
       ]);
     };
 

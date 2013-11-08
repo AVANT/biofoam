@@ -4,6 +4,7 @@ define(function(require){
 
   var Moonrakr = require('app');
   require('apps/header/list/list_view');
+  require('underscore');
 
   return Moonrakr.module('HeaderApp.List', function(List){
 
@@ -38,7 +39,8 @@ define(function(require){
 
         menu.on('itemview:navigate', function(childView, model){
           var trigger = model.get('navigationTrigger');
-          Moonrakr.trigger( trigger );
+          var navString = model.get('navigationString') || null;
+          Moonrakr.trigger( trigger, navString );
         });
 
         search.on('submitClicked', function( str ){
@@ -63,16 +65,34 @@ define(function(require){
 
       searchSubmitHandler: function( str ){
         var appSwitchCases = {
-          'post': 'posts:list',
-          'posts': 'posts:list',
-          'user': 'users:list',
-          'users': 'users:list',
-          'about': 'about:show'
+          'post': {
+            'eventType': 'posts:list'
+          },
+          'posts': {
+            'eventType': 'posts:list'
+          },
+          'user': {
+            'eventType': 'users:list'
+          },
+          'users': {
+            'eventType': 'users:list'
+          },
+          'about': {
+            'eventType': 'pages:show',
+            'slug': 'about'
+          },
+          'terms': {
+            'eventType': 'pages:show',
+            'slug': 'terms'
+          }
         }
+
         str = str.toLowerCase();
         str = $.trim(str)
         if( appSwitchCases[str] ){
-          Moonrakr.trigger( appSwitchCases[str] );
+          console.log( appSwitchCases[str].eventType );
+          console.log( appSwitchCases[str].additionalParams );
+          Moonrakr.trigger( appSwitchCases[str].eventType, appSwitchCases[str].slug );
         }
         else{
           // call out to server for search
