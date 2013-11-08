@@ -8,9 +8,11 @@ define(function(require){
 
   return Moonrakr.module('Common.Views', function(Views){
 
-    // TO IMPLIMENT THIS VIEW YOU CAN
-    // SET TEMPLATE HELPERS BY PASSING IN
-    // OPTIONS APPROPREATELY
+    /*
+      TO IMPLIMENT THIS VIEW YOU CAN
+      SET TEMPLATE HELPERS BY PASSING IN
+      OPTIONS APPROPREATELY
+    */
 
     Views.Redactor = Marionette.ItemView.extend({
       template: Handlebars.compile( _redactorView ),

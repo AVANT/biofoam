@@ -2,7 +2,7 @@ define(function(require){
 
   var Moonrakr = require('app');
   require('apps/pages/show/show_controller');
-  // require('apps/page/edit/edit_controller');
+  require('apps/pages/edit/edit_controller');
 
   return Moonrakr.module('Pages', function(Pages){
 

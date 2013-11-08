@@ -26,11 +26,12 @@ define(function(require){
     Show.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
       authLevelRequired: 3, // 3=editors
       template: Handlebars.compile( _pagePanel ),
-      triggers: {
+      events: {
         'click .js-edit': 'editClicked'
       },
-      editClicked: function(){
-        this.trigger('page:edit');
+      editClicked: function(e){
+        e.preventDefault();
+        this.trigger('pages:edit');
       }
     });
 

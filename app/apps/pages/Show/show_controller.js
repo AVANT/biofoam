@@ -32,9 +32,8 @@ define(function(require){
             });
 
             if(authGranted){
-              pagePanel.on('page:edit', function(){
-                // get id from pageView.model.get('id')
-                Moonrakr.trigger('page:edit', id);
+              pagePanel.on('pages:edit', function(){
+                Moonrakr.trigger('pages:edit', page.get('id'));
               });
             }
           }

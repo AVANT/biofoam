@@ -1,4 +1,4 @@
-require(['requireConfig'],function(){
+require(['require_config'],function(){
 
   require([
     'app',
@@ -9,7 +9,7 @@ require(['requireConfig'],function(){
     'apps/_entities/posts',
     'apps/_entities/users',
     'apps/_entities/comments',
-    'apps/_entities/helperFunctions',
+    'apps/_entities/helper_functions',
 
     'apps/_common/views/loading',
     'apps/_common/views/cms_panel',
