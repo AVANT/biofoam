@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/users/show/show_view');
+  require('apps/users/show/show_views');
 
   return Moonrakr.module('UsersApp.Show', function(Show){
 
@@ -34,6 +34,7 @@ define(function(require){
 
             if(authGranted || userIsOwner){
               cmsPanel.on('user:edit', function(){
+                console.log( user.get('id') );
                 Moonrakr.trigger('user:edit', user.get('id'));
               });
             }

@@ -59,6 +59,9 @@ define(function(require){
       initRedactor: function(){
         var that = this;
         this.$('.redactor').redactor({
+          // trying this on for size
+          air: true,
+          //////////////////////////
           changeCallback: function(html){
             that.$('.redactor').html(html);
             that.$('.redactor').trigger('change');

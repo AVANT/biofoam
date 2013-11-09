@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/users/list/list_view');
+  require('apps/users/list/list_views');
 
   return Moonrakr.module('UsersApp.List', function(List){
 

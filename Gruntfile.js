@@ -37,6 +37,10 @@ module.exports = function (grunt){
           atBegin: true,
         }
       },
+      // sass: {
+      //   files: ['<%= sacrum.app %>/styles/**/*.scss'],
+      //   tasks: ['sass:dev']
+      // },
       compass: {
         files: ['<%= sacrum.app %>/styles/**/*.scss'],
         tasks: ['compass:dev']
@@ -151,6 +155,27 @@ module.exports = function (grunt){
       all: [
         'Gruntfile.js'
       ]
+    },
+
+    // COMPILE SASS FILES - .scss only
+    sass: {
+      options: {
+        // includePaths: '<%= sacrum.app %>/styles/'
+      },
+      dev: {
+        options:{
+          outputStyle: 'expanded',
+          sourceComments: 'normal'
+        },
+        files: {
+          '.tmp/css/main.css': '<%= sacrum.app %>/styles/main.scss'
+        }
+      },
+      dist: {
+        options: {
+          cssDir: '<%= sacrum.dist %>/css'
+        }
+      }
     },
 
     // COMPILE COMPASS FILES
@@ -431,6 +456,7 @@ module.exports = function (grunt){
     concurrent: {
       devCompile: {
         tasks: [
+          // 'sass:dev',
           'compass:dev',
           'handlebars:dev'
         ]
@@ -446,7 +472,8 @@ module.exports = function (grunt){
       },
       distCompile: {
         tasks: [
-          'compass:dist',
+          'sass:dist',
+          // 'compass:dist',
           'handlebars:dev'
         ]
       },

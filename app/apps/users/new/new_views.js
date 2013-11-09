@@ -1,7 +1,9 @@
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/_common/views/image_uploader');
   require('apps/users/_common/views');
+
 
   return Moonrakr.module('UsersApp.New', function(New){
 
@@ -10,8 +12,9 @@ define(function(require){
         submitText: 'Create User',
         titleText: 'New User'
       }
-
     });
+
+    New.ImageUploader = Moonrakr.Common.Views.ImageUpload.extend();
 
   });
 

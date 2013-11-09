@@ -2,7 +2,7 @@ define(function(require){
 
   // APPS
   var Moonrakr = require('app');
-  require('apps/posts/list/list_view');
+  require('apps/posts/list/list_views');
 
   return Moonrakr.module('PostsApp.List', function(List){
     List.Controller = {

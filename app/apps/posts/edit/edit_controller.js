@@ -1,9 +1,8 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/image_uploader');
   require('apps/_common/views/redactor');
-  require('apps/posts/edit/edit_view');
+  require('apps/posts/edit/edit_views');
 
   return Moonrakr.module('PostsApp.Edit', function(Edit){
 
@@ -15,8 +14,7 @@ define(function(require){
         ////////////////////////
 
         // start and show spinner
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+        Moonrakr.Common.Controller.helper.cueLoadingView();
 
           ///////////////////////////////
          // FETCH AND PROMISE HANLDER //
@@ -41,8 +39,8 @@ define(function(require){
               model: post
             });
 
-            // init imageUpload view and insert model photo??
-            var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+            // init imageUpload view
+            var imageUploadView = new Edit.ImageUpload();
 
             // init redactor view and insert model.body
             var redactorView = that.getRedactorView( post.get('body') );

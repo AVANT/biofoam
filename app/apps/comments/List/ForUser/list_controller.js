@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/comments/list/foruser/list_view');
+  require('apps/comments/list/foruser/list_views');
 
   return Moonrakr.module('Comments.List.ForUser', function(ForUser){
 

@@ -12,6 +12,8 @@ define(function(require){
       }
     });
 
+    Edit.ImageUpload = Moonrakr.Common.Views.ImageUpload.extend();
+
   });
 
 });

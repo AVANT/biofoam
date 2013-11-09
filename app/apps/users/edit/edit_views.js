@@ -1,6 +1,8 @@
 define(function(require){
+
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
+  require('apps/_common/views/image_uploader');
   require('apps/users/_common/views');
 
   return Moonrakr.module('UsersApp.Edit', function(Edit){
@@ -11,6 +13,8 @@ define(function(require){
         titleText: 'Edit User'
       }
     });
+
+    Edit.ImageUploader = Moonrakr.Common.Views.ImageUpload.extend();
 
   });
 

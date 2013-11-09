@@ -61,7 +61,7 @@ define(function(require){
 
     Moonrakr.on('user:edit', function(id){
       Moonrakr.navigate('users/' + id + '/edit');
-      API.editUser();
+      API.editUser(id);
     });
 
   }); // return usersApp

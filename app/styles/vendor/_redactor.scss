@@ -553,8 +553,8 @@ body .redactor_toolbar li a.redactor_btn_pre		 		{ background-position: -875px; 
 
 	background-color: #333 !important;
 	opacity: 0.50;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	filter:alpha(opacity=50);
+	// -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	// filter:alpha(opacity=50);
 }
 
 #redactor_modal {

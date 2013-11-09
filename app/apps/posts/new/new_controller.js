@@ -1,9 +1,8 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/image_uploader');
+  require('apps/posts/new/new_views');
   require('apps/_common/views/redactor');
-  require('apps/posts/new/new_view');
 
   return Moonrakr.module('PostsApp.New', function(New){
 
@@ -24,7 +23,7 @@ define(function(require){
         });
 
         // init imageUpload view and insert model photo??
-        var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+        var imageUploadView = new New.ImageUpload();
 
         // INIT REDACTOR VIEW AND INSERT MODEL BODY
         var redactorView = this.getRedactorView( newPost.get('body') );

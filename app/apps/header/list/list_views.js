@@ -43,6 +43,10 @@ define(function(require){
         'click .js-submit': 'submitClicked',
         'keypress #search-input': 'keypressHanlder'
       },
+      initialize: function(){
+        // catch document wide keypresses
+        // this.setKeyboardWatcher();
+      },
       onRender: function(){
         this.stickit();
       },
@@ -52,6 +56,20 @@ define(function(require){
           this.submitHandler();
         }
       },
+      setKeyboardWatcher: function(){
+        var that = this;
+        $(document).on('keyup', function(e){
+          // this.trigger('keyup', e);
+          console.log( String.fromCharCode(e.keyCode) );
+          var str = String.fromCharCode(e.keyCode);
+          that.$el.find('#search-input').html( str );
+          that.$el.find('#search-input').selectRange(2);
+          that.releaseKeyboardWatcher();
+        });
+      },
+      releaseKeyboardWatcher: function(){
+        $(document).unbind('keyup');
+      },
       submitClicked: function(e){
         e.preventDefault();
         this.submitHandler();
@@ -59,6 +77,7 @@ define(function(require){
       submitHandler: function(){
         // get input text
         this.trigger('submitClicked', this.model.get('searchText'));
+        this.setKeyboardWatcher();
       }
     });
 

@@ -1,10 +1,7 @@
 define(function(require){
 
-  // require('backbone.picky');
-
   var Moonrakr = require('app');
-  require('apps/header/list/list_view');
-  require('underscore');
+  require('apps/header/list/list_views');
 
   return Moonrakr.module('HeaderApp.List', function(List){
 

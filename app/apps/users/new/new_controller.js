@@ -1,8 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/image_uploader');
-  require('apps/users/new/new_view');
+  require('apps/users/new/new_views');
 
   return Moonrakr.module('UsersApp.New', function(New){
 
@@ -15,7 +14,7 @@ define(function(require){
           model: newUser
         });
 
-        var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+        var imageUploadView = new New.ImageUploader();
 
         layoutView.on('render', function(){
           layoutView.imageUploadRegion.show( imageUploadView );
@@ -24,13 +23,19 @@ define(function(require){
         // SAVE HANDLER //
         layoutView.on('form:submit', function(){
 
-            var id = Moonrakr.Entities.HelperFunctions.randomString(32); // not needed with live server
-            if(newUser.save({'id': id})){
+          var data = { 'id': Moonrakr.Entities.HelperFunctions.randomString(32) }; // not needed with live server
+
+          newUser.save(data, {
+            success: function(){
+              console.log('new user save succesful');
               Moonrakr.trigger('user:show', newUser.get('id'));
-            }
-            else {
+            },
+            error: function(){
+              console.log('new user save failed');
               layoutView.triggerMethod('form:data:invalid', newUser.validationError);
+              // TODO handle save error
             }
+          });
 
         });
 

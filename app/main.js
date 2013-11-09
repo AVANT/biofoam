@@ -14,6 +14,7 @@ require(['require_config'],function(){
     'apps/_common/views/loading',
     'apps/_common/views/cms_panel',
     'apps/_common/controller/helper_functions',
+    'apps/_common/jquery/helper_functions',
 
     'apps/header/header_app',
     'apps/pages/pages_app',

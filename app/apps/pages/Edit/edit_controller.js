@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/pages/edit/edit_view');
+  require('apps/pages/edit/edit_views');
 
   return Moonrakr.module('Pages.Edit', function(Edit){
 
@@ -29,8 +29,6 @@ define(function(require){
             });
 
             view.on('form:submit', function(data){
-              console.log('test');
-              console.log( page.save(data) );
               page.save(data, {
                 success: function(){
                   Moonrakr.trigger('pages:show', page.get('id') );
@@ -40,7 +38,6 @@ define(function(require){
                 }
               });
             });
-
 
           }
           else {

@@ -17,8 +17,8 @@ define(function(require){
       },
 
       events: {
-        'click button.js-submit': 'submitClicked',
-        'click button.js-delete': 'deleteClicked',
+        'click .js-submit': 'submitClicked',
+        'click .js-delete': 'deleteClicked',
       },
 
       bindings: {
@@ -36,7 +36,6 @@ define(function(require){
       /////////////////////////////////////
       submitClicked: function(e){
         e.preventDefault();
-        // var data = Backbone.Syphon.serialize(this);
         this.trigger('form:submit');
       },
 
