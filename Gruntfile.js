@@ -16,6 +16,8 @@ module.exports = function (grunt){
     }
   });
 
+  grunt.loadNpmTasks('grunt-docco-husky');
+
 	// CONFIGURABLE PATHS
   var sacrumConfig = {
       app: 'app',
@@ -367,6 +369,31 @@ module.exports = function (grunt){
           }
         ]
       }
+    },
+
+    // Runs Docco Task which creates documentation from commented source files
+    // docco: {
+    //   options: {
+    //     layout: 'parallel',
+    //     output: 'docs/'
+    //   },
+    //   all: {
+    //     files:{ src: ['app/**/*.js'] }
+    //   },
+    //   single: {
+    //     files:{ src: ['app/app.js'] }
+    //   },
+    //   gruntfile: {
+    //     options: {
+    //       layout: 'linear'
+    //     },
+    //     files:{ src:'Gruntfile.js' }
+    //   }
+    // },
+
+    docco_husky : {
+      project_name: 'testing',
+      files: ['app/**/*.js']
     },
 
     // RUNS JASMINE SPECS IN HEADLESS PHANTOM

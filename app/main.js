@@ -3,7 +3,7 @@ require(['require_config'],function(){
   require([
     'app',
 
-    'apps/_entities/header',
+    'apps/_entities/menu',
     'apps/_entities/search',
     'apps/_entities/pages',
     'apps/_entities/posts',
@@ -16,7 +16,7 @@ require(['require_config'],function(){
     'apps/_common/controller/helper_functions',
     'apps/_common/jquery/helper_functions',
 
-    'apps/header/header_app',
+    'apps/menu/menu_app',
     'apps/pages/pages_app',
     'apps/users/users_app',
     'apps/posts/posts_app',

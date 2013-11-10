@@ -2,13 +2,13 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _menu = require('text!apps/header/list/templates/menu.html');
-  var _menuLink = require('text!apps/header/list/templates/menu-link.html');
-  var _search = require('text!apps/header/list/templates/search.html');
-  var _login = require('text!apps/header/list/templates/login.html');
-  var _header = require('text!apps/header/list/templates/header.html');
+  var _menu = require('text!apps/menu/list/templates/menu.html');
+  var _menuLink = require('text!apps/menu/list/templates/menu-link.html');
+  var _search = require('text!apps/menu/list/templates/search.html');
+  var _login = require('text!apps/menu/list/templates/login.html');
+  var _header = require('text!apps/menu/list/templates/header.html');
 
-  return Moonrakr.module('HeaderApp.List', function(List){
+  return Moonrakr.module('Menu.List', function(List){
 
     List.MenuLink = Marionette.ItemView.extend({
       template: Handlebars.compile( _menuLink ),

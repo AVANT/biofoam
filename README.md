@@ -1,26 +1,32 @@
 Avant Documentation
 ===================
 
+Getting Started
+---------------
+- install node and nvm
+- install grunt-cli
+- run `npm install`
+- run `grunt`
 
-CURRENT TASK
-------------
-- in imageUploader, the upload button should change text and functionality when there is a image sitting in the dock
+
+docs/
+-----
+Created with the use of the node module Docco-Husky
 
 
-SOME TASKS
----------
-- learn to save images from the uploader into localstorage
-- leanr to resert those images back into the uploader in the div that shows the current image
-- add "current image" div into the image uploader common view
-- fix the bug that the newest created user does not show up on the list view without refresh
-- revist how form errors are handled on simple input forms
-- revist how form errors are handled in the subforms (redactor, imageUpload, etc)
+NOTE: TODO LIST IN ASANA
+------------------------
 
-NOTE: FULL TASKS LIST IN ASANA
 
+Dev Structure
+-------------
+This project was built on top of B. Cedric Cogell's boiler plate "Sacrum" and "Coccyx" (small variations between the two).
+
+The README for those projects are available below...
 
 
 * * *
+
 Coccyx Documentation
 ====================
 

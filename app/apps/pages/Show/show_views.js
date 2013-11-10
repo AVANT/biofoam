@@ -10,9 +10,6 @@ define(function(require){
 
     Show.Page = Marionette.ItemView.extend({
       template: Handlebars.compile( _page ),
-      initialize: function(){
-        console.log( this.model );
-      }
     });
 
     Show.Layout = Marionette.Layout.extend({

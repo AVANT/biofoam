@@ -1,9 +1,9 @@
 {
-  "name": "sacrum",
-  "version": "0.0.0",
-  "description": "Frontend boilerplate built in marionette",
+  "name": "Moonrakr",
+  "version": "0.0.A",
+  "description": "Thick Javascript Application for web project code named 'Moonrakr'",
   "main": "Gruntfile.js",
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.0",
@@ -27,7 +27,8 @@
     "grunt-contrib-stylus": "~0.6.0",
     "grunt-concurrent": "~0.3.0",
     "grunt-contrib-handlebars": "~0.5.10",
-    "grunt-sass": "~0.8.0"
+    "grunt-sass": "~0.8.0",
+    "docco-husky": "~0.3.3"
   },
   "engines": {
     "node": ">=0.8.0"

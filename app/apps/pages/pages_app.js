@@ -32,7 +32,6 @@ define(function(require){
     });
 
     Moonrakr.on('pages:show', function(id){
-      console.log('pages show fired');
       Moonrakr.navigate('pages/' + id);
       API.showPage(id);
     });

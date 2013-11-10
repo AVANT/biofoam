@@ -36,8 +36,6 @@ define(function(require){
         var page = new Entities.Page({id: id});
         var defer = $.Deferred();
 
-        console.log( page );
-
         page.fetch({
           success: function(data){
             defer.resolve(data);

@@ -1,25 +1,25 @@
 define(function(require){
 
   var Moonrakr = require("app");
-  require('apps/header/list/list_controller');
+  require('apps/menu/list/list_controller');
 
-  return Moonrakr.module('HeaderApp', function(HeaderApp){
+  return Moonrakr.module('Menu', function(Menu){
     this.startWithParent = true;
 
     var API = {
       listHeader: function(){
-        HeaderApp.List.Controller.listHeader();
+        Menu.List.Controller.listHeader();
       },
       setHeaderText: function(str){
-        HeaderApp.List.Controller.setHeaderText(str);
+        Menu.List.Controller.setHeaderText(str);
       }
     };
 
     Moonrakr.commands.setHandler('set:active:header', function(name){
-      Moonrakr.HeaderApp.List.Controller.setActiveHeader(name);
+      Moonrakr.Menu.List.Controller.setActiveHeader(name);
     });
 
-    HeaderApp.on("start", function(){
+    Menu.on("start", function(){
       API.listHeader();
     });
 

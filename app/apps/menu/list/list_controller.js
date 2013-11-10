@@ -1,9 +1,9 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/header/list/list_views');
+  require('apps/menu/list/list_views');
 
-  return Moonrakr.module('HeaderApp.List', function(List){
+  return Moonrakr.module('Menu.List', function(List){
 
     List.Controller = {
       // api call

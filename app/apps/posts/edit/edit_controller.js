@@ -62,15 +62,24 @@ define(function(require){
             });
 
             // SAVE HANDLER //
-            // layoutView.on('form:submit', function(data){
-              // if(post.save(data)){
             layoutView.on('form:submit', function(data){
-              if(post.save(data)){
-                Moonrakr.trigger('post:show', post.get('id'));
-              }
-              else {
-                layoutView.triggerMethod('form:data:invalid', post.validationError);
-              }
+
+              post.save(data, {
+                success: function(){
+                  Moonrakr.trigger('post:show', post.get('id'));
+                },
+                error: function(){
+                  // TODO set and handle validation errors
+                  layoutView.triggerMethod('form:data:invalid', post.validationError);
+                }
+              });
+
+              // if(post.save(data)){
+              //   Moonrakr.trigger('post:show', post.get('id'));
+              // }
+              // else {
+              //   layoutView.triggerMethod('form:data:invalid', post.validationError);
+              // }
             });
 
           }
