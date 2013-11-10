@@ -1,25 +1,21 @@
-Avant Documentation
-===================
+# Avant Documentation
 
-Getting Started
----------------
+## Getting Started
 - install node and nvm
 - install grunt-cli
 - run `npm install`
 - run `grunt`
 
 
-docs/
------
+### docs/
 Created with the use of the node module Docco-Husky
 
 
-NOTE: TODO LIST IN ASANA
-------------------------
+### Current Developement
+All feature and functionality development is tracked in Moonrakr's Asana Project
 
 
-Dev Structure
--------------
+### Development Environment
 This project was built on top of B. Cedric Cogell's boiler plate "Sacrum" and "Coccyx" (small variations between the two).
 
 The README for those projects are available below...
