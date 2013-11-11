@@ -1,9 +1,10 @@
 {
   "name": "Moonrakr",
-  "version": "0.0.A",
+  "version": "0.0.0",
   "description": "Thick Javascript Application for web project code named 'Moonrakr'",
   "main": "Gruntfile.js",
-  "dependencies": {
+  "dependencies":{},
+  "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.0",

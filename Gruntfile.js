@@ -1,7 +1,5 @@
 'use strict';
 
-// var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
@@ -15,8 +13,6 @@ module.exports = function (grunt){
       grunt.loadNpmTasks(str);
     }
   });
-
-  grunt.loadNpmTasks('grunt-docco-husky');
 
 	// CONFIGURABLE PATHS
   var sacrumConfig = {
@@ -39,14 +35,14 @@ module.exports = function (grunt){
           atBegin: true,
         }
       },
-      // sass: {
-      //   files: ['<%= sacrum.app %>/styles/**/*.scss'],
-      //   tasks: ['sass:dev']
-      // },
-      compass: {
+      sass: {
         files: ['<%= sacrum.app %>/styles/**/*.scss'],
-        tasks: ['compass:dev']
+        tasks: ['sass:dev']
       },
+      // compass: {
+      //   files: ['<%= sacrum.app %>/styles/**/*.scss'],
+      //   tasks: ['compass:dev']
+      // },
       copyAssets: {
         files: ['<%= sacrum.app %>/assets/**/*.{png,jpg,jepg,gif,webp,svg,html,eot,ttf,woff}'],
         tasks: ['copy:assets2tmp']
@@ -91,8 +87,7 @@ module.exports = function (grunt){
           hostname: 'localhost',
           middleware: function (connect) {
             return [
-              // lrSnippet,
-              mountFolder(connect, '.tmp'),
+              mountFolder(connect, '.tmp')
             ];
           }
         }
@@ -103,8 +98,6 @@ module.exports = function (grunt){
           hostname: 'localhost',
           middleware: function (connect) {
             return [
-              // lrSnippet,
-              // mountFolder(connect, '<%= sacrum.dist %>')
               mountFolder(connect, 'dist')
             ];
           }
@@ -483,8 +476,8 @@ module.exports = function (grunt){
     concurrent: {
       devCompile: {
         tasks: [
-          // 'sass:dev',
-          'compass:dev',
+          'sass:dev',
+          // 'compass:dev',
           'handlebars:dev'
         ]
       },
