@@ -17,7 +17,9 @@ define(function(require){
         imageCurrentContainer: '#image-current-container'
       },
       events: {
-        'click button.js-crop': 'cropClicked'
+        'click button.js-crop': 'cropClicked',
+        'dragover #dragPad': 'dragoverEvent',
+        'drop #dragPad': 'droppedEvent'
       },
 
       onShow: function(){
@@ -92,6 +94,17 @@ define(function(require){
       cropClicked: function(e){
         e.preventDefault();
         this.cropHandler();
+      },
+
+      dragoverEvent: function(e){
+        // console.log('draging over me');
+        // e.preventDefault();
+        // e = e.originalEvent;
+        // e.dataTransfer.dropEffect = 'copy';
+      },
+
+      dropEvent: function(e){
+        console.log('you dropped something on me');
       },
 
       cropHandler: function(){
