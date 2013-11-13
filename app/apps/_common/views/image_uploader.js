@@ -18,31 +18,46 @@ define(function(require){
       },
       events: {
         'click button.js-crop': 'cropClicked',
+        'click #dragPad': 'padClicked',
         'dragover #dragPad': 'dragoverEvent',
-        'drop #dragPad': 'droppedEvent'
+        'drop #dragPad': 'droppedEvent',
+        'change .image-input': 'inputChanged'
       },
 
-      onShow: function(){
-        this.initImageLoad();
+      padClicked: function(e){
+        this.$el.find('.image-input').trigger('click');
       },
 
-      initImageLoad: function(){
-        var that = this;
-        this.$('#image-input').get(0).onchange = function(e){
-          loadImage(
-            e.target.files[0],
-            function(img){
-              that.replaceResults(img);
-              that.imagePreviewed = true;
-              that.setImageUploadLabel();
-              that.initJcrop();
-            },
-            { // OPTIONS
-              maxWidth: 600,
-              canvas: true
-            }
-          );
-        }
+      inputChanged: function(e){
+        var self = this;
+        this.loadImage(e, self);
+      },
+
+      loadImage: function(e, self){
+        var self = self;
+
+        e.preventDefault();
+        e = e.originalEvent;
+
+        var target = e.dataTransfer || e.target;
+        var file = target && target.files && target.files[0];
+        var options = {
+          maxWidth: 600,
+          canvas: true
+        };
+
+        if(!file){ return; }
+
+        loadImage(file,
+          function(img){
+            self.replaceResults(img);
+            self.imagePreviewed = true;
+            self.setImageUploadLabel();
+            self.initJcrop();
+          },
+          options
+        );
+
       },
 
       initJcrop: function(){
@@ -97,14 +112,17 @@ define(function(require){
       },
 
       dragoverEvent: function(e){
-        // console.log('draging over me');
-        // e.preventDefault();
-        // e = e.originalEvent;
-        // e.dataTransfer.dropEffect = 'copy';
+        e.preventDefault();
+        // get the orig event that has the dataTransfer option
+        e = e.originalEvent;
+        // allows the user to drop an image
+        e.dataTransfer.dropEffect = 'copy';
       },
 
-      dropEvent: function(e){
-        console.log('you dropped something on me');
+      droppedEvent: function(e){
+        var self = this;
+        e.preventDefault();
+        this.loadImage(e, self);
       },
 
       cropHandler: function(){
