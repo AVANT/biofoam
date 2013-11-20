@@ -1,0 +1,131 @@
+@import "typography/extensions.scss";
+@import "typography/mixins";
+/*
+# Typography
+All typographical elements.
+
+
+```
+
+  <h1>Header One</h1>
+  <h2>Header Two</h2>
+  <h3>Header Three</h3>
+  <h4>Header Four</h4>
+  <h5>Header Five</h5>
+  <h6>Header Six</h6>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, sit, culpa ducimus rerum quidem tenetur excepturi repudiandae dicta veniam maxime sed esse ea necessitatibus magnam deleniti! Minus, iure, commodi necessitatibus reprehenderit distinctio nisi tempora voluptatibus maiores neque pariatur eveniet earum ullam fugit cum recusandae. Ipsa sit eum nesciunt veniam labore.</p>
+
+  <a href="#">This is a link.</a>
+
+  // need to add attribution here, cite tag is incorrect
+
+  <blockquote>This is a blockquote</blockquote>
+
+  <ul>
+    <li>Unordered List Item One</li>
+    <li>Unordered List Item Two</li>
+    <li>Unordered List Item Three</li>
+  </ul>
+
+  <ol>
+    <li>Ordered List Item One</li>
+    <li>Ordered List Item Two</li>
+    <li>Ordered List Item Three</li>
+  </ol>
+
+  <pre>This is some code.</pre>
+
+  <span class="icon-paper">something else</span><br>
+  <span class="icon-thread">Thread</span><br>
+  <span class="icon-pen">Something else</span><br>
+  <span class="icon-author">Author</span>
+
+```
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote{
+  font-family: $primary-font;
+}
+
+h1{
+  @include font(82);
+}
+
+h2{
+  @include font(40);
+}
+
+h3{
+  @include font(27);
+}
+
+h4{
+  @include font(18);
+}
+
+
+blockquote{
+  &:before{
+    content: open-quote;
+  }
+  &:after{
+    content: close-quote;
+  }
+}
+
+blockquote{
+  color: $secondary-highlight;
+  font-size: 2em;
+}
+
+@include selection {
+    color: #FFFFFF;
+    background: $primary-highlight;
+}
+
+
+@include font-face("icomoon", font-files("icomoon.eot", "icomoon.eot?#iefix", "icomoon.ttf", "iconmoon.woff", "icomoon.svg#icomoon"));
+
+[class*="icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//=TODO (Greg) remove arbitrary font size from this
+
+[class*="icon-"]:before{
+  // =TODO (Greg)changes color dynamically based on background color set
+  font-size: 3em;
+}
+
+.icon-tag:before {
+  content: "\e600";
+}
+.icon-paper:before {
+  content: "\e601";
+}
+.icon-thread:before {
+  content: "\e602";
+}
+.icon-pen:before {
+  content: "\e603";
+}
+.icon-author:before {
+  content: "\e605";
+}

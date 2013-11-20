@@ -36,7 +36,7 @@ module.exports = function (grunt){
         }
       },
       sass: {
-        files: ['<%= sacrum.app %>/styles/**/*.scss'],
+        files: ['<%= sacrum.app %>/**/*.scss'],
         tasks: ['sass:dev']
       },
       // compass: {
@@ -80,6 +80,25 @@ module.exports = function (grunt){
       options: {
         port: 8000,
         hostname: 'localhost'
+      },
+      jsdocs: {
+        options:{
+          middleware: function (connect) {
+            return [
+              mountFolder(connect, 'jsdocs')
+            ];
+          }
+        }
+      },
+      styleguide: {
+        options:{
+          middleware: function (connect) {
+            return [
+              mountFolder(connect, 'docs'),
+              mountFolder(connect, '.tmp/css/')
+            ];
+          }
+        }
       },
       tmp: {
         options: {
@@ -127,6 +146,9 @@ module.exports = function (grunt){
       },
       testBrowser: {
         path: 'http://localhost:<%= connect.testBrowser.options.port %>/_SpecRunner.html'
+      },
+      jsdocs: {
+        path: 'http://localhost:<%= connect.options.port %>/jsdocs/index.html'
       }
     },
 
@@ -163,7 +185,8 @@ module.exports = function (grunt){
           sourceComments: 'normal'
         },
         files: {
-          '.tmp/css/main.css': '<%= sacrum.app %>/styles/main.scss'
+          '.tmp/css/main.css': '<%= sacrum.app %>/styles/main.scss',
+          '.tmp/css/vendor.css': '<%= sacrum.app %>/styles/vendor/vendor.scss'
         }
       },
       dist: {
@@ -472,6 +495,16 @@ module.exports = function (grunt){
       }
     },
 
+    // This task can run commands thru a shell (bash)
+    shell: {
+      generate_js_docs:{
+        options: {
+          stdout: true
+        },
+        command: './node_modules/.bin/docco-husky app'
+      }
+    },
+
     // RUN TASKS CONCURRENTLY
     concurrent: {
       devCompile: {
@@ -513,6 +546,23 @@ module.exports = function (grunt){
    // AUTHORING TASKS //
   /////////////////////
 
+  grunt.registerTask('compile:jsdocs',[
+    'shell:generate_js_docs'
+  ]);
+
+  grunt.registerTask('serve:jsdocs',[
+    'connect:jsdocs',
+    'open:jsdocs',
+    'watch'
+  ]);
+
+  grunt.registerTask('serve:styleguide',[
+    'dev',
+    'connect:styleguide',
+    'watch'
+  ]);
+
+
   grunt.registerTask('dev',[
     'clean:tmp',
     'concurrent:devCompile',
@@ -527,6 +577,21 @@ module.exports = function (grunt){
   ]);
 
   grunt.registerTask('default',['dev:server']);
+
+  grunt.registerTask('test',[
+    // ADD JS LINT CHECK SOMEWHERE
+    'concurrent:devCopy',
+    'connect:test',
+    'jasmine:test'
+  ]);
+
+  grunt.registerTask('test:server',[
+    'concurrent:devCopy',
+    'jasmine:test:build',
+    'connect:testBrowser',
+    'open:testBrowser',
+    'watch'                       // note: livereload untested here
+  ]);
 
   grunt.registerTask('build',[
     'clean:dist',               // clear previous build
@@ -549,19 +614,5 @@ module.exports = function (grunt){
     'watch:build'                // note: no livereload support here
   ]);
 
-  grunt.registerTask('test',[
-    // ADD JS LINT CHECK SOMEWHERE
-    'concurrent:devCopy',
-    'connect:test',
-    'jasmine:test'
-  ]);
-
-  grunt.registerTask('test:server',[
-    'concurrent:devCopy',
-    'jasmine:test:build',
-    'connect:testBrowser',
-    'open:testBrowser',
-    'watch'                       // note: livereload untested here
-  ]);
 
 };

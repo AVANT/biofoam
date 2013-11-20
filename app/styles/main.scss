@@ -1,17 +1,9 @@
   ///////////////////////////////
- // VENDOR STYLESHEET IMPORTS //
-///////////////////////////////
-@import "vendor/redactor";
-@import "vendor/jquery.jcrop";
-@import "vendor/bootstrap";
-
-
-  ///////////////////////////////
  // MODULE STYLESHEET IMPORTS //
 ///////////////////////////////
 
-// @import 'apps/header';
-// @import 'apps/footer';
+@import "config";
+@import "typography";
 
 
   //////////////////////
@@ -22,9 +14,11 @@
 
 body {
   font-family: 'raleway', 'helvetica', sans-serif;
-  // background-color: rgb(0, 255, 128);
 }
 
-body.modal-open {
-  margin-right: 0;
+
+@import "../apps/posts/_common/styles/hellyes";
+
+*{
+    @include box-sizing(border-box);
 }
