@@ -2,8 +2,8 @@
 module.exports = {
   devCompile: {
     tasks: [
-      // 'sass:dev',
-      'compass:dev',
+      'sass:dev',
+      // 'compass:dev',
       'handlebars:dev'
     ]
   },
