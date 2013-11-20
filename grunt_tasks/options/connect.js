@@ -1,3 +1,7 @@
+var mountFolder = function (connect, dir) {
+  return connect.static(require('path').resolve(dir));
+};
+
 module.exports = {
   options: {
     port: 8000,
@@ -16,7 +20,7 @@ module.exports = {
     options:{
       middleware: function (connect) {
         return [
-          mountFolder(connect, 'docs'),
+          mountFolder(connect, 'styleguide'),
           mountFolder(connect, '.tmp/css/')
         ];
       }

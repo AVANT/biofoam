@@ -1,10 +1,6 @@
 'use strict';
 
-// Utility Functions
-
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
+// Utility Function
 
 function loadConfig(path) {
   var glob = require('glob');

@@ -8,5 +8,8 @@ module.exports = {
   },
   jsdocs: {
     path: 'http://localhost:<%= connect.options.port %>/jsdocs/index.html'
+  },
+  styleguide: {
+    path: 'http://localhost:<%= connect.options.port %>/styleguide/index.html'
   }
 }

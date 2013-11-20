@@ -26,7 +26,7 @@ module.exports = {
     tasks: ['copy:scripts2tmp']
   },
   copyTemplates:{
-    files: ['<%= app %/apps/**/*.html>'],
+    files: ['<%= app %>/apps/**/*.html'],
     tasks: ['copy:templates2tmp']
   },
   copyStyles: {

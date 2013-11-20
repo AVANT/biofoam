@@ -7,7 +7,15 @@ define(function(require){
 
   return Moonrakr.module('Comments.Show.ForPost', function(ForPost){
 
-    ForPost.Comment = Moonrakr.Comments.Show.Common.Views.Comment.extend();
+    ForPost.Comment = Moonrakr.Comments.Show.Common.Views.Comment.extend({
+      events: {
+        'click .user-information': 'userClicked'
+      },
+      userClicked: function(e){
+        e.preventDefault();
+        Moonrakr.trigger('user:show', this.model.get('userId'));
+      }
+    });
 
     ForPost.MissingComment = Moonrakr.Comments.Show.Common.Views.MissingComment.extend();
 
