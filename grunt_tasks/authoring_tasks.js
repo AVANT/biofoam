@@ -4,17 +4,16 @@ module.exports = function(grunt) {
    // AUTHORING TASKS //
   /////////////////////
 
-  grunt.registerTask('compile:jsdocs',[
+  grunt.registerTask('jsdocs:compile',[
     'shell:generate_js_docs'
   ]);
 
-  grunt.registerTask('serve:jsdocs',[
+  grunt.registerTask('jsdocs:server',[
     'connect:jsdocs',
-    'open:jsdocs',
     'watch'
   ]);
 
-  grunt.registerTask('serve:styleguide',[
+  grunt.registerTask('styleguide:server',[
     'dev',
     'connect:styleguide',
     'watch'
