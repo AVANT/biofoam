@@ -30,7 +30,8 @@
     "grunt-contrib-handlebars": "~0.5.10",
     "grunt-sass": "~0.8.0",
     "docco-husky": "~0.3.3",
-    "grunt-shell": "~0.6.0"
+    "grunt-shell": "~0.6.0",
+    "glob": "~3.2.7"
   },
   "engines": {
     "node": ">=0.8.0"
