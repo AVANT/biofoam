@@ -502,6 +502,17 @@ module.exports = function (grunt){
           stdout: true
         },
         command: './node_modules/.bin/docco-husky app'
+      },
+      deploy: {
+        command: function(){
+          var env = grunt.option( "env" );
+          var server_target = "dev-server-name:/path/to/site/"
+          if ( env === "production" ){
+            server_target = "production-server-name:/path/to/site/"
+          }
+          grunt.log.writeln( "deploying to " + env + ": " + server_target );
+          return "rsync -rvc --rsync-path='umask 002 && rsync' dist/" +  server_target;
+        }
       }
     },
 
@@ -612,6 +623,10 @@ module.exports = function (grunt){
     'connect:build',
     'open:server',
     'watch:build'                // note: no livereload support here
+  ]);
+
+  grunt.registerTask('deploy', [
+    'shell:deploy'
   ]);
 
 
