@@ -37,7 +37,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default',['dev:server']);
 
   grunt.registerTask('test',[
-    // ADD JS LINT CHECK SOMEWHERE
+    // add jshint somewhere
     'concurrent:devCopy',
     'connect:test',
     'jasmine:test'

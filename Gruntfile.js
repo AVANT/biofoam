@@ -35,7 +35,7 @@ module.exports = function (grunt){
     };
 
   // load in all the task options
-  grunt.util._.extend(config, loadConfig('./tasks/options/'));
+  grunt.util._.extend(config, loadConfig('./grunt_tasks/options/'));
 
   // configure
   grunt.initConfig( config );
