@@ -19,8 +19,13 @@ body {
 }
 
 
+// testing import from within app folders
 @import "../apps/posts/_common/styles/hellyes";
 
 *{
     @include box-sizing(border-box);
 }
+
+
+
+@import "_testing_post";

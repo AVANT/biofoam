@@ -1,0 +1,27 @@
+/*
+
+# Post
+
+Here I'm going to create a base post format and markdown.
+
+```
+
+<article class="post">
+  <h1>Post Heading</h1>
+  <h2>Sub Heading</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, facere, earum, quaerat cum id ut doloremque quos fuga error illum consectetur unde nihil cumque voluptatibus placeat excepturi nostrum aliquam fugiat.</p>
+</article>
+
+```
+
+*/
+
+.post {
+  border: 1px solid grey;
+  h1 {
+    text-transform: uppercase;
+  }
+  p {
+    color: dark-grey;
+  }
+}
