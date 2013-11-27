@@ -1,3 +1,24 @@
+/**
+# Users.New SubApp
+
+The users.new subapp contains both the controller and view constructors necessary to display a user's detail page in the frontend.
+
+@module users
+@submodule users.new
+@main
+**/
+
+/**
+# Controller
+
+The users.new.controller creates a user's layout view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@namespace users.new
+@requires moonrakr, users.new.views
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

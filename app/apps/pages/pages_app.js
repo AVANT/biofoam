@@ -1,3 +1,19 @@
+/**
+# Pages App
+
+The posts app provides all the url routing and event routing to the subapps.
+
+Routes:
+- /pages/:id
+- /pages/:id/edit
+
+Subapps:
+- Edit
+- Show
+
+@module Pages
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

@@ -4,11 +4,9 @@ module.exports = function(grunt) {
    // AUTHORING TASKS //
   /////////////////////
 
-  grunt.registerTask('jsdocs:compile',[
-    'shell:generate_js_docs'
-  ]);
 
   grunt.registerTask('jsdocs:server',[
+    'yuidoc:compile',
     'connect:jsdocs',
     'watch'
   ]);

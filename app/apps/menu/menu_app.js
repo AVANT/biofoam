@@ -1,3 +1,14 @@
+/**
+# Menu App
+
+The menu app creates the persistant header layout which includes all the search functionality.
+
+Subapps:
+- List
+
+@module Menu
+**/
+
 define(function(require){
 
   var Moonrakr = require("app");

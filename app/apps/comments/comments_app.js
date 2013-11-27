@@ -1,3 +1,22 @@
+/**
+# Comments App
+
+The comments app provides an API for other apps to request comment layout views.
+
+Subapps:
+- List
+  - _common
+  - ForPost
+  - ForUser
+- Show
+  - _common
+  - ForPost
+  - ForUser
+- New
+
+@module Comments
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

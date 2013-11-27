@@ -1,3 +1,8 @@
+/**
+@module users
+@submodule users.show
+**/
+
 define(function(require){
 
   var Handlebars = require('handlebars');
@@ -9,16 +14,34 @@ define(function(require){
 
   return Moonrakr.module('UsersApp.Show', function(Show){
 
+    /**
+    @class MissingPost
+    @constructor
+    @namespace users.show
+    @requires handlebars, missing_user.html
+    **/
     Show.MissingPost = Marionette.ItemView.extend({
       tagName: 'div',
       template: Handlebars.compile(_missingUser)
     });
 
+    /**
+    @class User
+    @constructor
+    @namespace users.show
+    @requires handlebars, user.html
+    **/
     Show.User = Marionette.ItemView.extend({
       tagName: 'div',
       template: Handlebars.compile(_user)
     });
 
+    /**
+    @class CMSPanel
+    @constructor
+    @namespace users.show
+    @requires handlebars, cms_panel.html
+    **/
     Show.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
       authLevelRequired: 3, // 3=editors
       template: Handlebars.compile(_cms_panel),
@@ -31,6 +54,12 @@ define(function(require){
       }
     });
 
+    /**
+    @class UserLayout
+    @constructor
+    @namespace users.show
+    @requires handlebars, cms_panel.html
+    **/
     Show.UserLayout = Marionette.Layout.extend({
       template: Handlebars.compile( _userLayout ),
       regions: {

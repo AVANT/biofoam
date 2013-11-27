@@ -1,3 +1,25 @@
+/**
+# Users App
+
+The users app provides all the url routing and event routing to the subapps.
+
+Routes:
+- /users
+- /users/new
+- /users/:id
+- /users/:id/edit
+
+Subapps:
+- _common
+- Edit
+- List
+- New
+- Show
+
+@module users
+@requires moonrakr, users.new, users.list, users.show, users.edit
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

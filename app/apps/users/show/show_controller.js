@@ -1,3 +1,24 @@
+/**
+# Users.Show SubApp
+
+The users.show subapp contains both the controller and view constructors necessary to display a user's detail page in the frontend.
+
+@module users
+@submodule users.show
+@main
+**/
+
+/**
+# Controller
+
+The users.show.controller creates a user's layout view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@namespace users.show
+@requires moonrakr, users.show.views
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

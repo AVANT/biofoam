@@ -17,6 +17,16 @@ module.exports = {
   //   files: ['<%= app %>/styles/**/*.scss'],
   //   tasks: ['compass:dev']
   // },
+  yuidoc: {
+    files: ['<%= app %>/**/*.js'],
+    tasks: ['yuidoc:compile'],
+  },
+  jsdocs: {
+    files: ['jsdocs/files**/*.html'],
+    options: {
+      livereload: true
+    }
+  },
   copyAssets: {
     files: ['<%= app %>/assets/**/*.{png,jpg,jepg,gif,webp,svg,html,eot,ttf,woff}'],
     tasks: ['copy:assets2tmp']

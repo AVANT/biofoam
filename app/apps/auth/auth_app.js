@@ -1,3 +1,22 @@
+/**
+# Auth App
+
+The auth app provides url routing and event routing to corresponding subapps.  Also, the auth app maintains the current logged in user info for other apps to request thru the auth api API.
+
+Routes:
+- /login
+- /signup
+
+Subapps:
+- Login
+- Signup
+
+API:
+- get the current user permission level (change to return the whole user object which is more 'restful')
+
+@module Auth
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');
