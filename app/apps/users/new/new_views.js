@@ -1,6 +1,7 @@
 /**
 @module users
 @submodule users.new
+@namespace users.new
 @main
 **/
 define(function(require){
@@ -15,7 +16,6 @@ define(function(require){
     /**
     @class User
     @constructor
-    @namespace users.new
     **/
     New.User = Moonrakr.UsersApp.Common.Views.Form.extend({
       templateHelpers: {
@@ -27,7 +27,6 @@ define(function(require){
     /**
     @class ImageUploader
     @constructor
-    @namespace users.new
     **/
     New.ImageUploader = Moonrakr.Common.Views.ImageUpload.extend();
 

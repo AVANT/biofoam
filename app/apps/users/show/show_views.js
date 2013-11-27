@@ -1,6 +1,7 @@
 /**
 @module users
 @submodule users.show
+@namespace users.show
 **/
 
 define(function(require){
@@ -17,8 +18,6 @@ define(function(require){
     /**
     @class MissingPost
     @constructor
-    @namespace users.show
-    @requires handlebars, missing_user.html
     **/
     Show.MissingPost = Marionette.ItemView.extend({
       tagName: 'div',
@@ -28,8 +27,6 @@ define(function(require){
     /**
     @class User
     @constructor
-    @namespace users.show
-    @requires handlebars, user.html
     **/
     Show.User = Marionette.ItemView.extend({
       tagName: 'div',
@@ -39,8 +36,6 @@ define(function(require){
     /**
     @class CMSPanel
     @constructor
-    @namespace users.show
-    @requires handlebars, cms_panel.html
     **/
     Show.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
       authLevelRequired: 3, // 3=editors
@@ -57,8 +52,6 @@ define(function(require){
     /**
     @class UserLayout
     @constructor
-    @namespace users.show
-    @requires handlebars, cms_panel.html
     **/
     Show.UserLayout = Marionette.Layout.extend({
       template: Handlebars.compile( _userLayout ),

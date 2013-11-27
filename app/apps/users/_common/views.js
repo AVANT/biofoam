@@ -1,3 +1,13 @@
+/**
+# Users.Common.Views SubApp
+
+This subapp provides base views that can be used across all the users subapps.
+
+@module users
+@submodule users.common.views
+@namespace users.common.views
+**/
+
 define(function(require){
 
   require('bootbox');
@@ -8,6 +18,10 @@ define(function(require){
 
   return Moonrakr.module('UsersApp.Common.Views', function(Views){
 
+    /**
+    @class Form
+    @constructor
+    **/
     Views.Form = Marionette.Layout.extend({
       confirmDelete: 'Are you sure you want to delete this?',
       template: Handlebars.compile( _userForm ),

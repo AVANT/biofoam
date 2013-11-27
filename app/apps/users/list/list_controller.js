@@ -1,3 +1,24 @@
+/**
+# Users.List SubApp
+
+The users.list subapp contains both the controller and view constructors necessary to create a user list layout that gets displayed on the web app.
+
+@module users
+@submodule users.list
+@main
+**/
+
+/**
+# Controller
+
+The users.list.controller creates a user's list layout view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@namespace users.list
+@requires moonrakr, users.list.views
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

@@ -9,14 +9,8 @@ Routes:
 - /posts/:id
 - /posts/:id/edit
 
-Subapps:
-- _common
-- Edit
-- List
-- New
-- Show
-
-@module Posts
+@module posts
+@requires moonrakr, posts.new, posts.list, posts.show, posts.edit
 **/
 
 define(function(require){

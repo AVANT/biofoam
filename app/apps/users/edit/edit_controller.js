@@ -1,3 +1,24 @@
+/**
+# Users.Edit SubApp
+
+The users.edit subapp contains both the controller and view constructors necessary to display a user's edit page and handle the CMS events.
+
+@module users
+@submodule users.edit
+@namespace users.edit
+@main
+**/
+
+/**
+# Controller
+
+The users.edit.controller creates a user's edit view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@requires moonrakr, users.edit.views, bootbox
+**/
+
 define(function(require){
 
   var bootbox = require('bootbox');

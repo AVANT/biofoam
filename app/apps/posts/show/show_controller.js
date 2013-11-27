@@ -1,3 +1,23 @@
+/**
+# Posts.Show Subapp
+
+The posts.show subapp contains both the controller and view constructors necessary to display a post's detail page on the web app
+
+@module posts
+@submodule posts.show
+@namespace posts.show
+**/
+
+/**
+# Controller
+
+The posts.show.controller creates a post's layout view, requests the post's comments, and display the whole layout in moonrakr.mainRegion
+
+@class controller
+@static
+@requires moonrakr, posts.show.views
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');

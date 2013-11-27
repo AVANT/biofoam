@@ -1,3 +1,10 @@
+/**
+@module posts
+@submodule posts.show
+@namespace posts.show
+@requires handlebars
+**/
+
 define(function(require){
 
   var Handlebars = require('handlebars');
@@ -9,12 +16,22 @@ define(function(require){
 
   return Moonrakr.module('PostsApp.Show', function(Show){
 
-    Show.MissingPost = Moonrakr.Common.Views.ItemView.extend({
+    /**
+    @class MissingPost
+    @constructor
+    @requires missing_post.html
+    @extends common.views.itemview
+    **/
+    Show.MissingPost = Marionette.ItemView.extend({
       tagName: 'article',
       template: Handlebars.compile(_missingPost)
     });
 
-    Show.Post = Moonrakr.Common.Views.ItemView.extend({
+    /**
+    @class Post
+    @constructor
+    **/
+    Show.Post = Marionette.ItemView.extend({
       tagName: 'article',
       template: Handlebars.compile(_post)
     });

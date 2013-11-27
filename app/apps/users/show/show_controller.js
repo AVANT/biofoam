@@ -1,10 +1,11 @@
 /**
-# Users.Show SubApp
+# Users.Show Subapp
 
-The users.show subapp contains both the controller and view constructors necessary to display a user's detail page in the frontend.
+The users.show subapp contains both the controller and view constructors necessary to display a user's detail page on the web app.
 
 @module users
 @submodule users.show
+@namespace users.show
 @main
 **/
 
@@ -15,7 +16,6 @@ The users.show.controller creates a user's layout view and displays it in moonra
 
 @class controller
 @static
-@namespace users.show
 @requires moonrakr, users.show.views
 **/
 

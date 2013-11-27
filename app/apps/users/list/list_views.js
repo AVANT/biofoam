@@ -1,3 +1,9 @@
+/**
+@module users
+@submodule users.list
+@namespace users.list
+**/
+
 define(function(require){
 
   var Handlebars = require('handlebars');
@@ -7,7 +13,10 @@ define(function(require){
       _usersPanel = require('text!apps/users/list/templates/users_panel.html')
 
   return Moonrakr.module('UsersApp.List', function(List){
-
+    /**
+    @class User
+    @constructor
+    **/
     List.User = Marionette.ItemView.extend({
       tagName: 'div',
       template: Handlebars.compile( _user ),
@@ -20,11 +29,19 @@ define(function(require){
       }
     });
 
+    /**
+    @class Users
+    @constructor
+    **/
     List.Users = Marionette.CollectionView.extend({
       tagName: 'div',
       itemView: List.User
     });
 
+    /**
+    @class Layout
+    @constructor
+    **/
     List.Layout = Marionette.Layout.extend({
       template: Handlebars.compile( _usersLayout ),
       regions: {
@@ -33,6 +50,10 @@ define(function(require){
       }
     });
 
+    /**
+    @class CMSPanel
+    @constructor
+    **/
     List.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
       authLevelRequired: 3, // 3 = editors and admins
       template: Handlebars.compile( _usersPanel ),

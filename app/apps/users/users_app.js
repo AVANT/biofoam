@@ -9,13 +9,6 @@ Routes:
 - /users/:id
 - /users/:id/edit
 
-Subapps:
-- _common
-- Edit
-- List
-- New
-- Show
-
 @module users
 @requires moonrakr, users.new, users.list, users.show, users.edit
 **/

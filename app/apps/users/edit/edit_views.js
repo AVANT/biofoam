@@ -1,3 +1,9 @@
+/**
+@module users
+@submodule users.edit
+@namespace users.edit
+**/
+
 define(function(require){
 
   var Handlebars = require('handlebars');
@@ -7,6 +13,10 @@ define(function(require){
 
   return Moonrakr.module('UsersApp.Edit', function(Edit){
 
+    /**
+    @class User
+    @constructor
+    **/
     Edit.User = Moonrakr.UsersApp.Common.Views.Form.extend({
       templateHelpers: {
         submitText: 'Save User',
@@ -14,6 +24,10 @@ define(function(require){
       }
     });
 
+    /**
+    @class ImageUploader
+    @constructor
+    **/
     Edit.ImageUploader = Moonrakr.Common.Views.ImageUpload.extend();
 
   });
