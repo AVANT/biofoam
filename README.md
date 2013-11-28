@@ -3,14 +3,15 @@
 ## Getting Started
 - install node and nvm
 - install grunt-cli
-- run `npm install`
+- install bower
+- run `npm install && ./node_modules/bower/bin/bower install`
 - run `grunt`
 
 
 ### docs/
 Created with the use of the node module Docco-Husky
 
-
+bin
 ### Current Developement
 All feature and functionality development is tracked in Moonrakr's Asana Project
 
