@@ -32,15 +32,11 @@
     "docco-husky": "~0.3.3",
     "grunt-shell": "~0.6.0",
     "glob": "~3.2.7",
-    "grunt-contrib-yuidoc": "~0.5.0"
+    "grunt-contrib-yuidoc": "~0.5.0",
+    "bower": "~1.2.7"
   },
   "engines": {
     "node": ">=0.8.0"
   },
-  "author": "B. Cedric Cogell",
-  "docco_husky": {
-    "output_dir": "jsdocs",
-    "project_name": "Moonrakr",
-    "show_timestamp": true
-  }
+  "author": "B. Cedric Cogell"
 }

@@ -38,6 +38,28 @@ module.exports = {
     files: [
       {
         expand: true, dot: true, flatten: true,
+        cwd: 'bower_components',
+        src: [
+          'backbone/backbone.js',
+          'backbone.localstorage/backbone.localstorage.js',
+          'backbone.picky/backbone.picky.js',
+          'backbone.stickit/backbone.stickit.js',
+          'backbone.syphon/backbone.syphon.js',
+          'blueimp-load-image/js/*.js',
+          'bootbox/bootbox.js',
+          'handlebars/handlebars.js',
+          'jcrop/jcrop.js',
+          'jquery/jquery.js',
+          'marionette/lib/backbone.marionette.js',
+          'requirejs/require.js',
+          'spin/spin.js',
+          'text/text.js',
+          'underscore/underscore.js',
+        ],
+        dest: '.tmp/js/vendor'
+      },
+      {
+        expand: true, dot: true, flatten: true,
         cwd: 'vendor',
         src: 'js/require*.js',
         dest: '.tmp/js/'
