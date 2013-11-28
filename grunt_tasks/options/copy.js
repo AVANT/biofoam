@@ -42,17 +42,18 @@ module.exports = {
         src: [
           'backbone/backbone.js',
           'backbone.localstorage/backbone.localstorage.js',
-          'backbone.picky/backbone.picky.js',
+          'backbone.picky/lib/backbone.picky.js',
           'backbone.stickit/backbone.stickit.js',
           'backbone.syphon/backbone.syphon.js',
           'blueimp-load-image/js/*.js',
+          'bootstrap/dist/js/bootstrap.js',
           'bootbox/bootbox.js',
           'handlebars/handlebars.js',
-          'jcrop/jcrop.js',
+          'jcrop/js/jquery.Jcrop.js',
           'jquery/jquery.js',
           'marionette/lib/backbone.marionette.js',
           'requirejs/require.js',
-          'spin/spin.js',
+          'spinjs/spin.js',
           'text/text.js',
           'underscore/underscore.js',
         ],
@@ -61,13 +62,7 @@ module.exports = {
       {
         expand: true, dot: true, flatten: true,
         cwd: 'vendor',
-        src: 'js/require*.js',
-        dest: '.tmp/js/'
-      },
-      {
-        expand: true, dot: true, flatten: true,
-        cwd: 'vendor',
-        src: 'js/**/*.js',
+        src: 'Redactor/redactor/redactor.js',
         dest: '.tmp/js/vendor'
       },
       {
