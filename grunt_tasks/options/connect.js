@@ -58,8 +58,9 @@ module.exports = {
       port: 8002,
       middleware: function (connect) {
         return [
-          mountFolder(connect, 'test'),
-          mountFolder(connect, '.tmp'),
+        mountFolder(connect, '.'),
+          // mountFolder(connect, 'test'),
+          // mountFolder(connect, '.tmp'),
         ];
       }
     }

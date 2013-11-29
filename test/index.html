@@ -3,33 +3,24 @@
     <title>Moonrakr Tests</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="css/vendor/mocha.css">
-    <script src="js/vendor/mocha.js"></script>
-    <script src="js/vendor/chai.js"></script>
-    <script src="js/vendor/sinon.js"></script>
+    <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+    <script src="../bower_components/mocha/mocha.js"></script>
+    <script src="../bower_components/chai/chai.js"></script>
+    <script src="../bower_components/sinonjs/sinon.js"></script>
     <script>
       // setup.
       var expect = chai.expect;
-      mocha.setup('bdd');
+      mocha.setup({
+        ui:'bdd'
+      });
 
       // run tests on window load event.
-      window.onload = function(){
-        // mocha.run();
-      }
+      // window.onload = function(){
+      //   mocha.run();
+      // }
     </script>
 
-    <!-- use requirejs to load in my app here -->
-    <script data-main="js/main" src="js/vendor/require.js"></script>
-    <script data-main="test.config" src="js/vendor/require.js"></script>
-
-    <script>
-      // require(['app'], function(){
-      //   console.log('test');
-      //   var A = App || {};
-      //   console.log(A);
-      //   console.log(Moonrakr);
-      // });
-    </script>
+    <script data-main="spec/config" src="../bower_components/requirejs/require.js"></script>
 
     <!-- // <script src="spec/apps/entities/post.spec.js"></script> -->
 

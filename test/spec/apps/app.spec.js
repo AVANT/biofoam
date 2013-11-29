@@ -2,9 +2,9 @@ define(function(require){
 
   require('app');
 
-  describe('App', function(){
+  describe('Moonrakr App', function(){
     it('should exists', function(){
-      should.exist(app);
+      expect(Moonrakr).to.be.a('object');
     });
   });
 
