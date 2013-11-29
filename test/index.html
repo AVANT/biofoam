@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Moonrakr Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/vendor/mocha.css">
+    <script src="js/vendor/mocha.js"></script>
+    <script src="js/vendor/chai.js"></script>
+    <script src="js/vendor/sinon.js"></script>
+    <script>
+      // setup.
+      var expect = chai.expect;
+      mocha.setup('bdd');
+
+      // run tests on window load event.
+      window.onload = function(){
+        mocha.run();
+      }
+    </script>
+
+    <script src="spec/apps/entities/post.spec.js"></script>
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>

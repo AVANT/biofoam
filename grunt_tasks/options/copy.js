@@ -56,6 +56,10 @@ module.exports = {
           'spinjs/spin.js',
           'text/text.js',
           'underscore/underscore.js',
+          // for testing
+          'mocha/mocha.js',
+          'chai/chai.js',
+          'sinonjs/sinon.js'
         ],
         dest: '.tmp/js/vendor'
       },
@@ -65,19 +69,13 @@ module.exports = {
         src: 'Redactor/redactor/redactor.js',
         dest: '.tmp/js/vendor'
       },
+      // for testing
       {
         expand: true, dot: true, flatten: true,
-        cwd: 'vendor',
-        src: 'css/**/*.css',
+        cwd: 'bower_components',
+        src: 'mocha/mocha.css',
         dest: '.tmp/css/vendor'
       },
-      ,
-      {
-        expand: true, dot: true, flatten: true,
-        cwd: 'vendor',
-        src: 'css/**/*.scss',
-        dest: '.tmp/css/vendor'
-      }
     ]
   },
   // BUILD

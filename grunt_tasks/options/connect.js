@@ -53,6 +53,17 @@ module.exports = {
       port: 8001
     }
   },
+  testMocha: {
+    options: {
+      port: 8002,
+      middleware: function (connect) {
+        return [
+          mountFolder(connect, 'test'),
+          mountFolder(connect, '.tmp'),
+        ];
+      }
+    }
+  },
   testBrowser: {
     options: {
       port: 8002,

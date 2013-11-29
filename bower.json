@@ -33,6 +33,10 @@
     "jcrop": "~0.9.12",
     "blueimp-load-image": "~1.11.0",
     "requirejs": "~2.1.9",
-    "almond": "~0.2.7"
+    "almond": "~0.2.7",
+    "mocha": "~1.14.0",
+    "chai": "~1.8.1",
+    "sinon": "~1.7.3",
+    "sinonjs": "~1.7.3"
   }
 }

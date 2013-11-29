@@ -6,6 +6,7 @@ node_modules
 .sass-cache
 jsdocs
 bower_components
+.grunt
 
 # Compiled source #
 ###################

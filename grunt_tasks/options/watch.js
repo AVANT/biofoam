@@ -6,7 +6,8 @@ module.exports = {
     files: ['<%= app %>/assets/index.html'],
     tasks: ['open:server'],
     options: {
-      atBegin: true,
+      // atBegin: true,
+      atBegin: false,
     }
   },
   sass: {
@@ -47,10 +48,11 @@ module.exports = {
     files: ['vendor/**/*.js', 'vendor/**/*.css', 'vendor/**/*.scss'],
     tasks: ['copy:vendor2tmp']
   },
-  jasmine: {
-    files: ['<%= app %>/scripts/**/*.js', 'test/spec/**/*.js'],
-    tasks: ['test']
-  },
+  // TODO MAKE A MOCHA WATCH TASK
+  // jasmine: {
+  //   files: ['<%= app %>/scripts/**/*.js', 'test/spec/**/*.js'],
+  //   tasks: ['test']
+  // },
   // dummy task to keep the server running on build:server
   build: {
     files: ['<%= app %>/*.html'],

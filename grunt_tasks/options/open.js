@@ -3,6 +3,9 @@ module.exports = {
   server: {
     path: 'http://localhost:<%= connect.options.port %>'
   },
+  testMocha: {
+    path: 'http://localhost:<%= connect.testMocha.options.port %>/index.html'
+  },
   testBrowser: {
     path: 'http://localhost:<%= connect.testBrowser.options.port %>/_SpecRunner.html'
   }

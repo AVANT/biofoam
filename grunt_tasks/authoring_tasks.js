@@ -41,10 +41,13 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('test:server',[
-    'concurrent:devCopy',
-    'jasmine:test:build',
-    'connect:testBrowser',
-    'open:testBrowser',
+    'dev',
+    // 'concurrent:devCopy',
+    // 'jasmine:test:build',
+    // 'connect:testBrowser',
+    // 'open:testBrowser',
+    'connect:testMocha',
+    'open:testMocha',
     'watch'                       // note: livereload untested here
   ]);
 
