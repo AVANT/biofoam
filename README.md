@@ -1,11 +1,16 @@
 # Avant Documentation
 
 ## Getting Started
-- install node and nvm
-- install grunt-cli
-- install bower
+- install node and nvm (globally)
+- install grunt-cli (globally)
+- install bower (globally)
 - run `npm install && ./node_modules/bower/bin/bower install`
 - run `grunt`
+
+## Getting Started with fewer global installs
+- install node and nvm (globally)
+- run `npm install && ./node_modules/bower/bin/bower install`
+- run `./node_modules/.bin/grunt`
 
 
 ### docs/
