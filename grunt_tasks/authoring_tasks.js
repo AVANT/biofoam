@@ -4,19 +4,19 @@ module.exports = function(grunt) {
    // AUTHORING TASKS //
   /////////////////////
 
-
-  grunt.registerTask('jsdocs:server',[
+  grunt.registerTask('jsdocs',[
     'yuidoc:compile',
     'connect:jsdocs',
+    'open:server',
     'watch'
   ]);
 
-  grunt.registerTask('styleguide:server',[
+  grunt.registerTask('styleguide',[
     'dev',
     'connect:styleguide',
+    'open:server',
     'watch'
   ]);
-
 
   grunt.registerTask('dev',[
     'clean:tmp',

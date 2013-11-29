@@ -1,6 +1,11 @@
 define([
   // test files go here
-  'spec/app/app.spec.js'
+
+  // APP
+  'spec/app/app.spec.js',
+
+  // ENITIES
+  'spec/app/apps/entities/post.spec.js'
 
   ], function(){
     'use strict';

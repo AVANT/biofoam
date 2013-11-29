@@ -1,12 +1,15 @@
-require([App], function(){
+define(function(require){
 
-describe('App.Entities.Post', function(){
-  it('has default values', function(){
-    // create empty note model
-    var model = new App.Entities.Post();
+  require('apps/_entities/posts');
 
-    expect(model).to.be.ok;
+  describe('App.Entities.Post', function(){
+    it('has default values', function(){
+      // create empty note model
+      var model = new App.Entities.Post();
+
+      expect(model).to.be.ok;
+    });
   });
-});
 
 });
+
