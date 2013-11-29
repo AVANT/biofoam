@@ -21,7 +21,7 @@ For development on moonrakr you will likely want to have bower and grunt cli ins
 ### Grunt Commands
 There are grunt commands constructed for many, many different needs from compiling, serving, testing, to clean up, building, and deploying.
 
-For a list of all highlevel tasks please review the file grunt_tasks/authoring_tasks.js
+For a list of all highlevel tasks please review the [authoring_tasks.js](grunt_tasks/authoring_tasks.js) file.
 
 ### Documentation
 
