@@ -1,6 +1,6 @@
 define([
   // test files go here
-  'spec/apps/app.spec.js'
+  'spec/app/app.spec.js'
 
   ], function(){
     'use strict';

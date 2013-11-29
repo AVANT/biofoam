@@ -58,9 +58,8 @@ module.exports = {
       port: 8002,
       middleware: function (connect) {
         return [
+        // need to include root to get relative refernece across test/ and .tmp/
         mountFolder(connect, '.'),
-          // mountFolder(connect, 'test'),
-          // mountFolder(connect, '.tmp'),
         ];
       }
     }
