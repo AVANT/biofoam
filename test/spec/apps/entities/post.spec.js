@@ -1,3 +1,5 @@
+require([App], function(){
+
 describe('App.Entities.Post', function(){
   it('has default values', function(){
     // create empty note model
@@ -5,4 +7,6 @@ describe('App.Entities.Post', function(){
 
     expect(model).to.be.ok;
   });
+});
+
 });

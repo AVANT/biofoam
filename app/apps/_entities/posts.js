@@ -11,7 +11,7 @@ define(function(require){
         'title': '',
         'excerpt': '',
         'body': ''
-      }
+      },
       validate: function(attrs, options){
         var errors = {};
         if (! attrs.title){

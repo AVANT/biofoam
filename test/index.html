@@ -14,11 +14,24 @@
 
       // run tests on window load event.
       window.onload = function(){
-        mocha.run();
+        // mocha.run();
       }
     </script>
 
-    <script src="spec/apps/entities/post.spec.js"></script>
+    <!-- use requirejs to load in my app here -->
+    <script data-main="js/main" src="js/vendor/require.js"></script>
+    <script data-main="test.config" src="js/vendor/require.js"></script>
+
+    <script>
+      // require(['app'], function(){
+      //   console.log('test');
+      //   var A = App || {};
+      //   console.log(A);
+      //   console.log(Moonrakr);
+      // });
+    </script>
+
+    <!-- // <script src="spec/apps/entities/post.spec.js"></script> -->
 
   </head>
   <body>
