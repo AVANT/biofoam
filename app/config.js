@@ -3,9 +3,9 @@
 
 define({
 
-  // API settings
-  api: {
-      url: '',
+  {
+    url: '',
+    localStore: ''
   }
 
 });
