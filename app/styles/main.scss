@@ -1,27 +1,22 @@
+/* # Moonrakr */
+
+// Compass Support Styles
 @import "compass/__box-sizing";
 
-  ///////////////////////////////
- // MODULE STYLESHEET IMPORTS //
-///////////////////////////////
+// Vendor Styles
+@import "vendor/vendor";
 
+
+// Config and Variables
 @import "config";
-@import "typography";
-
-
-  //////////////////////
- // UNIVERSAL STYLES //
-//////////////////////
-
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,200,500,700,800);
-
-body {
-  font-family: 'raleway', 'helvetica', sans-serif;
-}
-
-
-// testing import from within app folders
-@import "../apps/posts/_common/styles/hellyes";
 
 *{
     @include box-sizing(border-box);
 }
+
+// Universal Modular Styles
+@import "typography";
+
+// App and View Specific Styles
+@import "apps/menu";
+

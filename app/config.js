@@ -1,11 +1,11 @@
 //Application Configuration File
 //==============================
 
-define({
+define(
 
   {
     url: '',
     localStore: ''
   }
 
-});
+);

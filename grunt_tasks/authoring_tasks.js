@@ -28,6 +28,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dev:server',[
     'dev',
     'connect:tmp',
+    'open:server',
     'watch'
   ]);
 

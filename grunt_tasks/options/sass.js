@@ -4,13 +4,13 @@ module.exports = {
     // includePaths: '<%= app %>/styles/'
   },
   dev: {
-    options:{
+    options: {
       outputStyle: 'expanded',
-      sourceComments: 'normal'
+      sourceComments: 'none'
     },
     files: {
-      '.tmp/css/main.css': '<%= app %>/styles/main.scss',
-      '.tmp/css/vendor.css': '<%= app %>/styles/vendor/vendor.scss'
+      '.tmp/css/main.css': '<%= app %>/styles/main.scss'
+      // '.tmp/css/vendor.css': '<%= app %>/styles/vendor/vendor.scss'
     }
   },
   dist: {

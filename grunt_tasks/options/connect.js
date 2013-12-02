@@ -1,4 +1,4 @@
-var mountFolder = function (connect, dir) {
+var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 
@@ -8,8 +8,8 @@ module.exports = {
     hostname: 'localhost'
   },
   jsdocs: {
-    options:{
-      middleware: function (connect) {
+    options: {
+      middleware: function(connect) {
         return [
           mountFolder(connect, 'jsdocs')
         ];
@@ -17,9 +17,10 @@ module.exports = {
     }
   },
   styleguide: {
-    options:{
-      middleware: function (connect) {
+    options: {
+      middleware: function(connect) {
         return [
+          mountFolder(connect, 'bower_components'),
           mountFolder(connect, 'styleguide'),
           mountFolder(connect, '.tmp/css/')
         ];
@@ -30,7 +31,7 @@ module.exports = {
     options: {
       port: 8000,
       hostname: 'localhost',
-      middleware: function (connect) {
+      middleware: function(connect) {
         return [
           mountFolder(connect, '.tmp')
         ];
@@ -41,7 +42,7 @@ module.exports = {
     options: {
       port: 8000,
       hostname: 'localhost',
-      middleware: function (connect) {
+      middleware: function(connect) {
         return [
           mountFolder(connect, 'dist')
         ];
@@ -56,10 +57,10 @@ module.exports = {
   testMocha: {
     options: {
       port: 8002,
-      middleware: function (connect) {
+      middleware: function(connect) {
         return [
-        // need to include root to get relative refernece across test/ and .tmp/
-        mountFolder(connect, '.'),
+          // need to include root to get relative refernece across test/ and .tmp/
+          mountFolder(connect, '.'),
         ];
       }
     }
@@ -67,11 +68,11 @@ module.exports = {
   testBrowser: {
     options: {
       port: 8002,
-      middleware: function (connect) {
+      middleware: function(connect) {
         return [
           mountFolder(connect, './')
         ];
       }
     }
   }
-  }
+}
