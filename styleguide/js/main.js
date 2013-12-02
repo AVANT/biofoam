@@ -47,4 +47,7 @@ require([
   Router.initialize({
     appView: appView
   }); // The router now has a copy of all main appview
+
+  // console.log('foundation defined: ', foundation);
+  $(document).foundation();
 });

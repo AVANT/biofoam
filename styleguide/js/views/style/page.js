@@ -9,10 +9,7 @@ define([
     'pagedown',
     'libs/highlight/highlight',
     'libs/parseuri/parseuri',
-    'libs/less/less-1.3.3.min',
-
-    // custom libraries
-    // 'foundation'
+    'libs/less/less-1.3.3.min'
   ],
   function($, _, Backbone, marked, stylePageTemplate, config, jscssp, Pagedown, hljs, parseuri) {
     var that = null;
