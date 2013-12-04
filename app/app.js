@@ -6,6 +6,8 @@ define(function(require){
   window.Moonrakr = new Marionette.Application();
   // var Moonrakr = new Marionette.Application();
 
+  Moonrakr.Config = ( config );
+
   Moonrakr.addRegions({
     headerRegion: '#header',
     mainRegion: '#main',
@@ -31,7 +33,7 @@ define(function(require){
   var backboneSync = Backbone.sync;
   Backbone.sync = function (method, model, options){
     options = _.extend(options, {
-      url: config.api.url + _.isFunction(model.url) ? function(){ console.log( model.url() );} : model.url // HACKED
+      url: Moonrakr.Config.api + _.isFunction(model.url) ? function(){ console.log( model.url() );} : model.url // HACKED
       // url: config.api.url + _.isFunction(model.url) ? model.url() : model.url
     });
     backboneSync(method, model, options);

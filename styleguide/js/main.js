@@ -8,8 +8,12 @@ require.config({
     backbone: 'libs/backbone/backbone-min', // https://github.com/amdjs
     jscssp: 'libs/jscssp/jscssp',
     fixie: 'libs/fixie/fixie',
-	pagedown: 'libs/pagedown/converter',
-	
+
+    // Custom Style Libraries
+    foundation: '../../foundation/js/foundation',
+
+    pagedown: 'libs/pagedown/converter',
+
     // Require.js plugins
     text: 'libs/require/text',
     order: 'libs/require/order',
@@ -18,7 +22,7 @@ require.config({
     // When you have HTML/CSS designers this aids in keeping them out of the js directory
     templates: '../templates'
   },
-	urlArgs: "bust=" +  (new Date()).getTime()
+  urlArgs: "bust=" + (new Date()).getTime()
 
 });
 
@@ -31,9 +35,11 @@ require([
   'fixie',
   'order!libs/cssbeautify/cssbeautify',
   'order!libs/highlighter/shCore',
-  'order!libs/highlighter/shBrushCss'
-], function(AppView, Router, Vm){
+  'order!libs/highlighter/shBrushCss',
+], function(AppView, Router, Vm) {
   var appView = Vm.create({}, 'AppView', AppView);
   appView.render();
-  Router.initialize({appView: appView});  // The router now has a copy of all main appview
+  Router.initialize({
+    appView: appView
+  }); // The router now has a copy of all main appview
 });
