@@ -36,18 +36,10 @@ require([
   'order!libs/cssbeautify/cssbeautify',
   'order!libs/highlighter/shCore',
   'order!libs/highlighter/shBrushCss',
-
-  // Custom Libraries
-  'jquery',
-  'foundation'
-
 ], function(AppView, Router, Vm) {
   var appView = Vm.create({}, 'AppView', AppView);
   appView.render();
   Router.initialize({
     appView: appView
   }); // The router now has a copy of all main appview
-
-  // console.log('foundation defined: ', foundation);
-  $(document).foundation();
 });

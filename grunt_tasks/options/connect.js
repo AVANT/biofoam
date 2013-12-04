@@ -18,6 +18,7 @@ module.exports = {
   },
   styleguide: {
     options: {
+      port: 8003,
       middleware: function(connect) {
         return [
           mountFolder(connect, 'bower_components'),

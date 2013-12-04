@@ -9,7 +9,10 @@ define([
     'pagedown',
     'libs/highlight/highlight',
     'libs/parseuri/parseuri',
-    'libs/less/less-1.3.3.min'
+    'libs/less/less-1.3.3.min',
+
+    // custom function
+    'foundation'
   ],
   function($, _, Backbone, marked, stylePageTemplate, config, jscssp, Pagedown, hljs, parseuri) {
     var that = null;
@@ -142,6 +145,7 @@ define([
           });
 
           fixie.init();
+          $(document).foundation();
         });
       },
 
