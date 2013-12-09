@@ -3,6 +3,9 @@ module.exports = {
   server: {
     path: 'http://localhost:<%= connect.options.port %>'
   },
+  styleguide: {
+    path: 'http://localhost:<%= connect.styleguide.options.port %>'
+  },
   testMocha: {
     path: 'http://localhost:<%= connect.testMocha.options.port %>/test/index.html'
   },
