@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   grunt.registerTask('styleguide',[
     'dev',
     'connect:styleguide',
-    'open:server',
+    'open:styleguide',
     'watch'
   ]);
 
