@@ -1,36 +1,27 @@
 /* # Moonrakr */
 
-<<<<<<< HEAD
-@import "config";
-@import "typography";
-@import "test";
-=======
 // Compass Support Styles
 @import "compass/__box-sizing";
 
+
 // Vendor Styles
 @import "vendor/vendor";
->>>>>>> 4164b3e795bc0f845dbeb6a825b82d3afe76f60f
 
 
 // Config and Variables
 @import "config";
 
 *{
-    @include box-sizing(border-box);
+	    @include box-sizing(border-box);
 }
+
 
 // Universal Modular Styles
 @import "typography";
 
-<<<<<<< HEAD
-// testing import from within app folders
-@import "../apps/posts/_common/styles/hellyes";
 
-*{
-    @include box-sizing(border-box);
-}
-=======
 // App and View Specific Styles
 @import "apps/menu";
->>>>>>> 4164b3e795bc0f845dbeb6a825b82d3afe76f60f
+
+// test
+@import "test";
