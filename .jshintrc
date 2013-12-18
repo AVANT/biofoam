@@ -19,6 +19,8 @@
   "globals": {
     "console": false,
     "define": false,
-    "Marionette": false
+    "Marionette": false,
+    "require": false,
+    "module": false
   }
 }

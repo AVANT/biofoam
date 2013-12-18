@@ -23,7 +23,8 @@ module.exports = {
         return [
           mountFolder(connect, 'bower_components'),
           mountFolder(connect, 'styleguide'),
-          mountFolder(connect, '.tmp/css/')
+          mountFolder(connect, '.tmp/css/'),
+          mountFolder(connect, '.tmp/'),
         ];
       }
     }

@@ -1,5 +1,3 @@
-'use strict';
-
 // Utility Function
 
 function loadConfig(path) {
