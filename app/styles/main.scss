@@ -1,14 +1,30 @@
-// you can delete this file
+/* # Moonrakr */
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,200,500,700,800);
+// Compass Support Styles
+@import "compass/__box-sizing";
 
-body {
-  font-family: 'raleway', 'helvetica', sans-serif
+
+// Vendor Styles
+@import "vendor/vendor";
+
+
+// Config and Variables
+@import "config";
+
+*{
+  @include box-sizing(border-box);
 }
 
 
-///////////////////////////////
-// MODULE STYLESHEET IMPORTS //
+// Universal Modular Styles
+@import "typography";
 
-// @import 'apps/header';
-// @import 'apps/footer';
+
+// App and View Specific Styles
+@import "apps/menu";
+
+// test
+@import "test";
+
+// Home Cover Img
+@import "hcover";

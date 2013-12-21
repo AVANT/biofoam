@@ -1,0 +1,11 @@
+@mixin selection {
+  ::-moz-selection { @content; }
+  ::selection { @content; }
+}
+
+
+//=TODO (greg) need to update this to see if has a unit and adjust accordingly.
+@mixin font($size){
+  font-size: $size * 1px;
+  font-size: $size / 16 * 1rem;
+}

@@ -1,0 +1,34 @@
+<h1>{{ titleText }}</h1>
+<form>
+  <div class="form-group">
+    <label for="post-title" class="form-label">
+      Title:
+    </label>
+    <input id="post-title" name="title" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="post-excerpt" class="form-label">
+      Excerpt:
+    </label>
+    <input id="post-excerpt" name="excerpt" type="text" value="{{excerpt}}">
+  </div>
+
+    <div class="form-group">
+      <label for="user-image" class="form-label">
+        Post Main Image:
+      </label>
+      <div id="image-upload-region">
+      </div>
+    </div>
+
+  <div class="form-group">
+    <label for="post-body" class="form-label">
+      Body:
+    </label>
+    <div id="redactor-region"></div>
+  </div>
+
+  <button class="js-submit">{{ submitText }}</button>
+  <button class="js-delete">Delete</button>
+</form>

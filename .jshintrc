@@ -1,0 +1,26 @@
+{
+  // Details: https://github.com/victorporof/Sublime-JSHint#using-your-own-jshintrc-options
+  // Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+  // Documentation: http://www.jshint.com/docs/
+  "browser": true,
+  "esnext": true,
+
+  // Enforcing
+  "quotmark": true,
+  "smarttabs": true,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+
+  // Relaxing
+  "globalstrict": false, // true: Allow global "use strict" (also enables 'strict')
+
+    // CUSTOM GLOBAL VARIABLES
+  "globals": {
+    "console": false,
+    "define": false,
+    "Marionette": false,
+    "require": false,
+    "module": false
+  }
+}
