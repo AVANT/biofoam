@@ -1,9 +1,5 @@
 module.exports = function(grunt) {
 
-    /////////////////////
-   // AUTHORING TASKS //
-  /////////////////////
-
   grunt.registerTask('jsdocs',[
     'yuidoc:compile',
     'connect:jsdocs',
@@ -34,22 +30,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default',['dev:server']);
 
-  grunt.registerTask('test',[
-    // add jshint somewhere
-    'concurrent:devCopy',
-    'connect:test',
-    'jasmine:test'
-  ]);
+  // grunt.registerTask('test',[
+  //   'dev',
+  //   'connect:testMocha',
+  //   'open:testMocha',
+  // ]);
 
   grunt.registerTask('test:server',[
     'dev',
-    // 'concurrent:devCopy',
-    // 'jasmine:test:build',
-    // 'connect:testBrowser',
-    // 'open:testBrowser',
     'connect:testMocha',
     'open:testMocha',
-    'watch'                       // note: livereload untested here
+    'watch'
   ]);
 
   grunt.registerTask('build',[
@@ -74,6 +65,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('deploy', [
+    'build',
     'shell:deploy'
   ]);
 

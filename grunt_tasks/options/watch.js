@@ -48,6 +48,12 @@ module.exports = {
     files: ['vendor/**/*.js', 'vendor/**/*.css', 'vendor/**/*.scss'],
     tasks: ['copy:vendor2tmp']
   },
+  test: {
+    files: ['test/spec/**/*'],
+    // options: {
+    //   livereload: true
+    // }
+  },
   // TODO MAKE A MOCHA WATCH TASK
   // jasmine: {
   //   files: ['<%= app %>/scripts/**/*.js', 'test/spec/**/*.js'],

@@ -1,10 +1,10 @@
 define([
-  // test files go here
+  // TEST FILES
 
-  // APP
+  // app
   'spec/app/app.spec.js',
 
-  // ENITIES
+  // entities
   'spec/app/apps/entities/posts.spec.js'
 
   ], function(){

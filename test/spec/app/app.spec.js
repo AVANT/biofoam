@@ -4,7 +4,7 @@ define(function(require){
 
   describe('Moonrakr App', function(){
     it('should exists', function(){
-      expect(Moonrakr).to.be.a('object');
+      expect(Moonrakr).to.be.an('object');
     });
   });
 
