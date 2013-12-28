@@ -5,7 +5,10 @@ define([
   'spec/app/app.spec.js',
 
   // entities
-  'spec/app/apps/entities/posts.spec.js'
+  'spec/app/apps/entities/_entities.spec.js',
+
+  // post app
+  'spec/app/apps/posts/_posts.spec.js'
 
   ], function(){
     'use strict';

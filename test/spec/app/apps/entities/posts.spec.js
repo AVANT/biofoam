@@ -1,8 +1,11 @@
+/*jshint expr: true*/
+
 define(function(require){
 
   require('apps/_entities/posts');
 
   describe('App.Entities.Post', function(){
+
     it('has default values', function(){
       // create empty note model
       var model = new Moonrakr.Entities.Post();
@@ -26,6 +29,11 @@ define(function(require){
       expect(model.get('excerpt')).to.equal('Post excerpt.');
       expect(model.get('body')).to.equal('lorem ipsum');
     });
+
+    // can delete
+
+    // can save
+
   });
 
 });
