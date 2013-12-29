@@ -18,10 +18,10 @@ module.exports = {
   //   files: ['<%= app %>/styles/**/*.scss'],
   //   tasks: ['compass:dev']
   // },
-  yuidoc: {
-    files: ['<%= app %>/**/*.js'],
-    tasks: ['yuidoc:compile'],
-  },
+  // yuidoc: {
+  //   files: ['<%= app %>/**/*.js'],
+  //   tasks: ['yuidoc:compile'],
+  // },
   jsdocs: {
     files: ['jsdocs/files/**/*.html'],
     options: {

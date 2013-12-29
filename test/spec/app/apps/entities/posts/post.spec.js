@@ -4,7 +4,7 @@ define(function(require){
 
   require('apps/_entities/posts');
 
-  describe('App.Entities.Post', function(){
+  describe('App.Entities Post Model', function(){
 
     it('has default values', function(){
       // create empty note model

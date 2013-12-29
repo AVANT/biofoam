@@ -4,7 +4,7 @@ define(function(require){
   var Moonrakr = require('app');
   require('apps/posts/list/list_views');
 
-  return Moonrakr.module('PostsApp.List', function(List){
+  return Moonrakr.module('Posts.List', function(List){
     List.Controller = {
       // api calls
       listPosts: function(){

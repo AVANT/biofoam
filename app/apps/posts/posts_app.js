@@ -21,9 +21,9 @@ define(function(require){
   require('apps/posts/edit/edit_controller');
   require('apps/posts/new/new_controller');
 
-  return Moonrakr.module("PostsApp",function(PostsApp){
+  return Moonrakr.module("Posts",function(Posts){
 
-    PostsApp.Router = Marionette.AppRouter.extend({
+    Posts.Router = Marionette.AppRouter.extend({
       appRoutes: {
         'posts': 'listPosts',
         'posts/new': 'newPost',
@@ -34,20 +34,20 @@ define(function(require){
 
     var API = {
       listPosts: function(){
-        PostsApp.List.Controller.listPosts();
+        Posts.List.Controller.listPosts();
         Moonrakr.execute('set:active:header', 'posts');
         Moonrakr.execute('header:set:title', 'Posts');
       },
       showPost: function(id){
-        PostsApp.Show.Controller.showPost(id);
+        Posts.Show.Controller.showPost(id);
         Moonrakr.execute('set:active:header', 'posts');
       },
       editPost: function(id){
-        PostsApp.Edit.Controller.editPost(id);
+        Posts.Edit.Controller.editPost(id);
         Moonrakr.execute('set:active:header', 'posts');
       },
       newPost: function(){
-        PostsApp.New.Controller.newPost();
+        Posts.New.Controller.newPost();
         Moonrakr.execute('set:active:header', 'posts');
         Moonrakr.execute('header:set:title', 'Posts: New');
       }
@@ -74,7 +74,7 @@ define(function(require){
     })
 
     Moonrakr.addInitializer(function(){
-      new PostsApp.Router({
+      new Posts.Router({
         controller: API
       });
     });

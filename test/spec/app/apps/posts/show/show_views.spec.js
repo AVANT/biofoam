@@ -3,7 +3,7 @@ define(function(require){
   require('apps/_entities/posts');
   require('apps/posts/posts_app');
 
-  describe('App.Posts.Show Views', function(){
+  describe('App.Posts.Show Post View', function(){
 
     before(function(){
       // create handle for this fixture
@@ -19,7 +19,7 @@ define(function(require){
       // empty out and append fixture to #fixtures
       this.$fixture.empty().appendTo($('#fixtures'));
       // create view and model
-      this.view = new Moonrakr.PostsApp.Show.Post({
+      this.view = new Moonrakr.Posts.Show.Post({
         model: new Moonrakr.Entities.Post()
       });
       // render view into this.$fixture
@@ -73,8 +73,6 @@ define(function(require){
         excerpt: 'excerpt text',
         body: 'body text'
       });
-
-      // p121
 
     });
 

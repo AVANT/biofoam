@@ -1,6 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/_common/views/loading');
 
   return Moonrakr.module('Common.Controller', function(Controller){
 

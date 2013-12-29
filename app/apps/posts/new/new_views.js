@@ -4,9 +4,9 @@ define(function(require){
   require('apps/_common/views/image_uploader');
   require('apps/posts/_common/views');
 
-  return Moonrakr.module('PostsApp.New', function(New){
+  return Moonrakr.module('Posts.New', function(New){
 
-    New.Post = Moonrakr.PostsApp.Common.Views.Form.extend({
+    New.Post = Moonrakr.Posts.Common.Views.Form.extend({
       templateHelpers: {
         titleText: 'New Post',
         submitText: 'Create Post'

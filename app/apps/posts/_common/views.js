@@ -5,7 +5,7 @@ define(function(require){
   var Moonrakr = require('app');
   var _postForm = require('text!apps/posts/_common/templates/post-form.html')
 
-  return Moonrakr.module('PostsApp.Common.Views', function(Views){
+  return Moonrakr.module('Posts.Common.Views', function(Views){
 
     Views.Form = Marionette.Layout.extend({
       template: Handlebars.compile( _postForm ),

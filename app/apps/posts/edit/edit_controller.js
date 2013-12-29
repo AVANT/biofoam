@@ -4,7 +4,7 @@ define(function(require){
   require('apps/_common/views/redactor');
   require('apps/posts/edit/edit_views');
 
-  return Moonrakr.module('PostsApp.Edit', function(Edit){
+  return Moonrakr.module('Posts.Edit', function(Edit){
 
     Edit.Controller = {
       editPost: function(id){
@@ -84,7 +84,7 @@ define(function(require){
 
           }
           else {
-            layoutView = new Moonrakr.PostsApp.Show.MissingPost();
+            layoutView = new Moonrakr.Posts.Show.MissingPost();
           }
 
             /////////////////////////

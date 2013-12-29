@@ -31,17 +31,17 @@ define(function(require){
     // SETTING UP MODEL TO USE LOCAL STORAGE
     Entities.configureStorage(Entities.Post);
 
-    Entities.PostCollection = Backbone.Collection.extend({
+    Entities.Posts = Backbone.Collection.extend({
       url: 'posts',
       model: Entities.Post,
       comparator: 'title'
     });
     // SETTING UP COLLECTION TO USE LOCAL STORAGE
-    Entities.configureStorage(Entities.PostCollection);
+    Entities.configureStorage(Entities.Posts);
 
     var initializePosts = function(){
 
-      var posts = new Entities.PostCollection([
+      var posts = new Entities.Posts([
         {id: 1, title: 'made up title number one', excerpt: 'short thingy here', body: 'here is some body text'},
         {id: 2, title: 'made up title number two', excerpt: 'short thingy here', body: 'here is some body text'},
         {id: 3, title: 'made up title number three', excerpt: 'short thingy here', body: 'here is some body text'},
@@ -54,7 +54,7 @@ define(function(require){
 
     var API = {
       getPostEntities: function(){
-        var posts = new Entities.PostCollection();
+        var posts = new Entities.Posts();
         var defer = $.Deferred();
         posts.fetch({
           success: function(data){

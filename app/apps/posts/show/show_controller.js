@@ -21,9 +21,10 @@ The posts.show.controller creates a post's layout view, requests the post's comm
 define(function(require){
 
   var Moonrakr = require('app');
+  require('apps/_common/controller/helper_functions');
   require('apps/posts/show/show_views');
 
-  return Moonrakr.module('PostsApp.Show', function(Show){
+  return Moonrakr.module('Posts.Show', function(Show){
 
     Show.Controller = {
       showPost: function(id){

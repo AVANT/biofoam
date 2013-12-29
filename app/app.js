@@ -1,12 +1,14 @@
 define(function(require){
 
-  var config = require('config');
   var Marionette = require('marionette');
+  var config = require('config');
+
+  console.log( config );
 
   window.Moonrakr = new Marionette.Application();
   // var Moonrakr = new Marionette.Application();
 
-  Moonrakr.Config = ( config );
+  Moonrakr.Config = config || {};
 
   Moonrakr.addRegions({
     headerRegion: '#header',

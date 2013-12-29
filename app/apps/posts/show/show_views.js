@@ -16,7 +16,7 @@ define(function(require){
   var _cms_panel = require('text!apps/posts/show/templates/cms_panel.html');
   var _postLayout = require('text!apps/posts/show/templates/post_layout.html');
 
-  return Moonrakr.module('PostsApp.Show', function(Show){
+  return Moonrakr.module('Posts.Show', function(Show){
 
     /**
     @class MissingPost

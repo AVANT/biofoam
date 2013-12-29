@@ -8,7 +8,7 @@ define(function(require){
   var _postsLayout = require('text!apps/posts/list/templates/post-layout.html');
   var _postsPanel = require('text!apps/posts/list/templates/post-panel.html');
 
-  return Moonrakr.module('PostsApp.List', function(List){
+  return Moonrakr.module('Posts.List', function(List){
 
     // SINGLE POST VIEW
     List.Post = Marionette.ItemView.extend({
@@ -47,7 +47,7 @@ define(function(require){
       },
       templateHelpers: {
         newPostAction: function(){
-          if(Moonrakr.PostsApp.New.newPost){
+          if(Moonrakr.Posts.New.newPost){
             return 'Resume Editing New Post'
           }
           else {
