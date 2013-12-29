@@ -52,6 +52,7 @@ define(function(require){
         var headerToSelect = links.find(function(header){
           return header.get('url') === headerUrl;
         });
+        console.log('header to select: ', headerToSelect);
         headerToSelect.select();
         links.trigger('reset');
       },

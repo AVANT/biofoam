@@ -7,7 +7,7 @@ define(function(require){
 
     before(function(){
       // create handle for this fixture
-      this.$fixture = $("<div id='post-view-fixture'></div>")
+      this.$fixture = $('<div id="post-view-fixture"></div>')
     });
 
     after(function(){
@@ -51,6 +51,8 @@ define(function(require){
 
     });
 
+
+    // fix this async test problem with sinon.js?
     it('can render simple post', function(){
 
       this.view.model.once('change', function(){
@@ -60,9 +62,7 @@ define(function(require){
         var $body = $('.body');
 
         expect( $title.text() ).to.equal("title text");
-
         expect( $excerpt.text() ).to.equal("excerpt text");
-
         expect( $body.text() ).to.equal("body text");
 
         done();

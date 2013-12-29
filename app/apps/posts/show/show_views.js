@@ -9,6 +9,8 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
+  require('apps/_common/views/cms_panel');
+
   var _missingPost = require('text!apps/posts/show/templates/missing_post.html');
   var _post = require('text!apps/posts/show/templates/post.html');
   var _cms_panel = require('text!apps/posts/show/templates/cms_panel.html');

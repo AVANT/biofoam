@@ -13,6 +13,7 @@ define(function(require){
     List.MenuLink = Marionette.ItemView.extend({
       template: Handlebars.compile( _menuLink ),
       tagName: 'li',
+      className: 'menu-item',
       events: {
         'click a': 'navigate'
       },

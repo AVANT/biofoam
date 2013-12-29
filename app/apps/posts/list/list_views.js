@@ -2,9 +2,11 @@ define(function(require){
 
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _post = require('text!apps/posts/list/templates/post.html'),
-  _postsLayout = require('text!apps/posts/list/templates/post-layout.html');
-  _postsPanel = require('text!apps/posts/list/templates/post-panel.html');
+  require('apps/_common/views/cms_panel');
+
+  var _post = require('text!apps/posts/list/templates/post.html');
+  var _postsLayout = require('text!apps/posts/list/templates/post-layout.html');
+  var _postsPanel = require('text!apps/posts/list/templates/post-panel.html');
 
   return Moonrakr.module('PostsApp.List', function(List){
 

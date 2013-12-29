@@ -37,9 +37,6 @@ define(function(require){
     Moonrakr.commands.setHandler('header:set:title', function(str){
       API.setHeaderText(str);
     });
-    // consider setting up handler with three arguments: 'section', 'action', and 'title'
-    // this will allow for more control over styling
-    // this may allow the search bar to act more for the power user
 
   });
 });

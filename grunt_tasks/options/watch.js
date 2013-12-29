@@ -23,7 +23,7 @@ module.exports = {
     tasks: ['yuidoc:compile'],
   },
   jsdocs: {
-    files: ['jsdocs/files**/*.html'],
+    files: ['jsdocs/files/**/*.html'],
     options: {
       livereload: true
     }
@@ -49,7 +49,7 @@ module.exports = {
     tasks: ['copy:vendor2tmp']
   },
   test: {
-    files: ['test/spec/**/*'],
+    files: ['test/spec/**/*']
     // options: {
     //   livereload: true
     // }
