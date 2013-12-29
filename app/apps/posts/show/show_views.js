@@ -35,7 +35,10 @@ define(function(require){
     **/
     Show.Post = Marionette.ItemView.extend({
       tagName: 'article',
-      template: Handlebars.compile(_post)
+      template: Handlebars.compile(_post),
+      initialize: function(){
+        this.model.on('change', this.render, this);
+      }
     });
 
     Show.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({

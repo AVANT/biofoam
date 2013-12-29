@@ -45,6 +45,9 @@ define(function(require){
               model: post
             });
 
+            // DEBUG
+            window.myModel = post;
+
             Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
 
             // will eventually need to pass a comments/for/:id value with this request

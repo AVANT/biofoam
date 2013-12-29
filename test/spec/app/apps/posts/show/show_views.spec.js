@@ -53,7 +53,7 @@ define(function(require){
 
 
     // fix this async test problem with sinon.js?
-    it('can render simple post', function(){
+    it('can render simple post', function(done){
 
       this.view.model.once('change', function(){
 
@@ -61,18 +61,20 @@ define(function(require){
         var $excerpt = $('.excerpt');
         var $body = $('.body');
 
-        expect( $title.text() ).to.equal("title text");
-        expect( $excerpt.text() ).to.equal("excerpt text");
-        expect( $body.text() ).to.equal("body text");
+        expect( $title.text() ).to.equal('title text');
+        expect( $excerpt.text() ).to.equal('excerpt text');
+        expect( $body.text() ).to.equal('body text');
 
         done();
       });
 
       this.view.model.set({
-        'title': 'title text',
-        'excerpt': 'excerpt text',
-        'body': 'body text'
+        title: 'title text',
+        excerpt: 'excerpt text',
+        body: 'body text'
       });
+
+      // p121
 
     });
 
