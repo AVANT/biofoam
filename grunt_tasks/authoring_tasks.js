@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev:server',[
     'dev',
+    'mocha:test',
     'connect:tmp',
     'open:server',
     'watch'
@@ -40,6 +41,7 @@ module.exports = function(grunt) {
     'dev',
     'connect:testMocha',
     'open:testMocha',
+    // 'mocha:test',
     'watch'
   ]);
 
