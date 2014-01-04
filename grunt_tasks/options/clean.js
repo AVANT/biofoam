@@ -8,10 +8,8 @@ module.exports = {
   },
   postBuild: {
     src: [
-      '<%= dist %>/js/vendor',
-      '<%= dist %>/js/primatives',
-      '<%= dist %>/js/templates',
-      '<%= dist %>/css/vendor'
+      '!<%= dist %>/js/main.optimized.js',
+      // '<%= dist %>/js/**/*',
     ]
   }
-}
+};
