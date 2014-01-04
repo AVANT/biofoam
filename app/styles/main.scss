@@ -1,29 +1,30 @@
-  ///////////////////////////////
- // VENDOR STYLESHEET IMPORTS //
-///////////////////////////////
-@import "vendor/redactor";
-@import "vendor/jquery.jcrop";
-@import "vendor/bootstrap";
+/* # Moonrakr */
+
+// Compass Support Styles
+@import "compass/__box-sizing";
 
 
-  ///////////////////////////////
- // MODULE STYLESHEET IMPORTS //
-///////////////////////////////
-
-// @import 'apps/header';
-// @import 'apps/footer';
+// Vendor Styles
+@import "vendor/vendor";
 
 
-  //////////////////////
- // UNIVERSAL STYLES //
-//////////////////////
+// Config and Variables
+@import "config";
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,200,500,700,800);
-
-body {
-  font-family: 'raleway', 'helvetica', sans-serif
+*{
+  @include box-sizing(border-box);
 }
 
-body.modal-open {
-  margin-right: 0;
-}
+
+// Universal Modular Styles
+@import "typography";
+
+
+// App and View Specific Styles
+@import "apps/menu/menu";
+
+// test
+@import "test";
+
+// Home Cover Img
+@import "hcover";

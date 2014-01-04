@@ -1,11 +1,10 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/imageUploader');
   require('apps/_common/views/redactor');
-  require('apps/posts/edit/edit_view');
+  require('apps/posts/edit/edit_views');
 
-  return Moonrakr.module('PostsApp.Edit', function(Edit){
+  return Moonrakr.module('Posts.Edit', function(Edit){
 
     Edit.Controller = {
       editPost: function(id){
@@ -15,8 +14,7 @@ define(function(require){
         ////////////////////////
 
         // start and show spinner
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+        Moonrakr.Common.Controller.helper.cueLoadingView();
 
           ///////////////////////////////
          // FETCH AND PROMISE HANLDER //
@@ -30,6 +28,8 @@ define(function(require){
           var layoutView;
           if(post !== undefined){
 
+              Moonrakr.execute('header:set:title', 'Posts: Edit: ' + post.get('title'));
+
               ///////////////
              // GET VIEWS //
             ///////////////
@@ -39,8 +39,8 @@ define(function(require){
               model: post
             });
 
-            // init imageUpload view and insert model photo??
-            var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+            // init imageUpload view
+            var imageUploadView = new Edit.ImageUpload();
 
             // init redactor view and insert model.body
             var redactorView = that.getRedactorView( post.get('body') );
@@ -62,20 +62,29 @@ define(function(require){
             });
 
             // SAVE HANDLER //
-            // layoutView.on('form:submit', function(data){
-              // if(post.save(data)){
             layoutView.on('form:submit', function(data){
-              if(post.save(data)){
-                Moonrakr.trigger('post:show', post.get('id'));
-              }
-              else {
-                layoutView.triggerMethod('form:data:invalid', post.validationError);
-              }
+
+              post.save(data, {
+                success: function(){
+                  Moonrakr.trigger('post:show', post.get('id'));
+                },
+                error: function(){
+                  // TODO set and handle validation errors
+                  layoutView.triggerMethod('form:data:invalid', post.validationError);
+                }
+              });
+
+              // if(post.save(data)){
+              //   Moonrakr.trigger('post:show', post.get('id'));
+              // }
+              // else {
+              //   layoutView.triggerMethod('form:data:invalid', post.validationError);
+              // }
             });
 
           }
           else {
-            layoutView = new Moonrakr.PostsApp.Show.MissingPost();
+            layoutView = new Moonrakr.Posts.Show.MissingPost();
           }
 
             /////////////////////////

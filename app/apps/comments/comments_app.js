@@ -1,71 +1,77 @@
+/**
+# Comments App
+
+The comments app provides an API for other apps to request comment layout views.
+
+Subapps:
+- List
+  - _common
+  - ForPost
+  - ForUser
+- Show
+  - _common
+  - ForPost
+  - ForUser
+- New
+
+@module Comments
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/comments/show/show_controller');
-  require('apps/comments/list/list_controller');
+  require('apps/comments/show/forpost/show_controller');
+  require('apps/comments/show/foruser/show_controller');
+  require('apps/comments/list/forpost/list_controller');
+  require('apps/comments/list/foruser/list_controller');
 
-  return Moonrakr.module('CommentsApp', function(CommentsApp){
-
-    // * * * * * * * * * * * * * * * * * * * * * * * * * //
-    // v1.0 dosent have comments getting its own router  //
-
-    CommentsApp.Router = Marionette.AppRouter.extend({
-      appRoutes: {
-        'comments': 'listComments',
-        'comments/new': 'newComment',
-        'comments/:id': 'showComment',
-        'comments/:id/edit': 'editComment'
-      }
-    });
-
-    // * * * * * * * * * * * * * * * * * * * * * * * * * //
+  return Moonrakr.module('Comments', function(Comments){
 
     var API = {
-      listComments: function(){
-        CommentsApp.List.Controller.listComments();
+      // will eventually need to handle taking in a comments/for/:id value
+      listForPostComments: function(){
+        return Comments.List.ForPost.Controller.listComments();
       },
-      showComment: function(id){
-        CommentsApp.Show.Controller.showComment(id);
+      // will eventually need to handle taking in a comments/for/:id value
+      listForUserComments: function(){
+        return Comments.List.ForUser.Controller.listComments();
       },
-      newComment: function(){
-        CommentsApp.New.Controller.newComment();
+      showForUserComment: function(model){
+        return Comments.Show.ForUser.Controller.showComment(model);
       },
-      editComment: function(){
-        CommentsApp.Edit.Controller.editComment();
+      showForPostComment: function(model){
+        return Comments.Show.ForPost.Controller.showComment(model);
+      },
+      newCommentReturn: function(){
+        return Comments.New.Controller.newCommentReturn();
       }
     };
 
-    Moonrakr.addInitializer(function(){
-      new CommentsApp.Router({
-        controller: API
-      });
+    // will eventually need to handle taking in a comments/for/:id value
+    Moonrakr.reqres.setHandler('comments:listforpost', function(){
+      return API.listForPostComments();
     });
 
-    // * * * * * * * * * * * * //
-    // 'user:comments:list' ?? //
-    // 'post:comments:list' ?? //
-    Moonrakr.on('comments:list', function(){
-      // pass in user id / post id ?
-      API.listComments();
-      // return composite view of comments?
-    });
-    // * * * * * * * * * * * * //
-
-    Moonrakr.on('comment:show', function(id){
-      // pass in comment id
-      API.showComment(id);
-      // return view?
+    // will eventually need to handle taking in a comments/for/:id value
+    Moonrakr.reqres.setHandler('comments:listforuser', function(){
+      return API.listForUserComments();
     });
 
-    Moonrakr.on('comment:new', function(){
-      API.newComment();
-      // return create comment view? (textarea or redactor?)
+    Moonrakr.reqres.setHandler('comment:showforpost', function(model){
+      return API.showForPostComment(model);
     });
 
-    Moonrakr.on('comment:edit', function(id){
-      API.editComment(id);
-      // will this be the editor comment editing ability
+    Moonrakr.reqres.setHandler('comment:showforuser', function(model){
+      return API.showForUserComment(model);
     });
+
+    Moonrakr.reqres.setHandler('comment:new:return', function(){
+      return API.newCommentReturn();
+    });
+
+    // Moonrakr.on('comment:edit', function(id){
+    //   API.editComment(id);
+    // });
 
   });
 

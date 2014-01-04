@@ -1,17 +1,33 @@
+/**
+# Users.New SubApp
+
+The users.new subapp contains both the controller and view constructors necessary to display a user's detail page in the frontend.
+
+@module users
+@submodule users.new
+@main
+**/
+
+/**
+# Controller
+
+The users.new.controller creates a user's layout view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@namespace users.new
+@requires moonrakr, users.new.views
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/imageUploader');
-  require('apps/users/new/new_view');
+  require('apps/users/new/new_views');
 
   return Moonrakr.module('UsersApp.New', function(New){
 
     New.Controller = {
       newUser: function(){
-
-          /////////////////////////////
-         // GET VIEWS AND THE MODEL //
-        /////////////////////////////
 
         var newUser = new Moonrakr.Entities.User();
 
@@ -19,7 +35,7 @@ define(function(require){
           model: newUser
         });
 
-        var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+        var imageUploadView = new New.ImageUploader();
 
         layoutView.on('render', function(){
           layoutView.imageUploadRegion.show( imageUploadView );
@@ -28,22 +44,19 @@ define(function(require){
         // SAVE HANDLER //
         layoutView.on('form:submit', function(){
 
-          newUser.save();
+          var data = { 'id': Moonrakr.Entities.HelperFunctions.randomString(32) }; // not needed with live server
 
-          // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          // var fetchingUsers = Moonrakr.request('user:entities');
-          // $.when(fetchingUsers).done(function(users){
-
-          //   // var highestId = users.max(function(c){ return c.id });
-          //   // highestId = highestId.get('id');
-          //   // id = highestId + 1;
-          //   if(newUser.save({'id': id})){
-          //     Moonrakr.trigger('user:show', newUser.get('id'));
-          //   }
-          //   else {
-          //     layoutView.triggerMethod('form:data:invalid', newUser.validationError);
-          //   }
-          // });
+          newUser.save(data, {
+            success: function(){
+              console.log('new user save succesful');
+              Moonrakr.trigger('user:show', newUser.get('id'));
+            },
+            error: function(){
+              console.log('new user save failed');
+              layoutView.triggerMethod('form:data:invalid', newUser.validationError);
+              // TODO handle save error
+            }
+          });
 
         });
 

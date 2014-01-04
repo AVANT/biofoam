@@ -1,26 +1,53 @@
+/**
+# Users.Edit SubApp
+
+The users.edit subapp contains both the controller and view constructors necessary to display a user's edit page and handle the CMS events.
+
+@module users
+@submodule users.edit
+@namespace users.edit
+@main
+**/
+
+/**
+# Controller
+
+The users.edit.controller creates a user's edit view and displays it in moonrakr.mainRegion
+
+@class controller
+@static
+@requires moonrakr, users.edit.views, bootbox
+**/
+
 define(function(require){
+
   var bootbox = require('bootbox');
   var Moonrakr = require('app');
-  require('apps/_common/views/imageUploader');
-  require('apps/users/edit/edit_view');
+  require('apps/users/edit/edit_views');
 
   return Moonrakr.module('UsersApp.Edit', function(Edit){
 
     Edit.Controller = {
       editUser: function(id){
 
-        var loadingView = new Moonrakr.Common.Views.Loading();
-        Moonrakr.mainRegion.show( loadingView );
+        Moonrakr.Common.Controller.helper.cueLoadingView();
 
+        // console.log( id );
         var fetchingUser = Moonrakr.request('user:entity', id);
         $.when(fetchingUser).done(function(user){
 
           var layoutView;
           if(user !== undefined){
+
+            // console.log( user );
+
             layoutView = new Edit.User({
               model: user
             });
-            var imageUploader = new Moonrakr.Common.Views.ImageUpload();
+
+            var imageUploader = new Edit.ImageUploader();
+
+            Moonrakr.execute('header:set:title', 'Users: Edit: ' + user.get('username'));
 
             layoutView.on('render', function(){
               layoutView.imageUploadRegion.show( imageUploader );

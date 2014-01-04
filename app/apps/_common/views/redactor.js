@@ -1,6 +1,6 @@
 define(function(require){
-  // require('redactor') // loaded w/ jquery?
 
+  require('jquery.redactor');
   var loadImage = require('loadImage');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
@@ -8,9 +8,11 @@ define(function(require){
 
   return Moonrakr.module('Common.Views', function(Views){
 
-    // TO IMPLIMENT THIS VIEW YOU CAN
-    // SET TEMPLATE HELPERS BY PASSING IN
-    // OPTIONS APPROPREATELY
+    /*
+      TO IMPLIMENT THIS VIEW YOU CAN
+      SET TEMPLATE HELPERS BY PASSING IN
+      OPTIONS APPROPREATELY
+    */
 
     Views.Redactor = Marionette.ItemView.extend({
       template: Handlebars.compile( _redactorView ),
@@ -57,6 +59,9 @@ define(function(require){
       initRedactor: function(){
         var that = this;
         this.$('.redactor').redactor({
+          // trying this on for size
+          air: true,
+          //////////////////////////
           changeCallback: function(html){
             that.$('.redactor').html(html);
             that.$('.redactor').trigger('change');

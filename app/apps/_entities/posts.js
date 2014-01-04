@@ -41,7 +41,7 @@ define(function(require){
 
     var initializePosts = function(){
 
-      var posts = new Entities.PostCollection([
+      var posts = new Entities.Posts([
         {id: 1, title: 'made up title number one', excerpt: 'short thingy here', body: 'here is some body text'},
         {id: 2, title: 'made up title number two', excerpt: 'short thingy here', body: 'here is some body text'},
         {id: 3, title: 'made up title number three', excerpt: 'short thingy here', body: 'here is some body text'},
@@ -54,7 +54,7 @@ define(function(require){
 
     var API = {
       getPostEntities: function(){
-        var posts = new Entities.PostCollection();
+        var posts = new Entities.Posts();
         var defer = $.Deferred();
         posts.fetch({
           success: function(data){

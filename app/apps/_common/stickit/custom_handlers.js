@@ -6,11 +6,11 @@ define(function(require){
     selector: '#image-current-container',
     updateMethod: 'html',
     onGet: function(val){
-      console.log('custom onGet called');
+      // console.log('custom onGet called');
       return '<img id="image-current" src=' + val + '>';
     },
     onSet: function(val, options){
-      console.log('custom onSet called');
+      // console.log('custom onSet called');
       return $(val).attr('src');
     },
     updateModel: true,

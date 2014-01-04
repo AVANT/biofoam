@@ -1,3 +1,18 @@
+/**
+# Users App
+
+The users app provides all the url routing and event routing to the subapps.
+
+Routes:
+- /users
+- /users/new
+- /users/:id
+- /users/:id/edit
+
+@module users
+@requires moonrakr, users.new, users.list, users.show, users.edit
+**/
+
 define(function(require){
 
   var Moonrakr = require('app');
@@ -21,10 +36,12 @@ define(function(require){
       listUsers: function(){
         UsersApp.List.Controller.listUsers();
         Moonrakr.execute('set:active:header', 'users');
+        Moonrakr.execute('header:set:title', 'Users');
       },
       newUser: function(){
         UsersApp.New.Controller.newUser();
         Moonrakr.execute('set:active:header', 'users');
+        Moonrakr.execute('header:set:title', 'Users: New');
       },
       showUser: function(id){
         UsersApp.Show.Controller.showUser(id);
@@ -59,7 +76,7 @@ define(function(require){
 
     Moonrakr.on('user:edit', function(id){
       Moonrakr.navigate('users/' + id + '/edit');
-      API.editUser();
+      API.editUser(id);
     });
 
   }); // return usersApp

@@ -60,15 +60,18 @@ define(function(require){
       getUserEntity: function(userId){
         var user = new Entities.User({_id: userId});
         var defer = $.Deferred();
-        user.fetch({
-          success: function(data){
-            defer.resolve(data);
-          },
-          error: function(data){
-            defer.resolve(undefined);
-            // instead perhaps try passing the server errors thru?
-          }
-        });
+
+        setTimeout(function(){
+          user.fetch({
+            success: function(data){
+              defer.resolve(data);
+            },
+            error: function(data){
+              defer.resolve(undefined);
+              // instead perhaps try passing the server errors thru?
+            }
+          })
+        }, 0);
         return defer.promise();
       }
     };

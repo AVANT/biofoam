@@ -1,11 +1,10 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_common/views/imageUploader');
+  require('apps/posts/new/new_views');
   require('apps/_common/views/redactor');
-  require('apps/posts/new/new_view');
 
-  return Moonrakr.module('PostsApp.New', function(New){
+  return Moonrakr.module('Posts.New', function(New){
 
     New.Controller = {
 
@@ -24,7 +23,7 @@ define(function(require){
         });
 
         // init imageUpload view and insert model photo??
-        var imageUploadView = new Moonrakr.Common.Views.ImageUpload();
+        var imageUploadView = new New.ImageUpload();
 
         // INIT REDACTOR VIEW AND INSERT MODEL BODY
         var redactorView = this.getRedactorView( newPost.get('body') );
@@ -42,17 +41,17 @@ define(function(require){
 
         // ON 'localsave' EVENT, ATTACH THE NEW POST TO THIS SUB-APP
         layoutView.on('model:changed', function(){
-          Moonrakr.PostsApp.New.newPost = newPost;
+          Moonrakr.Posts.New.newPost = newPost;
         });
 
         // ON 'redactor:changed' EVENT, ATTACH THE NEW POST TO THIS SUB-APP
         redactorView.on('redactor:changed', function(){
-          Moonrakr.PostsApp.New.newPost = newPost;
+          Moonrakr.Posts.New.newPost = newPost;
         });
 
         // ON 'post:delete' EVENT, CLEAR MODEL AND GO TO NAVIGATE TO THE HOME PAGE
         layoutView.on('post:delete', function(model){
-          Moonrakr.PostsApp.New.newPost = null;
+          Moonrakr.Posts.New.newPost = null;
           Moonrakr.trigger('posts:list');
         });
 
@@ -92,7 +91,7 @@ define(function(require){
       }, // newPost()
 
       getNewPost: function(){
-        return Moonrakr.PostsApp.New.newPost || new Moonrakr.Entities.Post();
+        return Moonrakr.Posts.New.newPost || new Moonrakr.Entities.Post();
       },
 
       getRedactorView: function(body){

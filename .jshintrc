@@ -18,7 +18,19 @@
     // CUSTOM GLOBAL VARIABLES
   "globals": {
     "console": false,
+
+    // requirejs
     "define": false,
-    "Marionette": false
+    "require": false,
+    "module": false,
+
+    // application specific
+    "Marionette": false,
+    "Moonrakr": false,
+
+    // mocha testing
+    "describe": false,
+    "it": false,
+    "expect": false
   }
 }
