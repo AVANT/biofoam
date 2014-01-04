@@ -62,7 +62,8 @@ define(function(require){
       // SUBMIT HANDLER
       submitClicked: function(e){
         e.preventDefault();
-        this.trigger('form:submit');
+        console.log( 'my submit button?', this.$el.find(e.target) );
+        // this.trigger('form:submit');
       },
 
       // DELETE HANDLER //

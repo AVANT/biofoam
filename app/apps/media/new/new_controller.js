@@ -24,6 +24,9 @@ define(function(require){
         this.view.on('media:new:submit', function(){
           // save media
           this.model.save(null, {
+            // data: FormData,
+            // contentType: false,
+            // processData: false,
             success: function(data){
               console.log('success', data);
               // trigger event with model data

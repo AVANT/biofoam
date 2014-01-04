@@ -13,7 +13,7 @@ define(function(require){
       template: Handlebars.compile( _imageuploadView ),
       imagePreviewed: false,
       ui: {
-        submitButton: 'button.js-submit',
+        submitButton: 'button.js-image-submit',
         cropButton: 'button.js-crop',
         imageInputLabel: '#image-input-label',
         imagePreview: '#image-preview',
@@ -26,7 +26,7 @@ define(function(require){
         'drop #dragPad': 'droppedEvent',
         'change .image-input': 'inputChanged',
 
-        'click .js-submit': 'submitClicked'
+        'click .js-image-submit': 'submitClicked'
       },
 
       padClicked: function(){
@@ -138,7 +138,8 @@ define(function(require){
             left: that.coordinates.x,
             top: that.coordinates.y,
             sourceWidth: that.coordinates.w,
-            sourceHeight: that.coordinates.h
+            sourceHeight: that.coordinates.h,
+            canvas: true
           }));
           this.enableSubmit();
         }
@@ -166,7 +167,13 @@ define(function(require){
         //reset upload dialog
         this.setImageUploadLabel();
 
+
         var src = img.toDataURL('image/png');
+        window.debugImg = img;
+
+        // var blob = img.toBlob();
+        // this.model.set('blob', blob);
+
         this.ui.imageCurrentContainer.find('img').attr('src', src);
         this.ui.imageCurrentContainer.trigger('change');
 
