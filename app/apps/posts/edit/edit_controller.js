@@ -9,16 +9,9 @@ define(function(require){
     Edit.Controller = {
       editPost: function(id){
 
-          ////////////////////////
-         // LOADING TRANSITION //
-        ////////////////////////
 
         // start and show spinner
         Moonrakr.Common.Controller.helper.cueLoadingView();
-
-          ///////////////////////////////
-         // FETCH AND PROMISE HANLDER //
-        ///////////////////////////////
 
         var that = this;
         // get post model defer
@@ -57,6 +50,7 @@ define(function(require){
 
             // DELETE HANDLER //
             layoutView.on('post:delete', function(model){
+              console.log('gonna call model.destory');
               model.destroy();
               Moonrakr.trigger('posts:list');
             });
@@ -74,22 +68,12 @@ define(function(require){
                 }
               });
 
-              // if(post.save(data)){
-              //   Moonrakr.trigger('post:show', post.get('id'));
-              // }
-              // else {
-              //   layoutView.triggerMethod('form:data:invalid', post.validationError);
-              // }
             });
 
           }
           else {
             layoutView = new Moonrakr.Posts.Show.MissingPost();
           }
-
-            /////////////////////////
-           // DISPLAY *THE* VIEW  //
-          /////////////////////////
 
           // show the edit layoutView
           Moonrakr.mainRegion.show( layoutView );

@@ -1,7 +1,7 @@
 module.exports = {
-  html: '<%= sacrum.app %>/index.html',
-  css: '<%= sacrum.app %>/css/main.css',
-  options: {
-    dest: '<%= sacrum.dist %>'
+  html: '<%= app %>/index.html',
+  css: '<%= app %>/css/main.css',
+  options: {;
+    dest: '<;%= dist %>'
   }
-}
+};

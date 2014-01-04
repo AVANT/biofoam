@@ -3,7 +3,6 @@ module.exports = {
   devCompile: {
     tasks: [
       'sass:dev',
-      // 'compass:dev',
       'handlebars:dev'
     ]
   },
@@ -19,7 +18,6 @@ module.exports = {
   distCompile: {
     tasks: [
       'sass:dist',
-      // 'compass:dist',
       'handlebars:dev'
     ]
   },
@@ -27,8 +25,9 @@ module.exports = {
     tasks: [
       'copy:assets2dist',
       'copy:scripts2dist',
+      'copy:templates2dist',
       'copy:styles2dist',
       'copy:vendor2dist'
     ]
   }
-}
+};

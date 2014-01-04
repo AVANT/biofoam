@@ -31,10 +31,12 @@ define(function(require){
 
         Moonrakr.Common.Controller.helper.cueLoadingView();
 
-        authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
+        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
 
         var cmsPanel = authGranted ? new Show.CMSPanel() : null;
         var postLayout = new Show.PostLayout();
+
+        console.log('asking for this id', id);
 
         var fetchingPost = Moonrakr.request('post:entity', id);
         $.when(fetchingPost).done(function(post){

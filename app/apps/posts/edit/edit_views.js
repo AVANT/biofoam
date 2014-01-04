@@ -2,6 +2,7 @@ define(function(require){
 
   var Moonrakr = require('app');
   require('apps/posts/_common/views');
+  require('apps/_common/views/image_uploader');
 
   return Moonrakr.module('Posts.Edit', function(Edit){
 

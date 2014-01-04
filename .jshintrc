@@ -27,10 +27,14 @@
     // application specific
     "Marionette": false,
     "Moonrakr": false,
+    "Backbone": false,
+    "_": false,
+    "$": false,
 
     // mocha testing
     "describe": false,
     "it": false,
-    "expect": false
+    "expect": false,
+    "mochaPhantomJS": false
   }
 }

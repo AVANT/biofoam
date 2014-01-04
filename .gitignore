@@ -1,7 +1,7 @@
 # MOONRAKR SPECIFIC #
 #####################
 .tmp
-build
+dist
 node_modules
 .sass-cache
 jsdocs

@@ -1,38 +1,43 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  require('apps/_entities/localstorage');
+  // require('apps/_entities/localstorage');
 
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
-      // url: 'posts',
       url: function(){
-        console.log(this.get('_id'));
-        return "http://192.168.1.4:9000/posts/" + this.get("_id");
+        if ( this.get('id') ){
+          return Moonrakr.Config.api + '/posts/' + this.get('id');
+        }
+        else {
+          return Moonrakr.Config.api + '/posts';
+        }
       },
-      validate: function(attrs, options){
-        var errors = {};
-        if (! attrs.title){
-          errors.title = "can't be blank";
-        }
-        if (! attrs.excerpt){
-          errors.excerpt = "can't be blank";
-        }
-        if (! attrs.body){
-          errors.body = "can't be blank";
-        }
-        if(! _.isEmpty(errors)){
-          return errors;
-        }
-      }
+      // validate: function(attrs, options){
+      //   var errors = {};
+      //   if (! attrs.title){
+      //     errors.title = 'cant be blank';
+      //   }
+      //   if (! attrs.excerpt){
+      //     errors.excerpt = 'cant be blank';
+      //   }
+      //   if (! attrs.body){
+      //     errors.body = 'cant be blank';
+      //   }
+      //   if(! _.isEmpty(errors)){
+      //     return errors;
+      //   }
+      // }
     });
     // SETTING UP MODEL TO USE LOCAL STORAGE
     // Entities.configureStorage(Entities.Post);
 
-    Entities.PostCollection = Backbone.Collection.extend({
+    Entities.Posts = Backbone.Collection.extend({
       // url: 'posts',
-      url: 'http://192.168.1.4:9000/posts',
+      url: function(){
+        return Moonrakr.Config.api + '/posts';
+      },
       model: Entities.Post,
       comparator: 'title'
     });
@@ -72,7 +77,7 @@ define(function(require){
         return promise;
       },
       getPostEntity: function(postId){
-        var post = new Entities.Post({ _id: postId});
+        var post = new Entities.Post({ id: postId});
         var defer = $.Deferred();
         setTimeout(function(){
           post.fetch({
@@ -88,11 +93,11 @@ define(function(require){
       }
     };
 
-    Moonrakr.reqres.setHandler("post:entities", function(){
+    Moonrakr.reqres.setHandler('post:entities', function(){
       return API.getPostEntities();
     });
 
-    Moonrakr.reqres.setHandler("post:entity", function(id){
+    Moonrakr.reqres.setHandler('post:entity', function(id){
       return API.getPostEntity(id);
     });
 

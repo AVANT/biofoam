@@ -16,10 +16,10 @@ require(['require_config'],function(){
     'apps/_common/controller/helper_functions',
     'apps/_common/jquery/helper_functions',
 
-    'apps/menu/menu_app',
-    'apps/pages/pages_app',
-    'apps/users/users_app',
     'apps/posts/posts_app',
+    // 'apps/menu/menu_app',
+    // 'apps/pages/pages_app',
+    // 'apps/users/users_app',
     'apps/comments/comments_app',
     'apps/auth/auth_app'
 

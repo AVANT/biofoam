@@ -48,13 +48,13 @@ module.exports = function(grunt) {
     'clean:dist',               // clear previous build
     'concurrent:distCompile',   // compile all files
     'concurrent:distCopy',      // copy all targeted files to sacrum.dist
-    'imagemin:dist',            // image conversion
+    // 'imagemin:dist',            // image conversion
     'useminPrepare',            // get a handle on all references before names change
-    'test',                     // run all tests
+    // 'test',                     // run all tests
     'requirejs:dist',           // run require optimization
-    'rev',                      // add a unique hash to the name of every static file
+    // 'rev',                      // add a unique hash to the name of every static file
     'usemin',                   // replace references to static files with new names
-    'clean:postBuild'           // clear out unwanted folders left over from optimization
+    // 'clean:postBuild'           // clear out unwanted folders left over from optimization
   ]);
 
 

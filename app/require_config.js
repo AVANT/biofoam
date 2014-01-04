@@ -1,9 +1,6 @@
 require.config({
   paths:{
 
-      //////////
-     // CORE //
-    //////////
     jquery: 'vendor/jquery',
     underscore: 'vendor/underscore',
     handlebars: 'vendor/handlebars',
@@ -12,9 +9,6 @@ require.config({
     text: 'vendor/text',
     'backbone.stickit': 'vendor/backbone.stickit',
 
-      //////////////////
-     // SUPPLEMENTAL //
-    //////////////////
     'backbone.localstorage': 'vendor/backbone.localstorage',
     spinner: 'vendor/spin',
     'backbone.syphon': 'vendor/backbone.syphon',
@@ -22,18 +16,15 @@ require.config({
     bootstrap: 'vendor/bootstrap',
     bootbox: 'vendor/bootbox',
 
-      /////////
-     // CMS //
-    /////////
     'jquery.redactor': 'vendor/redactor',
     'jquery.jcrop': 'vendor/jquery.Jcrop',
-    loadImage: 'vendor/load-image.min',
+    loadImageMin: 'vendor/load-image.min',
     loadImageExifMap : 'vendor/load-image-exif-map',
     loadImageExif: 'vendor/load-image-exif',
     loadImageIos: 'vendor/load-image-ios',
     loadImageMeta: 'vendor/load-image-meta',
     loadImageOrientation: 'vendor/load-image-orientation',
-    loadImage: 'vendor/load-image'
+    loadImage: 'vendor/load-image',
 
   },
   shim: {
@@ -41,6 +32,7 @@ require.config({
       exports: '_'
     },
     handlebars: {
+      deps: ['text'],
       exports: 'Handlebars'
     },
     backbone: {

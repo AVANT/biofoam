@@ -15,7 +15,11 @@ module.exports = {
   },
   dist: {
     options: {
-      cssDir: '<%= dist %>/css'
+      // outputStyle: 'expanded',
+      // sourceComments: 'none'
+    },
+    files: {
+      'dist/css/main.css': '<%= app %>/styles/main.scss'
     }
   }
-}
+};

@@ -50,7 +50,7 @@ define(function(require){
         });
 
         // ON 'post:delete' EVENT, CLEAR MODEL AND GO TO NAVIGATE TO THE HOME PAGE
-        layoutView.on('post:delete', function(model){
+        layoutView.on('post:delete', function(){
           Moonrakr.Posts.New.newPost = null;
           Moonrakr.trigger('posts:list');
         });
@@ -58,9 +58,20 @@ define(function(require){
         // ON 'form:submit' EVENT, GET AN ID AND SAVE THAT SHIT
         layoutView.on('form:submit', function(){
 
+          console.log('form:submit event fired');
           console.log( newPost );
-          console.log( data );
-          newPost.save();
+
+          window.tessst = newPost;
+
+          newPost.save(null,{
+            success: function(){
+              console.log('success');
+              Moonrakr.trigger('posts:list');
+            },
+            error: function(){
+              console.log('error');
+            }
+          });
 
           // GET HIGHEST ID OF ALL POSTS -- not needed with live server
           // var fetchingPosts = Moonrakr.request('post:entities');
@@ -91,7 +102,8 @@ define(function(require){
       }, // newPost()
 
       getNewPost: function(){
-        return Moonrakr.Posts.New.newPost || new Moonrakr.Entities.Post();
+        // return Moonrakr.Posts.New.newPost || new Moonrakr.Entities.Post();
+        return new Moonrakr.Entities.Post();
       },
 
       getRedactorView: function(body){
@@ -101,7 +113,7 @@ define(function(require){
         });
       }
 
-    }
+    };
 
   });
 

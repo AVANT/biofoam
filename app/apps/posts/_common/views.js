@@ -3,7 +3,7 @@ define(function(require){
   require('apps/_common/stickit/custom_handlers');
   var Handlebars = require('handlebars');
   var Moonrakr = require('app');
-  var _postForm = require('text!apps/posts/_common/templates/post-form.html')
+  var _postForm = require('text!apps/posts/_common/templates/post-form.html');
 
   return Moonrakr.module('Posts.Common.Views', function(Views){
 
@@ -30,8 +30,8 @@ define(function(require){
 
       initialize: function(){
         var that = this;
-        this.model.on('change', this.modelChanged, this)
-        $( window ).bind( 'beforeunload', that.beforeUnloadHandler );
+        this.model.on('change', this.modelChanged, this);
+        $( window ).bind( 'beforeunload', that.beforeUnloadHandler, that );
 
         // this.model.
       },
@@ -50,7 +50,7 @@ define(function(require){
       },
 
       beforeUnloadHandler: function(){
-        if (that.modelChanged){
+        if (this.modelChanged){
           return( 'There are changes in the form.  Do you want to leave them unsaved?');
         }
       },
@@ -69,11 +69,10 @@ define(function(require){
       deleteClicked: function(e){
         var that = this;
         e.preventDefault();
-        bootbox.confirm('Are you sure you want to delete this post?', function(result){
-          if(result){
-            that.trigger('post:delete', that.model);
-          }
-        });
+        var result = window.confirm('Are you sure you want to delete this post?');
+        if(result){
+          that.trigger('post:delete', that.model);
+        }
       },
 
         //////////////////////////

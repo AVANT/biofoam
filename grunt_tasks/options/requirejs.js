@@ -1,18 +1,19 @@
 module.exports = {
   dist: {
     options: {
-      baseUrl: '<%= sacrum.dist %>/js',
+      baseUrl: '<%= dist %>/js',
       optimize: 'uglify',
       preserveLicenseComments: true,
       useStrict: false,
-      wrap: true,
-    mainConfigFile: '<%= sacrum.dist %>/js/requireConfig.js',
+      // wrap: true,
+
+      mainConfigFile: '<%= dist %>/js/require_config.js',
       removeCombined: true,
       findNestedDependencies: true,
       name: 'main',
-      out: '<%= sacrum.dist %>/js/main.optimized.js',
+      out: '<%= dist %>/js/main.optimized.js',
       waitSeconds: 7,
       logLevel: 0
     }
   }
-}
+};

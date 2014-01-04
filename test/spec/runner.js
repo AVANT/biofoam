@@ -5,13 +5,13 @@ define([
   'spec/app/app.spec.js',
 
   // entities
-  'spec/app/apps/entities/_entities.spec.js',
+  // 'spec/app/apps/entities/_entities.spec.js',
 
   // post app
-  'spec/app/apps/posts/_posts.spec.js',
+  // 'spec/app/apps/posts/_posts.spec.js',
 
   // menu app
-  'spec/app/apps/menu/_menu.spec.js'
+  // 'spec/app/apps/menu/_menu.spec.js'
 
   ], function(){
     'use strict';

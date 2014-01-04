@@ -91,6 +91,15 @@ module.exports = {
             src: '**/*.js'
         }]
     },
+    templates2dist: {
+        files: [{
+            expand: true,
+            dot: true,
+            cwd: 'app/apps',
+            dest: 'dist/js/apps',
+            src: '**/*.html'
+        }]
+    },
     styles2dist: {
         files: [{
             expand: true,
@@ -105,30 +114,33 @@ module.exports = {
             expand: true,
             dot: true,
             flatten: true,
-            cwd: 'vendor',
-            src: 'js/require*.js',
-            dest: 'dist/js/'
-        }, {
-            expand: true,
-            dot: true,
-            flatten: true,
-            cwd: 'vendor',
-            src: 'js/almond*.js',
-            dest: 'dist/js/'
-        }, {
-            expand: true,
-            dot: true,
-            flatten: true,
-            cwd: 'vendor',
-            src: 'js/**/*.js',
+            cwd: 'bower_components',
+            src: [
+                'backbone/backbone.js',
+                'backbone.localstorage/backbone.localstorage.js',
+                'backbone.picky/lib/backbone.picky.js',
+                'backbone.stickit/backbone.stickit.js',
+                'backbone.syphon/backbone.syphon.js',
+                'blueimp-load-image/js/*.js',
+                'bootstrap/dist/js/bootstrap.js',
+                'bootbox/bootbox.js',
+                'handlebars/handlebars.js',
+                'jcrop/js/jquery.Jcrop.js',
+                'jquery/jquery.js',
+                'marionette/lib/backbone.marionette.js',
+                'requirejs/require.js',
+                'spinjs/spin.js',
+                'text/text.js',
+                'underscore/underscore.js'
+            ],
             dest: 'dist/js/vendor'
         }, {
             expand: true,
             dot: true,
             flatten: true,
             cwd: 'vendor',
-            src: 'css/**/*.css',
-            dest: 'dist/css/vendor'
+            src: 'Redactor/redactor/redactor.js',
+            dest: 'dist/js/vendor'
         }]
-    }
-}
+    },
+};

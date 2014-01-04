@@ -8,7 +8,7 @@ define(function(require){
     Entities.Comment = Backbone.Model.extend({
       url: 'comments'
     });
-    Entities.configureStorage( Entities.Comment );
+    // Entities.configureStorage( Entities.Comment );
 
     Entities.CommentCollection = Backbone.Collection.extend({
       // eventually will have to set up some to get comments/for/:id
@@ -17,7 +17,7 @@ define(function(require){
       model: Entities.Comment
       // comparator: 'date'
     });
-    Entities.configureStorage( Entities.CommentCollection );
+    // Entities.configureStorage( Entities.CommentCollection );
 
     var initializeComments = function(){
       console.log('comment entities initializing');
