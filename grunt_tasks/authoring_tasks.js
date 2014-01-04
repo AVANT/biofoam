@@ -17,7 +17,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dev',[
     'clean:tmp',
     'concurrent:devCompile',
-    'concurrent:devCopy',
+    'concurrent:devCopy'
     // 'mocha:test',
   ]);
 
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     'dev',
     'connect:tmp',
     'open:server',
-    'watch',
+    'watch'
   ]);
 
   grunt.registerTask('default',['dev:server']);
