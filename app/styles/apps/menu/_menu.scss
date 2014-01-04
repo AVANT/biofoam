@@ -23,7 +23,7 @@ Current search lives in the menu and stuff.
       <div class="row">
         <form>
           <div class="form-group">
-            <h3 id="search-input" class="small-8 columns" contenteditable="true">Posts</h3>
+            <h3 id="search-input" class="small-8 columns" contenteditable="true">SEARCH</h3>
           </div>
           <button class="js-submit small-4 small columns">Search</button>
         </form>
@@ -32,7 +32,8 @@ Current search lives in the menu and stuff.
     <div id="login" class="small-4 columns">
       <div>
         <div class="login-container">
-          <a href="#login" class="login">Login</a>
+          <a href="#login" class="login"><img class="unlogged" src="/images/unlogged.png"></a>
+          <a href="#login" class="login">login</a>
         </div>
       </div>
     </div>
@@ -43,3 +44,16 @@ Current search lives in the menu and stuff.
 ```
 
 */
+
+.unlogged {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   }
+
+.unlogged:hover {
+  opacity: 0.5;
+  }
+
+
