@@ -3,7 +3,7 @@
 module.exports = {
   html: ['<%= dist %>/index.html'],
   css: ['<%= dist %>/css/main.css'],
-  options: {;
+  options: {
     dirs: ['<;%= dist %>']
   }
 };

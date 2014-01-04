@@ -8,7 +8,7 @@ module.exports = {
   },
   files: {
     src: [
-      '<%= sacrum.dist %>/**/*.{js,css,png,jpg}'
+      '<%= dist %>/**/*.{js,css,png,jpg}'
     ]
   }
-}
+};
