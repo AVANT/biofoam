@@ -32,6 +32,8 @@ define(function(require){
               model: post
             });
 
+            window.myModel = post;
+
             // init imageUpload view
             var imageUploadView = new Edit.ImageUpload();
 

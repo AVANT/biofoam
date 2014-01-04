@@ -23,7 +23,7 @@ define(function(require){
         });
 
         // init imageUpload view and insert model photo??
-        var imageUploadView = new New.ImageUpload();
+        var imageUploadView = Moonrakr.request('media:new');
 
         // INIT REDACTOR VIEW AND INSERT MODEL BODY
         var redactorView = this.getRedactorView( newPost.get('body') );
