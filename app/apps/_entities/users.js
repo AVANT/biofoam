@@ -1,89 +1,85 @@
-define(function(require){
+require('app');
+require('apps/_entities/localstorage');
 
-  var Moonrakr = require('app');
-  require('apps/_entities/localstorage');
+return Moonrakr.module('Entities', function(Entities){
 
-  return Moonrakr.module('Entities', function(Entities){
+  Entities.User = Backbone.Model.extend({
+    // url: 'users',
+    url: function(){
+      console.log(this.get('_id'));
+      return "http://192.168.1.4:9000/posts/" + this.get("_id");
+    }
+  });
+  // SETTING UP MODEL TO USE LOCAL STORAGE
+  // Entities.configureStorage(Entities.User);
 
-    Entities.User = Backbone.Model.extend({
-      // url: 'users',
-      url: function(){
-        console.log(this.get('_id'));
-        return "http://192.168.1.4:9000/posts/" + this.get("_id");
-      }
+  Entities.UserCollection = Backbone.Collection.extend({
+    url: 'users',
+    model: Entities.User,
+    comparator: 'lastName'
+  });
+  // Entities.configureStorage(Entities.UserCollection);
+
+  var initializeUsers = function(){
+    console.log('user entities initialized')
+    var users = new Entities.UserCollection([
+      {id:1, username: 'Ced'},
+      {id:2, username: 'Che'},
+      {id:3, username: 'Sam'},
+    ]);
+    users.forEach(function(user){
+      user.save();
     });
-    // SETTING UP MODEL TO USE LOCAL STORAGE
-    // Entities.configureStorage(Entities.User);
+    return users.models;
+  };
 
-    Entities.UserCollection = Backbone.Collection.extend({
-      url: 'users',
-      model: Entities.User,
-      comparator: 'lastName'
-    });
-    // Entities.configureStorage(Entities.UserCollection);
-
-    var initializeUsers = function(){
-      console.log('user entities initialized')
-      var users = new Entities.UserCollection([
-        {id:1, username: 'Ced'},
-        {id:2, username: 'Che'},
-        {id:3, username: 'Sam'},
-      ]);
-      users.forEach(function(user){
-        user.save();
+  var API = {
+    getUserEntities: function(){
+      var users = new Entities.UserCollection();
+      var defer = $.Deferred();
+      users.fetch({
+        success: function(data){
+          defer.resolve(data);
+        }
       });
-      return users.models;
-    };
+      var promise = defer.promise();
 
-    var API = {
-      getUserEntities: function(){
-        var users = new Entities.UserCollection();
-        var defer = $.Deferred();
-        users.fetch({
+      // HANDLE THE CASE WHERE THERE ARE NO USERS RETURNED //
+      $.when(promise).done(function(users){
+        if(users.length === 0){
+          // var models = initializeUsers();
+          users.reset(models);
+        }
+      });
+      // END CASE HANDLING
+
+      return promise;
+    },
+    getUserEntity: function(userId){
+      var user = new Entities.User({_id: userId});
+      var defer = $.Deferred();
+
+      setTimeout(function(){
+        user.fetch({
           success: function(data){
             defer.resolve(data);
+          },
+          error: function(){
+            defer.resolve(undefined);
+            // instead perhaps try passing the server errors thru?
           }
         });
-        var promise = defer.promise();
+      }, 0);
+      return defer.promise();
+    }
+  };
 
-        // HANDLE THE CASE WHERE THERE ARE NO USERS RETURNED //
-        $.when(promise).done(function(users){
-          if(users.length === 0){
-            // var models = initializeUsers();
-            users.reset(models);
-          }
-        });
-        // END CASE HANDLING
+  Moonrakr.reqres.setHandler('user:entities', function(){
+    return API.getUserEntities();
+  });
 
-        return promise;
-      },
-      getUserEntity: function(userId){
-        var user = new Entities.User({_id: userId});
-        var defer = $.Deferred();
+  Moonrakr.reqres.setHandler('user:entity', function(id){
+    return API.getUserEntity(id);
+  });
 
-        setTimeout(function(){
-          user.fetch({
-            success: function(data){
-              defer.resolve(data);
-            },
-            error: function(data){
-              defer.resolve(undefined);
-              // instead perhaps try passing the server errors thru?
-            }
-          })
-        }, 0);
-        return defer.promise();
-      }
-    };
-
-    Moonrakr.reqres.setHandler('user:entities', function(){
-      return API.getUserEntities();
-    });
-
-    Moonrakr.reqres.setHandler('user:entity', function(id){
-      return API.getUserEntity(id);
-    });
-
-  });  // return module
-
-}); // define
+});  // return module

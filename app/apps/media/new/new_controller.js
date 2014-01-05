@@ -1,47 +1,43 @@
-define(function(require){
+require('app');
+require('apps/_entities/media');
+require('apps/media/new/views/uploader');
 
-  var App = require('app');
-  require('apps/_entities/media');
-  require('apps/media/new/views/uploader');
+return Moonrakr.module('Media.New', function(New){
 
-  return App.module('Media.New', function(New){
+  New.Controller = {
 
-    New.Controller = {
+    newMedia: function(){
 
-      newMedia: function(){
+      this.model = new Moonrakr.Entities.Media();
 
-        this.model = new App.Entities.Media();
+      // debug
+      window.mediaModel = this.model;
 
-        // debug
-        window.mediaModel = this.model;
+      this.view = new New.Uploader({
+        model: this.model
+      });
 
-        this.view = new New.Uploader({
-          model: this.model
+      this.attachHandlers();
+
+      return this.view;
+
+    },
+    attachHandlers:function(){
+      var controller = this;
+      this.view.on('media:new:submit', function(){
+
+        this.model.save(null,{
+          success: function(data){
+            console.log('success', data);
+            controller.view.trigger('media:save:success', controller.model);
+          },
+          error: function(){
+            console.log('error');
+          }
         });
+      });
+    }
 
-        this.attachHandlers();
-
-        return this.view;
-
-      },
-      attachHandlers:function(){
-        var controller = this;
-        this.view.on('media:new:submit', function(){
-
-          this.model.save(null,{
-            success: function(data){
-              console.log('success', data);
-              controller.view.trigger('media:save:success', controller.model);
-            },
-            error: function(){
-              console.log('error');
-            }
-          });
-        });
-      }
-
-    };
-
-  });
+  };
 
 });

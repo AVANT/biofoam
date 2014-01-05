@@ -8,35 +8,31 @@ Subapps:
 
 @module Menu
 **/
+require('app');
+require('apps/menu/list/list_controller');
 
-define(function(require){
+return Moonrakr.module('Menu', function(Menu){
+  this.startWithParent = true;
 
-  var Moonrakr = require("app");
-  require('apps/menu/list/list_controller');
+  var API = {
+    listHeader: function(){
+      Menu.List.Controller.listHeader();
+    },
+    setHeaderText: function(str){
+      Menu.List.Controller.setHeaderText(str);
+    }
+  };
 
-  return Moonrakr.module('Menu', function(Menu){
-    this.startWithParent = true;
-
-    var API = {
-      listHeader: function(){
-        Menu.List.Controller.listHeader();
-      },
-      setHeaderText: function(str){
-        Menu.List.Controller.setHeaderText(str);
-      }
-    };
-
-    Moonrakr.commands.setHandler('set:active:header', function(name){
-      Moonrakr.Menu.List.Controller.setActiveHeader(name);
-    });
-
-    Menu.on("start", function(){
-      API.listHeader();
-    });
-
-    Moonrakr.commands.setHandler('header:set:title', function(str){
-      API.setHeaderText(str);
-    });
-
+  Moonrakr.commands.setHandler('set:active:header', function(name){
+    Moonrakr.Menu.List.Controller.setActiveHeader(name);
   });
+
+  Menu.on('start', function(){
+    API.listHeader();
+  });
+
+  Moonrakr.commands.setHandler('header:set:title', function(str){
+    API.setHeaderText(str);
+  });
+
 });

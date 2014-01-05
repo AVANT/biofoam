@@ -18,68 +18,64 @@ The posts.show.controller creates a post's layout view, requests the post's comm
 @requires moonrakr, posts.show.views
 **/
 
-define(function(require){
+require('app');
+require('apps/_common/controller/helper_functions');
+require('apps/posts/show/show_views');
 
-  var Moonrakr = require('app');
-  require('apps/_common/controller/helper_functions');
-  require('apps/posts/show/show_views');
+return Moonrakr.module('Posts.Show', function(Show){
 
-  return Moonrakr.module('Posts.Show', function(Show){
+  Show.Controller = {
+    showPost: function(id){
 
-    Show.Controller = {
-      showPost: function(id){
+      Moonrakr.Common.Controller.helper.cueLoadingView();
 
-        Moonrakr.Common.Controller.helper.cueLoadingView();
+      var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
 
-        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
+      var cmsPanel = authGranted ? new Show.CMSPanel() : null;
+      var postLayout = new Show.PostLayout();
 
-        var cmsPanel = authGranted ? new Show.CMSPanel() : null;
-        var postLayout = new Show.PostLayout();
+      console.log('asking for this id', id);
 
-        console.log('asking for this id', id);
+      var fetchingPost = Moonrakr.request('post:entity', id);
+      $.when(fetchingPost).done(function(post){
+        var postView;
 
-        var fetchingPost = Moonrakr.request('post:entity', id);
-        $.when(fetchingPost).done(function(post){
-          var postView;
+        if (post !== undefined){
 
-          if (post !== undefined){
+          postView = new Show.Post({
+            model: post
+          });
 
-            postView = new Show.Post({
-              model: post
+          // DEBUG
+          window.myModel = post;
+
+          Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
+
+          // will eventually need to pass a comments/for/:id value with this request
+          var commentsView = Moonrakr.request('comments:listforpost');
+
+          postLayout.on('show', function(){
+            if(authGranted){postLayout.cmsRegion.show(cmsPanel);}
+            postLayout.postRegion.show( postView );
+            postLayout.commentsRegion.show( commentsView );
+          });
+
+          if(authGranted){
+            cmsPanel.on('post:edit', function(){
+              Moonrakr.trigger('post:edit', post.get('id'));
             });
-
-            // DEBUG
-            window.myModel = post;
-
-            Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
-
-            // will eventually need to pass a comments/for/:id value with this request
-            var commentsView = Moonrakr.request('comments:listforpost');
-
-            postLayout.on('show', function(){
-              if(authGranted){postLayout.cmsRegion.show(cmsPanel);}
-              postLayout.postRegion.show( postView );
-              postLayout.commentsRegion.show( commentsView );
-            });
-
-            if(authGranted){
-              cmsPanel.on('post:edit', function(){
-                Moonrakr.trigger('post:edit', post.get('id'));
-              });
-            }
-
-          }
-          else {
-            postView = new Show.MissingPost();
           }
 
-          Moonrakr.mainRegion.show( postLayout );
+        }
+        else {
+          postView = new Show.MissingPost();
+        }
 
-        });
-      }
-    };
+        Moonrakr.mainRegion.show( postLayout );
 
+      });
+    }
+  };
 
-  });
 
 });

@@ -19,52 +19,48 @@ The users.list.controller creates a user's list layout view and displays it in m
 @requires moonrakr, users.list.views
 **/
 
-define(function(require){
+require('app');
+require('apps/users/list/list_views');
 
-  var Moonrakr = require('app');
-  require('apps/users/list/list_views');
+return Moonrakr.module('UsersApp.List', function(List){
 
-  return Moonrakr.module('UsersApp.List', function(List){
+  List.Controller = {
+    listUsers: function(){
 
-    List.Controller = {
-      listUsers: function(){
+      Moonrakr.Common.Controller.helper.cueLoadingView();
 
-        Moonrakr.Common.Controller.helper.cueLoadingView();
+      var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
 
-        var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
+      var fetchingUsers = Moonrakr.request('user:entities');
 
-        var fetchingUsers = Moonrakr.request('user:entities');
+      var usersListLayout = new List.Layout();
+      var usersListPanel = authGranted ? new List.CMSPanel() : null;
 
-        var usersListLayout = new List.Layout();
-        var usersListPanel = authGranted ? new List.CMSPanel() : null;
+      $.when(fetchingUsers).done(function(users){
 
-        $.when(fetchingUsers).done(function(users){
-
-          var usersListView = new List.Users({
-            collection: users
-          });
-
-          usersListLayout.on('show', function(){
-            if(authGranted){ usersListLayout.panelRegion.show( usersListPanel ); }
-            usersListLayout.usersRegion.show( usersListView );
-          });
-
-          if(authGranted){
-            usersListPanel.on('user:new', function(){
-              Moonrakr.trigger('user:new');
-            });
-          }
-
-          usersListView.on('itemview:user:show', function(childView, model){
-            Moonrakr.trigger('user:show', model.get('id'));
-          });
-
-          Moonrakr.mainRegion.show( usersListLayout );
-
+        var usersListView = new List.Users({
+          collection: users
         });
-      }
-    }
 
-  });
+        usersListLayout.on('show', function(){
+          if(authGranted){ usersListLayout.panelRegion.show( usersListPanel ); }
+          usersListLayout.usersRegion.show( usersListView );
+        });
+
+        if(authGranted){
+          usersListPanel.on('user:new', function(){
+            Moonrakr.trigger('user:new');
+          });
+        }
+
+        usersListView.on('itemview:user:show', function(childView, model){
+          Moonrakr.trigger('user:show', model.get('id'));
+        });
+
+        Moonrakr.mainRegion.show( usersListLayout );
+
+      });
+    }
+  };
 
 });

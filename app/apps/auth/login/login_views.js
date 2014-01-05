@@ -1,56 +1,54 @@
-define(function(require){
-  var Handlebars = require('handlebars');
-  var Moonrakr = require('app');
-  var _loginForm = require('text!apps/auth/login/templates/login_form.html');
+require('handlebars');
+require('app');
 
-  return Moonrakr.module('Auth.Login', function(Login){
+var _loginForm = require('text!apps/auth/login/templates/login_form.html');
 
-    Login.LoginView = Marionette.ItemView.extend({
-      template: Handlebars.compile( _loginForm ),
+return Moonrakr.module('Auth.Login', function(Login){
 
-      events: {
-        'click button.js-login': 'loginClicked',
-        'click button.js-signup': 'signupClicked'
-      },
+  Login.LoginView = Marionette.ItemView.extend({
+    template: Handlebars.compile( _loginForm ),
 
-      signupClicked: function(e){
-        e.preventDefault();
-        this.trigger('view:signup');
-      },
+    events: {
+      'click button.js-login': 'loginClicked',
+      'click button.js-signup': 'signupClicked'
+    },
 
-      loginClicked: function(e){
-        e.preventDefault();
-        var data = Backbone.Syphon.serialize(this);
-        // console.log( 'form data: ', data);
-        this.trigger('form:submit', data);
-      },
+    signupClicked: function(e){
+      e.preventDefault();
+      this.trigger('view:signup');
+    },
 
-      onFormDataInvalid: function(errors){
-        var $view = this.$el;
+    loginClicked: function(e){
+      e.preventDefault();
+      var data = Backbone.Syphon.serialize(this);
+      // console.log( 'form data: ', data);
+      this.trigger('form:submit', data);
+    },
 
-        var clearFormErrors = function(){
-          var $form = $view.find('form');
-          $form.find('.help-inline.error').each(
-            function(){
-              $(this).remove();
-          });
-          $form.find('.control-group.error').each(
-            function(){
-              $(this).removeClass('error');
-          });
-        };
+    onFormDataInvalid: function(errors){
+      var $view = this.$el;
 
-        var markErrors = function(value, key){
-          var $controlGroup = $view.find(key).parent();
-          var $errorEl = ('<span>', {class: 'help-inline error', text: value});
-          $controlGroup.appen($errorEl).addClass('error');
-        };
+      var clearFormErrors = function(){
+        var $form = $view.find('form');
+        $form.find('.help-inline.error').each(
+          function(){
+            $(this).remove();
+        });
+        $form.find('.control-group.error').each(
+          function(){
+            $(this).removeClass('error');
+        });
+      };
 
-        clearFormErrors();
-        _.each(errors, markErrors);
-      }
+      var markErrors = function(value, key){
+        var $controlGroup = $view.find(key).parent();
+        var $errorEl = ('<span>', {class: 'help-inline error', text: value});
+        $controlGroup.appen($errorEl).addClass('error');
+      };
 
-    });
+      clearFormErrors();
+      _.each(errors, markErrors);
+    }
 
   });
 

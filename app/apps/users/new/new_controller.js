@@ -19,51 +19,47 @@ The users.new.controller creates a user's layout view and displays it in moonrak
 @requires moonrakr, users.new.views
 **/
 
-define(function(require){
+require('app');
+require('apps/users/new/new_views');
 
-  var Moonrakr = require('app');
-  require('apps/users/new/new_views');
+return Moonrakr.module('UsersApp.New', function(New){
 
-  return Moonrakr.module('UsersApp.New', function(New){
+  New.Controller = {
+    newUser: function(){
 
-    New.Controller = {
-      newUser: function(){
+      var newUser = new Moonrakr.Entities.User();
 
-        var newUser = new Moonrakr.Entities.User();
+      var layoutView = new New.User({
+        model: newUser
+      });
 
-        var layoutView = new New.User({
-          model: newUser
+      var imageUploadView = new New.ImageUploader();
+
+      layoutView.on('render', function(){
+        layoutView.imageUploadRegion.show( imageUploadView );
+      });
+
+      // SAVE HANDLER //
+      layoutView.on('form:submit', function(){
+
+        var data = { 'id': Moonrakr.Entities.HelperFunctions.randomString(32) }; // not needed with live server
+
+        newUser.save(data, {
+          success: function(){
+            console.log('new user save succesful');
+            Moonrakr.trigger('user:show', newUser.get('id'));
+          },
+          error: function(){
+            console.log('new user save failed');
+            layoutView.triggerMethod('form:data:invalid', newUser.validationError);
+            // TODO handle save error
+          }
         });
 
-        var imageUploadView = new New.ImageUploader();
+      });
 
-        layoutView.on('render', function(){
-          layoutView.imageUploadRegion.show( imageUploadView );
-        });
-
-        // SAVE HANDLER //
-        layoutView.on('form:submit', function(){
-
-          var data = { 'id': Moonrakr.Entities.HelperFunctions.randomString(32) }; // not needed with live server
-
-          newUser.save(data, {
-            success: function(){
-              console.log('new user save succesful');
-              Moonrakr.trigger('user:show', newUser.get('id'));
-            },
-            error: function(){
-              console.log('new user save failed');
-              layoutView.triggerMethod('form:data:invalid', newUser.validationError);
-              // TODO handle save error
-            }
-          });
-
-        });
-
-        Moonrakr.mainRegion.show( layoutView );
-      }
+      Moonrakr.mainRegion.show( layoutView );
     }
-
-  });
+  };
 
 });

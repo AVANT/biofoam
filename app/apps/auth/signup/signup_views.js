@@ -1,26 +1,24 @@
-define(function(require){
-  var Handlebars = require('handlebars');
-  var Moonrakr = require('app');
-  var _signupForm = require('text!apps/auth/signup/templates/signup_form.html');
+require('handlebars');
+require('app');
 
-  return Moonrakr.module('Auth.Signup', function(Signup){
+var _signupForm = require('text!apps/auth/signup/templates/signup_form.html');
 
-    Signup.SignupView = Marionette.ItemView.extend({
-      template: Handlebars.compile( _signupForm ),
-      events: {
-        'click button.js-submit': 'submitClicked'
-      },
+return Moonrakr.module('Auth.Signup', function(Signup){
 
-      submitClicked: function(e){
-        e.preventDefault();
-        var data = Backbone.Syphon.serialize(this);
-        console.log( 'form data: ', data );
-        this.trigger('form:submit');
-      },
+  Signup.SignupView = Marionette.ItemView.extend({
+    template: Handlebars.compile( _signupForm ),
+    events: {
+      'click button.js-submit': 'submitClicked'
+    },
 
-      onFormDataInvalid: function(errors){}
+    submitClicked: function(e){
+      e.preventDefault();
+      var data = Backbone.Syphon.serialize(this);
+      console.log( 'form data: ', data );
+      this.trigger('form:submit');
+    },
 
-    });
+    onFormDataInvalid: function(errors){}
 
   });
 

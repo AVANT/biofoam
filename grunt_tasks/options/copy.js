@@ -38,6 +38,16 @@ module.exports = {
             src: '**/*.css'
         }]
     },
+    // require2tmp: {
+    //     files: [{
+    //         expand: true,
+    //         dot: true,
+    //         flatten: true,
+    //         cwd: 'bower_components',
+    //         src: 'requirejs/require.js',
+    //         dest: '.tmp/js/vendor'
+    //     }]
+    // },
     vendor2tmp: {
         files: [{
             expand: true,

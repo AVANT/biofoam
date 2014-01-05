@@ -12,7 +12,10 @@ module.exports = {
       'copy:scripts2tmp',
       'copy:templates2tmp',
       'copy:styles2tmp',
-      'copy:vendor2tmp'
+      // 'copy:require2tmp'
+      'copy:vendor2tmp',
+
+      'wrap:dev',
     ]
   },
   distCompile: {
@@ -27,7 +30,9 @@ module.exports = {
       'copy:scripts2dist',
       'copy:templates2dist',
       'copy:styles2dist',
-      'copy:vendor2dist'
+      'copy:vendor2dist',
+
+      'wrap:dev',
     ]
   }
 };

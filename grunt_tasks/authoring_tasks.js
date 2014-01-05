@@ -17,7 +17,8 @@ module.exports = function(grunt) {
   grunt.registerTask('dev',[
     'clean:tmp',
     'concurrent:devCompile',
-    'concurrent:devCopy'
+    'concurrent:devCopy',
+    // 'requirejs:dev',
     // 'mocha:test',
   ]);
 
