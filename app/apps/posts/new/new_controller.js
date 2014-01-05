@@ -9,10 +9,7 @@ define(function(require){
     New.Controller = {
 
       newPost: function(){
-
-          /////////////////////////////
-         // GET VIEWS AND THE MODEL //
-        /////////////////////////////
+        // GET VIEWS AND THE MODEL //
 
         // GET POST MODEL FROM THIS APP OR CREATE A NEW ONE
         var newPost = this.getNewPost();
@@ -29,9 +26,7 @@ define(function(require){
         var redactorView = this.getRedactorView( newPost.get('body') );
 
 
-          ////////////////////////
-         // SET EVENT HANDLERS //
-        ////////////////////////
+        // SET EVENT HANDLERS //
 
         // SHOW REDACTOR VIEW WHEN LAYOUT VIEW IS RENDERED
         layoutView.on('render', function(){
@@ -55,6 +50,13 @@ define(function(require){
           Moonrakr.trigger('posts:list');
         });
 
+        imageUploadView.on('media:save:success', function(model){
+          console.log('handle on this model: ', model);
+
+          newPost.set('mediaId', model.get('id'));
+          newPost.set('mediaUrl', model.get('url'));
+        });
+
         // ON 'form:submit' EVENT, GET AN ID AND SAVE THAT SHIT
         layoutView.on('form:submit', function(){
 
@@ -73,28 +75,7 @@ define(function(require){
             }
           });
 
-          // GET HIGHEST ID OF ALL POSTS -- not needed with live server
-          // var fetchingPosts = Moonrakr.request('post:entities');
-          // $.when(fetchingPosts).done(function(posts){
-
-          //   // var highestId = posts.max(function(c){ return c.id });
-          //   // highestId = highestId.get('id');
-          //   // data.id = highestId + 1
-          //   if(newPost.create(data)){
-          //     // Moonrakr.trigger('post:show', newPost.get('id'));
-          //     Moonrakr.trigger('post:list');
-          //   }
-          //   else {
-          //     layoutView.triggerMethod('form:data:invalid', newPost.validationError);
-          //   }
-
-          // });
-        }); // layoutView.on
-
-
-          /////////////////////////
-         // DISPLAY *THE* VIEW  //
-        /////////////////////////
+        }); // 'form:sbumit'
 
         // DISPLAY THE LAYOUT VIEW ON THE MAIN REGION
         Moonrakr.mainRegion.show(layoutView);

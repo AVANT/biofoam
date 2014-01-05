@@ -46,6 +46,7 @@ module.exports = {
             cwd: 'bower_components',
             src: [
                 'backbone/backbone.js',
+                'backbone-validation/dist/backbone-validation-amd.js',
                 'backbone.localstorage/backbone.localstorage.js',
                 'backbone.picky/lib/backbone.picky.js',
                 'backbone.stickit/backbone.stickit.js',
@@ -118,6 +119,7 @@ module.exports = {
             cwd: 'bower_components',
             src: [
                 'backbone/backbone.js',
+                'backbone-validation/dist/backbone-validation-amd.js',
                 'backbone.localstorage/backbone.localstorage.js',
                 'backbone.picky/lib/backbone.picky.js',
                 'backbone.stickit/backbone.stickit.js',

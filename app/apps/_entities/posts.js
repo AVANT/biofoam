@@ -1,7 +1,7 @@
 define(function(require){
 
   var Moonrakr = require('app');
-  // require('apps/_entities/localstorage');
+  require('backbone.validation');
 
   return Moonrakr.module('Entities', function(Entities){
 
@@ -14,35 +14,21 @@ define(function(require){
           return Moonrakr.Config.api + '/posts';
         }
       },
-      // validate: function(attrs, options){
-      //   var errors = {};
-      //   if (! attrs.title){
-      //     errors.title = 'cant be blank';
-      //   }
-      //   if (! attrs.excerpt){
-      //     errors.excerpt = 'cant be blank';
-      //   }
-      //   if (! attrs.body){
-      //     errors.body = 'cant be blank';
-      //   }
-      //   if(! _.isEmpty(errors)){
-      //     return errors;
-      //   }
-      // }
+      validation: {
+        title: {
+          rangeLength: [1, 40],
+          msg: 'Title must be between 1 and 40 characters'
+        }
+      }
     });
-    // SETTING UP MODEL TO USE LOCAL STORAGE
-    // Entities.configureStorage(Entities.Post);
 
     Entities.Posts = Backbone.Collection.extend({
-      // url: 'posts',
       url: function(){
         return Moonrakr.Config.api + '/posts';
       },
       model: Entities.Post,
       comparator: 'title'
     });
-    // SETTING UP COLLECTION TO USE LOCAL STORAGE
-    // Entities.configureStorage(Entities.PostCollection);
 
     var initializePosts = function(){
 

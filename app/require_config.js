@@ -8,6 +8,7 @@ require.config({
     marionette: 'vendor/backbone.marionette',
     text: 'vendor/text',
     'backbone.stickit': 'vendor/backbone.stickit',
+    'backbone.validation': 'vendor/backbone-validation-amd',
 
     'backbone.localstorage': 'vendor/backbone.localstorage',
     spinner: 'vendor/spin',

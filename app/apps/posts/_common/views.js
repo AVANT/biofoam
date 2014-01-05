@@ -33,11 +33,12 @@ define(function(require){
         this.model.on('change', this.modelChanged, this);
         $( window ).bind( 'beforeunload', that.beforeUnloadHandler, that );
 
-        // this.model.
+        this.model.on('validated:invalid', this.modelValidated, this);
       },
 
       onRender: function(){
         this.stickit();
+        Backbone.Validation.bind(this);
       },
 
         ///////////////////
@@ -59,14 +60,11 @@ define(function(require){
        // UI HANLDERS //
       /////////////////
 
-      // SUBMIT HANDLER
       submitClicked: function(e){
         e.preventDefault();
-        console.log( 'my submit button?', this.$el.find(e.target) );
-        // this.trigger('form:submit');
+        this.trigger('form:submit');
       },
 
-      // DELETE HANDLER //
       deleteClicked: function(e){
         var that = this;
         e.preventDefault();
@@ -76,9 +74,39 @@ define(function(require){
         }
       },
 
-        //////////////////////////
-       // HANLDING FORM ERRORS //
-      //////////////////////////
+        ////////////////////////////////
+       // HANLDING VALIDATION ERRORS //
+      ////////////////////////////////
+
+      modelValidated: function(model, errors){
+        var view = this;
+
+        this.clearFormErrors();
+        _.each(errors, function(value, key){
+          view.renderFormErrors(value, key, view);
+        });
+
+        console.log('model validation errors: ', errors);
+      },
+
+      clearFormErrors: function(){
+        var $view = this.$el;
+        var $form = $view.find('form');
+        $form.find('.help-inline.error').each(function(){
+          $(this).remove();
+        });
+        $form.find('.control-group.error').each(function(){
+          $(this).removeClass('error');
+        });
+
+      },
+      renderFormErrors: function( value, key, view){
+        var $view = view.$el;
+        var $controlGroup = $view.find('#post-' + key).parent();
+        var $errorEl = $('<span>', {class: 'help-inline error', text: value});
+        $controlGroup.append($errorEl).addClass('error');
+      },
+
 
       onFormDataInvalid: function(errors){
         var $view = this.$el;

@@ -39,7 +39,8 @@
     "sinon": "~1.7.3",
     "sinonjs": "~1.7.3",
     "foundation": "~5.0.2",
-    "blueimp-canvas-to-blob": "~2.1.0"
+    "blueimp-canvas-to-blob": "~2.1.0",
+    "backbone-validation": "~0.9.0"
   },
   "devDependencies": {
     "sinon-chai": "~2.4.0"

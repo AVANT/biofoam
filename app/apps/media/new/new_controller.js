@@ -11,6 +11,10 @@ define(function(require){
       newMedia: function(){
 
         this.model = new App.Entities.Media();
+
+        // debug
+        window.mediaModel = this.model;
+
         this.view = new New.Uploader({
           model: this.model
         });
@@ -21,12 +25,13 @@ define(function(require){
 
       },
       attachHandlers:function(){
+        var controller = this;
         this.view.on('media:new:submit', function(){
 
           this.model.save(null,{
             success: function(data){
               console.log('success', data);
-              // trigger event with model data
+              controller.view.trigger('media:save:success', controller.model);
             },
             error: function(){
               console.log('error');
