@@ -22,11 +22,8 @@ define(function(require){
       },
       attachHandlers:function(){
         this.view.on('media:new:submit', function(){
-          // save media
-          this.model.save(null, {
-            // data: FormData,
-            // contentType: false,
-            // processData: false,
+
+          this.model.save(null,{
             success: function(data){
               console.log('success', data);
               // trigger event with model data

@@ -26,6 +26,8 @@ require.config({
     loadImageOrientation: 'vendor/load-image-orientation',
     loadImage: 'vendor/load-image',
 
+    canvasToBlob: 'vendor/canvas-to-blob',
+
   },
   shim: {
     underscore: {

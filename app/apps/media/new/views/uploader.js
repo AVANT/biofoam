@@ -4,6 +4,8 @@ define(function(require){
 
   var loadImage = require('loadImage');
   require('jquery.jcrop');
+  require('canvasToBlob');
+
   var Handlebars = require('handlebars');
   var _imageuploadView = require('text!apps/media/new/templates/uploader.html');
 
@@ -171,8 +173,13 @@ define(function(require){
         var src = img.toDataURL('image/png');
         window.debugImg = img;
 
-        // var blob = img.toBlob();
-        // this.model.set('blob', blob);
+        // add blob to model
+        var toSave;
+        img.toBlob(function(blob){
+          toSave = blob;
+        },
+        'image/jpeg');
+        this.model.set('blob', toSave);
 
         this.ui.imageCurrentContainer.find('img').attr('src', src);
         this.ui.imageCurrentContainer.trigger('change');
