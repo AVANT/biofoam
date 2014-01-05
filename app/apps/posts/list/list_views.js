@@ -21,13 +21,13 @@ define(function(require){
         e.preventDefault();
         this.trigger('post:show', this.model);
       }
-    })
+    });
 
     // COLLECTION POST VIEW
     List.Posts = Marionette.CollectionView.extend({
       tagName: 'div',
       itemView: List.Post
-    })
+    });
 
     // LAYOUT POST VIEW
     List.Layout = Marionette.Layout.extend({
@@ -36,7 +36,7 @@ define(function(require){
         panelRegion: '#panel-region',
         postsRegion: '#posts-region'
       }
-    })
+    });
 
     // BUTTON PANEL
     List.CMSPanel = Moonrakr.Common.Views.CMSPanel.extend({
@@ -47,15 +47,16 @@ define(function(require){
       },
       templateHelpers: {
         newPostAction: function(){
-          if(Moonrakr.Posts.New.newPost){
-            return 'Resume Editing New Post'
-          }
-          else {
-            return 'New Post'
-          }
+          return 'New Post';
+          // if(Moonrakr.Posts.New.newPost){
+          //   return 'Resume Editing New Post'
+          // }
+          // else {
+          //   return 'New Post'
+          // }
         }
       }
-    })
+    });
 
   });
 });

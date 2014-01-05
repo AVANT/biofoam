@@ -65,6 +65,8 @@ define(function(require){
 
           window.tessst = newPost;
 
+          // console.log( 'check if model is valid: ', newPost.isValid() );
+
           newPost.save(null,{
             success: function(){
               console.log('success');

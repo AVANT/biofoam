@@ -6,6 +6,9 @@ define(function(require){
   return Moonrakr.module('Entities', function(Entities){
 
     Entities.Post = Backbone.Model.extend({
+      initialize: function(){
+        _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
+      },
       url: function(){
         if ( this.get('id') ){
           return Moonrakr.Config.api + '/posts/' + this.get('id');
@@ -18,7 +21,15 @@ define(function(require){
         title: {
           rangeLength: [1, 40],
           msg: 'Title must be between 1 and 40 characters'
-        }
+        },
+        excerpt: {
+          rangeLength: [1, 40],
+          msg: 'Excerpt must be between 1 and 40 characters'
+        },
+        // body: {
+        //   rangeLength: [1, 40],
+        //   msg: 'Body must be between 1 and 40 characters'
+        // }
       }
     });
 
