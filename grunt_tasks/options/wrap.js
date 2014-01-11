@@ -5,7 +5,7 @@ module.exports = {
     src: ['apps/**/*.js'],
     dest: '<%= tmp %>/js',
     options: {
-      wrapper: ['define(function(require){\n', '\n})']
+      wrapper: ['define(function(require){\n', '\n});']
     }
   },
   dist: {
@@ -14,7 +14,7 @@ module.exports = {
     src: ['apps/**/*.js'],
     dest: '<%= dist %>/js',
     options: {
-      wrapper: ['define(function(require){\n', '\n})']
+      wrapper: ['define(function(require){\n', '\n});']
     }
   }
 };

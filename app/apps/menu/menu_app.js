@@ -9,26 +9,26 @@ Subapps:
 @module Menu
 **/
 require('app');
-require('apps/menu/list/list_controller');
+require('apps/menu/show/show_controller');
 
 return Moonrakr.module('Menu', function(Menu){
   this.startWithParent = true;
 
   var API = {
-    listHeader: function(){
-      Menu.List.Controller.listHeader();
+    showMenu: function(){
+      Menu.Show.Controller.showMenu();
     },
     setHeaderText: function(str){
-      Menu.List.Controller.setHeaderText(str);
+      Menu.Show.Controller.setHeaderText(str);
     }
   };
 
   Moonrakr.commands.setHandler('set:active:header', function(name){
-    Moonrakr.Menu.List.Controller.setActiveHeader(name);
+    Moonrakr.Menu.Show.Controller.setActiveHeader(name);
   });
 
   Menu.on('start', function(){
-    API.listHeader();
+    API.showMenu();
   });
 
   Moonrakr.commands.setHandler('header:set:title', function(str){

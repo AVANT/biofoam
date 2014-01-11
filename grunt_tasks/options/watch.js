@@ -33,8 +33,13 @@ module.exports = {
     tasks: ['copy:assets2tmp']
   },
   copyScripts: {
-    files: ['<%= app %>/**/*.js'],
+    // files: ['<%= app %>/**/*.js'],
+    files: ['<%= app %>/*.js'], // just get first level
     tasks: ['copy:scripts2tmp']
+  },
+  wrap: {
+    files: ['<%= app %>/apps/**/*.js'],
+    tasks: ['wrap:dev']
   },
   copyTemplates:{
     files: ['<%= app %>/apps/**/*.html'],

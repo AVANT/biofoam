@@ -17,7 +17,7 @@ module.exports = {
             dot: true,
             cwd: 'app',
             dest: '.tmp/js/',
-            src: ['**/*.js', '!jsdocs/**/*.js']
+            src: ['*.js']
         }]
     },
     templates2tmp: {

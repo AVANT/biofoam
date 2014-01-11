@@ -39,4 +39,4 @@ return Moonrakr.module('Entities', function(Entities){
     return API.getHeaders();
   });
 
-}); // return module
+});

@@ -1,5 +1,8 @@
 require('app');
-require('apps/posts/list/list_views');
+require('apps/posts/list/views/posts');
+require('apps/posts/list/views/post');
+require('apps/posts/list/views/layout');
+require('apps/posts/list/views/cms_panel');
 
 return Moonrakr.module('Posts.List', function(List){
   List.Controller = {
