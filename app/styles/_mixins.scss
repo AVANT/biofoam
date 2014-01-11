@@ -1,0 +1,37 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    transition: $args;
+}
+
+@mixin clearfix {
+  *zoom: 1; // For IE 6/7 only
+  &:before,
+  &:after{
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+@mixin width-breakdown {
+  max-width: $global-max-width;
+  @media (min-width: $screen-sm-min) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 60%;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 40%;
+  }
+}
+
+@mixin padding-breakdown {
+  padding: $global-padding / 2;
+  @media (min-width: $screen-md-min) {
+    padding: $global-padding;
+  }
+}

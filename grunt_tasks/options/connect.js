@@ -35,7 +35,8 @@ module.exports = {
       hostname: 'localhost',
       middleware: function(connect) {
         return [
-          mountFolder(connect, '.tmp')
+          mountFolder(connect, '.tmp'),
+          mountFolder(connect, 'prototype')
         ];
       }
     }

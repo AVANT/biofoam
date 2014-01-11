@@ -3,7 +3,7 @@ module.exports = {
   devCompile: {
     tasks: [
       'sass:dev',
-      'handlebars:dev'
+      'handlebars:dev',
     ]
   },
   devCopy: {
@@ -12,16 +12,13 @@ module.exports = {
       'copy:scripts2tmp',
       'copy:templates2tmp',
       'copy:styles2tmp',
-      // 'copy:require2tmp'
       'copy:vendor2tmp',
-
-      'wrap:dev',
     ]
   },
   distCompile: {
     tasks: [
       'sass:dist',
-      'handlebars:dev'
+      'handlebars:dev',
     ]
   },
   distCopy: {
@@ -31,8 +28,6 @@ module.exports = {
       'copy:templates2dist',
       'copy:styles2dist',
       'copy:vendor2dist',
-
-      'wrap:dev',
     ]
   }
 };

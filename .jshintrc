@@ -31,6 +31,7 @@
     "_": false,
     "$": false,
     "Handlebars": false,
+    "grunt": false,
 
     // mocha testing
     "describe": false,

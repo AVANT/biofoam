@@ -1,0 +1,22 @@
+header{
+  .header-image-wrapper{
+    max-height: 400px;
+    overflow: hidden; // keep img in check
+    .header-image{
+      width: 100%;
+    }
+  }
+  .header-title{
+    @include width-breakdown;
+    @include padding-breakdown;
+
+    .title{
+      margin: 0;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    .header-image-wrapper{
+      padding-top: $collapsed-nav;
+    }
+  }
+}

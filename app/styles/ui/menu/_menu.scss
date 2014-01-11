@@ -1,0 +1,86 @@
+.nav{
+  width: 100%;
+  min-height: $collapsed-nav;
+
+  background: white;
+  border-bottom: 1px solid black;
+  color: white;
+
+  position: relative;
+  z-index: 999;
+
+  @media (min-width: $screen-sm-min) {}
+
+  // switch to fixed nav at the bottom
+  @media (min-width: $screen-md-min) {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+  }
+
+}
+
+.nav .nav-viewport .menu {
+  position: fixed;
+  top: $collapsed-nav;
+  bottom: 0;
+  z-index: 999;
+
+  width: 100%;
+  background: white;
+
+  overflow-y: auto;
+
+  .menu-viewport{
+    // position: absolute;
+    width: 100%;
+  }
+
+  .menu-viewport-shim{}
+
+  @media (min-width: $screen-sm-min) {}
+
+  @media (min-width: $screen-md-min) {
+    position: relative;
+
+    top: 0; // reset from xs screen
+    bottom: 0; // reset from xs screen
+
+    overflow-y: visible; // reset from xs screen
+
+    font-size: 1rem;
+
+    width: 100%;
+    padding-left: 6%;
+
+    box-shadow: 0 -10px 0px rgba(black, 0.4);
+
+    &.collapsing{
+      overflow: visible;
+    }
+
+    .menu-viewport{
+      position: absolute;
+      top: 0;
+
+      width: 100%;
+
+      height: $expanded-nav;
+      overflow: hidden;
+
+      @include transition(opacity .35s ease 0s);
+      &.opening {
+        // some how this isnt working ???
+        opacity: 1;
+      }
+      &.closing {
+        opacity: 0;
+      }
+
+    }
+    .menu-viewport-shim{
+      height: $expanded-nav;
+    }
+  }
+
+}

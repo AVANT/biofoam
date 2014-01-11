@@ -1,0 +1,15 @@
+.home .posts .post {
+  h2{}
+  .post-image-wrapper{
+    width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    img{
+      width: 100%;
+    }
+  }
+  p{
+    font-size: 1.6em;
+  }
+}

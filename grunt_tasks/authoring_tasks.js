@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     'clean:tmp',
     'concurrent:devCompile',
     'concurrent:devCopy',
+    'wrap:dev',
     // 'requirejs:dev',
     // 'mocha:test',
   ]);
@@ -49,6 +50,7 @@ module.exports = function(grunt) {
     'clean:dist',               // clear previous build
     'concurrent:distCompile',   // compile all files
     'concurrent:distCopy',      // copy all targeted files to sacrum.dist
+    'wrap:dist',
     // 'imagemin:dist',            // image conversion
     'useminPrepare',            // get a handle on all references before names change
     // 'test',                     // run all tests
@@ -68,7 +70,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     'build',
-    'shell:deploy'
+    'shell:deployDev',
+  ]);
+
+  grunt.registerTask('deploy:production', [
+    'build',
+    'shell:deployProduction',
   ]);
 
 };
