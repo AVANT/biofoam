@@ -1,5 +1,5 @@
 require('app');
-require('apps/comments/show/foruser/show_views');
+require('apps/comments/show/for_user/show_views');
 
 return Moonrakr.module('Comments.Show.ForUser', function(ForUser){
 

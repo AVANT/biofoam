@@ -1,7 +1,7 @@
 require('handlebars');
 require('app');
 require('apps/comments/show/_common/views');
-var _user = require('text!apps/comments/show/forpost/templates/user.html');
+var _user = require('text!apps/comments/show/for_post/templates/user.html');
 
 return Moonrakr.module('Comments.Show.ForPost', function(ForPost){
 

@@ -18,10 +18,10 @@ Subapps:
 **/
 
 require('app');
-require('apps/comments/show/forpost/show_controller');
-require('apps/comments/show/foruser/show_controller');
-require('apps/comments/list/forpost/list_controller');
-require('apps/comments/list/foruser/list_controller');
+require('apps/comments/show/for_post/show_controller');
+require('apps/comments/show/for_user/show_controller');
+require('apps/comments/list/for_post/list_controller');
+require('apps/comments/list/for_user/list_controller');
 
 return Moonrakr.module('Comments', function(Comments){
 

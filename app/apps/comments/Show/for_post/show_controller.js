@@ -1,5 +1,5 @@
 require('app');
-require('apps/comments/show/forpost/show_views');
+require('apps/comments/show/for_post/show_views');
 
 return Moonrakr.module('Comments.Show.ForPost', function(ForPost){
   ForPost.Controller = {
