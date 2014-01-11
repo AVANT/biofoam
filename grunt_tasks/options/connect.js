@@ -36,6 +36,7 @@ module.exports = {
       middleware: function(connect) {
         return [
           mountFolder(connect, '.tmp'),
+          mountFolder(connect, 'bower_components'),
           mountFolder(connect, 'prototype')
         ];
       }
