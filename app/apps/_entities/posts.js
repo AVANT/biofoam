@@ -56,6 +56,7 @@ return Moonrakr.module('Entities', function(Entities){
     getPostEntities: function(){
       var posts = new Entities.Posts();
       var defer = $.Deferred();
+      console.log('fire request to server in next line');
       posts.fetch({
         success: function(data){
           defer.resolve(data);
@@ -64,9 +65,9 @@ return Moonrakr.module('Entities', function(Entities){
       var promise = defer.promise();
       $.when(promise).done(function(posts){
         if(posts.length === 0){
-          // if we dont have any contacts yet, create some for convenience
+          // if we dont have any posts yet, create some for convenience
           // var models = initializePosts();
-          posts.reset(models);
+          // posts.reset(models);
         }
       });
       return promise;

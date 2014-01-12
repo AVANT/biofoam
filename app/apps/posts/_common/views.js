@@ -1,7 +1,5 @@
-
-
-require('handlebars');
 require('app');
+require('handlebars');
 require('apps/_common/stickit/custom_handlers');
 var _postForm = require('text!apps/posts/_common/templates/post-form.html');
 

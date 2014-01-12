@@ -12,9 +12,14 @@
   box-sizing: border-box;
 }
 
-body{
-  margin: 0; // remove default
-}
+// body{
+//   margin: 0; // remove default
+// }
+
+//// vendor styles
+@import "vendor/normalize";
+@import "vendor/redactor";
+@import "vendor/jquery.jcrop";
 
 //// variable and config imports
 @import "colors";

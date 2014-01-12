@@ -1,8 +1,9 @@
-require('jquery.redactor');
-var loadImage = require('loadImage');
-require('handlebars');
 require('app');
-var _redactorView = require('text!apps/_common/views/templates/redactor_view.html')
+require('handlebars');
+require('jquery.redactor');
+
+var loadImage = require('loadImage');
+var _redactorView = require('text!apps/_common/views/templates/redactor_view.html');
 
 return Moonrakr.module('Common.Views', function(Views){
 
@@ -56,32 +57,32 @@ return Moonrakr.module('Common.Views', function(Views){
 
     initRedactor: function(){
       var that = this;
+      var fileUploadUrl = Moonrakr.Config.api + '/media';
       this.$('.redactor').redactor({
-        // trying this on for size
-        air: false,
-        //////////////////////////
+        imageUpload: fileUploadUrl,
+        // fileUpload: fileUploadUrl,
         changeCallback: function(html){
           that.$('.redactor').html(html);
           that.$('.redactor').trigger('change');
           that.trigger('redactor:changed');
         },
-        buttonsCustom: {
-          image: {
-            title: "Advanced List",
-            dropdown: {
-              image: {
-                title: 'Upload Image From the Web',
-                callback: this.imageShow
-              },
-              point2: {
-                title: 'Upload Image From Your Computer',
-                callback: function(){
-                  that.$('#hidden-image-input').trigger('click');
-                }
-              }
-            }
-          }
-        }
+        // buttonsCustom: {
+        //   image: {
+        //     title: 'Advanced List',
+        //     dropdown: {
+        //       image: {
+        //         title: 'Upload Image From the Web',
+        //         callback: this.imageShow
+        //       },
+        //       point2: {
+        //         title: 'Upload Image From Your Computer',
+        //         callback: function(){
+        //           that.$('#hidden-image-input').trigger('click');
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       }); // redactor
     }, // init redactor
 

@@ -9,9 +9,13 @@ return Moonrakr.module('Posts.List', function(List){
     // api calls
     listPosts: function(){
 
+
       Moonrakr.Common.Controller.helper.cueLoadingView();
 
+      // refactor so this controller doesnt crash when this method fails
+      // refactor to bring logic into this controller ?
       var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
+      console.log('test');
 
       var fetchingPosts = Moonrakr.request('post:entities');
 

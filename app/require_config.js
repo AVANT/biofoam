@@ -17,6 +17,8 @@ require.config({
     bootstrap: 'vendor/bootstrap',
     bootbox: 'vendor/bootbox',
 
+    masonry: 'vendor/masonry.pkgd',
+
     'jquery.redactor': 'vendor/redactor',
     'jquery.jcrop': 'vendor/jquery.Jcrop',
     loadImageMin: 'vendor/load-image.min',
@@ -37,6 +39,9 @@ require.config({
     handlebars: {
       deps: ['text'],
       exports: 'Handlebars'
+    },
+    masonry:{
+      exports: 'Masonry'
     },
     backbone: {
       deps: ['underscore', 'jquery'],

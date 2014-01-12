@@ -51,8 +51,7 @@ return Moonrakr.module('Posts.New', function(New){
       imageUploadView.on('media:save:success', function(model){
         console.log('handle on this model: ', model);
 
-        newPost.set('mediaId', model.get('id'));
-        newPost.set('mediaUrl', model.get('url'));
+        newPost.set('headerImage', model.get('id'));
       });
 
       // ON 'form:submit' EVENT, GET AN ID AND SAVE THAT SHIT

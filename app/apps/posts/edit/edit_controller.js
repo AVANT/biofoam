@@ -7,15 +7,14 @@ return Moonrakr.module('Posts.Edit', function(Edit){
   Edit.Controller = {
     editPost: function(id){
 
-
       // start and show spinner
       Moonrakr.Common.Controller.helper.cueLoadingView();
 
       var that = this;
-      // get post model defer
+
       var fetchingPost = Moonrakr.request('post:entity', id);
       $.when(fetchingPost).done(function(post){
-        // put model in the edit view
+
         var layoutView;
         if(post !== undefined){
 
@@ -48,14 +47,14 @@ return Moonrakr.module('Posts.Edit', function(Edit){
             layoutView.redactorRegion.show( redactorView );
           });
 
-          // DELETE HANDLER //
+          // DELETE HANDLER
           layoutView.on('post:delete', function(model){
             console.log('gonna call model.destory');
             model.destroy();
             Moonrakr.trigger('posts:list');
           });
 
-          // SAVE HANDLER //
+          // SAVE HANDLER
           layoutView.on('form:submit', function(data){
 
             post.save(data, {

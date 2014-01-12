@@ -32,7 +32,7 @@ return Moonrakr.module('Menu', function(Menu){
   });
 
   Moonrakr.commands.setHandler('header:set:title', function(str){
-    API.setHeaderText(str);
+    // API.setHeaderText(str);
   });
 
 });

@@ -19,22 +19,9 @@ return Moonrakr.module('Menu.Show', function(Show){
       e.preventDefault();
       this.trigger('logo:clicked');
     },
-    // onShow:function(){
-    //   this.$el.find('#menu').collapse('hide');
-    // },
-    appendHtml: function(collectionView, itemView, index){
-    if (collectionView.isBuffering) {
-      // buffering happens on reset events and initial renders
-      // in order to reduce the number of inserts into the
-      // document, which are expensive.
-      collectionView.elBuffer.appendChild(itemView.el);
+    onShow:function(){
+      this.$el.find('#menu').collapse('hide');
     }
-    else {
-      // If we've already rendered the main collection, just
-      // append the new items directly into the element.
-      collectionView.$el.prepend(itemView.el);
-    }
-  }
   });
 
 });

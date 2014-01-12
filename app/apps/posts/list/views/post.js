@@ -7,6 +7,10 @@ return Moonrakr.module('Posts.List', function(List){
 
   List.Post = Marionette.ItemView.extend({
     tagName: 'article',
+    className: function(){
+      // get from model whether image-focus, text-focus, or callout
+      return 'post';
+    },
     template: Handlebars.compile(_post),
     events: {
       'click': 'showClicked'

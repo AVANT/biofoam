@@ -20,7 +20,11 @@ The posts.show.controller creates a post's layout view, requests the post's comm
 
 require('app');
 require('apps/_common/controller/helper_functions');
-require('apps/posts/show/show_views');
+
+require('apps/posts/show/views/post_layout');
+require('apps/posts/show/views/cms_panel');
+require('apps/posts/show/views/post');
+require('apps/posts/show/views/missing_post');
 
 return Moonrakr.module('Posts.Show', function(Show){
 
@@ -52,12 +56,12 @@ return Moonrakr.module('Posts.Show', function(Show){
           Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
 
           // will eventually need to pass a comments/for/:id value with this request
-          var commentsView = Moonrakr.request('comments:listforpost');
+          // var commentsView = Moonrakr.request('comments:listforpost');
 
           postLayout.on('show', function(){
             if(authGranted){postLayout.cmsRegion.show(cmsPanel);}
             postLayout.postRegion.show( postView );
-            postLayout.commentsRegion.show( commentsView );
+            // postLayout.commentsRegion.show( commentsView );
           });
 
           if(authGranted){

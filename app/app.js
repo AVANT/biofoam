@@ -7,8 +7,8 @@ define(function(require){
   // var Moonrakr = new Marionette.Application();
 
   var config = {
-    api: 'http://www.cheruisibesares.com'
-    // api: 'http://localhost:8900'
+    // api: 'http://www.cheruisibesares.com'
+    api: 'http://192.168.1.14:9900'
   };
 
   Moonrakr.Config = config;
