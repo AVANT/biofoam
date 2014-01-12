@@ -58,7 +58,7 @@ return Moonrakr.module('Common.Views', function(Views){
       var that = this;
       this.$('.redactor').redactor({
         // trying this on for size
-        air: true,
+        air: false,
         //////////////////////////
         changeCallback: function(html){
           that.$('.redactor').html(html);
