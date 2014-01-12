@@ -1,7 +1,7 @@
 require('app');
 require('handlebars');
 
-var _postsLayout = require('text!apps/list/templates/post_layout.html');
+var _postsLayout = require('text!apps/posts/list/templates/post_layout.html');
 
 return Moonrakr.module('Posts.List', function(List){
 

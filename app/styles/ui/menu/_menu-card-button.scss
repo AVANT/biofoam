@@ -1,7 +1,6 @@
 .menu .menu-viewport .card.button {
   position: relative; // for the kiddies
 
-
   &.about .img-frame{background-image: url('/images/prototype/test-logo.png');}
   &.posts .img-frame{background-image: url('/images/prototype/bar.jpg');}
   &.authors .img-frame{background-image: url('/images/prototype/hand.jpg');}
@@ -35,6 +34,5 @@
 
     @include transition(text-shadow .25s ease 0s);
   }
-
 
 }

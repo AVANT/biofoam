@@ -2,7 +2,7 @@ require('app');
 require('handlebars');
 require('apps/_common/views/cms_panel');
 
-var _postsPanel = require('text!apps/list/templates/post_panel.html');
+var _postsPanel = require('text!apps/posts/list/templates/post_panel.html');
 
 return Moonrakr.module('Posts.List', function(List){
 

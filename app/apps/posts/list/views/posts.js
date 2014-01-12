@@ -1,7 +1,7 @@
 require('app');
 require('handlebars');
 
-require('apps/list/views/post');
+require('apps/posts/list/views/post');
 
 return Moonrakr.module('Posts.List', function(List){
 

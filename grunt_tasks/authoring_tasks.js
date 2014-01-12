@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     'clean:tmp',
     'concurrent:devCompile',
     'concurrent:devCopy',
-    'wrap:dev',
+    'newer:wrap:dev',
     // 'requirejs:dev',
     // 'mocha:test',
   ]);

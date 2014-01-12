@@ -39,7 +39,7 @@ module.exports = {
   },
   wrap: {
     files: ['<%= app %>/apps/**/*.js'],
-    tasks: ['wrap:dev']
+    tasks: ['newer:wrap:dev']
   },
   copyTemplates:{
     files: ['<%= app %>/apps/**/*.html'],

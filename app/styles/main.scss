@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+body{
+  margin: 0; // remove default
+}
+
 //// variable and config imports
 @import "colors";
 @import "breakpoints";

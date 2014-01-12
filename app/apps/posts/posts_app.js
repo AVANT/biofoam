@@ -32,22 +32,23 @@ return Moonrakr.module('Posts',function(Posts){
 
   var API = {
     listPosts: function(){
+      Moonrakr.execute('set:body:class', 'home');
       Posts.List.Controller.listPosts();
-      Moonrakr.execute('set:active:header', 'posts');
-      Moonrakr.execute('header:set:title', 'Posts');
+      // Moonrakr.execute('set:active:header', 'posts');
+      // Moonrakr.execute('header:set:title', 'Posts');
     },
     showPost: function(id){
       Posts.Show.Controller.showPost(id);
-      Moonrakr.execute('set:active:header', 'posts');
+      // Moonrakr.execute('set:active:header', 'posts');
     },
     editPost: function(id){
       Posts.Edit.Controller.editPost(id);
-      Moonrakr.execute('set:active:header', 'posts');
+      // Moonrakr.execute('set:active:header', 'posts');
     },
     newPost: function(){
       Posts.New.Controller.newPost();
-      Moonrakr.execute('set:active:header', 'posts');
-      Moonrakr.execute('header:set:title', 'Posts: New');
+      // Moonrakr.execute('set:active:header', 'posts');
+      // Moonrakr.execute('header:set:title', 'Posts: New');
     }
   };
 

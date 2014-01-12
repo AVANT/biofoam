@@ -56,6 +56,12 @@ define(function(require){
   });
 
 
+  // should be moved to a traffic controller modual
+  Moonrakr.commands.setHandler('set:body:class', function( classStr ){
+    $('body').attr( 'class', classStr );
+  });
+
+
   return Moonrakr;
 
 });
