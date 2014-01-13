@@ -10,9 +10,7 @@ return Moonrakr.module('Posts.List', function(List){
     className: 'posts js-masonry',
     itemView: List.Post,
     onRender: function(){
-      var masonEl = this.$el[0];
-      console.log('masonry container el: ', masonEl);
-      this.msnry = new Masonry( masonEl );
+      this.msnry = new Masonry( this.$el[0] );
       //// todo: mansonry loads broken, I think it doesnt have the images loaded at the time of init
       //// could fix this by using imagesLoaded as suggested on the FAQ page of masonry
       // imagesLoaded( container, function() {
@@ -24,7 +22,7 @@ return Moonrakr.module('Posts.List', function(List){
       // really shitty fix for this problem
       setTimeout(function(){
         that.msnry.layout();
-      }, 100)
+      }, 150);
     }
   });
 

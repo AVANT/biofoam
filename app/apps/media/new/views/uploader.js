@@ -29,30 +29,37 @@ return Moonrakr.module('Media.New', function(New){
       'click .js-image-submit': 'submitClicked'
     },
 
+    initialize:function(){
+      // called in posts.edit.controller
+      this.on('display', this.displayUrl, this);
+    },
+
     padClicked: function(){
       this.$el.find('.image-input').trigger('click');
     },
 
     inputChanged: function(e){
       var self = this;
-      this.loadImage(e, self);
+      this.loadImageEvent(e, self);
     },
 
-    loadImage: function(e, self){
-      // var self = self;
+    displayUrl: function( url ){
+      this.loadImage( url, this );
+    },
 
+    loadImageEvent: function(e, self){
       e.preventDefault();
       e = e.originalEvent;
 
       var target = e.dataTransfer || e.target;
       var file = target && target.files && target.files[0];
-      var options = {
-        maxWidth: 600,
-        canvas: true
-      };
 
       if(!file){ return; }
 
+      this.loadImage( file, self );
+    },
+
+    loadImage: function(file, self){
       loadImage(file,
         function(img){
           self.replaceResults(img);
@@ -60,9 +67,12 @@ return Moonrakr.module('Media.New', function(New){
           self.setImageUploadLabel();
           self.initJcrop();
         },
-        options
+        { // options
+          maxWidth: 600,
+          canvas: true,
+          crossOrigin: 'Anonymous'
+        }
       );
-
     },
 
     initJcrop: function(){
@@ -127,7 +137,7 @@ return Moonrakr.module('Media.New', function(New){
     droppedEvent: function(e){
       var self = this;
       e.preventDefault();
-      this.loadImage(e, self);
+      this.loadImageEvent(e, self);
     },
 
     cropHandler: function(){

@@ -15,19 +15,32 @@ return Moonrakr.module('Entities', function(Entities){
         return Moonrakr.Config.api + '/posts';
       }
     },
+    defaults:{
+      'body': ''
+    },
     validation: {
       title: {
-        rangeLength: [1, 40],
-        msg: 'Title must be between 1 and 40 characters'
+        rangeLength: [1, 200],
+        msg: 'Title must be between 1 and 100 characters'
       },
       excerpt: {
-        rangeLength: [1, 40],
-        msg: 'Excerpt must be between 1 and 40 characters'
+        rangeLength: [1, 200],
+        msg: 'Excerpt must be between 1 and 100 characters'
       },
       // body: {
       //   rangeLength: [1, 40],
       //   msg: 'Body must be between 1 and 40 characters'
       // }
+    },
+    parse: function( resp, options ){
+
+      var obj = {};
+      obj.headerImageUrl = resp.headerImage.filelink;
+
+      // obj will override any samename properties of resp
+      _.extend(resp, obj);
+
+      return resp;
     }
   });
 
@@ -36,7 +49,7 @@ return Moonrakr.module('Entities', function(Entities){
       return Moonrakr.Config.api + '/posts';
     },
     model: Entities.Post,
-    comparator: 'title'
+    // comparator: 'title'
   });
 
   var initializePosts = function(){
