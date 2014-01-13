@@ -17,3 +17,17 @@
   }
 
 }
+
+// all the cards in the .menu-links div need to take different widths
+// TODO: remove the need for .menu-links div by being smarter with nesting the views in the app
+.menu .menu-viewport .menu-links {
+  .card{}
+  @media (min-width: $screen-md-min) {
+    width: 60%;
+    float: left;
+    height: 100%;
+    .card{
+      width: 33.3333% // now fitting three cards inside .menu-links
+    }
+  }
+}

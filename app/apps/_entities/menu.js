@@ -21,7 +21,7 @@ return Moonrakr.module('Entities', function(Entities){
   var initializeHeaders = function(){
     Entities.headers = new Entities.HeaderCollection([
       { name: 'Posts', url: 'posts', navigationTrigger: 'posts:list' },
-      { name: 'Users', url: 'users', navigationTrigger: 'users:list' },
+      { name: 'Authors', url: 'users', navigationTrigger: 'users:list' },
       { name: 'About', url: 'pages/about', navigationTrigger: 'pages:show', navigationString:'about' }
     ]);
   };

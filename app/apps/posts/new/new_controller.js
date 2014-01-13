@@ -49,8 +49,6 @@ return Moonrakr.module('Posts.New', function(New){
       });
 
       imageUploadView.on('media:save:success', function(model){
-        console.log('handle on this model: ', model);
-
         newPost.set('headerImage', model.get('id'));
       });
 
@@ -58,11 +56,9 @@ return Moonrakr.module('Posts.New', function(New){
       layoutView.on('form:submit', function(){
 
         console.log('form:submit event fired');
-        console.log( newPost );
+        console.log( 'model about to be saved: ', newPost );
 
         window.tessst = newPost;
-
-        // console.log( 'check if model is valid: ', newPost.isValid() );
 
         newPost.save(null,{
           success: function(){

@@ -1,6 +1,6 @@
 require('app');
 require('handlebars');
-var _menuLink = require('text!apps/menu/show/views/templates/menu_link.html');
+var _menuLink = require('text!apps/menu/show/templates/menu_link.html');
 
 function createMenuLinkView(App){
 

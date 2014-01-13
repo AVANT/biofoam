@@ -2,7 +2,7 @@ require('app');
 require('handlebars');
 require('bootstrap');
 require('apps/menu/show/views/menu_link');
-var _menu = require('text!apps/menu/show/views/templates/menu.html');
+var _menu = require('text!apps/menu/show/templates/menu.html');
 
 return Moonrakr.module('Menu.Show', function(Show){
 
@@ -11,7 +11,7 @@ return Moonrakr.module('Menu.Show', function(Show){
     className: 'nav',
     tagName: 'nav',
     itemView: Show.MenuLink,
-    itemViewContainer: '#menu',
+    itemViewContainer: '.menu-links',
     events:{
       // catch logo click
     },
