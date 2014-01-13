@@ -1,8 +1,8 @@
-.home .posts {
+body.posts.list .posts {
   // @include padding-breakdown;
   // max-width: $global-max-width;
 
-  width: auto;
+  // width: auto;
   margin: 0 auto;
 
   overflow: auto;

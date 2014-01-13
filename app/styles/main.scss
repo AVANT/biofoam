@@ -1,48 +1,41 @@
-/* # Moonrakr */
-// @import "vendor/compass/__box-sizing";
-// @import "vendor/vendor";
-// @import "config";
-// *{
-//   @include box-sizing(border-box);
-// }
-// @import "typography";
-
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-// body{
-//   margin: 0; // remove default
-// }
 
-//// vendor styles
+// Vendor Imports
 @import "vendor/normalize";
 @import "vendor/redactor";
 @import "vendor/jquery.jcrop";
 
-//// variable and config imports
+
+// Variables and Config Imports
 @import "colors";
 @import "breakpoints";
 @import "measurements";
 @import "mixins";
 @import "type";
 
-//// module imports
-@import "ui/menu/menu";
-@import "ui/menu/fold";
-@import "ui/menu/menu-card";
-@import "ui/menu/menu-card-button";
-@import "ui/menu/menu-card-extra";
 
-//// page specific imports
-@import "pages/home/home";
-@import "pages/home/posts/posts";
-@import "pages/home/posts/post";
-@import "pages/home/posts/post-callout";
-@import "pages/home/posts/post-text-focus";
-@import "pages/home/posts/post-image-focus";
+// App Imports
 
-@import "pages/post/post";
-@import "pages/post/header";
-@import "pages/post/body";
+//// Menu App Imports
+@import "apps/menu/show/show";
+@import "apps/menu/show/menu";
+@import "apps/menu/show/fold";
+@import "apps/menu/show/menu-card";
+@import "apps/menu/show/menu-card-button";
+@import "apps/menu/show/menu-card-extra";
+
+//// Post App Imports
+@import "apps/posts/list/list";
+@import "apps/posts/list/posts";
+@import "apps/posts/list/post";
+@import "apps/posts/list/post-text-focus";
+@import "apps/posts/list/post-image-focus";
+@import "apps/posts/list/post-callout";
+
+@import "apps/posts/show/show";
+@import "apps/posts/show/body";
+@import "apps/posts/show/header";

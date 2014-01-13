@@ -32,21 +32,23 @@ return Moonrakr.module('Posts',function(Posts){
 
   var API = {
     listPosts: function(){
-      Moonrakr.execute('set:body:class', 'home');
+      Moonrakr.execute('set:body:class', 'posts list');
       Posts.List.Controller.listPosts();
       // Moonrakr.execute('set:active:header', 'posts');
       // Moonrakr.execute('header:set:title', 'Posts');
     },
     showPost: function(id){
-      Moonrakr.execute('set:body:class', 'post');
+      Moonrakr.execute('set:body:class', 'posts show');
       Posts.Show.Controller.showPost(id);
       // Moonrakr.execute('set:active:header', 'posts');
     },
     editPost: function(id){
+      Moonrakr.execute('set:body:class', 'posts edit');
       Posts.Edit.Controller.editPost(id);
       // Moonrakr.execute('set:active:header', 'posts');
     },
     newPost: function(){
+      Moonrakr.execute('set:body:class', 'posts new');
       Posts.New.Controller.newPost();
       // Moonrakr.execute('set:active:header', 'posts');
       // Moonrakr.execute('header:set:title', 'Posts: New');
