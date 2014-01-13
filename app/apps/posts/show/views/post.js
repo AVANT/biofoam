@@ -7,6 +7,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
   Show.Post = Marionette.ItemView.extend({
     tagName: 'article',
+    className: 'post',
     template: Handlebars.compile( _post ),
     initialize: function(){
       this.model.on('change', this.render, this);

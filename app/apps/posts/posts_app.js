@@ -38,6 +38,7 @@ return Moonrakr.module('Posts',function(Posts){
       // Moonrakr.execute('header:set:title', 'Posts');
     },
     showPost: function(id){
+      Moonrakr.execute('set:body:class', 'post');
       Posts.Show.Controller.showPost(id);
       // Moonrakr.execute('set:active:header', 'posts');
     },
