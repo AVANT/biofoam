@@ -1,5 +1,5 @@
 require('backbone');
-require('backbone.localstorage');
+// require('backbone.localstorage');
 
 require('app');
 
