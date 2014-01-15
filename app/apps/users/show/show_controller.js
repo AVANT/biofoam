@@ -33,7 +33,7 @@ return Moonrakr.module('UsersApp.Show', function(Show){
 
       var cmsPanel = authGranted ? new Show.CMSPanel() : null ;
       var userLayout = new Show.UserLayout();
-      var commentsView = Moonrakr.request('comments:listforuser');
+      // var commentsView = Moonrakr.request('comments:listforuser');
 
       var fetchingUser = Moonrakr.request('user:entity', id);
       $.when(fetchingUser).done(function(user){

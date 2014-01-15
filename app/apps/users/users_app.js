@@ -34,21 +34,21 @@ return Moonrakr.module('UsersApp', function(UsersApp){
   var API = {
     listUsers: function(){
       UsersApp.List.Controller.listUsers();
-      Moonrakr.execute('set:active:header', 'users');
-      Moonrakr.execute('header:set:title', 'Users');
+      // Moonrakr.execute('set:active:header', 'users');
+      // Moonrakr.execute('header:set:title', 'Users');
     },
     newUser: function(){
       UsersApp.New.Controller.newUser();
-      Moonrakr.execute('set:active:header', 'users');
-      Moonrakr.execute('header:set:title', 'Users: New');
+      // Moonrakr.execute('set:active:header', 'users');
+      // Moonrakr.execute('header:set:title', 'Users: New');
     },
     showUser: function(id){
       UsersApp.Show.Controller.showUser(id);
-      Moonrakr.execute('set:active:header', 'users');
+      // Moonrakr.execute('set:active:header', 'users');
     },
     editUser: function(id){
       UsersApp.Edit.Controller.editUser(id);
-      Moonrakr.execute('set:active:header', 'users');
+      // Moonrakr.execute('set:active:header', 'users');
     }
   };
 

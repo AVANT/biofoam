@@ -4,8 +4,10 @@
 @namespace users.show
 **/
 
-require('handlebars');
 require('app');
+require('handlebars');
+require('apps/_common/views/cms_panel');
+
 var _missingUser = require('text!apps/users/show/templates/missing_user.html');
 var _user = require('text!apps/users/show/templates/user.html');
 var _cms_panel = require('text!apps/users/show/templates/cms_panel.html');

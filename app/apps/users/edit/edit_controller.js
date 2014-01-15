@@ -43,7 +43,8 @@ return Moonrakr.module('UsersApp.Edit', function(Edit){
             model: user
           });
 
-          var imageUploader = new Edit.ImageUploader();
+          var imageUploader = Moonrakr.request('media:new');
+          imageUploader.trigger('display', user.get('headerImageUrl'));
 
           Moonrakr.execute('header:set:title', 'Users: Edit: ' + user.get('username'));
 

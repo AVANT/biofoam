@@ -15,7 +15,7 @@ require(['require_config'],function(){
     'apps/posts/posts_app',
     'apps/menu/menu_app',
     // 'apps/pages/pages_app',
-    // 'apps/users/users_app',
+    'apps/users/users_app',
     // 'apps/comments/comments_app',
     'apps/auth/auth_app'
 
