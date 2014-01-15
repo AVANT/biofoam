@@ -17,7 +17,7 @@ return Moonrakr.module('Entities', function(Entities){
     parse: function( resp, options ){
 
       var obj = {};
-      obj.headerImageUrl = resp.userImage.filelink;
+      obj.userImageUrl = resp.userImage.filelink;
 
       // obj will override any samename properties of resp
       _.extend(resp, obj);

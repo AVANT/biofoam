@@ -9,8 +9,17 @@ return Moonrakr.module('Auth.Login', function(Login){
     template: Handlebars.compile( _loginForm ),
 
     events: {
-      'click button.js-login': 'loginClicked',
-      'click button.js-signup': 'signupClicked'
+      'click .js-login': 'loginClicked',
+      'click .js-signup': 'signupClicked'
+    },
+
+    bindings: {
+      '#username': 'user',
+      '#password': 'password',
+    },
+
+    onRender: function(){
+      this.stickit();
     },
 
     signupClicked: function(e){
@@ -20,9 +29,7 @@ return Moonrakr.module('Auth.Login', function(Login){
 
     loginClicked: function(e){
       e.preventDefault();
-      var data = Backbone.Syphon.serialize(this);
-      // console.log( 'form data: ', data);
-      this.trigger('form:submit', data);
+      this.trigger('form:submit');
     },
 
     onFormDataInvalid: function(errors){

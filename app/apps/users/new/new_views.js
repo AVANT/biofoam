@@ -10,13 +10,13 @@ require('apps/_common/views/image_uploader');
 require('apps/users/_common/views');
 
 
-return Moonrakr.module('UsersApp.New', function(New){
+return Moonrakr.module('Users.New', function(New){
 
   /**
   @class User
   @constructor
   **/
-  New.User = Moonrakr.UsersApp.Common.Views.Form.extend({
+  New.User = Moonrakr.Users.Common.Views.Form.extend({
     templateHelpers: {
       submitText: 'Create User',
       titleText: 'New User'

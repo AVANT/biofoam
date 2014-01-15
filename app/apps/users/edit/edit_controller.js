@@ -23,7 +23,7 @@ The users.edit.controller creates a user's edit view and displays it in moonrakr
 require('app');
 require('apps/users/edit/edit_views');
 
-return Moonrakr.module('UsersApp.Edit', function(Edit){
+return Moonrakr.module('Users.Edit', function(Edit){
 
   Edit.Controller = {
     editUser: function(id){
@@ -44,12 +44,16 @@ return Moonrakr.module('UsersApp.Edit', function(Edit){
           });
 
           var imageUploader = Moonrakr.request('media:new');
-          imageUploader.trigger('display', user.get('headerImageUrl'));
+          imageUploader.trigger('display', user.get('userImageUrl'));
 
           Moonrakr.execute('header:set:title', 'Users: Edit: ' + user.get('username'));
 
           layoutView.on('render', function(){
             layoutView.imageUploadRegion.show( imageUploader );
+          });
+
+          imageUploader.on('media:save:success', function(data){
+            user.set('userImage', {'id': data.id});
           });
 
           layoutView.on('form:submit', function(data){
