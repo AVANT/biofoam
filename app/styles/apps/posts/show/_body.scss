@@ -1,7 +1,6 @@
 .body {
   @include width-breakdown;
   @include padding-breakdown;
-
   img {
     @include padding-breakdown;
     width: 100%;

@@ -27,10 +27,22 @@ p { font-family: 'Quattrocento', serif; font-size: 17px; color:#363636; font-wei
   margin-bottom: 10px;
 }
 
+// body container
+.body-container {
+	margin-top: 350px;
+	width: 100%;
+	background-color: white;
+}
+
+
 // footer
 
-.footer {
-	margin-top: 50px;
+.footer-buffer{
+	background-color: white;
+	width: 100%;
+	height:50px;
+}
+.footer-main {
 	width: 100%;
 	height: 180px;
 	background-color:#242424;
