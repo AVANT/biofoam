@@ -7,22 +7,8 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic|Quattrocento:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="/css/main.css">
-
-  <script type="text/javascript">
-  $(function() {
-
-      $(window).resize(function() {
-          var totalColWidth = $("#inner").outerWidth() - 475;
-          var columns = parseInt(totalColWidth / 245);
-
-          $("#header").animate({width:(columns*245) + 475},{duration:0, queue:false});
-
-      });
-  });
-  </script>>
-
 </head>
 
 <body class="posts list">
@@ -116,8 +102,11 @@
 
   <div class="main">
 
-    <div style="position: relative; margin: 0 auto;" class="posts js-masonry" data-masonry-options='{ "columnWidth": 500, "isFitWidth": true, "gutter": 30, "transitionDuration": 0
-    }'>
+	  <div class="posts js-masonry" data-masonry-options='{
+		  "columnWidth": ".post",
+		  "itemSelector": ".post",
+		  "isAnimated": "true"
+		  }'>
 
       <div class="post callout">
         <h2 class="post-title">Post Title</h2>

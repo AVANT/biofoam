@@ -2,11 +2,6 @@
   @include width-breakdown;
   @include padding-breakdown;
 
-  p {
-    font-size: 1.6em;
-    margin-bottom: 30px;
-  }
-
   img {
     @include padding-breakdown;
     width: 100%;

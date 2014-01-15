@@ -2,9 +2,7 @@ body.posts.list .posts .post {
   position: relative;
 
   background: white;
-  border: 1px solid rgba(black, 0.5);
   @include padding-breakdown;
-  margin: 10px 0;
 
   .post-title{
     margin-top: 0;
@@ -19,18 +17,17 @@ body.posts.list .posts .post {
     }
   }
   .post-excerpt{
-    font-size: 1.6em;
+  margin-top:20px;
   }
 
   @media (min-width: $screen-sm){
-    margin: 10px;
-    width: 46%;
-    float: left;
+    width: 100%;
   }
   @media (min-width: $screen-md){
-    width: 30%;
+    width: 500px;
   }
   @media (min-width: $screen-lg){
-    width: 22%;
+    width: 500px;
   }
 }
+

@@ -8,19 +8,19 @@
 
 // Extra small screen / phone
 // Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
-$screen-xs:                  480px;
+$screen-xs:                  300px;
 $screen-xs-min:              $screen-xs;
 $screen-phone:               $screen-xs-min;
 
 // Small screen / tablet
 // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
-$screen-sm:                  768px;
+$screen-sm:                  500px;
 $screen-sm-min:              $screen-sm;
 $screen-tablet:              $screen-sm-min;
 
 // Medium screen / desktop
 // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md:                  992px;
+$screen-md:                  800px;
 $screen-md-min:              $screen-md;
 $screen-desktop:             $screen-md-min;
 
