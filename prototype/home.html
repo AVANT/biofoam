@@ -10,19 +10,6 @@
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic|Quattrocento:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/main.css">
 
-  <script type="text/javascript">
-  $(function() {
-
-      $(window).resize(function() {
-          var totalColWidth = $("#inner").outerWidth() - 475;
-          var columns = parseInt(totalColWidth / 245);
-
-          $("#header").animate({width:(columns*245) + 475},{duration:0, queue:false});
-
-      });
-  });
-  </script>>
-
 </head>
 
 <body class="posts list">
@@ -186,14 +173,18 @@
     </div>
 
   </div>
+  <div class="footer">
+  </br>
+  <h2>this is a footer</h2>
+  <a>ABOUT</a>
+  <a>AUTHORS</a>
+  <a>NEWSLETTER</a>
+  </div>
 
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
   <script src="/proto-js/masonry.pkgd.js"></script>
-
   <script src="/proto-js/main.js"></script>
-
   <script src="http://localhost:35729/livereload.js"></script>
 </body>
 
