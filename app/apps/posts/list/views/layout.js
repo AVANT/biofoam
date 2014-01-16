@@ -11,6 +11,7 @@ return Moonrakr.module('Posts.List', function(List){
       panelRegion: '#panel-region',
       postsRegion: '#posts-region'
     }
+
   });
 
 });

@@ -2,7 +2,7 @@ body.posts.list .posts .post {
   position: relative;
 
   background: white;
-  @include padding-breakdown;
+  //@include padding-breakdown;
 
   .post-title{
     margin-top: 0;
@@ -17,7 +17,7 @@ body.posts.list .posts .post {
     }
   }
   .post-excerpt{
-  margin-top:20px;
+    margin-top:20px;
   }
 
   @media (min-width: $screen-sm){

@@ -8,7 +8,7 @@ define(function(require){
 
   var config = {
     // api: 'http://www.cheruisibesares.com'
-    api: 'http://192.168.1.14:9900'
+    api: 'http://localhost:9000'
   };
 
   Moonrakr.Config = config;
