@@ -1,11 +1,10 @@
 body.posts.list .posts {
-  // @include padding-breakdown;
   // max-width: $global-max-width;
 
-  // width: auto;
-  margin: 0 auto;
-
-  overflow: auto;
+  	 width: 100%;
+ 	 margin: 0 auto;
+  	 overflow:  // @include padding-breakdown;
+ auto;
 
   @media (min-width: $screen-md){
     padding-top: $collapsed-nav;

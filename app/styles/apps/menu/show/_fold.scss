@@ -1,6 +1,8 @@
 .nav .nav-viewport {
   position: relative; // for the kids, honey
   overflow: hidden; // get kids height
+  margin: 0 auto;
+  border-bottom: 1px solid black;
 
   .menu-toggle{
     display: block;
