@@ -1,17 +1,8 @@
-/**
-# Users.Common.Views SubApp
-
-This subapp provides base views that can be used across all the users subapps.
-
-@module users
-@submodule users.common.views
-@namespace users.common.views
-**/
-
-require('bootbox');
-require('handlebars');
 require('app');
+require('handlebars');
+require('bootbox');
 require('apps/_common/stickit/custom_handlers');
+
 var _userForm = require('text!apps/users/_common/templates/user_form.html');
 
 return Moonrakr.module('Users.Common.Views', function(Views){

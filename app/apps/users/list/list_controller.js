@@ -22,7 +22,7 @@ The users.list.controller creates a user's list layout view and displays it in m
 require('app');
 require('apps/users/list/list_views');
 
-return Moonrakr.module('UsersApp.List', function(List){
+return Moonrakr.module('Users.List', function(List){
 
   List.Controller = {
     listUsers: function(){

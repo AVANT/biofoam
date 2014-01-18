@@ -162,6 +162,13 @@ module.exports = {
             cwd: 'vendor',
             src: 'Redactor/redactor/redactor.js',
             dest: 'dist/js/vendor'
+        }, {
+            expand: true,
+            dot: true,
+            flatten: true,
+            cwd: 'vendor',
+            src: 'Masonry/masonry.pkgd.js',
+            dest: 'dist/js/vendor'
         }]
     },
 };

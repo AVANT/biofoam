@@ -3,6 +3,7 @@ require(['require_config'],function(){
   require([
     'app',
 
+    'apps/_entities/auth',
     'apps/_entities/menu',
     // 'apps/_entities/search',
     // 'apps/_entities/pages',
@@ -13,9 +14,9 @@ require(['require_config'],function(){
 
     'apps/media/media_app',
     'apps/posts/posts_app',
-    'apps/menu/menu_app',
+    'apps/menu/menu',
     // 'apps/pages/pages_app',
-    // 'apps/users/users_app',
+    'apps/users/users',
     // 'apps/comments/comments_app',
     'apps/auth/auth_app'
 

@@ -4,13 +4,15 @@
 @namespace users.list
 **/
 
-require('handlebars');
 require('app');
+require('handlebars');
+require('apps/_common/views/cms_panel');
+
 var _user = require('text!apps/users/list/templates/user.html');
 var _usersLayout = require('text!apps/users/list/templates/users_layout.html');
 var _usersPanel = require('text!apps/users/list/templates/users_panel.html');
 
-return Moonrakr.module('UsersApp.List', function(List){
+return Moonrakr.module('Users.List', function(List){
   /**
   @class User
   @constructor

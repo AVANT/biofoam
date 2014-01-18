@@ -20,9 +20,12 @@ The users.show.controller creates a user's layout view and displays it in moonra
 **/
 
 require('app');
-require('apps/users/show/show_views');
+require('apps/users/show/views/user');
+require('apps/users/show/views/missing_user');
+require('apps/users/show/views/cms_panel');
+require('apps/users/show/views/user_layout');
 
-return Moonrakr.module('UsersApp.Show', function(Show){
+return Moonrakr.module('Users.Show', function(Show){
 
   Show.Controller = {
     showUser: function(id){
@@ -33,7 +36,7 @@ return Moonrakr.module('UsersApp.Show', function(Show){
 
       var cmsPanel = authGranted ? new Show.CMSPanel() : null ;
       var userLayout = new Show.UserLayout();
-      var commentsView = Moonrakr.request('comments:listforuser');
+      // var commentsView = Moonrakr.request('comments:listforuser');
 
       var fetchingUser = Moonrakr.request('user:entity', id);
       $.when(fetchingUser).done(function(user){
@@ -48,6 +51,8 @@ return Moonrakr.module('UsersApp.Show', function(Show){
             model: user
           });
 
+          window.myModel = user;
+
           // set page title
           Moonrakr.execute('header:set:title', 'Users: ' + user.get('username'));
 
@@ -61,7 +66,7 @@ return Moonrakr.module('UsersApp.Show', function(Show){
           userLayout.on('show', function(){
             if(authGranted || userIsOwner){ userLayout.cmsRegion.show(cmsPanel); }
             userLayout.userRegion.show( userView );
-            userLayout.commentsRegion.show( commentsView );
+            // userLayout.commentsRegion.show( commentsView );
           });
         }
         else {

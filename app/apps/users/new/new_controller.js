@@ -22,7 +22,7 @@ The users.new.controller creates a user's layout view and displays it in moonrak
 require('app');
 require('apps/users/new/new_views');
 
-return Moonrakr.module('UsersApp.New', function(New){
+return Moonrakr.module('Users.New', function(New){
 
   New.Controller = {
     newUser: function(){

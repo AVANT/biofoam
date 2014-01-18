@@ -4,28 +4,21 @@
 @namespace users.edit
 **/
 
-require('handlebars');
 require('app');
-require('apps/_common/views/image_uploader');
-require('apps/users/_common/views');
+require('handlebars');
+require('apps/users/_common/views/form');
 
-return Moonrakr.module('UsersApp.Edit', function(Edit){
+return Moonrakr.module('Users.Edit', function(Edit){
 
   /**
   @class User
   @constructor
   **/
-  Edit.User = Moonrakr.UsersApp.Common.Views.Form.extend({
+  Edit.User = Moonrakr.Users.Common.Views.Form.extend({
     templateHelpers: {
       submitText: 'Save User',
       titleText: 'Edit User'
     }
   });
-
-  /**
-  @class ImageUploader
-  @constructor
-  **/
-  Edit.ImageUploader = Moonrakr.Common.Views.ImageUpload.extend();
 
 });

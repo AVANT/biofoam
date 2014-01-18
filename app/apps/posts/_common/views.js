@@ -23,7 +23,7 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
       '#post-title': 'title',
       '#post-excerpt': 'excerpt',
       '#post-body': 'body', // in the redactor view
-      '#image-current-container': 'image', // in the imageUpload view
+      // '#image-current-container': 'image', // in the imageUpload view
     },
 
     initialize: function(){

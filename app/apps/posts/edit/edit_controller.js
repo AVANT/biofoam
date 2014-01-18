@@ -18,21 +18,20 @@ return Moonrakr.module('Posts.Edit', function(Edit){
         var layoutView;
         if(post !== undefined){
 
-            Moonrakr.execute('header:set:title', 'Posts: Edit: ' + post.get('title'));
-
             ///////////////
            // GET VIEWS //
           ///////////////
 
-          // init layout view and insert model
           layoutView = new Edit.Post({
             model: post
           });
 
           window.myModel = post;
 
-          // init imageUpload view
-          var imageUploadView = new Edit.ImageUpload();
+          var imageUploadView = Moonrakr.request('media:new');
+          // need to shove headerimage into this view
+          imageUploadView.trigger('display', post.get('headerImageUrl'));
+
 
           // init redactor view and insert model.body
           var redactorView = that.getRedactorView( post.get('body') );
@@ -67,6 +66,11 @@ return Moonrakr.module('Posts.Edit', function(Edit){
               }
             });
 
+          });
+
+          imageUploadView.on('media:save:success', function(model){
+            // wrap headerImage in an object for the backend
+            post.set('headerImage', { 'id': model.get('id') });
           });
 
         }
