@@ -13,10 +13,9 @@ return Moonrakr.module('Menu.Show', function(Show){
     itemView: Show.MenuLink,
     itemViewContainer: '.menu-links',
     events:{
-      // catch logo click
+      // 'click .js-menu-toggle': menuClicked
     },
     initialize: function  () {
-      // i think this works with out using an anon function
       Moonrakr.on('posts:msnry:layoutcomplete', this.layoutCompleteHandler, this );
     },
     logoClicked:function(e){
@@ -24,7 +23,20 @@ return Moonrakr.module('Menu.Show', function(Show){
       this.trigger('logo:clicked');
     },
     onShow:function(){
-      this.$el.find('#menu').collapse('hide');
+      var $menu = this.$el.find('#menu');
+      $menu.collapse('hide');
+
+      // attach listeners to the bootstrap events from opening and closing menu
+      $menu.on('show:bs:collapse', this.menuOpening);
+      $menu.on('hide:bs:collapse', this.menuClosing);
+    },
+    menuOpening:function(){
+      // lock body
+      $('body').addClass('locked');
+    },
+    menuClosing: function(){
+      // unlock body
+      $('body').removeClass('locked');
     },
     layoutCompleteHandler:function (msnryInstance) {
       // do stuff with msnryInstance
@@ -39,6 +51,7 @@ return Moonrakr.module('Menu.Show', function(Show){
       console.log(width);
       this.$el.find('.nav-viewport').css('width', width + "px");
     }
+
   });
 
 });

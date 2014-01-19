@@ -1,3 +1,7 @@
 body #main{
   padding-top: $collapsed-nav;
 }
+
+body.locked {
+  position: fixed;
+}
