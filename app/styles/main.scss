@@ -1,81 +1,7 @@
-// typography
-
-h1 { font-family: 'Josefin Sans', sans-serif; font-size: 38px; font-weight: 300; letter-spacing: 0.1em;}
-
-h2 { font-family: 'Josefin Sans', sans-serif; font-size: 34px; font-weight: 300; letter-spacing: 0.1em;}
-
-h3 { font-family: 'Josefin Sans', sans-serif; font-size: 20px; font-weight: 300; letter-spacing: 0.1em;}
-
-h4 { font-family: 'Josefin Sans', sans-serif; font-size: 20px; font-weight: 300; letter-spacing: 0.1em;}
-
-p { font-family: 'Quattrocento', serif; font-size: 17px; color:#363636; font-weight:lighter; letter-spacing: 0.01em; line-height: 2em;}
-
-// home font styles
-.read-more {
-	color: blue;
-	font-size: 14px;
-	display: inline;
-}
-.author-name {
-	color: blue;
-	display: inline;
-	margin-left: 15px;
-}
-.post-title {
-display: inline;
-}
-.post-excerpt {
-	display: inline;
-}
-.read-more {
-	font-weight: 600;
-	display: inline;
-	margin-left: 15px;
-}
-
-// masonry formatting
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
+// God's Box Sizing Model
+*, *::before, *::after {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.posts {
-  margin: 0 auto;
-  background: white;
-}
-
-.posts .post {
-  width:  500px;
-  float: left;
-  border: 1px solid white;
-  border-color: white;
-  margin-bottom: 10px;
-}
-
-// body container
-.body-container {
-	margin-top: 350px;
-	width: 100%;
-	background-color: white;
-}
-
-
-// footer
-
-.footer-buffer{
-	background-color: white;
-	width: 100%;
-	height:50px;
-}
-.footer-main {
-	width: 100%;
-	height: 180px;
-	background-color:#242424;
-	color: white;
-	text-align: center;
-	bottom: 0px;
 }
 
 
@@ -94,6 +20,8 @@ display: inline;
 
 
 // App Imports
+
+@import "apps/common";
 
 //// Menu App Imports
 @import "apps/menu/show/show";

@@ -4,13 +4,39 @@
 
 */
 
-$rale: 'Raleway', sans-serif;
+$rale: "Raleway", sans-serif;
+$jose: "Josefin Sans", sans-serif;
+$quat: 'Quattrocento', serif;
 
 body {
   font-size: 100%;
-  font-family: $rale;
+  font-family: $jose;
+  color: $black;
 }
 
-.fa-dark {
-  color: black;
+.fa-dark { color: $black; }
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  // letter-spacing: 0.1em;
+}
+
+h1 { font-size: 3.8em; }
+
+h2 { font-size: 3.4em; }
+
+h3 { font-size: 2.0em; }
+
+h4 { font-size: 2.0em; }
+
+p {
+    font-family: $quat;
+    font-size: 1.7em;
+    font-weight: lighter;
+    // letter-spacing: 0.01em;
+    // line-height: 2em;
 }

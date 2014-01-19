@@ -45,7 +45,7 @@ return Moonrakr.module('Auth', function(Auth){
   Auth.currentUser = new Moonrakr.Entities.User({
     id: 1,  // cedric
     username: 'Ced',
-    userPermissions: 999 // 0=everyone, 1=publicUser, 2=author, 3=editor, 4+=admin
+    userPermissions: 0 // 0=everyone, 1=publicUser, 2=author, 3=editor, 4+=admin
   });
   /***************************/
 

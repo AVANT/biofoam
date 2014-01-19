@@ -1,34 +1,56 @@
 body.posts.list .posts .post {
-  position: relative;
+  width: 100%;
+  cursor: pointer;
+
+  margin-bottom: 20px; // reveal black background
+  padding-bottom: 20px;
 
   background: white;
-  @include padding-breakdown;
 
-  .post-title{
-    margin-top: 25px;
-  }
+
   .post-image-wrapper{
     width: 100%;
-    max-height: 200px;
+    max-height: 100vw; // the image cannot be taller than the screen
     overflow: hidden;
-    margin-bottom: 5px;
-    margin-top: 15px;
+
     img{
       width: 100%;
     }
   }
-  .post-excerpt{
-  margin-top:0px;
+
+  .post-title,
+  .post-excerpt,
+  .post-more{
+    padding: 0 20px;
   }
 
-  @media (min-width: $screen-sm){
-    width: 100%;
+  .post-title{
+    font-size: 3em;
+    margin-bottom: 10px;
   }
-  @media (min-width: $screen-md){
-    width: 500px;
+
+  .post-excerpt{}
+
+  .post-more{
+    text-transform: uppercase;
+    font-size: 1.3em;
+    &:hover{
+      text-decoration: none;
+    }
   }
-  @media (min-width: $screen-lg){
-    width: 500px;
+
+  @media (min-width: $screen-xs-min){}
+
+  @media (min-width: $screen-sm-min){
+    width: 47vw;
+    float: left;
+    // margin: 10px 1vw;
+  }
+  @media (min-width: $screen-md-min){
+    width: 30.8vw;
+  }
+  @media (min-width: $screen-lg-min){
+    width: 23vw;
+    // margin: 10px 0.5vw;
   }
 }
-

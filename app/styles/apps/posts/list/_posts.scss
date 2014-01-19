@@ -1,12 +1,31 @@
-body.posts.list .posts {
-  // max-width: $global-max-width;
+/*
 
-  	 width: 100%;
- 	 margin: 0 auto;
-  	 overflow:  // @include padding-breakdown;
- auto;
+  div#posts-region
+    div.posts
 
-  @media (min-width: $screen-md){
-    padding-top: $collapsed-nav;
+*/
+
+
+body.posts.list #posts-region{
+  background: $black;
+
+  @media (min-width: $screen-sm-min){
+    padding-top: 1vw; // TOP
+    padding-left: 1.1vw; // hacky center of posts
   }
+
+  @media (min-width: $screen-md-min){
+    padding-left: 1.4vw;
+  }
+
+  @media (min-width: $screen-lg-min){
+    padding-left: 1.6vw;
+  }
+
+}
+
+body.posts.list .posts {
+  width: 100%;
+ 	margin: 0 auto;
+  overflow: auto;  // @include padding-breakdown;
 }
