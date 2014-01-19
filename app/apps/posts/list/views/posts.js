@@ -15,16 +15,15 @@ return Moonrakr.module('Posts.List', function(List){
         // 'isFitWidth': true,
         'gutter': 20,
         'transitionDuration': 0,
+        'isInitLayout': false,
       });
-
-      // init correct padding of this.$el in parent
-      this.centerThisInParent( this.msnry );
 
       // //// todo: mansonry loads broken, I think it doesnt have the images loaded at the time of init
       // //// could fix this by using imagesLoaded as suggested on the FAQ page of masonry
       // // imagesLoaded( container, function() {
       // //   msnry.layout();
       // // });
+
       var that = this;
       this.msnry.on('layoutComplete', function(msnryInstance){
         that.layoutHandler(msnryInstance, that);
@@ -36,7 +35,8 @@ return Moonrakr.module('Posts.List', function(List){
       // // really shitty fix for this problem
       setTimeout(function(){
         that.msnry.layout();
-      }, 150);
+        that.centerThisInParent( that.msnry );
+      }, 200);
     },
 
     layoutHandler: function(msnryInstance, context){
@@ -56,6 +56,7 @@ return Moonrakr.module('Posts.List', function(List){
         setPaddingTo = parseInt( (wWidth - mWidth) / 2 );
       }
 
+      console.log('how fast are your eyes...');
       this.$el.parent().css('padding-left', setPaddingTo);
     },
 
