@@ -7,7 +7,7 @@ define(function(require){
   // var Moonrakr = new Marionette.Application();
 
   var config = {
-    api: 'http://192.168.1.2:9000'
+    api: 'http://moonrakr.local.moonrakr.co/api'
   };
 
   Moonrakr.Config = config;
