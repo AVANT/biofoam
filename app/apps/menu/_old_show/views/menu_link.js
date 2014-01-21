@@ -7,7 +7,7 @@ function createMenuLinkView(App){
   App.MenuLink = Marionette.ItemView.extend({
 
     template: Handlebars.compile( _menuLink ),
-    tagName: 'span',
+    tagName: 'div',
     className: function(){
       return 'card button ' + this.model.get('name').toLowerCase();
     },

@@ -1,85 +1,46 @@
-.nav{
+nav.nav .nav-viewport{
+  position: fixed; // for the kids
+  z-index: 9; // above the open menu
+
   width: 100%;
-  min-height: $collapsed-nav;
-
   background: white;
-  color: white;
+  border-bottom: 1px solid black;
 
-  position: fixed;
-  z-index: 999;
+  .nav-logo {
+    margin: 10px 10px 0 20px;
+    width: 40px;
+    height: 40px;
 
-  @media (min-width: $screen-sm-min) {}
+    float: left;
 
-  // switch to fixed nav at the bottom
-  @media (min-width: $screen-md-min) {
-    position: fixed;
-    top: 0;
-    z-index: 9;
+    .logo{
+      margin-top:5px;
+      width: 80%;
+    }
   }
 
+  .menu {
+    float: right;
+    padding-right: 20px;
+
+    a {
+      color: $black;
+      .title {font-size: 2em;}
+      &:hover{}
+    }
+  }
+
+
+  @media (min-width: $screen-lg-min) {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-.nav .nav-viewport .menu {
-  position: fixed;
-  top: $collapsed-nav;
-  bottom: 0;
-  z-index: 999;
+nav.nav {
 
-  width: 100%;
-  background: white;
-
-  overflow-y: auto;
-
-  .menu-viewport{
-    // position: absolute;
-    width: 100%;
+  @media (min-width: $screen-lg-min) {
+    padding: 0 10%;
+    margin-left: -10%;
   }
-
-  .menu-viewport-shim{}
-
-  @media (min-width: $screen-sm-min) {}
-
-  @media (min-width: $screen-md-min) {
-    position: relative;
-
-    top: 0; // reset from xs screen
-    bottom: 0; // reset from xs screen
-
-    overflow-y: visible; // reset from xs screen
-
-    font-size: 1rem;
-
-    width: 100%;
-    padding-left: 6%;
-
-    box-shadow: 0 -10px 0px rgba(black, 0.4);
-
-    &.collapsing{
-      overflow: visible;
-    }
-
-    .menu-viewport{
-      position: absolute;
-      top: 0;
-
-      width: 100%;
-
-      height: $expanded-nav;
-      overflow: hidden;
-
-      @include transition(opacity .35s ease 0s);
-      &.opening {
-        // some how this isnt working ???
-        opacity: 1;
-      }
-      &.closing {
-        opacity: 0;
-      }
-
-    }
-    .menu-viewport-shim{
-      height: $expanded-nav;
-    }
-  }
-
 }
