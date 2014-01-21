@@ -15,7 +15,8 @@ define(function(require){
   Moonrakr.addRegions({
     headerRegion: '#header',
     mainRegion: '#main',
-    modalRegion: '#modal'
+    modalRegion: '#modal',
+    footerRegion: '#footer',
   });
 
   // IDEA ABOUT CLEANING THIS UP ON PAGE 212

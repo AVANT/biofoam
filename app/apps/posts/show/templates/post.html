@@ -4,4 +4,11 @@
   </div>
   <h2 class="header-title">{{ title }}</h2>
 </header>
-<div class="content">{{{ body }}}</div>
+<div class="body">
+  <div class="meta-content">
+    <p>{{ author }}</p>
+    <p>{{ publishedAt }}</p>
+    <p>{{ tags }}</p>
+  </div>
+  <div class="content">{{{ body }}}</div>
+</div>

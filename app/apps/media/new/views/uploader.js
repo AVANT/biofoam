@@ -69,6 +69,7 @@ return Moonrakr.module('Media.New', function(New){
         },
         { // options
           maxWidth: 600,
+          contain: true,
           canvas: true,
           crossOrigin: 'Anonymous'
         }
@@ -93,7 +94,7 @@ return Moonrakr.module('Media.New', function(New){
           that.disableCrop();
           that.coordinates = null;
         },
-        aspectRatio: 1/1
+        aspectRatio: 16/9
       },
       function(){
         that.jcrop_api = this;
