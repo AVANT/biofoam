@@ -60,7 +60,7 @@ return Moonrakr.module('Common.Views', function(Views){
       var fileUploadUrl = Moonrakr.Config.api + '/media';
       this.$('.redactor').redactor({
         imageUpload: fileUploadUrl,
-        // fileUpload: fileUploadUrl,
+        fileUpload: fileUploadUrl,
         changeCallback: function(html){
           that.$('.redactor').html(html);
           that.$('.redactor').trigger('change');

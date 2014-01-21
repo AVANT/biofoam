@@ -1,14 +1,16 @@
-header{
+body.posts.show header{
+
   .header-image-wrapper{
     max-height: 400px;
     overflow: hidden; // keep img in check
     .header-image{
       width: 100%;
-      position:fixed;
+      // position:fixed;
       z-index:-1;
       top: 60px;
     }
   }
+
   .header-title{
     @include width-breakdown;
     @include padding-breakdown;
@@ -17,9 +19,7 @@ header{
       margin-top: 45px;
     }
   }
-  @media (min-width: $screen-md-min) {
-    .header-image-wrapper{
-      padding-top: $collapsed-nav;
-    }
-  }
+
+  @media (min-width: $screen-md-min) {}
+
 }

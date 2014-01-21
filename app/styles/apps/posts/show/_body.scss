@@ -1,11 +1,16 @@
-.body {
-  @include width-breakdown;
+body.posts.show .content {
+  @include width-breakdown; // media width breakdown
   @include padding-breakdown;
+
   img {
     @include padding-breakdown;
     width: 100%;
     max-height: 600px;
     overflow: hidden;
+  }
+
+  p {
+    margin-bottom: 20px;
   }
 
 }
