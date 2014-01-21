@@ -7,7 +7,8 @@ define(function(require){
   // var Moonrakr = new Marionette.Application();
 
   var config = {
-    api: 'http://moonrakr.local.moonrakr.co/api'
+    // api: 'http://moonrakr.local.moonrakr.co/api'
+    api: 'http://localhost:9000'
   };
 
   Moonrakr.Config = config;

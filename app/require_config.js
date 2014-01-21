@@ -18,6 +18,7 @@ require.config({
     bootbox: 'vendor/bootbox',
 
     masonry: 'vendor/masonry.pkgd',
+    moment: 'vendor/moment',
 
     'jquery.redactor': 'vendor/redactor',
     'jquery.jcrop': 'vendor/jquery.Jcrop',

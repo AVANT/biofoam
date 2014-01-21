@@ -1,4 +1,4 @@
-body.posts.show .content {
+body.posts.show .body {
   @include width-breakdown; // media width breakdown
   @include padding-breakdown;
 

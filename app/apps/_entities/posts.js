@@ -1,5 +1,6 @@
 require('app');
 require('backbone.validation');
+require('moment');
 
 return Moonrakr.module('Entities', function(Entities){
 
@@ -35,13 +36,38 @@ return Moonrakr.module('Entities', function(Entities){
     parse: function( resp, options ){
 
       var obj = {};
-      obj.headerImageUrl = resp.headerImage.filelink;
 
-      // obj will override any samename properties of resp
+      obj.headerImageUrl = this.parseHeaderImg( resp );
+
+      obj.date = this.parseDate( resp );
+      obj.tags = this.parseTags( resp );
+
       _.extend(resp, obj);
 
       return resp;
+    },
+
+    parseHeaderImg: function(resp){
+      return resp.headerImage.filelink;
+    },
+
+    parseDate: function(resp){
+      var date = new Date( resp.publishedAt );
+      return moment( date.toString() ).format('MMMM Do YYYY');
+    },
+
+    parseTags: function( resp ){
+      var toReturn = '';
+      _.each( resp.tags, function( tag, i ){
+        if( i === 0){
+          toReturn = tag;
+        } else {
+          toReturn = toReturn + ', ' + tag;
+        }
+      });
+      return toReturn;
     }
+
   });
 
   Entities.Posts = Backbone.Collection.extend({

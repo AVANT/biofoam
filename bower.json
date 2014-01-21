@@ -41,7 +41,9 @@
     "foundation": "~5.0.2",
     "blueimp-canvas-to-blob": "~2.1.0",
     "backbone-validation": "~0.9.0",
-    "masonry": "~3.1.4"
+    "masonry": "~3.1.4",
+    "time-js": "*",
+    "moment": "~2.5.0"
   },
   "devDependencies": {
     "sinon-chai": "~2.4.0"

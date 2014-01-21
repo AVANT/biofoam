@@ -52,26 +52,26 @@ return Moonrakr.module('Posts.List', function(List){
       if ( wWidth <= 768 ){
         setPaddingTo = 0;
       } else {
+        var pWidth = this.$el.parent().width();
         var mWidth = this.getMasonryWidth(msnryInstance);
-        setPaddingTo = parseInt( (wWidth - mWidth) / 2 );
+        setPaddingTo = parseInt( (pWidth - mWidth) / 2 );
       }
 
-      console.log('how fast are your eyes...');
       this.$el.parent().css('padding-left', setPaddingTo);
     },
 
     getMasonryWidth:function (msnryInstance) {
-      // do stuff with msnryInstance
+
       var width = 0;
+
       msnryInstance.items.some(function(e) {
         if ( e.position.y > 0 ) return true;
         var size = e.size;
         width += size.borderLeftWidth + size.borderRightWidth + size.marginLeft  + size.marginRight + size.width + size.paddingLeft + size.paddingRight;
         width += msnryInstance.gutter;
       });
-      // console.log(width);
+
       return width -= msnryInstance.gutter;
-      // this.$el.find('.nav-viewport').css('width', width + "px");
     }
 
   });
