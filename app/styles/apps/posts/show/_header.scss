@@ -14,6 +14,7 @@ body.posts.show header{
   .header-title{
     @include width-breakdown;
     @include padding-breakdown;
+    font-family: $jose;
 
     .title{
       margin-top: 45px;

@@ -25,18 +25,18 @@ h4 {
   // letter-spacing: 0.1em;
 }
 
-h1 { font-size: 3.8em; }
+h1 { font-size: 3.8em; letter-spacing: 0.05em;}
 
-h2 { font-size: 3.4em; }
+h2 { font-size: 3.4em; letter-spacing: 0.05em;}
 
-h3 { font-size: 2.0em; }
+h3 { font-size: 2.0em; letter-spacing: 0.05em;}
 
-h4 { font-size: 2.0em; }
+h4 { font-size: 2.0em; letter-spacing: 0.05em;}
 
 p {
     font-family: $quat;
     font-size: 1.7em;
     font-weight: lighter;
-    // letter-spacing: 0.01em;
-    // line-height: 2em;
+    letter-spacing: 0.01em;
+    line-height: 2em;
 }

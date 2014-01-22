@@ -27,12 +27,16 @@ body.posts.list .posts .post {
   .post-title{
     font-size: 3em;
     margin-bottom: 10px;
+    font-family: $jose;
   }
 
   .post-excerpt{}
 
   .post-more{
     text-transform: uppercase;
+    font-family: $jose;
+    letter-spacing: 0.05em;
+    font-weight: bold;
     font-size: 1.3em;
     &:hover{
       text-decoration: none;

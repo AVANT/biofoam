@@ -2,7 +2,7 @@
   position: relative; // for the kids, honey
   overflow: hidden; // get kids height
   margin: 0 auto;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
 
   .menu-toggle{
     display: block;
@@ -11,7 +11,7 @@
     .hamburger {
       font-size: 2em;
       padding: $global-padding;
-      color: black;
+      color: $black;
     }
     .hamburger:hover{
       opacity: 0.6;

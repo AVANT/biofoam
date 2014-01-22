@@ -1,6 +1,12 @@
 body.posts.show .content {
   @include width-breakdown; // media width breakdown
   @include padding-breakdown;
+  font-family: $quat;
+  font-size: 1.7em;
+  font-weight: lighter;
+  letter-spacing: 0.01em;
+  line-height: 2em;
+
 
   img {
     @include padding-breakdown;
