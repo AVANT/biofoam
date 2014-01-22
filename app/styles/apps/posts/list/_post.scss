@@ -6,7 +6,14 @@ body.posts.list .posts .post {
   padding-bottom: 20px;
 
   background: white;
-
+  &:hover{
+    .post-title {
+    color: $vvv-blue;
+    transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+    }
+    }
 
   .post-image-wrapper{
     width: 100%;
@@ -16,6 +23,7 @@ body.posts.list .posts .post {
     img{
       width: 100%;
     }
+
   }
 
   .post-title,
