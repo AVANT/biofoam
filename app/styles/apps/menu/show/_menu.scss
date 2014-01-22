@@ -1,9 +1,12 @@
 nav.nav .nav-viewport{
   position: fixed; // for the kids
   z-index: 9; // above the open menu
+  width: 100%;
 
-  background: $grey;
-  color: $grey;
+  background: white;
+  // color: $grey;
+
+  border-bottom: 1px solid $black;
 
   .nav-logo {
     margin: 10px 10px 0 20px;
@@ -28,9 +31,6 @@ nav.nav .nav-viewport{
       &:hover{}
     }
   }
-
-  width: 100%;
-  background: $grey;
 
   @media (min-width: $screen-lg-min) {
     width: 80%;

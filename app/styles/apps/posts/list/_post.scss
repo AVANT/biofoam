@@ -6,25 +6,21 @@ body.posts.list .posts .post {
   padding-bottom: 20px;
 
   background: white;
+
+  // border: 1px solid rgba(black, 0.5);
+  // box-shadow: 5px 10px 0 rgba(black, 0.5);
+
   &:hover{
-    .post-title {
+    .title {
       color: $vvv-blue;
-      transition: color .25s ease-in-out;
-      -moz-transition: color .25s ease-in-out;
-      -webkit-transition: color .25s ease-in-out;
+      @include transition( color .25s ease-in-out );
     }
-    .post-more{
+    .more-cta{
       padding-left: 1.8em;
       text-decoration: none;
-      transition: padding-left .25s ease-in-out;
-      -moz-transition: padding-left .25s ease-in-out;
-      -webkit-transition: padding-left .25s ease-in-out;
+      @include transition( padding-left .25s ease-in-out );
     }
-    }
-
-  border: 1px solid rgba(black, 0.5);
-  box-shadow: 5px 10px 0 rgba(black, 0.5);
-
+  }
 
   .post-image-wrapper{
     width: 100%;
