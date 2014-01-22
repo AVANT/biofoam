@@ -2,7 +2,10 @@ body.posts.show header{
 
   .header-image-wrapper{
     max-height: 400px;
+    width: 100%;
     overflow: hidden; // keep img in check
+    position:fixed;
+    z-index: -1;
     .header-image{
       width: 100%;
       // position:fixed;
@@ -14,12 +17,14 @@ body.posts.show header{
   .header-title{
     @include width-breakdown;
     @include padding-breakdown;
-
-    .title{
-      margin-top: 45px;
-    }
+    font-family: $jose;
+    color: $black;
   }
 
   @media (min-width: $screen-md-min) {}
 
+}
+
+.meta-content {
+  text-align: center;
 }
