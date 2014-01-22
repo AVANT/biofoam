@@ -8,7 +8,7 @@ define(function(require){
 
   var config = {
     // api: 'http://moonrakr.local.moonrakr.co/api'
-    api: 'http://localhost:9000'
+    api: 'http://192.168.33.130/api'
   };
 
   Moonrakr.Config = config;
