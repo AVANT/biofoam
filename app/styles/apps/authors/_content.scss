@@ -1,0 +1,17 @@
+#users-region {
+	background-color: $grey;
+	h2 {
+		font-family: $jose;
+		font-size: 4em;
+		letter-spacing: 0.05em;
+		line-height: 1.2em;
+		font-weight: 500;
+		}
+	h2:hover{
+      	color: black;
+      	transition: color .25s ease-in-out;
+      	-moz-transition: color .25s ease-in-out;
+      	-webkit-transition: color .25s ease-in-out;
+      	text-decoration:none;
+    	}
+}
