@@ -8,10 +8,17 @@ body.posts.list .posts .post {
   background: white;
   &:hover{
     .post-title {
-    color: $vvv-blue;
-    transition: color .25s ease-in-out;
-    -moz-transition: color .25s ease-in-out;
-    -webkit-transition: color .25s ease-in-out;
+      color: $vvv-blue;
+      transition: color .25s ease-in-out;
+      -moz-transition: color .25s ease-in-out;
+      -webkit-transition: color .25s ease-in-out;
+    }
+    .post-more{
+      padding-left: 1.8em;
+      text-decoration: none;
+      transition: padding-left .25s ease-in-out;
+      -moz-transition: padding-left .25s ease-in-out;
+      -webkit-transition: padding-left .25s ease-in-out;
     }
     }
 
@@ -47,13 +54,6 @@ body.posts.list .posts .post {
     font-weight: bold;
     font-size: 1.3em;
     color: $vvv-blue;
-    &:hover{
-      padding-left: 1.8em;
-      text-decoration: none;
-      transition: padding-left .25s ease-in-out;
-      -moz-transition: padding-left .25s ease-in-out;
-      -webkit-transition: padding-left .25s ease-in-out;
-    }
   }
 
   @media (min-width: $screen-xs-min){}
