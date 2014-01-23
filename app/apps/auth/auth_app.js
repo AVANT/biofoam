@@ -26,7 +26,7 @@ return Moonrakr.module('Auth', function(Auth){
   Auth.Router = Marionette.AppRouter.extend({
     appRoutes : {
       'login': 'loginUser',
-      'signup': 'signupUser'
+      'signup': 'signupUser',
     }
   });
 
