@@ -23,11 +23,17 @@
 
 @import "apps/common";
 
-//// Menu App Imports
-@import "apps/menu/show/menu";
-@import "apps/menu/show/menu-card-extra";
 
-//// Post App Imports
+//// Persistant Module Imports
+////// Menu App Imports
+@import "apps/menu/menu";
+@import "apps/menu/menu-card-extra";
+////// Footer Imports
+@import "apps/footer/footer";
+
+
+//// Dynamic Module Imports
+////// Post App Imports
 @import "apps/posts/list/list";
 @import "apps/posts/list/posts";
 @import "apps/posts/list/post";
@@ -38,9 +44,6 @@
 @import "apps/posts/show/show";
 @import "apps/posts/show/body";
 @import "apps/posts/show/header";
-
-//// Footer Imports
-@import "apps/footer/content";
 
 //// Author Imports
 @import "apps/authors/content";

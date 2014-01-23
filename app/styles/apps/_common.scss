@@ -6,10 +6,6 @@ body #main{
   padding-top: $collapsed-nav;
 }
 
-body.locked {
-  position: fixed;
-}
-
 body{
   @media (min-width: $screen-lg-min){
     padding: 0 10%;

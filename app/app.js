@@ -58,11 +58,20 @@ define(function(require){
   });
 
 
-  // should be moved to a traffic controller modual
-  Moonrakr.commands.setHandler('set:body:class', function( classStr ){
-    $('body').attr( 'class', classStr );
+  //// should be moved to a traffic controller module
+  // add event should be renamed to reflect the module owner? ie. "traffic:class:add" , "traffic:class:remove"
+  Moonrakr.commands.setHandler('add:body:class', function( classStr ){
+    $('body').addClass( classStr );
   });
 
+  Moonrakr.commands.setHandler('remove:body:class', function( classStr ){
+    $('body').removeClass( classStr );
+  });
+
+  Moonrakr.commands.setHandler('clear:body:class', function(){
+    $('body').attr('class', '');
+  });
+  //// refactor block
 
   return Moonrakr;
 

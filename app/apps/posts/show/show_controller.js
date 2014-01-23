@@ -31,6 +31,7 @@ return Moonrakr.module('Posts.Show', function(Show){
   Show.Controller = {
     showPost: function(id){
 
+      Moonrakr.execute('add:body:class', 'loading');
       Moonrakr.Common.Controller.helper.cueLoadingView();
 
       var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( Show.CMSPanel );
@@ -75,6 +76,7 @@ return Moonrakr.module('Posts.Show', function(Show){
           postView = new Show.MissingPost();
         }
 
+        Moonrakr.execute('remove:body:class', 'loading');
         Moonrakr.mainRegion.show( postLayout );
 
       });

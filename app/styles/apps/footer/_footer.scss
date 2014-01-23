@@ -1,0 +1,9 @@
+// while the page is loading hide the footer
+body.loading .footer {
+  visibility: hidden;
+}
+
+
+.footer {
+  visibility: visible;
+}

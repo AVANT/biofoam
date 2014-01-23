@@ -9,7 +9,8 @@ return Moonrakr.module('Posts.List', function(List){
     // api calls
     listPosts: function(){
 
-
+      // set loading class on body
+      Moonrakr.execute('add:body:class', 'loading');
       Moonrakr.Common.Controller.helper.cueLoadingView();
 
       // refactor so this controller doesnt crash when this method fails
@@ -43,7 +44,9 @@ return Moonrakr.module('Posts.List', function(List){
           });
         }
 
+        Moonrakr.execute('remove:body:class', 'loading');
         Moonrakr.mainRegion.show( postsListLayout );
+        Moonrakr.execute('add:body:class', 'posts');
 
       }); // when...done
 
