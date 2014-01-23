@@ -1,5 +1,6 @@
 require('app');
 require('handlebars');
+require('fittext');
 
 var _post = require('text!apps/posts/list/templates/post.html');
 
@@ -12,13 +13,20 @@ return Moonrakr.module('Posts.List', function(List){
       return 'post';
     },
     template: Handlebars.compile(_post),
+
+    onShow:function(){
+      this.$el.find('.title').fitText(null, {maxFontSize: '30px'});
+    },
+
     events: {
       'click': 'showClicked'
     },
+
     showClicked: function(e){
       e.preventDefault();
       this.trigger('post:show', this.model);
     }
+
   });
 
 });

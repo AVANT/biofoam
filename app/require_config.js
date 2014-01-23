@@ -19,6 +19,7 @@ require.config({
 
     masonry: 'vendor/masonry.pkgd',
     moment: 'vendor/moment',
+    fittext: 'vendor/jquery.fittext',
 
     'jquery.redactor': 'vendor/redactor',
     'jquery.jcrop': 'vendor/jquery.Jcrop',
@@ -69,6 +70,9 @@ require.config({
     },
     'bootbox': {
       deps: ['jquery', 'bootstrap']
+    },
+    fittext: {
+      deps: ['jquery']
     }
   }
 });
