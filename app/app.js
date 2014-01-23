@@ -48,7 +48,7 @@ define(function(require){
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');
     if(Backbone.history){
-      Backbone.history.start();
+      Backbone.history.start({pushState: true});
 
       if (this.getCurrentRoute() === ''){
         Moonrakr.trigger('posts:list');

@@ -13,7 +13,7 @@ return Moonrakr.module('Menu.Show', function(Show){
     itemView: Show.MenuLink,
     itemViewContainer: '.menu',
     events:{
-      // 'click .js-menu-toggle': menuClicked
+      'click .nav-logo': 'logoClicked'
     },
     logoClicked:function(e){
       e.preventDefault();
