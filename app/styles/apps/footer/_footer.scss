@@ -33,30 +33,39 @@ body.loading .footer {
 		}
 		#mc_embed_signup {
 		border: solid $black 1px;
+		background-color: $grey;
 		height: 1.3em;
 		width: 222px;
 		margin: auto;
+		.message {
+			padding-top: 2em;
+		}
 		}
 		.clear {
 			input {
-					text-transform: lowercase;
-					text-align: center;
-					height: 1.5em;
-					width: 70px;
-					float: right;
-					padding: 2px;
-					vertical-align: middle;
-					border: solid 1px $grey;
-					border-left: none;
-					color: white;
-					background-color: $black;
-					font-size: 16px;
-					&:hover {
-						background-color: $vvv-blue;
-						@include transition( background-color .25s ease-in-out );
+				text-transform: lowercase;
+				text-align: center;
+				height: 1.5em;
+				width: 70px;
+				float: right;
+				padding: 2px;
+				vertical-align: middle;
+				border: solid 1px $grey;
+				border-left: none;
+				color: white;
+				background-color: $black;
+				font-size: 16px;
+				&:hover {
+					background-color: $vvv-blue;
+					@include transition( background-color .25s ease-in-out );
 				}
 			}
+			input:focus {
+				background-color: $black;
+				@include transition( background-color .25s ease-in-out );
+				outline: none;
 			}
+		}
 		input {
 			height: 1.5em;
 			border: solid 1px $grey;
