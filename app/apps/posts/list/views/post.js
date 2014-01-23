@@ -15,7 +15,7 @@ return Moonrakr.module('Posts.List', function(List){
     template: Handlebars.compile(_post),
 
     onShow:function(){
-      this.$el.find('.title').fitText(null, {maxFontSize: '30px'});
+      this.$el.find('.title').fitText(null, {minFontSize: '20px', maxFontSize: '30px'});
     },
 
     events: {

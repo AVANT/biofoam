@@ -1,3 +1,5 @@
+var modRewrite = require('connect-modrewrite');
+
 var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
@@ -35,6 +37,7 @@ module.exports = {
       hostname: 'localhost',
       middleware: function(connect) {
         return [
+          modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']),
           mountFolder(connect, '.tmp'),
           mountFolder(connect, 'bower_components'),
           mountFolder(connect, 'prototype')

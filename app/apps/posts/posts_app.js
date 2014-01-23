@@ -21,13 +21,16 @@ require('apps/posts/new/new_controller');
 
 return Moonrakr.module('Posts',function(Posts){
 
+  var postsSlug = Moonrakr.Config.postsSlug;
+
+  var routeHash = {};
+  routeHash[ postsSlug ] = 'listPosts';
+  routeHash[ postsSlug + 'new' ] = 'newPost';
+  routeHash[ postsSlug + ':id' ] = 'showPost';
+  routeHash[ postsSlug + ':id/edit' ] = 'editPost';
+
   Posts.Router = Marionette.AppRouter.extend({
-    appRoutes: {
-      'posts': 'listPosts',
-      'posts/new': 'newPost',
-      'posts/:id': 'showPost',
-      'posts/:id/edit': 'editPost'
-    }
+    appRoutes: routeHash
   });
 
   var API = {
@@ -56,22 +59,22 @@ return Moonrakr.module('Posts',function(Posts){
   };
 
   Moonrakr.on('posts:list', function(){
-    Moonrakr.navigate('posts');
+    Moonrakr.navigate( postsSlug );
     API.listPosts();
   });
 
   Moonrakr.on('post:show', function(id){
-    Moonrakr.navigate('posts/' + id);
+    Moonrakr.navigate( postsSlug + id);
     API.showPost(id);
   });
 
   Moonrakr.on('post:edit', function(id){
-    Moonrakr.navigate('posts/' + id + '/edit');
+    Moonrakr.navigate( postsSlug + id + '/edit' );
     API.editPost(id);
   });
 
   Moonrakr.on('post:new', function(){
-    Moonrakr.navigate('posts/new');
+    Moonrakr.navigate( postsSlug + 'new' );
     API.newPost();
   });
 

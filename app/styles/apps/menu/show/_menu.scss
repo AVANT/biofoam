@@ -1,9 +1,11 @@
 nav.nav .nav-viewport{
   position: fixed;
+  z-index: 9;
+
   width: 100%;
   height: $collapsed-nav;
 
-  background: white;
+  background: $grey;
   // color: $grey;
 
   border-bottom: 1px solid $black;

@@ -52,7 +52,7 @@ return Moonrakr.module('Posts.List', function(List){
       if ( wWidth <= 768 ){
         setPaddingTo = 0;
       } else {
-        var pWidth = this.$el.parent().width();
+        var pWidth = this.$el.parent().parent().width(); // #header element
         var mWidth = this.getMasonryWidth(msnryInstance);
         setPaddingTo = parseInt( (pWidth - mWidth) / 2 );
       }

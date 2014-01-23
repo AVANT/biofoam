@@ -8,7 +8,8 @@ define(function(require){
 
   var config = {
     // api: 'http://moonrakr.local.moonrakr.co/api'
-    api: 'http://192.168.33.130/api'
+    api: 'http://192.168.33.130/api',
+    postsSlug: 'editorial/'
   };
 
   Moonrakr.Config = config;
