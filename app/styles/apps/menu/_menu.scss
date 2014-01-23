@@ -23,6 +23,16 @@ nav.nav .nav-viewport{
     }
   }
 
+  .title{
+    font-family: $jose;
+    // text-transform: uppercase;
+    text-decoration: none;
+    &:hover{
+      color: $vvv-blue;
+      @include transition( color .25s ease-in-out );
+    }
+  }
+
   .menu {
     float: right;
     padding-right: 20px;

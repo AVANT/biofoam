@@ -3,7 +3,10 @@ body.loading .footer {
   visibility: hidden;
 }
 
-
 .footer {
   visibility: visible;
+}
+
+.footer {
+  border-top: 1px solid $black;
 }

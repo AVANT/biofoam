@@ -16,6 +16,23 @@ body.posts.show .body {
 
   p {
     margin-bottom: 20px;
+    font-size: 1.4em;
+
+  }
+  .authors {
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+  }
+  .tags {
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+  }
+  .date {
+    font-family: $jose;
+    font-weight: bold;
+    color: $mid-grey;
   }
 
 }

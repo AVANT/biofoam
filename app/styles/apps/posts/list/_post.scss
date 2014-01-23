@@ -30,7 +30,27 @@ body.posts.list .posts .post {
 
   background: white;
 
-  border: 1px solid rgba(black, 0.5);
+  .date {
+    font-family: $jose;
+    font-weight: bold;
+    color: $mid-grey;
+    letter-spacing: 0.05em;
+  }
+  .tags {
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+    letter-spacing: 0.05em;
+  }
+  .authors {
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+    letter-spacing: 0.05em;
+  }
+  .title {
+    font-family: $jose;
+  }
 
   &:hover{
     .title {
