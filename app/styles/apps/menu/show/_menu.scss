@@ -1,7 +1,7 @@
 nav.nav .nav-viewport{
-  position: fixed; // for the kids
-  z-index: 9; // above the open menu
+  position: fixed;
   width: 100%;
+  height: $collapsed-nav;
 
   background: white;
   // color: $grey;
@@ -38,6 +38,8 @@ nav.nav .nav-viewport{
   }
 }
 
+
+// to achieve the center, padded nav bar
 nav.nav {
 
   @media (min-width: $screen-lg-min) {

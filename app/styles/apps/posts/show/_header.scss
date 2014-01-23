@@ -4,12 +4,14 @@ body.posts.show header{
     max-height: 400px;
     width: 100%;
     overflow: hidden; // keep img in check
-    position:fixed;
-    z-index: -1;
+
+    // position:fixed;
+    // z-index: -1;
+
     .header-image{
       width: 100%;
       // position:fixed;
-      z-index:-1;
+      // z-index:-1;
       top: 60px;
     }
   }
