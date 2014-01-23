@@ -8,5 +8,29 @@ body.loading .footer {
 }
 
 .footer {
-  border-top: 1px solid $black;
+	border-top: 1px solid $black;
+
+	a {
+	font-family: $jose;
+		font-size: 2em;
+		font-weight: 600;
+		color: $black;
+		letter-spacing: 0.05em;
+	}
+	.subscribe-wrapper {
+		font-family: $jose;
+		font-size: 2em;
+		font-weight: 600;
+		color: $black;
+		letter-spacing: 0.05em;
+		h3 {
+			font-family: $jose;
+			font-size: 1.1em;
+			font-weight: 600;
+			color: $black;
+			letter-spacing: 0.05em;
+		}
+	}
+}
+.subscribe-wrapper {
 }
