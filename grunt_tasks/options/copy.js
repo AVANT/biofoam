@@ -147,7 +147,7 @@ module.exports = {
                 'blueimp-load-image/js/*.js',
                 'bootstrap/dist/js/bootstrap.js',
                 'bootbox/bootbox.js',
-                'fittext/fittext.js',
+                'jquery-fittext.js/jquery.fittext.js',
                 'handlebars/handlebars.js',
                 'jcrop/js/jquery.Jcrop.js',
                 'jquery/jquery.js',
