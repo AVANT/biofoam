@@ -16,7 +16,6 @@ return Moonrakr.module('Posts.List', function(List){
       // refactor so this controller doesnt crash when this method fails
       // refactor to bring logic into this controller ?
       var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
-      console.log('test');
 
       var fetchingPosts = Moonrakr.request('post:entities');
 

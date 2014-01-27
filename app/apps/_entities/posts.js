@@ -49,7 +49,11 @@ return Moonrakr.module('Entities', function(Entities){
     },
 
     parseHeaderImg: function(resp){
-      return resp.headerImage.filelink;
+
+      if (resp.headerImage) {
+        return resp.headerImage.filelink;
+      }
+      return '';
     },
 
     parseDate: function(resp){
@@ -89,6 +93,21 @@ return Moonrakr.module('Entities', function(Entities){
     },
     model: Entities.Post,
     // comparator: 'title'
+    withoutPages: function() {
+      var filtered = [];
+      filtered = this.filter(function(model) {
+        var toReturn = true;
+        Moonrakr.Config.reservedSlugs.some(function(reserved){
+          if ( model.get('id') === reserved ) {
+            toReturn = false;
+            //break out of loop
+            return true;
+          }
+        });
+        return toReturn;
+      });
+    return new Entities.Posts(filtered);
+  }
   });
 
   var initializePosts = function(){

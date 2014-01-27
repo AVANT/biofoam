@@ -28,9 +28,10 @@ return Moonrakr.module('Posts',function(Posts){
   routeHash[ postsSlug + 'new' ] = 'newPost';
   routeHash[ postsSlug + ':id' ] = 'showPost';
   routeHash[ postsSlug + ':id/edit' ] = 'editPost';
-  routeHash[ 'about' ] = 'showPost';
-  // routeHash[ 'privacy' ] = 'showPost';
-  // routeHash[ 'sponsorship' ] = 'showPost';
+  // 'Static' page hacks
+  routeHash[ 'about(/)' ] = 'aboutPage';
+  routeHash[ 'privacy(/)' ] = 'privacyPage';
+  routeHash[ 'sponsorship(/)' ] = 'sponsorshipPage';
 
   Posts.Router = Marionette.AppRouter.extend({
     appRoutes: routeHash
@@ -46,7 +47,6 @@ return Moonrakr.module('Posts',function(Posts){
       // Moonrakr.execute('header:set:title', 'Posts');
     },
     showPost: function(id){
-      console.log('test');
 
       Moonrakr.execute('clear:body:class');
       Moonrakr.execute('add:body:class', 'posts show');
@@ -68,7 +68,18 @@ return Moonrakr.module('Posts',function(Posts){
       Posts.New.Controller.newPost();
       // Moonrakr.execute('set:active:header', 'posts');
       // Moonrakr.execute('header:set:title', 'Posts: New');
+    },
+    // 'Static' page hacks
+    aboutPage: function(){
+      Moonrakr.trigger('post:about');
+    },
+    privacyPage: function(){
+      Moonrakr.trigger('post:privacy');
+    },
+    sponsorshipPage: function(){
+      Moonrakr.trigger('post:sponsorship');
     }
+
   };
 
   Moonrakr.on('posts:list', function(){
