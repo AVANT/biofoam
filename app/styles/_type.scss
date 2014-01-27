@@ -27,7 +27,15 @@ h4 {
 
 h1 { font-size: 4em; letter-spacing: 0.05em; line-height: 1.2em; font-weight: 600;}
 
-h2 { font-size: 4em; letter-spacing: 0.05em; line-height: 1.2em; font-weight: 600;}
+h2 {  font-size: 4em;
+      letter-spacing: 0.05em;
+      line-height: 1.2em;
+      font-weight: 600;
+      &:hover {
+        text-decoration:none;
+      }
+    }
+
 
 h3 { font-size: 2.0em; letter-spacing: 0.05em; line-height: 1.2em;}
 
@@ -35,7 +43,7 @@ h4 { font-size: 2.0em; letter-spacing: 0.05em; line-height: 1.2em;}
 
 p {
     font-family: $quat;
-    font-size: 1.7em;
+    font-size: 1.8em;
     font-weight: lighter;
     letter-spacing: 0.01em;
     line-height: 1.6em;
