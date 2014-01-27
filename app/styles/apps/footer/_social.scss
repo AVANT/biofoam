@@ -1,0 +1,34 @@
+.footer {
+  ul{
+      overflow: auto; // adopt childrens height
+      font-size: 1.7em; // set font size for text and icons
+      padding-left: 0; // remove default ul padding
+  }
+  li {
+    list-style: none; // remove default li bullet
+    display: inline-block; // get li to flow inline !IE7
+    text-transform: uppercase; // make all caps
+    margin-bottom: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .social-list {
+    margin-bottom: 0; // remove default margin
+    text-align: center; // align the li's
+
+    // highlight just icons
+    // .twitter .icon:hover{color: #0ab0ed;}
+    // .facebook .icon:hover {color: #3c599b;}
+    // .google .icon:hover {color: #f80010;}
+    // .youtube .icon:hover{color: #f80010;}
+
+    // highlight circle background
+    .twitter:hover{color: #00b0ed;}
+    .facebook:hover {color: #3b5999;}
+  }
+
+}

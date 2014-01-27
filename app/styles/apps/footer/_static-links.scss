@@ -1,0 +1,19 @@
+.footer .static-links-wrapper {
+  text-align: center;
+
+  a {
+    font-family: $jose;
+    font-size: 2em;
+    font-weight: 600;
+    color: $black;
+    margin: 5px;
+    letter-spacing: 0.05em;
+  }
+
+  // cats go three up
+  @media (min-width: $screen-md-min){
+    width: 33%;
+    float: right;
+    margin-top: 20px;
+  }
+}

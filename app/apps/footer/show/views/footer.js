@@ -61,6 +61,7 @@ var _footer = require('text!apps/footer/show/templates/footer.html');
     },
 
     chimpErrorHandler:function(data){
+      // console.log('from mail chimp:', data);
       this.ui.message.html( data.msg );
     },
 
