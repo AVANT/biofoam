@@ -29,6 +29,8 @@ return Moonrakr.module('Posts',function(Posts){
   routeHash[ postsSlug + ':id' ] = 'showPost';
   routeHash[ postsSlug + ':id/edit' ] = 'editPost';
   routeHash[ 'about' ] = 'showPost';
+  // routeHash[ 'privacy' ] = 'showPost';
+  // routeHash[ 'sponsorship' ] = 'showPost';
 
   Posts.Router = Marionette.AppRouter.extend({
     appRoutes: routeHash
@@ -44,6 +46,8 @@ return Moonrakr.module('Posts',function(Posts){
       // Moonrakr.execute('header:set:title', 'Posts');
     },
     showPost: function(id){
+      console.log('test');
+
       Moonrakr.execute('clear:body:class');
       Moonrakr.execute('add:body:class', 'posts show');
 
@@ -87,9 +91,18 @@ return Moonrakr.module('Posts',function(Posts){
     API.newPost();
   });
 
+  // 'Static' page hacks
   Moonrakr.on('post:about', function(){
     Moonrakr.navigate( 'about' );
     API.showPost('about');
+  });
+  Moonrakr.on('post:privacy', function(){
+    Moonrakr.navigate( 'privacy' );
+    API.showPost('privacy');
+  });
+  Moonrakr.on('post:sponsorship', function(){
+    Moonrakr.navigate( 'sponsorship' );
+    API.showPost('sponsorship');
   });
 
   Moonrakr.addInitializer(function(){

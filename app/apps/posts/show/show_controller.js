@@ -31,6 +31,7 @@ return Moonrakr.module('Posts.Show', function(Show){
   Show.Controller = {
     showPost: function(id){
 
+
       Moonrakr.execute('add:body:class', 'loading');
       Moonrakr.Common.Controller.helper.cueLoadingView();
 
