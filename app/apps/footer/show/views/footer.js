@@ -1,11 +1,12 @@
-require('app');
+// require('app');
+require('marionette');
 require('handlebars');
 
 var _footer = require('text!apps/footer/show/templates/footer.html');
 
-return Moonrakr.module('Footer.Show', function(Show){
-
-  Show.Footer = Marionette.CompositeView.extend({
+// return Moonrakr.module('Footer.Show', function(Show){
+  // Show.Footer = Marionette.CompositeView.extend({
+  return Marionette.CompositeView.extend({
     template: Handlebars.compile( _footer ),
     tagName: 'div',
     className: 'footer',
@@ -71,6 +72,6 @@ return Moonrakr.module('Footer.Show', function(Show){
 
 
 
-  });
+  // });
 
 });

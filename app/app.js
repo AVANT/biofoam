@@ -8,8 +8,8 @@ define(function(require){
 
   var config = {
     // api: 'http://moonrakr.local.moonrakr.co/api'
-    // api: 'http://192.168.33.130/api',
-    api: 'http://192.168.1.4:9000',
+    api: 'http://192.168.33.130/api',
+    // api: 'http://192.168.1.4:9000',
     postsSlug: 'editorial/'
   };
 

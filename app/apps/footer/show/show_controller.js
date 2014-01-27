@@ -1,5 +1,5 @@
 require('app');
-require('apps/footer/show/views/footer');
+var FooterView = require('apps/footer/show/views/footer');
 
 return Moonrakr.module('Footer.Show', function(Show){
 
@@ -7,8 +7,9 @@ return Moonrakr.module('Footer.Show', function(Show){
 
     showFooter:function(){
 
-      // this.collection = Moonrakr.request('header:entities');
-      this.view = new Show.Footer({collection: this.collection});
+      // this.view = new Show.Footer({collection: this.collection});
+
+      this.view = new FooterView({collection: this.collection});
 
       this.attachHandlers();
 
