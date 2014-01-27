@@ -28,6 +28,7 @@ return Moonrakr.module('Posts',function(Posts){
   routeHash[ postsSlug + 'new' ] = 'newPost';
   routeHash[ postsSlug + ':id' ] = 'showPost';
   routeHash[ postsSlug + ':id/edit' ] = 'editPost';
+  routeHash[ 'about' ] = 'showPost';
 
   Posts.Router = Marionette.AppRouter.extend({
     appRoutes: routeHash
@@ -84,6 +85,11 @@ return Moonrakr.module('Posts',function(Posts){
   Moonrakr.on('post:new', function(){
     Moonrakr.navigate( postsSlug + 'new' );
     API.newPost();
+  });
+
+  Moonrakr.on('post:about', function(){
+    Moonrakr.navigate( 'about' );
+    API.showPost('about');
   });
 
   Moonrakr.addInitializer(function(){
