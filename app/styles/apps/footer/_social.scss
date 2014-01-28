@@ -17,18 +17,12 @@
   }
 
   .social-list {
-    margin-bottom: 0; // remove default margin
-    text-align: center; // align the li's
-
-    // highlight just icons
-    // .twitter .icon:hover{color: #0ab0ed;}
-    // .facebook .icon:hover {color: #3c599b;}
-    // .google .icon:hover {color: #f80010;}
-    // .youtube .icon:hover{color: #f80010;}
-
-    // highlight circle background
-    .twitter:hover{color: #00b0ed;}
-    .facebook:hover {color: #3b5999;}
+    fbook-follow-button{
+      text-align:left;
+    }
+    twitter-follow-button {
+      text-align:left;
+    }
   }
 
 }

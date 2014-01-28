@@ -1,6 +1,6 @@
 .footer .static-links-wrapper {
-  text-align: center;
-
+display: block;
+float: right;
   a {
     font-family: $jose;
     font-size: 2em;
@@ -8,6 +8,7 @@
     color: $black;
     margin: 5px;
     letter-spacing: 0.05em;
+    float: right;
   }
 
   // cats go three up

@@ -12,14 +12,35 @@ nav.nav .nav-viewport{
 
   .nav-logo {
     margin: 10px 10px 0 20px;
-    width: 40px;
-    height: 40px;
+
 
     float: left;
+    display: inline;
 
     .logo{
-      margin-top:5px;
+      margin-top: 0.1em;
       width: 80%;
+      float: left;
+      display: inline;
+      width: 33px;
+      height: 33px;
+    }
+
+  .logotxt {
+      font-family: $jose;
+      color: $black;
+      font-size: 2.5em;
+      letter-spacing: 0.24em;
+      line-height: 1.2em;
+      font-weight: 600;
+      text-decordation:none;
+      float: left;
+      display: inline;
+      margin-top: .25em;
+    }
+
+    .VVNT {
+      margin-left: .1em;
     }
   }
 
