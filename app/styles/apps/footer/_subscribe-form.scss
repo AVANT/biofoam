@@ -1,4 +1,5 @@
 .footer .subscribe-wrapper{
+  max-width: 400px;
   font-family: $jose;
   font-size: 2em;
   font-weight: 600;
@@ -69,10 +70,11 @@
       }
     }
   }
-
+  text-align: center;
+  margin: auto;
   // cats go three up
   @media (min-width: $screen-md-min){
-    width: 33%;
-    float: left;
+  }
+  @media (min-width: $screen-sm-min){
   }
 }

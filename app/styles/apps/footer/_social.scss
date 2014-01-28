@@ -17,12 +17,15 @@
   }
 
   .social-list {
-    fbook-follow-button{
+    padding-left: 20px;
+    margin-top: 2em;
+    line-height: 4em;
+    }
+      twitter-follow-button {
       text-align:left;
     }
-    twitter-follow-button {
+      fbook-follow-button{
       text-align:left;
-    }
   }
 
 }
