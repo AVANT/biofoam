@@ -27,7 +27,7 @@ return Moonrakr.module('Posts.Show', function(Show){
         var display = '&display=popup';
         var caption = '&caption=' + encodeURIComponent(this.excerpt);
         var link = '&link=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
-        var redirect_uri = '&redirect_uri=' + link;
+        var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
         var picture = '&picture=' + encodeURIComponent(this.headerImageUrl);
 
         var toReturn = baseUrl + appId + display + caption + link + redirect_uri + picture;
