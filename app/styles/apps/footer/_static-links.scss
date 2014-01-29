@@ -11,5 +11,12 @@ padding-bottom: 2.5em;
     color: $black;
     letter-spacing: 0.05em;
     float: right;
+
+    text-decoration: none;
+
+    &:hover{
+      color: $vvv-blue;
+      @include transition( color .25s ease-in-out );
+    }
   }
 }
