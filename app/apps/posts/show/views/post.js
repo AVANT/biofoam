@@ -31,7 +31,7 @@ return Moonrakr.module('Posts.Show', function(Show){
         var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
         var picture = '&picture=' + encodeURIComponent(this.headerImageUrl);
 
-        var toReturn = baseUrl + appId + display + caption + link + redirect_uri + picture;
+        var toReturn = baseUrl + appId + display + name + caption + link + redirect_uri + picture;
 
         console.log('facebook', toReturn);
 
