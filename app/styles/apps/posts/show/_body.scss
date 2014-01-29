@@ -1,5 +1,6 @@
 body.posts.show .body {
-  @include width-breakdown; // media width breakdown
+  max-width: $global-max-width;
+
   @include padding-breakdown;
   font-family: $quat;
   font-size: 1.7em;
@@ -35,6 +36,17 @@ body.posts.show .body {
     font-weight: bold;
     color: $mid-grey;
     font-size: 0.9em;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 60%;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 640px;
   }
 
 }

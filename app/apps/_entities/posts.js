@@ -91,23 +91,37 @@ return Moonrakr.module('Entities', function(Entities){
     url: function(){
       return Moonrakr.Config.api + '/posts';
     },
+
     model: Entities.Post,
-    // comparator: 'title'
-    withoutPages: function() {
-      var filtered = [];
-      filtered = this.filter(function(model) {
-        var toReturn = true;
-        Moonrakr.Config.reservedSlugs.some(function(reserved){
-          if ( model.get('id') === reserved ) {
-            toReturn = false;
-            //break out of loop
-            return true;
-          }
-        });
-        return toReturn;
+
+    initialize: function () {
+      this.on('add', this.removeReserved, this);
+    },
+
+    removeReserved: function (m, c, opts) {
+      var that = this;
+      Moonrakr.Config.reservedSlugs.some(function(reserved){
+        if ( m.get('id') === reserved ) {
+          that.remove(m);
+        }
       });
-    return new Entities.Posts(filtered);
-  }
+    }
+
+    // withoutPages: function() {
+    //   var filtered = [];
+    //   filtered = this.filter(function(model) {
+    //     var toReturn = true;
+    //     Moonrakr.Config.reservedSlugs.some(function(reserved){
+    //       if ( model.get('id') === reserved ) {
+    //         toReturn = false;
+    //         //break out of loop
+    //         return true;
+    //       }
+    //     });
+    //     return toReturn;
+    //   });
+    //   return new Entities.Posts(filtered);
+    // }
   });
 
   var initializePosts = function(){
