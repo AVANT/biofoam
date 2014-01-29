@@ -25,6 +25,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
         var appId = 'app_id=630547413679417';
         var display = '&display=popup';
+        var name = '&name=' + encodeURIComponent(this.title);
         var caption = '&caption=' + encodeURIComponent(this.excerpt);
         var link = '&link=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
         var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
