@@ -28,18 +28,6 @@ nav.nav .nav-viewport{
       //height: 33px;
     }
 
-  .logotxt {
-      //font-family: $jose;
-      //color: $black;
-      //font-size: 2.5em;
-      //letter-spacing: 0.24em;
-      //line-height: 1.2em;
-      //font-weight: 600;
-      //text-decordation:none;
-      //float: left;
-      //display: inline;
-      //margin-top: .25em;
-    }
 
     .VVNT {
       //margin-left: .1em;
@@ -49,24 +37,43 @@ nav.nav .nav-viewport{
   .social-links {
 
     float: right;
-    display: inline;
-    margin-right: 1.5em;
-    margin-top: 2.3em;
-
-    .twitter-icon {
-      height: 14px;
-      width: 14px;
-      &:hover {
-        // opacity: 0.5;
+    padding-top: 21px;
+    padding-right: 13px;
+    .fa-stack {
+      &:hover{
+      .fa-stop {
+        color: #3b5998;
+        @include transition( color .25s ease-in-out );
+        }
       }
     }
-    .fbook-icon {
-      margin-left: 0.8em;
-      height: 14px;
-      width: 14px;
-      &:hover {
-        // opacity: 0.5;
-      }
+
+    .fa-twitter {
+    font-size: 18px;
+    color: $black;
+    padding-right: 2px;
+    &:hover{
+      color: #55acee;
+    @include transition( color .25s ease-in-out );
+    }
+    }
+    .fa-stop {
+    font-size: 18px;
+    color: $black;
+    padding-right: 3px;
+    }
+    .fa-facebook {
+    font-size: 14px;
+    margin-left: 2px;
+    margin-top: -2px;
+    }
+    .fa-rss {
+    font-size: 18px;
+    color: $black;
+    &:hover{
+      color: #F7C36F;
+    @include transition( color .25s ease-in-out );
+    }
     }
   }
 

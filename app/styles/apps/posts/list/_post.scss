@@ -54,17 +54,28 @@ body.posts.list .posts .post {
     font-family: $jose;
   }
 
+  -webkit-transition: box-shadow .2s linear;
+  -moz-transition: box-shadow .2s linear;
+  -ms-transition: box-shadow .2s linear;
+  -o-transition: box-shadow .2s linear;
+  transition: box-shadow .2s linear;
+  //margin-top: 1px;
+
   &:hover{
-    .title {
-      color: $vvv-blue;
-      @include transition( color .25s ease-in-out );
-    }
-    .more-cta{
-      padding-left: 1.8em;
-      text-decoration: none;
-      @include transition( padding-left .25s ease-in-out );
-    }
+  box-shadow: 3px 3px #C4C4C4;
+  //margin-top: 0px;
+  //@include transition( margin-top .25s ease-in-out );
   }
+ //   .title {
+ //     color: $vvv-blue;
+ //     @include transition( color .25s ease-in-out );
+ //   }
+ //   .more-cta{
+ //     padding-left: 1.8em;
+ //     text-decoration: none;
+ //     @include transition( padding-left .25s ease-in-out );
+ //   }
+ //}
 
   .post-image-wrapper{
     width: 100%;
