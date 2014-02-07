@@ -6,4 +6,6 @@ body.loading .footer {
 .footer {
   visibility: visible;
   border-top: 1px solid $black;
+
+  position: relative; // for the kiddies
 }
