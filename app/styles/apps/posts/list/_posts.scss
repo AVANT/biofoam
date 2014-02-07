@@ -18,4 +18,23 @@ body.posts.list .posts {
   width: 100%;
  	margin: 0 auto;
   overflow: auto;  // @include padding-breakdown;
+
+	// Goodies for salvattore
+	#posts-region[data-columns]::before {
+		content: '3 .column.size-1of3';
+	}
+
+	/* These are the classes that are going to be applied: */
+	.column { float: left; }
+	.size-1of3 { width: 33.333%; }
+
+	/* Also, don't forget to add this: */
+	[data-columns]::before { display: none; }
+
+	/* Again, you're free to use and define the classes: */
+	.column { float: left; }
+	.size-1of1 { width: 100%; }
+	.size-1of2 { width: 50%; }
+	.size-1of3 { width: 33.333%; }
+
 }

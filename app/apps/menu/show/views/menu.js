@@ -13,13 +13,12 @@ return Moonrakr.module('Menu.Show', function(Show){
     itemView: Show.MenuLink,
     itemViewContainer: '.menu',
     events:{
-      'click .nav-logo': 'logoClicked'
+      'click .nav-logo': 'logoClicked',
     },
     logoClicked:function(e){
       e.preventDefault();
       this.trigger('logo:clicked');
     },
-
   });
 
 });

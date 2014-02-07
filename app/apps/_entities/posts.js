@@ -40,7 +40,7 @@ return Moonrakr.module('Entities', function(Entities){
       obj.headerImageUrl = this.parseHeaderImg( resp );
 
       obj.date = this.parseDate( resp );
-      obj.tags = this.parseTags( resp );
+      // obj.tags = this.parseTags( resp );
       obj.authors = this.parseAuthors( resp );
 
       _.extend(resp, obj);

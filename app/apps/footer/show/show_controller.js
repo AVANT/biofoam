@@ -22,6 +22,18 @@ return Moonrakr.module('Footer.Show', function(Show){
         Moonrakr.trigger('posts:list');
       });
 
+      this.view.on('about:clicked', function(){
+        Moonrakr.trigger('post:about');
+      });
+
+      this.view.on('privacy:clicked', function(){
+        Moonrakr.trigger('post:privacy');
+      });
+
+      this.view.on('sponorship:clicked', function(){
+        Moonrakr.trigger('post:sponorship');
+      });
+
     }
   };
 

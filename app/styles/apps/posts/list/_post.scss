@@ -100,13 +100,13 @@ body.posts.list .posts .post {
   @media (min-width: $screen-xs-min){}
 
   @media (min-width: $screen-sm-min){
-    width: 47vw;
+    width: 50%;
     float: left;
   }
   @media (min-width: $screen-md-min){
-    width: 30.8vw;
+    width: 33.333333%;
   }
   @media (min-width: $screen-lg-min){
-    width: 23vw;
+    width: 25%;
   }
 }

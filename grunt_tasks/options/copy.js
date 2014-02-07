@@ -72,6 +72,7 @@ module.exports = {
                 'marionette/lib/backbone.marionette.js',
                 'moment/moment.js',
                 'requirejs/require.js',
+                'salvattore/dist/salvattore.min.js',
                 'spinjs/spin.js',
                 'text/text.js',
                 'underscore/underscore.js'
@@ -155,6 +156,7 @@ module.exports = {
                 'moment/moment.js',
                 'requirejs/require.js',
                 'spinjs/spin.js',
+                'salvattore/dist/salvattore.min.js',
                 'text/text.js',
                 'underscore/underscore.js'
             ],

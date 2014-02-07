@@ -23,9 +23,11 @@ return Moonrakr.module('Menu.Show', function(Show){
       });
 
       this.view.on('itemview:navigate', function(childView, model){
+        console.log('q;ejrbn');
         var trigger = model.get('navigationTrigger');
-        var navString = model.get('navigationString') || null;
-        Moonrakr.trigger( trigger, navString );
+        // var navString = model.get('navigationString') || null;
+        Moonrakr.trigger( trigger );
+
       });
 
     }

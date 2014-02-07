@@ -17,7 +17,8 @@ require.config({
     bootstrap: 'vendor/bootstrap',
     bootbox: 'vendor/bootbox',
 
-    masonry: 'vendor/masonry.pkgd',
+    salvattore: 'vendor/salvattore.min',
+    // masonry: 'vendor/masonry.pkgd',
     moment: 'vendor/moment',
     fittext: 'vendor/jquery.fittext',
 

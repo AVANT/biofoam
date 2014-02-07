@@ -22,7 +22,7 @@ return Moonrakr.module('Entities', function(Entities){
     Entities.headers = new Entities.HeaderCollection([
       // { name: 'Posts', url: 'posts', navigationTrigger: 'posts:list' },
       // { name: 'Authors', url: 'users', navigationTrigger: 'users:list' },
-      { name: 'About', url: 'pages/about', navigationTrigger: 'pages:show', navigationString:'about' }
+      { name: 'About', url: 'media/about', navigationTrigger: 'post:about', navigationString:'about' }
     ]);
   };
 
