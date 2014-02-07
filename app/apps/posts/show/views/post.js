@@ -33,7 +33,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
         var toReturn = baseUrl + appId + display + name + caption + link + redirect_uri + picture;
 
-        console.log('facebook', toReturn);
+        // console.log('facebook', toReturn);
 
         // return toReturn;
         return toReturn;
@@ -65,7 +65,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
         var toReturn = baseUrl + url + hashtags;
 
-        console.log('twitter', toReturn);
+        // console.log('twitter', toReturn);
 
         // return toReturn;
         return toReturn;

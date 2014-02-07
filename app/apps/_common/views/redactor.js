@@ -66,23 +66,16 @@ return Moonrakr.module('Common.Views', function(Views){
           that.$('.redactor').trigger('change');
           that.trigger('redactor:changed');
         },
-        // buttonsCustom: {
-        //   image: {
-        //     title: 'Advanced List',
-        //     dropdown: {
-        //       image: {
-        //         title: 'Upload Image From the Web',
-        //         callback: this.imageShow
-        //       },
-        //       point2: {
-        //         title: 'Upload Image From Your Computer',
-        //         callback: function(){
-        //           that.$('#hidden-image-input').trigger('click');
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
+        buttonsAdd: ['|', 'pre'],
+        buttonsCustom: {
+          pre: {
+            title: 'Code',
+            callback: function()
+            {
+              this.blockSetAttr('class', 'photoCredit');
+            }
+          }
+        }
       }); // redactor
     }, // init redactor
 

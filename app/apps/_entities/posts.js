@@ -1,12 +1,12 @@
 require('app');
-require('backbone.validation');
+// require('backbone.validation');
 require('moment');
 
 return Moonrakr.module('Entities', function(Entities){
 
   Entities.Post = Backbone.Model.extend({
     initialize: function(){
-      _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
+      // _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
     },
     url: function(){
       if ( this.get('id') ){
@@ -19,20 +19,20 @@ return Moonrakr.module('Entities', function(Entities){
     defaults:{
       'body': ''
     },
-    validation: {
-      title: {
-        rangeLength: [1, 200],
-        msg: 'Title must be between 1 and 100 characters'
-      },
-      excerpt: {
-        rangeLength: [1, 200],
-        msg: 'Excerpt must be between 1 and 100 characters'
-      },
-      // body: {
-      //   rangeLength: [1, 40],
-      //   msg: 'Body must be between 1 and 40 characters'
-      // }
-    },
+    // validation: {
+    //   title: {
+    //     rangeLength: [1, 200],
+    //     msg: 'Title must be between 1 and 100 characters'
+    //   },
+    //   excerpt: {
+    //     rangeLength: [1, 200],
+    //     msg: 'Excerpt must be between 1 and 100 characters'
+    //   },
+    //   // body: {
+    //   //   rangeLength: [1, 40],
+    //   //   msg: 'Body must be between 1 and 40 characters'
+    //   // }
+    // },
     parse: function( resp, options ){
 
       var obj = {};

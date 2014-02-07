@@ -31,12 +31,12 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
       this.model.on('change', this.modelChanged, this);
       $( window ).bind( 'beforeunload', that.beforeUnloadHandler, that );
 
-      this.model.on('validated:invalid', this.modelValidated, this);
+      // this.model.on('validated:invalid', this.modelValidated, this);
     },
 
     onRender: function(){
       this.stickit();
-      Backbone.Validation.bind(this);
+      // Backbone.Validation.bind(this);
     },
 
       ///////////////////
