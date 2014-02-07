@@ -37,7 +37,7 @@ nav.nav .nav-viewport{
   .social-links {
 
     float: right;
-    padding-top: 21px;
+    padding-top: 18px;
     padding-right: 13px;
     .fa-stack {
       &:hover{
@@ -60,18 +60,20 @@ nav.nav .nav-viewport{
     .fa-stop {
     font-size: 18px;
     color: $black;
-    padding-right: 3px;
+    padding-right: 4px;
     }
     .fa-facebook {
     font-size: 14px;
-    margin-left: 2px;
+    margin-left:1px;
     margin-top: -2px;
     }
     .fa-rss {
-    font-size: 18px;
+    position: relative;
+    top: 2px;
+    font-size: 20px;
     color: $black;
     &:hover{
-      color: #F7C36F;
+      color: #F0B85D;
     @include transition( color .25s ease-in-out );
     }
     }
