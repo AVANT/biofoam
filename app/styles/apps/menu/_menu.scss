@@ -11,26 +11,38 @@ nav.nav .nav-viewport{
   border-bottom: 1px solid $black;
 
   .nav-logo {
-    margin: 10px 10px 0 20px;
+    margin: 8px 10px 0 20px;
 
 
     float: left;
     display: inline;
 
-    .logo{
-      margin-top: 0.1em;
-      width: 80%;
-      float: left;
-      display: inline;
-        width: 38px;
-        height: 38px;
-      //width: 33px;
-      //height: 33px;
+    .logo-circle {
+      position: relative;
+      padding-left: 20xpx;
+      font-size: 4.5em;
+      background-image: url('http://farm9.staticflickr.com/8228/8497927563_00dcb3fe09_s.jpg');
+      background-size:55px;
+      background-position: 50% 50%; 
+      color: transparent;
+      -webkit-background-clip: text;  
+      background-clip: text; 
+      text-align: left;
+      z-index: -1;
     }
-
-
-    .VVNT {
-      //margin-left: .1em;
+    .logo-a {
+      font-size: 2.9em;
+      color: $grey;
+      text-decoration: none;
+      z-index: 0;
+      position: absolute;
+      margin-top: -1.54em;
+      margin-left: 0.28em;
+      -moz-transform:rotate(-180deg); /* Firefox */
+      -webkit-transform:rotate(-180deg); /* Webkit */        
+      -ms-transform:rotate(-180deg); /* IE */
+      -o-transform:rotate(-180deg); /* Opera */
+      transform:rotate(-180deg); /* future */
     }
   }
 
@@ -38,7 +50,7 @@ nav.nav .nav-viewport{
 
     float: right;
     padding-top: 18px;
-    padding-right: 13px;
+    padding-right: 10px;
     .fa-stack {
       &:hover{
       .fa-stop {
@@ -49,28 +61,34 @@ nav.nav .nav-viewport{
     }
 
     .fa-twitter {
-    font-size: 18px;
+    position: absolute;
+    bottom: 19px;
+    font-size: 17px;
     color: $black;
-    padding-right: 2px;
+    margin-left: -22px;
     &:hover{
       color: #55acee;
     @include transition( color .25s ease-in-out );
     }
     }
+    .fa-stack {
+    padding-top: 3px;
+    }
     .fa-stop {
-    font-size: 18px;
+    font-size: 15px;
     color: $black;
     padding-right: 4px;
     }
     .fa-facebook {
-    font-size: 14px;
-    margin-left:1px;
-    margin-top: -2px;
+    font-size: 12px;
+    margin-left:-1px;
+    margin-top: -3px;
     }
     .fa-rss {
+    padding-top: 4px;
     position: relative;
     top: 2px;
-    font-size: 20px;
+    font-size: 15px;
     color: $black;
     &:hover{
       color: #F0B14D;
@@ -80,8 +98,10 @@ nav.nav .nav-viewport{
   }
 
   .title{
-  float: right;
-  display: inline;
+    float: right;
+    font-size: 1.8em;
+    padding-top: 2px;
+    display: inline;
     font-family: $jose;
     // text-transform: uppercase;
     text-decoration: none;
@@ -97,7 +117,6 @@ nav.nav .nav-viewport{
 
     a {
       color: $black;
-      .title {font-size: 2em;}
       &:hover{}
     }
   }

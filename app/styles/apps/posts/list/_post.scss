@@ -50,16 +50,16 @@ body.posts.list .posts .post {
   -webkit-transition: .25s ease;
   transition: .25s ease;
   }
-  .tri {
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 0 0 15px 15px;
-  border-color: transparent transparent #ffffff transparent;
-  position:absolute;
-  right: 0px;
-  bottom:0;
-  }
+  //.tri {
+  //width: 0px;
+  //height: 0px;
+  //border-style: solid;
+  //border-width: 0 0 15px 15px;
+  //border-color: transparent transparent #ffffff transparent;
+  //position:absolute;
+  //right: 0px;
+  //bottom:0;
+  //}
   .date {
     font-family: $jose;
     font-weight: bold;

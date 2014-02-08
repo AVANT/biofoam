@@ -1,7 +1,7 @@
 .footer .subscribe-wrapper{
   max-width: 400px;
   font-family: $jose;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 600;
   color: $black;
   letter-spacing: 0.05em;
@@ -17,6 +17,7 @@
   background-color: $grey;
   height: 100%; // to include child error messages
   margin: 20px;
+  margin-top: 10px;
 
     form {
       border: solid $black 1px;
@@ -73,8 +74,4 @@
   text-align: center;
   margin: auto;
   // cats go three up
-  @media (min-width: $screen-md-min){
-  }
-  @media (min-width: $screen-sm-min){
-  }
 }
