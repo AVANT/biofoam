@@ -9,17 +9,37 @@ nav.nav .nav-viewport{
   // color: $grey;
 
   border-bottom: 1px solid $black;
-
+  a {text-decoration: none;}
   .nav-logo {
-    margin: 8px 10px 0 20px;
-
-
-    float: left;
-    display: inline;
-
+    display: block;
+    margin: 8px auto;
+    padding-left: 6px;
+    text-align:center;
+    float: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .AV {
+      vertical-align:13.5%;
+      display: inline;
+      font-size: 2.5em;
+      color: $black;
+      letter-spacing: .5em;
+      padding-right: 5px;
+    }
+    .NT {
+      vertical-align:13.5%;
+      display: inline;
+      font-size: 2.5em;
+      color: $black;
+      letter-spacing: .5em;
+      padding-left: 5px;
+    }
     .logo-circle {
+      display: inline;
+      text-align: center;
       position: relative;
-      padding-left: 20xpx;
+      margin-left: -11px;
       font-size: 4.5em;
       background-image: url('http://farm9.staticflickr.com/8228/8497927563_00dcb3fe09_s.jpg');
       background-size:55px;
@@ -34,10 +54,10 @@ nav.nav .nav-viewport{
       font-size: 2.9em;
       color: $grey;
       text-decoration: none;
-      z-index: 0;
+      z-index: 1;
       position: absolute;
-      margin-top: -1.54em;
-      margin-left: 0.28em;
+      margin-top: 0;
+      margin-left: -1.15em;
       -moz-transform:rotate(-180deg); /* Firefox */
       -webkit-transform:rotate(-180deg); /* Webkit */        
       -ms-transform:rotate(-180deg); /* IE */
@@ -62,17 +82,19 @@ nav.nav .nav-viewport{
 
     .fa-twitter {
     position: absolute;
-    bottom: 19px;
+    top: 25px;
     font-size: 17px;
     color: $black;
-    margin-left: -22px;
+    margin-left: -107px;
     &:hover{
       color: #55acee;
     @include transition( color .25s ease-in-out );
     }
     }
     .fa-stack {
-    padding-top: 3px;
+    position: absolute;
+    margin-left: -85px;
+    top: 25px;
     }
     .fa-stop {
     font-size: 15px;
@@ -85,9 +107,9 @@ nav.nav .nav-viewport{
     margin-top: -3px;
     }
     .fa-rss {
-    padding-top: 4px;
-    position: relative;
-    top: 2px;
+    margin-left: -55px;
+    position: absolute;
+    top: 25px;
     font-size: 15px;
     color: $black;
     &:hover{
