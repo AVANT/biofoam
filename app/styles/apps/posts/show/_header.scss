@@ -19,12 +19,22 @@ body.posts.show header{
   .header-title{
     @include width-breakdown;
     @include padding-breakdown;
+    padding-top: 1em;
     font-family: $jose;
     color: $black;
   }
 
   @media (min-width: $screen-md-min) {}
 
+}
+
+blockquote {
+    border-left: solid 8px #DEDEDE;
+}
+
+pre {
+  background: none;
+  border: none;
 }
 
 .meta-content {

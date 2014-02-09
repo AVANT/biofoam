@@ -9,70 +9,121 @@ nav.nav .nav-viewport{
   // color: $grey;
 
   border-bottom: 1px solid $black;
-
+  a {text-decoration: none;}
   .nav-logo {
-    margin: 10px 10px 0 20px;
-
-
-    float: left;
-    display: inline;
-
-    .logo{
-      margin-top: 0.1em;
-      width: 80%;
-      float: left;
+    display: block;
+    margin: 8px auto;
+    padding-left: 6px;
+    text-align:center;
+    float: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .AV {
+      vertical-align:13.5%;
       display: inline;
-        width: 38px;
-        height: 38px;
-      //width: 33px;
-      //height: 33px;
+      font-size: 2.5em;
+      color: $black;
+      letter-spacing: .5em;
+      padding-right: 5px;
     }
-
-  .logotxt {
-      //font-family: $jose;
-      //color: $black;
-      //font-size: 2.5em;
-      //letter-spacing: 0.24em;
-      //line-height: 1.2em;
-      //font-weight: 600;
-      //text-decordation:none;
-      //float: left;
-      //display: inline;
-      //margin-top: .25em;
+    .NT {
+      vertical-align:13.5%;
+      display: inline;
+      font-size: 2.5em;
+      color: $black;
+      letter-spacing: .5em;
+      padding-left: 6px;
     }
-
-    .VVNT {
-      //margin-left: .1em;
+    .logo-circle {
+      display: inline;
+      text-align: center;
+      position: relative;
+      margin-left: -12px;
+      font-size: 4.5em;
+      background-image: url('http://farm9.staticflickr.com/8228/8497927563_00dcb3fe09_s.jpg');
+      background-size:55px;
+      background-position: 50% 50%; 
+      color: transparent;
+      -webkit-background-clip: text;  
+      background-clip: text; 
+      text-align: left;
+      z-index: -1;
+    }
+    .logo-a {
+      font-size: 2.9em;
+      color: $grey;
+      text-decoration: none;
+      z-index: 1;
+      position: absolute;
+      margin-top: 0;
+      margin-left: -1.14em;
+      -moz-transform:rotate(-180deg); /* Firefox */
+      -webkit-transform:rotate(-180deg); /* Webkit */        
+      -ms-transform:rotate(-180deg); /* IE */
+      -o-transform:rotate(-180deg); /* Opera */
+      transform:rotate(-180deg); /* future */
     }
   }
 
   .social-links {
 
     float: right;
-    display: inline;
-    margin-right: 1.5em;
-    margin-top: 2.3em;
-
-    .twitter-icon {
-      height: 14px;
-      width: 14px;
-      &:hover {
-        // opacity: 0.5;
+    padding-top: 18px;
+    padding-right: 10px;
+    .fa-stack {
+      &:hover{
+      .fa-stop {
+        color: #3b5998;
+        @include transition( color .25s ease-in-out );
+        }
       }
     }
-    .fbook-icon {
-      margin-left: 0.8em;
-      height: 14px;
-      width: 14px;
-      &:hover {
-        // opacity: 0.5;
-      }
+
+    .fa-twitter {
+    position: absolute;
+    top: 26px;
+    font-size: 17px;
+    color: $black;
+    margin-left: -107px;
+    &:hover{
+      color: #55acee;
+    @include transition( color .25s ease-in-out );
+    }
+    }
+    .fa-stack {
+    position: absolute;
+    margin-left: -85px;
+    top: 26px;
+    }
+    .fa-stop {
+    font-size: 15px;
+    color: $black;
+    padding-right: 4px;
+    }
+    .fa-facebook {
+    font-size: 12px;
+    margin-left:-1px;
+    margin-top: -3px;
+    }
+    .fa-rss {
+    margin-left: -55px;
+    position: absolute;
+    top: 26px;
+    font-size: 15px;
+    color: $black;
+    &:hover{
+      color: #F0B14D;
+    @include transition( color .25s ease-in-out );
+    }
     }
   }
 
   .title{
-  float: right;
-  display: inline;
+    float: right;
+    font-size: 1.8em;
+    padding-top: 2px;
+    display: inline;
     font-family: $jose;
     // text-transform: uppercase;
     text-decoration: none;
@@ -88,7 +139,6 @@ nav.nav .nav-viewport{
 
     a {
       color: $black;
-      .title {font-size: 2em;}
       &:hover{}
     }
   }

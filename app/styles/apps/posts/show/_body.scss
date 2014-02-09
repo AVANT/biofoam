@@ -17,25 +17,44 @@ body.posts.show .body {
 
   p {
     margin-bottom: 20px;
-    font-size: 1.4em;
+    font-size: 1em;
+    line-height: 2em;
 
   }
   .authors {
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
+    font-size: 1.5em;
   }
   .tags {
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .date {
     font-family: $jose;
     font-weight: bold;
     color: $mid-grey;
-    font-size: 0.9em;
+    font-size: 1em;
+  }
+
+  blockquote {
+    border-left: solid 8px #DEDEDE;
+    color: #757575;
+  }
+
+  pre {
+    border: none;
+    font-size: 0.8em;
+    line-height: 250%;
+    margin: 1.2em;
+    margin-left: 0;
+    padding-left: 1.6em;
+    margin-top: 0;
+    border-left: double 8px $mid-grey;
+    border-radius: 0px;
   }
 
   @media (min-width: $screen-sm-min) {

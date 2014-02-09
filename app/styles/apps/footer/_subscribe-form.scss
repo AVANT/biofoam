@@ -1,7 +1,7 @@
 .footer .subscribe-wrapper{
-  max-width: 400px;
+  max-width: 350px;
   font-family: $jose;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 600;
   color: $black;
   letter-spacing: 0.05em;
@@ -17,6 +17,7 @@
   background-color: $grey;
   height: 100%; // to include child error messages
   margin: 20px;
+  margin-top: 10px;
 
     form {
       border: solid $black 1px;
@@ -32,7 +33,7 @@
       text-transform: lowercase;
       text-align: center;
       height: 1.5em;
-      width: 30%;
+      width: 25%;
       float: right;
       padding: 2px;
       vertical-align: middle;
@@ -62,7 +63,7 @@
       padding-left: 5px;
       float:left;
       font-size: 16px;
-      width: 70%;
+      width: 75%;
       &:focus {
         background-color: white;
         @include transition( background-color .25s ease-in-out );
@@ -73,8 +74,4 @@
   text-align: center;
   margin: auto;
   // cats go three up
-  @media (min-width: $screen-md-min){
-  }
-  @media (min-width: $screen-sm-min){
-  }
 }
