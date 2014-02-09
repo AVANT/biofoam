@@ -1,6 +1,7 @@
 require('app');
 require('apps/posts/list/views/posts');
 require('apps/posts/list/views/post');
+require('apps/posts/list/views/post_splash');
 require('apps/posts/list/views/layout');
 require('apps/posts/list/views/cms_panel');
 
@@ -28,8 +29,17 @@ return Moonrakr.module('Posts.List', function(List){
           collection: posts
         });
 
+        var splash = new List.PostSplash();
+        postsListView.on('post:splash', function(model){
+          splash.model = model;
+          // this is horribly bad, the view should know to render whenever its model changes
+          splash.render();
+        });
+
+
         postsListLayout.on('show', function(){
           if(authGranted){ postsListLayout.panelRegion.show( postsListPanel ); }
+          postsListLayout.splashRegion.show( splash );
           postsListLayout.postsRegion.show( postsListView );
         });
 

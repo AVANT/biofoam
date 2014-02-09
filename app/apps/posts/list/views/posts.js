@@ -1,7 +1,6 @@
 require('app');
 require('handlebars');
-// var Masonry = require('masonry');
-window.salvattore = require('salvattore');
+var salvattore = require('salvattore');
 require('apps/posts/list/views/post');
 
 return Moonrakr.module('Posts.List', function(List){
@@ -10,44 +9,22 @@ return Moonrakr.module('Posts.List', function(List){
     tagName: 'div',
     className: 'posts js-salvattore',
     itemView: List.Post,
+    // temp
+    count: 0,
     onShow:function(){
       this.$el.attr('data-columns', '');
       salvattore.register_grid( this.$el[0] );
     },
 
-    layoutHandler: function(msnryInstance, context){
-      context.centerThisInParent( msnryInstance );
-    },
+    // use this method to pull out the splash article
+    onBeforeItemAdded: function(itemView){
+      if (this.count == 0){
+        this.count += 1;
+        this.trigger('post:splash', itemView.model);
 
-    centerThisInParent: function(msnryInstance){
-      var wWidth = $(window).width();
-
-      var setPaddingTo;
-
-      // if the window be smallz - using smallest breakpoint 768px
-      if ( wWidth <= 768 ){
-        setPaddingTo = 0;
-      } else {
-        var pWidth = this.$el.parent().parent().width(); // #header element
-        var mWidth = this.getMasonryWidth(msnryInstance);
-        setPaddingTo = parseInt( (pWidth - mWidth) / 2 );
+        // destroy html of the itemview meant for the splash position
+        itemView.$el.css('display', 'none');
       }
-
-      this.$el.parent().css('padding-left', setPaddingTo);
-    },
-
-    getMasonryWidth:function (msnryInstance) {
-
-      var width = 0;
-
-      msnryInstance.items.some(function(e) {
-        if ( e.position.y > 0 ) return true;
-        var size = e.size;
-        width += size.borderLeftWidth + size.borderRightWidth + size.marginLeft  + size.marginRight + size.width + size.paddingLeft + size.paddingRight;
-        width += msnryInstance.gutter;
-      });
-
-      return width -= msnryInstance.gutter;
     }
 
   });

@@ -9,7 +9,8 @@ return Moonrakr.module('Posts.List', function(List){
     template: Handlebars.compile( _postsLayout ),
     regions: {
       panelRegion: '#panel-region',
-      postsRegion: '#posts-region'
+      splashRegion: '#splash-region',
+      postsRegion: '#posts-region',
     }
 
   });
