@@ -32,7 +32,10 @@ body.posts.list{
 	/* Again, you're free to use and define the classes: */
 	.column { float: left; }
 	.size-1of1 { width: 100%; }
-	.size-1of2 { width: 50%; }
+	.size-1of2 {
+		width: 50%;
+		// padding: 0 5px;
+	}
 	.size-1of3 { width: 33.333%; }
 	.size-1of4 { width: 25%; }
 
