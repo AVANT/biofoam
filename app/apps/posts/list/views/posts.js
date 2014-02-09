@@ -10,50 +10,7 @@ return Moonrakr.module('Posts.List', function(List){
     tagName: 'div',
     className: 'posts js-salvattore',
     itemView: List.Post,
-    // hacky
-    counter: 0,
-    initalize: function(){
-
-    },
-    onAfterItemAdded: function(itemView){
-      // if (this.counter === 0){
-      //   this.counter += 1;
-      // } else if (this.counter === 1){
-      //   this.counter += 1;
-      //   salvattore.register_grid( this.$el );
-      // } else {
-      //   salvattore['append_elements']( this.$el, [ itemView.$el ]);
-      // }
-    },
-    onRender: function(){
-      // this.msnry = new Masonry( this.$el[0], {
-      //   // 'columnWidth': '.post',
-      //   // 'isFitWidth': true,
-      //   'gutter': 20,
-      //   'transitionDuration': 0,
-      //   'isInitLayout': false,
-      // });
-
-      // //// todo: mansonry loads broken, I think it doesnt have the images loaded at the time of init
-      // //// could fix this by using imagesLoaded as suggested on the FAQ page of masonry
-      // // imagesLoaded( container, function() {
-      // //   msnry.layout();
-      // // });
-
-      // var that = this;
-      // this.msnry.on('layoutComplete', function(msnryInstance){
-      //   that.layoutHandler(msnryInstance, that);
-      // });
-      // console.log('this $el', this.$el );
-    },
-
     onShow:function(){
-      // var that = this;
-      // // // really shitty fix for this problem
-      // setTimeout(function(){
-      //   that.msnry.layout();
-      //   that.centerThisInParent( that.msnry );
-      // }, 200);
       this.$el.attr('data-columns', '');
       salvattore.register_grid( this.$el[0] );
     },
