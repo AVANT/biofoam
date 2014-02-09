@@ -39,7 +39,7 @@ nav.nav .nav-viewport{
       display: inline;
       text-align: center;
       position: relative;
-      margin-left: -11px;
+      margin-left: -12px;
       font-size: 4.5em;
       background-image: url('http://farm9.staticflickr.com/8228/8497927563_00dcb3fe09_s.jpg');
       background-size:55px;
@@ -57,7 +57,7 @@ nav.nav .nav-viewport{
       z-index: 1;
       position: absolute;
       margin-top: 0;
-      margin-left: -1.15em;
+      margin-left: -1.13em;
       -moz-transform:rotate(-180deg); /* Firefox */
       -webkit-transform:rotate(-180deg); /* Webkit */        
       -ms-transform:rotate(-180deg); /* IE */
@@ -82,7 +82,7 @@ nav.nav .nav-viewport{
 
     .fa-twitter {
     position: absolute;
-    top: 25px;
+    top: 26px;
     font-size: 17px;
     color: $black;
     margin-left: -107px;
@@ -94,7 +94,7 @@ nav.nav .nav-viewport{
     .fa-stack {
     position: absolute;
     margin-left: -85px;
-    top: 25px;
+    top: 26px;
     }
     .fa-stop {
     font-size: 15px;
@@ -109,7 +109,7 @@ nav.nav .nav-viewport{
     .fa-rss {
     margin-left: -55px;
     position: absolute;
-    top: 25px;
+    top: 26px;
     font-size: 15px;
     color: $black;
     &:hover{
