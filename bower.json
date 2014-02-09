@@ -44,7 +44,8 @@
     "masonry": "~3.1.4",
     "time-js": "*",
     "moment": "~2.5.0",
-    "jquery-fittext.js": "*"
+    "jquery-fittext.js": "*",
+    "salvattore": "~1.0.4"
   },
   "devDependencies": {
     "sinon-chai": "~2.4.0"
