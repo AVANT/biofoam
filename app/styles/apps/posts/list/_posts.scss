@@ -18,9 +18,11 @@ body.posts.list .posts {
   width: 100%;
  	margin: 0 auto;
   overflow: auto;  // @include padding-breakdown;
+}
 
+body.posts.list{
 	// Goodies for salvattore
-	#posts-region[data-columns]::before {
+	.js-salvattore[data-columns]::before {
 		content: '3 .column.size-1of3';
 	}
 
@@ -36,5 +38,4 @@ body.posts.list .posts {
 	.size-1of1 { width: 100%; }
 	.size-1of2 { width: 50%; }
 	.size-1of3 { width: 33.333%; }
-
 }
