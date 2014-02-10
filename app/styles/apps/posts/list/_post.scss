@@ -19,7 +19,6 @@
 
 */
 
-
 // body.posts.list .posts .post {
 body.posts.list .post {
   width: 100%;
@@ -149,6 +148,10 @@ body.posts.list .post {
  //     @include transition( padding-left .25s ease-in-out );
  //   }
  //}
+
+  .splash {
+  margin-bottom: 0px;
+  }
 
   .post-image-wrapper{
     width: 100%;
