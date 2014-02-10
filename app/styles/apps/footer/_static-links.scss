@@ -6,7 +6,7 @@
 
   a {
     display: inline-block;
-    width: 135px; // hard coded to the width of sponsorship
+    width: 90px; // hard coded to the width of sponsorship
 
     font-family: $jose;
     font-size: 1.8em;
@@ -23,10 +23,10 @@
   }
 
   @media (min-width: $screen-md-min) {
-    width: 25%;
+    width: 15%;
     position: absolute;
     text-align: right;
     top: 35px;
-    right: 20px;
+    right: 18px;
   }
 }

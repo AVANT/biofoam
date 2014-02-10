@@ -9,3 +9,17 @@ body.loading .footer {
 
   position: relative; // for the kiddies
 }
+
+.license {
+	margin: auto;
+	text-align: center;
+	display: block;
+	margin-bottom: 40px;
+
+	@media (min-width: $screen-md-min) {
+	    position: absolute;
+	    text-align: left;
+	    top: 110px;
+	    left: 18px;
+  }
+}

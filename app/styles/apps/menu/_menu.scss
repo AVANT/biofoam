@@ -20,6 +20,13 @@ nav.nav .nav-viewport{
     &:hover {
       cursor: pointer;
     }
+
+    @media (max-width: $screen-xs-min) {
+    width: 180px;
+    position: absolute;
+    left: 18px;
+    }
+
     .AV {
       vertical-align:13.5%;
       display: inline;
@@ -71,8 +78,8 @@ nav.nav .nav-viewport{
   .social-links {
 
     float: right;
-    padding-top: 18px;
     padding-right: 10px;
+    margin-right: 20px;
     .fa-stack {
       &:hover{
       .fa-stop {
@@ -84,7 +91,7 @@ nav.nav .nav-viewport{
 
     .fa-twitter {
     position: absolute;
-    top: 26px;
+    top: 24px;
     font-size: 17px;
     color: $black;
     margin-left: -52px;
@@ -96,7 +103,7 @@ nav.nav .nav-viewport{
     .fa-stack {
     position: absolute;
     margin-left: -30px;
-    top: 26px;
+    top: 24px;
     }
     .fa-stop {
     font-size: 15px;
@@ -111,7 +118,7 @@ nav.nav .nav-viewport{
     .fa-rss {
     margin-left: 0px;
     position: absolute;
-    top: 26px;
+    top: 24px;
     font-size: 15px;
     color: $black;
     &:hover{
