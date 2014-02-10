@@ -19,7 +19,7 @@ body.posts.show header{
   .header-title{
     @include width-breakdown;
     @include padding-breakdown;
-    padding-top: 1em;
+    margin-top: 20px !important;
     font-family: $jose;
     color: $black;
   }
