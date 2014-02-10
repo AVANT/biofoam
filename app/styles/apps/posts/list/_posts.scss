@@ -10,15 +10,19 @@ body.posts.list #splash-region{
 	
 	.post {
 		padding-bottom: 0px !important;
+		@media (max-width: $screen-sm-min){
+			padding-bottom: 20px !important;
+		}
 	}
 
 	.splash {
 
-		background: none;
-
 		.post-image-wrapper {
 			max-height: 400px;
 			overflow: hidden;
+			@media (max-width: $screen-sm-min){
+				max-height: 50vw;
+			}
 		}
 
 		.content-wrapper {
@@ -27,12 +31,13 @@ body.posts.list #splash-region{
 			text-align: right;
 			width: 80%;
 			left: 9%;
-
 			@media (max-width: $screen-sm-min){
-    			top: 100px;
-    			width: 95%;
-    			left: 2%;
-  			}
+				position: relative;
+				top: auto;
+				text-align: left;
+				width: auto;
+				left: auto;
+			}
 
 			.title {
 				font-size: 5em;
@@ -40,7 +45,10 @@ body.posts.list #splash-region{
 				-webkit-text-fill-color: transparent;
 				-webkit-text-stroke: 0.5px white;
 				@media (max-width: $screen-sm-min){
-					font-size: 4em;
+					-webkit-text-fill-color: $black;
+					-webkit-text-stroke: 0px;
+					font-weight: 600;
+					font-size: 30px;
 				}
 			}
 			.authors {
@@ -48,12 +56,24 @@ body.posts.list #splash-region{
 				padding-top: 0px;
 				top: 150px;
 				font-size: 2.5em;
+				@media (max-width: $screen-sm-min){
+					top: auto;
+					padding-top: inherit;
+					font-size: 1.8em;
+					color: $vvv-blue;
+				}
 			}
 			.date {
 				display: none;
+				@media (max-width: $screen-sm-min){
+					display: inherit;
+				}
 			}
 			.tags {
 				padding-top: 0px;
+				@media (max-width: $screen-sm-min){
+					padding-top: inherit;
+				}
 			}
 
 		}

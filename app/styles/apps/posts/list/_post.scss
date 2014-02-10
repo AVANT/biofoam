@@ -151,7 +151,7 @@ body.posts.list .post {
 
   .post-image-wrapper{
     width: 100%;
-    max-height: 100vw; // the image cannot be taller than the screen
+    max-height: 140px; // the image cannot be taller than the screen
     overflow: hidden;
 
     img{
