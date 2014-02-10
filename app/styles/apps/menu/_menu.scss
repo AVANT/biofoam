@@ -13,6 +13,7 @@ nav.nav .nav-viewport{
   .nav-logo {
     display: block;
     margin: 8px auto;
+    margin-top: 4px;
     padding-left: 6px;
     text-align:center;
     float: center;
@@ -36,6 +37,7 @@ nav.nav .nav-viewport{
       padding-left: 6px;
     }
     .logo-circle {
+      line-height: 1.1em;
       display: inline;
       text-align: center;
       position: relative;
@@ -56,8 +58,8 @@ nav.nav .nav-viewport{
       text-decoration: none;
       z-index: 1;
       position: absolute;
-      margin-top: 0;
-      margin-left: -1.14em;
+      margin-top: 2px;
+      margin-left: -33px;
       -moz-transform:rotate(-180deg); /* Firefox */
       -webkit-transform:rotate(-180deg); /* Webkit */        
       -ms-transform:rotate(-180deg); /* IE */
@@ -85,7 +87,7 @@ nav.nav .nav-viewport{
     top: 26px;
     font-size: 17px;
     color: $black;
-    margin-left: -107px;
+    margin-left: -52px;
     &:hover{
       color: #55acee;
     @include transition( color .25s ease-in-out );
@@ -93,7 +95,7 @@ nav.nav .nav-viewport{
     }
     .fa-stack {
     position: absolute;
-    margin-left: -85px;
+    margin-left: -30px;
     top: 26px;
     }
     .fa-stop {
@@ -107,7 +109,7 @@ nav.nav .nav-viewport{
     margin-top: -3px;
     }
     .fa-rss {
-    margin-left: -55px;
+    margin-left: 0px;
     position: absolute;
     top: 26px;
     font-size: 15px;
