@@ -70,9 +70,29 @@ body.posts.list .post {
   .tags {
     font-family: $jose;
     font-weight: bold;
-    color: $vvv-blue;
+    color: $black;
     letter-spacing: 0.05em;
     font-size: 1.4em;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    li {
+      display: inline;
+      border: solid 1px $black;
+      padding: 3px;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-bottom: 2px;
+      margin-right: 3px;
+      margin-left: 3px;
+      line-height: 1.9em;
+      &:hover {
+        color: $vvv-blue;
+        @include transition( color .25s ease-in-out );
+        border: solid 1px $vvv-blue;
+        @include transition( border .25s ease-in-out );
+      }
+    }
+    list-style-type: none;
   }
   .authors {
     font-family: $jose;
