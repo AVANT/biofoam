@@ -2,13 +2,21 @@ require('app');
 require('handlebars');
 
 var _post = require('text!apps/posts/show/templates/post.html');
+var _static_page = require('text!apps/posts/show/templates/static_page.html');
 
 return Moonrakr.module('Posts.Show', function(Show){
 
   Show.Post = Marionette.ItemView.extend({
     tagName: 'article',
     className: 'post',
-    template: Handlebars.compile( _post ),
+    // hack to get different template rendering for static pages
+    getTemplate: function(){
+      if (this.model.get('id') == 'about' || this.model.get('id') == 'privacy' || this.model.get('id') == 'sponsorship'){
+        return Handlebars.compile( _static_page );
+      } else {
+        return Handlebars.compile( _post );
+      }
+    },
     initialize: function(){
       this.model.on('change', this.render, this);
     },

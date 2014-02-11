@@ -24,6 +24,9 @@
     height: 50px;
     clear: both;
 
+    // taking care of some weird width issues from the social buttons
+    overflow: hidden;
+
     .twitter {
       width: 60px;
       display: inline-block;

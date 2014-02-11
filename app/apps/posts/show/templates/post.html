@@ -8,7 +8,11 @@
   <div class="meta-content">
     <p class="authors">{{ authors }}</p>
     <p class="date">{{ date }}</p>
-    <p class="tags">{{ tags }}</p>
+    <ul class="tags">
+      {{#each tags}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
   </div>
   <div class="content">{{{ body }}}</div>
 </div>

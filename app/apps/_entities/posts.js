@@ -107,21 +107,6 @@ return Moonrakr.module('Entities', function(Entities){
       });
     }
 
-    // withoutPages: function() {
-    //   var filtered = [];
-    //   filtered = this.filter(function(model) {
-    //     var toReturn = true;
-    //     Moonrakr.Config.reservedSlugs.some(function(reserved){
-    //       if ( model.get('id') === reserved ) {
-    //         toReturn = false;
-    //         //break out of loop
-    //         return true;
-    //       }
-    //     });
-    //     return toReturn;
-    //   });
-    //   return new Entities.Posts(filtered);
-    // }
   });
 
   var initializePosts = function(){
