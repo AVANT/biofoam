@@ -82,7 +82,7 @@ var _footer = require('text!apps/footer/show/templates/footer.html');
     },
     sponsorshipClicked:function(e){
       e.preventDefault()
-      this.trigger('sponorship:clicked')
+      this.trigger('sponsorship:clicked')
     },
 
 

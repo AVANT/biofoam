@@ -30,8 +30,9 @@ return Moonrakr.module('Footer.Show', function(Show){
         Moonrakr.trigger('post:privacy');
       });
 
-      this.view.on('sponorship:clicked', function(){
-        Moonrakr.trigger('post:sponorship');
+      this.view.on('sponsorship:clicked', function(){
+        console.log('spon');
+        Moonrakr.trigger('post:sponsorship');
       });
 
     }
