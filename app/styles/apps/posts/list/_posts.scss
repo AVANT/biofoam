@@ -21,13 +21,13 @@ body.posts.list #splash-region{
 			max-height: 400px;
 			overflow: hidden;
 			@media (max-width: $screen-sm-min){
-				max-height: 50vw;
+				max-height: 200px;
 			}
 		}
 
 		.content-wrapper {
 			position: absolute;
-			top: 160px;
+			top: 100px;
 			text-align: right;
 			width: 80%;
 			left: 9%;
@@ -37,6 +37,10 @@ body.posts.list #splash-region{
 				text-align: left;
 				width: auto;
 				left: auto;
+			}
+			@media (max-width: $screen-md-min){
+			left: 2%;
+			width: 96%;
 			}
 
 			.title {
