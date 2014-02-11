@@ -2,7 +2,7 @@ nav.nav .nav-viewport{
   position: fixed;
   z-index: 9;
 
-  width: 100%;
+  width: calc(100% - 20px);
   height: $collapsed-nav;
 
   background: $grey;
@@ -59,10 +59,10 @@ nav.nav .nav-viewport{
       font-size: 4.5em;
       background-image: url('http://farm9.staticflickr.com/8228/8497927563_00dcb3fe09_s.jpg');
       background-size:55px;
-      background-position: 50% 50%; 
+      background-position: 50% 50%;
       color: transparent;
-      -webkit-background-clip: text;  
-      background-clip: text; 
+      -webkit-background-clip: text;
+      background-clip: text;
       text-align: left;
       z-index: -1;
     }
@@ -75,7 +75,7 @@ nav.nav .nav-viewport{
       margin-top: 2px;
       margin-left: -33px;
       -moz-transform:rotate(-180deg); /* Firefox */
-      -webkit-transform:rotate(-180deg); /* Webkit */        
+      -webkit-transform:rotate(-180deg); /* Webkit */
       -ms-transform:rotate(-180deg); /* IE */
       -o-transform:rotate(-180deg); /* Opera */
       transform:rotate(-180deg); /* future */
@@ -160,6 +160,10 @@ nav.nav .nav-viewport{
       color: $black;
       &:hover{}
     }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 100%;
   }
 
   @media (min-width: $screen-lg-min) {
