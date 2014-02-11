@@ -6,7 +6,9 @@ body.loading .footer {
 .footer {
   visibility: visible;
   border-top: 1px solid $black;
-
+  @media (max-width: $screen-sm-min) {
+  	margin-top: -20px;
+  }
   position: relative; // for the kiddies
 }
 

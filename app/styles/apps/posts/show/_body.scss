@@ -1,6 +1,78 @@
-body.posts.show .body {
-  max-width: $global-max-width;
+body.posts.show {
+  #main {
+    @media (max-width: $screen-sm-min) {
+      padding-bottom: 20px;
+    }
+  }
+  #post-region {
+    .carousel {
+      width: 110%;
+      margin-left: -5%;
+    @media (max-width: $screen-sm-min) {
+      width: 100%;
+      margin-left: 0%;
+    }
+    .carousel-caption {
+      text-shadow: none;
+      font-family: $quat;
+      color: $black;
+      text-align: left;
+      width: 100%;
+      padding: 0 20px;
+      margin: none;
+      padding: none;
+      margin-left: -20%;
+      @media (max-width: $screen-sm-min) {
+        margin-left: -15%;
+      }
+      margin-top: 30px;
+      position: relative;
+    }
+    .carousel-indicators {
+      top: 80%;
+      @media (max-width: $screen-sm-min) {
+        top: 70%;
+      }
+      @media (max-width: $screen-xs-min) {
+        top: 65%;
+      }
+      li {
+        border: solid 1px $black;
+      }
+    }
+    .carousel-indicators .active {
+      background: $black;
+      width: 10px;
+      height: 10px;
+      margin: 1px;
+    }
+    .carousel-control {
+      text-shadow: none;
+      font-size: 1.5em;
+      color: $black;
+      opacity: 1;
+      &:hover {
+        color: $grey;
+        @include transition( color .25s ease-in-out );
+      }
+    }
+    .chevron{
+        width:30%;
+        position:absolute;
+        top:42%;
+        @media (max-width: $screen-sm-min) {
+          top: 38%;
+        }
+      }
+      .chevron-left{left:8%;}
+      .chevron-right{right:8%;}
+    }
+  }
+}
 
+body.posts.show .body {
+
+  max-width: $global-max-width;
   @include padding-breakdown;
   font-family: $quat;
   font-size: 1.7em;
@@ -10,7 +82,7 @@ body.posts.show .body {
   padding-top: 0px !important;
 
   img {
-    @include padding-breakdown;
+    //@include padding-breakdown;
     width: 100%;
     max-height: 600px;
     overflow: hidden;
@@ -26,20 +98,41 @@ body.posts.show .body {
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    display: inline;
   }
   .tags {
     font-family: $jose;
     font-weight: bold;
-    color: $vvv-blue;
-    font-size: 1em;
+    color: $black;
+    font-size: 0.9em;
+    margin-left: -40px;
+    margin-bottom: 30px;
+    li {
+      display: inline;
+      border: solid 1px $black;
+      padding: 3px;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-bottom: 2px;
+      margin-right: 3px;
+      margin-left: 0px;
+      line-height: 1.5em;
+      &:hover {
+        color: $vvv-blue;
+        @include transition( color .25s ease-in-out );
+        border: solid 1px $vvv-blue;
+        @include transition( border .25s ease-in-out );
+      }
+    }
   }
   .date {
     font-family: $jose;
     font-weight: bold;
     color: $mid-grey;
-    font-size: 1em;
-  }
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    }
 
   blockquote {
     border-left: solid 8px #DEDEDE;

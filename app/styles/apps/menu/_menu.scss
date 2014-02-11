@@ -2,7 +2,7 @@ nav.nav .nav-viewport{
   position: fixed;
   z-index: 9;
 
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
   height: $collapsed-nav;
 
   background: $grey;
@@ -21,7 +21,7 @@ nav.nav .nav-viewport{
       cursor: pointer;
     }
 
-    @media (max-width: $screen-xs-min) {
+    @media (max-width: $screen-sm-min) {
     width: 180px;
     position: absolute;
     left: 18px;
@@ -35,7 +35,7 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-right: 5px;
-      @media (max-width: $screen-xs-min){
+      @media (max-width: $screen-sm-min){
         display: none;
       }
     }
@@ -46,7 +46,7 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 6px;
-      @media (max-width: $screen-xs-min){
+      @media (max-width: $screen-sm-min){
         display: none;
       }
     }
@@ -79,7 +79,7 @@ nav.nav .nav-viewport{
       -ms-transform:rotate(-180deg); /* IE */
       -o-transform:rotate(-180deg); /* Opera */
       transform:rotate(-180deg); /* future */
-      @media (max-width: $screen-xs-min){
+      @media (max-width: $screen-sm-min){
         margin-left:-30px;
       }
     }
