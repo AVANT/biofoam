@@ -25,6 +25,7 @@ nav.nav .nav-viewport{
     width: 180px;
     position: absolute;
     left: 18px;
+    text-align: left;
     }
 
     .AV {
@@ -34,6 +35,9 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-right: 5px;
+      @media (max-width: $screen-xs-min){
+        display: none;
+      }
     }
     .NT {
       vertical-align:13.5%;
@@ -42,6 +46,9 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 6px;
+      @media (max-width: $screen-xs-min){
+        display: none;
+      }
     }
     .logo-circle {
       line-height: 1.1em;
@@ -72,6 +79,9 @@ nav.nav .nav-viewport{
       -ms-transform:rotate(-180deg); /* IE */
       -o-transform:rotate(-180deg); /* Opera */
       transform:rotate(-180deg); /* future */
+      @media (max-width: $screen-xs-min){
+        margin-left:-30px;
+      }
     }
   }
 
