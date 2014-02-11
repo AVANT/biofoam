@@ -11,7 +11,7 @@ return Moonrakr.module('Posts.Show', function(Show){
     className: 'post',
     // hack to get different template rendering for static pages
     getTemplate: function(){
-      if (this.model.get('slug') == 'about' || this.model.get('slug') == 'privacy' || this.model.get('slug') == 'sponsorship'){
+      if (this.model.get('id') == 'about' || this.model.get('id') == 'privacy' || this.model.get('id') == 'sponsorship'){
         return Handlebars.compile( _static_page );
       } else {
         return Handlebars.compile( _post );
