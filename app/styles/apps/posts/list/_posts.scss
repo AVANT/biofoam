@@ -7,7 +7,7 @@
 
 
 body.posts.list #splash-region{
-	
+
 	.post {
 		padding-bottom: 0px !important;
 		@media (max-width: $screen-sm-min){
@@ -115,6 +115,10 @@ body.posts.list{
 	@media screen and (max-width: $screen-xs-max){
 		.js-salvattore[data-columns]::before {
 			content: '1 .column.size-1of1';
+		}
+		.column {
+			padding-left: 5px;
+			padding-right: 5px;
 		}
 	}
 
