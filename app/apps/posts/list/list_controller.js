@@ -34,6 +34,10 @@ return Moonrakr.module('Posts.List', function(List){
           splash.model = model;
           // this is horribly bad, the view should know to render whenever its model changes
           splash.render();
+
+          splash.on('post:show', function(model){
+            Moonrakr.trigger('post:show', model.get('id'));
+          });
         });
 
 
