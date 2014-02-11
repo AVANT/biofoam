@@ -34,7 +34,19 @@ return Moonrakr.module('Posts',function(Posts){
   routeHash[ 'sponsorship(/)' ] = 'sponsorshipPage';
 
   Posts.Router = Marionette.AppRouter.extend({
-    appRoutes: routeHash
+    appRoutes: routeHash,
+    initalize: function(){
+      this.bind('route', this.trackPageview, this);
+    },
+    trackPageview: function (){
+      var url = Backbone.history.getFragment();
+      //prepend slash
+      if (!/^\//.test(url) && url != "")
+      {
+          url = "/" + url;
+      }
+      _gaq.push(['_trackPageview', url]);
+    }
   });
 
   var API = {
