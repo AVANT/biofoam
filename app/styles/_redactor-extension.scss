@@ -14,3 +14,14 @@
 	font-size: 0.8em !important;
 	margin-bottom: 10px;
 }
+
+.redactor_toolbar li a.redactor_btn_superscript {
+    position:relative;
+}
+.redactor_toolbar li a.redactor_btn_superscript:before {
+  position: absolute;
+  font-family: FontAwesome;
+  top: 0;
+  left: -5px;
+  content: "\f12b";
+}
