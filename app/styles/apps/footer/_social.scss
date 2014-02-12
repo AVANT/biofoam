@@ -21,7 +21,7 @@
     margin: auto;
     width: 180px;
     position: relative;
-    height: 50px;
+    height: 55px;
     clear: both;
 
     // taking care of some weird width issues from the social buttons
@@ -65,4 +65,8 @@
 
   }
 
+}
+
+body.loading .footer .social-list .fb-follow span iframe {
+  visibility: hidden !important;
 }
