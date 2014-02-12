@@ -24,6 +24,12 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
       '#post-excerpt': 'excerpt',
       '#post-body': 'body', // in the redactor view
       '#post-slug': 'slug',
+      '#post-tags': {
+        observe: 'tags',
+        onSet: function(value) {
+          return value.split(',');
+        }
+      }
       // '#post-tags': 'tags' // explode and strip whitespace
       // '#image-current-container': 'image', // in the imageUpload view
     },

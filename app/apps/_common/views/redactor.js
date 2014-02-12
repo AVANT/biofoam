@@ -66,7 +66,7 @@ return Moonrakr.module('Common.Views', function(Views){
           that.$('.redactor').trigger('change');
           that.trigger('redactor:changed');
         },
-        buttonsAdd: ['|', 'pre', 'foot'],
+        buttonsAdd: ['|', 'pre', 'foot', 'superscript'],
         buttonsCustom: {
           pre: {
             title: 'Code',
@@ -81,7 +81,15 @@ return Moonrakr.module('Common.Views', function(Views){
             {
               this.blockSetAttr('class', 'footnote');
             }
-          }
+          },
+          // superscript: {
+          //   title: 'superscript',
+          //   callback: function()
+          //   {
+          //     console.log('window.getSelection()', window.getSelection() );
+          //     // this.formatBlocks('sub');
+          //   }
+          // }
         }
       }); // redactor
     }, // init redactor
