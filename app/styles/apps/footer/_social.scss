@@ -30,11 +30,14 @@
     .twitter {
       width: 60px;
       display: inline-block;
+
     }
-    .facebook{
-      width: 92px;
+    .fb-follow{
       display: inline-block;
-      padding-left: 15px;
+      @media (max-width: $screen-md-min) {
+        top: -5px;
+        padding-left: 15px;
+      }
     }
 
   @media (min-width: $screen-md-min) {
