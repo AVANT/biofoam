@@ -66,13 +66,20 @@ return Moonrakr.module('Common.Views', function(Views){
           that.$('.redactor').trigger('change');
           that.trigger('redactor:changed');
         },
-        buttonsAdd: ['|', 'pre'],
+        buttonsAdd: ['|', 'pre', 'foot'],
         buttonsCustom: {
           pre: {
             title: 'Code',
             callback: function()
             {
               this.blockSetAttr('class', 'photoCredit');
+            }
+          },
+          foot: {
+            title: 'foot',
+            callback: function()
+            {
+              this.blockSetAttr('class', 'footnote');
             }
           }
         }
