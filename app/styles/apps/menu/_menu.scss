@@ -12,8 +12,8 @@ nav.nav .nav-viewport{
   a {text-decoration: none;}
   .nav-logo {
     display: block;
-    margin: 8px auto;
-    margin-top: 4px;
+    margin: 0px auto;
+    margin-top: 12px;
     padding-left: 8px;
     text-align:center;
     float: center;
@@ -29,62 +29,36 @@ nav.nav .nav-viewport{
     }
 
     .AV {
-      vertical-align:22%;
+      vertical-align:-12%;
       display: inline;
       font-size: 2.5em;
       color: $black;
       letter-spacing: .5em;
-      padding-right: 5px;
+      padding-right: 7px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
     .NT {
-      vertical-align:22%;
+      vertical-align:-12%;
       display: inline;
       font-size: 2.5em;
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      margin-left: -1px;
+      margin-left: 1px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
     .logo-circle {
-      line-height: 1.1em;
+      margin-top:-7px;
       display: inline;
       text-align: center;
       position: relative;
-      margin-left: -12px;
+      margin-left: -20px;
       font-size: 4.9em;
-      background-image: url('http://vvvnt.s3.amazonaws.com/staging/b11b7438-f9f5-46af-7bc9-6c1442f22b48.jpg');
-      background-size:58px;
-      background-position: 50% 50%;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
       text-align: left;
-      z-index: -1;
-    }
-    .logo-a {
-      font-family: $jose;
-      font-weight: 800;
-      font-size: 0.7em;
-      color: $grey;
-      text-decoration: none;
-      z-index: 1;
-      position: absolute;
-      margin-top: -3px;
-      margin-left: -45px;
-      -moz-transform:rotate(-180deg); /* Firefox */
-      -webkit-transform:rotate(-180deg); /* Webkit */
-      -ms-transform:rotate(-180deg); /* IE */
-      -o-transform:rotate(-180deg); /* Opera */
-      transform:rotate(-180deg); /* future */
-      @media (max-width: $screen-sm-min){
-        margin-left:-33px;
-      }
     }
   }
 
@@ -127,6 +101,7 @@ nav.nav .nav-viewport{
     font-size: 12px;
     margin-left:-1px;
     margin-top: -3px;
+    color: $grey;
     }
     .fa-rss {
     margin-left: 0px;
