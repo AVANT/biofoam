@@ -52,6 +52,8 @@ nav.nav .nav-viewport{
       }
     }
     .logo-circle {
+      width: 48px;
+      height: 48px;
       margin-top:-7px;
       display: inline;
       text-align: center;
@@ -140,9 +142,9 @@ nav.nav .nav-viewport{
     }
   }
 
-  @media (min-width: $screen-sm-min) {
-    width: 100%;
-  }
+  //@media (min-width: $screen-sm-min) {
+  //  width: 100%;
+  //}
 
   @media (min-width: $screen-lg-min) {
     width: 80%;

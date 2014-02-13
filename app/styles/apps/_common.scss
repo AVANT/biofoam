@@ -10,9 +10,9 @@ body{
 	padding-left: 20px;
 	padding-right: 20px;
 
-	@media (min-width: $screen-sm-min){
-		padding: 0;
-	}
+	//@media (min-width: $screen-sm-min){
+	//	padding: 0;
+	//}
 
   @media (min-width: $screen-lg-min){
     padding: 0 10%;

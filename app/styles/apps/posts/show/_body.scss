@@ -111,14 +111,14 @@ body.posts.show .body {
   .tags {
     font-family: $jose;
     font-weight: bold;
-    color: $black;
+    color: $vvv-blue;
     font-size: 0.9em;
     margin-left: -40px;
     margin-bottom: 30px;
     cursor: default;
     li {
       display: inline;
-      border: solid 1px $black;
+      border: solid 1px $vvv-blue;
       padding: 5px;
       padding-right: 6px;
       padding-left: 6px;
@@ -127,7 +127,7 @@ body.posts.show .body {
       margin-left: 0px;
       line-height: 1.5em;
       &:hover {
-        color: $vvv-blue;
+        //color: $vvv-blue;
         @include transition( color .25s ease-in-out );
         border: solid 1px $vvv-blue;
         @include transition( border .25s ease-in-out );
