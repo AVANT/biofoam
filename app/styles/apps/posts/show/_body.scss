@@ -4,6 +4,8 @@ body.posts.show {
       padding-bottom: 20px;
     }
   }
+
+
   .share-buttons {
     margin-bottom: 5em;
     //text-align: center;
@@ -22,40 +24,63 @@ body.posts.show {
     margin-left: 12px;
     margin-top: -3px;
     color: $grey;
-    .fa-stop {font-size: 19px; margin-top: 20px;}
-    .fa-facebook {color: $black;}
     
   }
+
+
   .fbook-share {
+    a {text-decoration: none;}
     background: $black;
     padding-top: 5px;
     @include transition( background .25s ease-in-out );
-    .fa-facebook {margin-left: -70px; color: $black;}
+    display: inline-block;
     &:hover {
       background: $vvv-blue;
+      .fa-facebook {
+        color: $vvv-blue;
+      }
     }
-    display: inline-block;
+    .fa-stack {
+      margin-top: -25px;
+      height: auto;
+      width: 17px;
+      margin-right: -4px;
+      margin-left:13px;
+    }
+    .fa-stop {
+      font-size: 19px;
+    }
     .fa-facebook {
+      margin-left: 2px;
+      margin-top: -10px;
       display: inline;
-      color: $grey;
+      color: $black;
+      @include transition( color .25s ease-in-out );
       //margin-top: 10px;
-      font-size: 15px;
-      text-align: center;
+      font-size: 16px;
     }
   }
+
   .share-out {
     margin-left: 10px;
+    margin-right:2px;
     padding-top: 5px;
-    font-size: 14px;
+    font-size: 16px;
   }
+
+
+
   .twitter-share {
+    a {text-decoration: none;}
     margin-left: 10px;
     background: $black;
+    @include transition( background .25s ease-in-out );
     padding-top: 5px;
     &:hover {
       background: $vvv-blue;
     }
     display: inline-block;
+
     .fa-twitter {
       display: inline;
       color: $grey;
@@ -65,7 +90,12 @@ body.posts.show {
       height: 30px;
       text-align: center;
     }
+
   }
+
+
+
+
   #post-region {
     .carousel {
       width: 110%;
