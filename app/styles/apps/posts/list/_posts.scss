@@ -10,19 +10,27 @@ body.posts.list #splash-region{
 
 	.post {
 		padding-bottom: 0px !important;
-		.post-hi:hover{
-			padding-top: 0px;
-      		margin-bottom:0px;
-      		@include transition( all .25s ease-in-out );
-      		box-shadow: inset 0 0px 0px 0px $grey;
-      		-moz-box-shadow: inset 0 0px 0px 0px $grey;
-      		-webkit-box-shadow: inset 0 0px 0px 0px $grey;
+		.post-hi {
+			@media (min-width: $screen-sm-min){
+				padding-top: 0px;
+	      		margin-bottom:0px;
+	      		@include transition( all .25s ease-in-out );
+	      		box-shadow: inset 0 0px 0px 0px $grey;
+	      		-moz-box-shadow: inset 0 0px 0px 0px $grey;
+	      		-webkit-box-shadow: inset 0 0px 0px 0px $grey;
+      		}
 		}
 		@media (max-width: $screen-sm-min){
 			padding-bottom: 20px !important;
 		}
 	}
-
+	&:hover {
+		.splash .content-wrapper .title {
+			@media (max-width: $screen-sm-min){
+				-webkit-text-fill-color: $mid-grey;
+			}
+		}
+	}
 	.splash {
 
 		.post-image-wrapper {

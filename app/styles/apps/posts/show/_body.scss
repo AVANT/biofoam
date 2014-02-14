@@ -4,6 +4,68 @@ body.posts.show {
       padding-bottom: 20px;
     }
   }
+  .share-buttons {
+    margin-bottom: 5em;
+    //text-align: center;
+  }
+  .share-wrapper {
+    text-decoration: none;
+    font-family: $jose;
+    letter-spacing: 0.1em;
+    color: $grey;
+    font-weight: 500;
+    font-size: 1.5em;
+    display: inline;
+    padding: 10px;
+  }
+  .post-share {
+    margin-left: 12px;
+    margin-top: -3px;
+    color: $grey;
+    .fa-stop {font-size: 19px; margin-top: 20px;}
+    .fa-facebook {color: $black;}
+    
+  }
+  .fbook-share {
+    background: $black;
+    padding-top: 5px;
+    @include transition( background .25s ease-in-out );
+    .fa-facebook {margin-left: -70px; color: $black;}
+    &:hover {
+      background: $vvv-blue;
+    }
+    display: inline-block;
+    .fa-facebook {
+      display: inline;
+      color: $grey;
+      //margin-top: 10px;
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+  .share-out {
+    margin-left: 10px;
+    padding-top: 5px;
+    font-size: 14px;
+  }
+  .twitter-share {
+    margin-left: 10px;
+    background: $black;
+    padding-top: 5px;
+    &:hover {
+      background: $vvv-blue;
+    }
+    display: inline-block;
+    .fa-twitter {
+      display: inline;
+      color: $grey;
+      margin-top: 10px;
+      font-size: 17px;
+      width: 170px;
+      height: 30px;
+      text-align: center;
+    }
+  }
   #post-region {
     .carousel {
       width: 110%;
@@ -99,7 +161,28 @@ body.posts.show .body {
     margin-bottom: 20px;
     font-size: 1em;
     line-height: 2em;
-
+  }
+  .footnote {
+    border-top: solid 1px $mid-grey;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    padding-top: 0.6em;
+    font-size: 0.8em;
+    color: $mid-grey;
+  }
+  .footnote::selection {
+      color: white;
+      background: $mid-grey;
+  }
+  .photoCredit {
+    font-family: $jose;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: $mid-grey;
+  }
+  .photoCredit::selection {
+      color: white;
+      background: $mid-grey;
   }
   .authors {
     font-family: $jose;
