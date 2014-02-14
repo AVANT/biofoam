@@ -8,9 +8,6 @@ return Moonrakr.module('Posts.List', function(List){
 
   List.PostSplash = Marionette.ItemView.extend({
     tagName: 'article',
-    initalize: function(){
-      this.model.on('change', this.render, this);
-    },
     className: function(){
       // get from model whether image-focus, text-focus, or callout
       return 'post splash';
@@ -18,7 +15,7 @@ return Moonrakr.module('Posts.List', function(List){
     template: Handlebars.compile(_post),
 
     onShow:function(){
-      this.$el.find('.title').fitText(null, {minFontSize: '20px', maxFontSize: '30px'});
+      this.$el.find('.title').fitText(1, {minFontSize: '20px', maxFontSize: '30px'});
     },
 
     events: {
