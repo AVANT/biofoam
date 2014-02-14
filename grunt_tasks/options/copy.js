@@ -156,7 +156,7 @@ module.exports = {
                 'moment/moment.js',
                 'requirejs/require.js',
                 'spinjs/spin.js',
-                'salvattore/dist/salvattore.min.js',
+                'salvattore/dist/salvattore.js',
                 'text/text.js',
                 'underscore/underscore.js'
             ],
