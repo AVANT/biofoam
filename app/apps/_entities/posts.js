@@ -89,7 +89,11 @@ return Moonrakr.module('Entities', function(Entities){
 
   Entities.Posts = Backbone.Collection.extend({
     url: function(){
-      return Moonrakr.Config.api + '/posts';
+      if(this.get('unpublishedFlag')){
+        return Moonrakr.Config.api + '/posts/unpublished';
+      } else {
+        return Moonrakr.Config.api + '/posts';
+      }
     },
 
     model: Entities.Post,
@@ -138,8 +142,15 @@ return Moonrakr.module('Entities', function(Entities){
   };
 
   var API = {
-    getPostEntities: function(){
-      var posts = new Entities.Posts();
+    getPostEntities: function(unpublishedFlag){
+      if(typeof unpublishedFlag === 'undefined'){
+        unpublishedFlag = false
+      } else {
+        unpublishedFlag = true
+      }
+      var posts = new Entities.Posts({
+        unpublishedFlag: flag
+      });
       var defer = $.Deferred();
       console.log('fire request to server in next line');
       posts.fetch({
@@ -174,8 +185,9 @@ return Moonrakr.module('Entities', function(Entities){
     }
   };
 
-  Moonrakr.reqres.setHandler('post:entities', function(){
-    return API.getPostEntities();
+  Moonrakr.reqres.setHandler('post:entities', function(unpublishedFlag){
+      return API.getPostEntities(unpublishedFlag);
+    }
   });
 
   Moonrakr.reqres.setHandler('post:entity', function(id){

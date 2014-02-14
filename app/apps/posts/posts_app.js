@@ -25,6 +25,7 @@ return Moonrakr.module('Posts',function(Posts){
 
   var routeHash = {};
   routeHash[ postsSlug ] = 'listPosts';
+  routeHash[ postsSlug + 'unpublished'] = 'listUnpublishedPosts';
   routeHash[ postsSlug + 'new' ] = 'newPost';
   routeHash[ postsSlug + ':id' ] = 'showPost';
   routeHash[ postsSlug + ':id/edit' ] = 'editPost';
@@ -45,6 +46,12 @@ return Moonrakr.module('Posts',function(Posts){
       Posts.List.Controller.listPosts();
       // Moonrakr.execute('set:active:header', 'posts');
       // Moonrakr.execute('header:set:title', 'Posts');
+    },
+    listUnpublishedPosts: function(){
+      Moonrakr.execute('clear:body:class');
+      Moonrakr.execute('add:body:class', 'posts list');
+
+      Posts.List.Controller.listPosts(true);
     },
     showPost: function(id){
 
