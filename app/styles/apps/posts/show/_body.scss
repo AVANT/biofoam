@@ -8,15 +8,15 @@ body.posts.show {
 
   .share-buttons {
     margin-bottom: 5em;
-    //text-align: center;
+    text-align: center;
   }
-  .share-wrapper {
+  .body .share-wrapper {
     text-decoration: none;
     font-family: $jose;
     letter-spacing: 0.1em;
     color: $grey;
     font-weight: 500;
-    font-size: 1.5em;
+    font-size: 12px;
     display: inline;
     padding: 10px;
   }
@@ -31,7 +31,7 @@ body.posts.show {
   .fbook-share {
     a {text-decoration: none;}
     background: $black;
-    padding-top: 5px;
+    //padding-top: 5px;
     @include transition( background .25s ease-in-out );
     display: inline-block;
     &:hover {
@@ -41,41 +41,41 @@ body.posts.show {
       }
     }
     .fa-stack {
-      margin-top: -25px;
+      margin-top: -12px;
       height: auto;
       width: 17px;
-      margin-right: -4px;
-      margin-left:13px;
+      margin-right: -8px;
+      margin-left: 8px;
     }
     .fa-stop {
-      font-size: 19px;
+      font-size: 12px;
     }
     .fa-facebook {
-      margin-left: 2px;
-      margin-top: -10px;
+      margin-left: 1px;
+      margin-top: -14px;
       display: inline;
       color: $black;
       @include transition( color .25s ease-in-out );
       //margin-top: 10px;
-      font-size: 16px;
+      font-size: 11px;
     }
   }
 
   .share-out {
-    margin-left: 10px;
-    margin-right:2px;
+    margin-left: 8px;
+    margin-right:1px;
     padding-top: 5px;
-    font-size: 16px;
+    font-size: 11px;
   }
 
 
 
   .twitter-share {
     a {text-decoration: none;}
-    margin-left: 10px;
+    margin-left: 7px;
     background: $black;
     @include transition( background .25s ease-in-out );
-    padding-top: 5px;
+    //padding-top: 5px;
     &:hover {
       background: $vvv-blue;
     }
@@ -84,8 +84,10 @@ body.posts.show {
     .fa-twitter {
       display: inline;
       color: $grey;
+      //margin-left: 2px;
       margin-top: 10px;
-      font-size: 17px;
+      margin-right: -2px;
+      font-size: 13px;
       width: 170px;
       height: 30px;
       text-align: center;
