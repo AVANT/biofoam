@@ -45,6 +45,6 @@
   },
   "scripts": {
     "install": "./node_modules/bower/bin/bower install",
-    "postinstall": "./node_modules/.bin/grunt"
+    "postinstall": "./node_modules/.bin/grunt build"
   }
 }
