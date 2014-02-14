@@ -89,16 +89,19 @@ return Moonrakr.module('Entities', function(Entities){
 
   Entities.Posts = Backbone.Collection.extend({
     url: function(){
-      if(this.get('unpublishedFlag')){
+      if(this.unpublishedFlag){
+        console.log('unpublishedFlag');
         return Moonrakr.Config.api + '/posts/unpublished';
       } else {
+        console.log('published');
         return Moonrakr.Config.api + '/posts';
       }
     },
 
     model: Entities.Post,
 
-    initialize: function () {
+    initialize: function (options) {
+      this.unpublishedFlag = options.unpublishedFlag;
       this.on('add', this.removeReserved, this);
     },
 
@@ -143,13 +146,14 @@ return Moonrakr.module('Entities', function(Entities){
 
   var API = {
     getPostEntities: function(unpublishedFlag){
-      if(typeof unpublishedFlag === 'undefined'){
-        unpublishedFlag = false
-      } else {
+      console.log('here is unpublishedFlag', unpublishedFlag);
+      if(unpublishedFlag){
         unpublishedFlag = true
+      } else {
+        unpublishedFlag = false
       }
       var posts = new Entities.Posts({
-        unpublishedFlag: flag
+        unpublishedFlag: unpublishedFlag
       });
       var defer = $.Deferred();
       console.log('fire request to server in next line');
@@ -186,8 +190,7 @@ return Moonrakr.module('Entities', function(Entities){
   };
 
   Moonrakr.reqres.setHandler('post:entities', function(unpublishedFlag){
-      return API.getPostEntities(unpublishedFlag);
-    }
+    return API.getPostEntities(unpublishedFlag);
   });
 
   Moonrakr.reqres.setHandler('post:entity', function(id){
