@@ -256,6 +256,10 @@ body.posts.show .body {
     font-size: 0.9em;
     margin-bottom: 10px;
     }
+  .date::selection {
+    color: white;
+    background: $mid-grey;
+  }
 
   blockquote {
     border-left: solid 8px #DEDEDE;

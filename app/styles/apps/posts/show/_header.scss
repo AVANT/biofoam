@@ -23,6 +23,10 @@ body.posts.show header{
     font-family: $jose;
     color: $black;
   }
+  .date::selection {
+      color: white;
+      background: $mid-grey;
+  }
 
   @media (min-width: $screen-md-min) {}
 
