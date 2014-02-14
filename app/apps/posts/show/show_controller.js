@@ -81,6 +81,19 @@ return Moonrakr.module('Posts.Show', function(Show){
         Moonrakr.mainRegion.show( postLayout );
 
       });
+
+
+      // header image fade out on scroll
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          $( ".header-image" ).fadeOut('slow');
+        } else {
+          console.log('there');
+          $( ".header-image" ).fadeIn('slow');
+        }
+      });
+      // end header image fade out
+
     }
   };
 

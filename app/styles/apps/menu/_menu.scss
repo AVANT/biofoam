@@ -73,7 +73,6 @@ nav.nav .nav-viewport{
       &:hover{
       .fa-stop {
         color: #3b5998;
-        @include transition( color .25s ease-in-out );
         }
       }
     }
@@ -83,10 +82,10 @@ nav.nav .nav-viewport{
     top: 24px;
     font-size: 17px;
     color: $black;
+    @include transition( color .25s ease-in-out );
     margin-left: -52px;
     &:hover{
       color: #55acee;
-    @include transition( color .25s ease-in-out );
     }
     }
     .fa-stack {
@@ -98,6 +97,7 @@ nav.nav .nav-viewport{
     font-size: 15px;
     color: $black;
     padding-right: 4px;
+    @include transition( color .25s ease-in-out );
     }
     .fa-facebook {
     font-size: 12px;
@@ -111,9 +111,9 @@ nav.nav .nav-viewport{
     top: 24px;
     font-size: 15px;
     color: $black;
+    @include transition( color .25s ease-in-out );
     &:hover{
       color: #F0B14D;
-    @include transition( color .25s ease-in-out );
     }
     }
   }

@@ -99,6 +99,19 @@ body.posts.show {
 
 
   #post-region {
+    .body-wrapper {
+      margin-top: -20px;
+      background-color: $grey;
+      z-index: 1;
+      margin-top: 400px;
+      @media (max-width: $screen-sm-min) {
+        margin-top: 56%;
+      }
+      position: relative;
+      display: block;
+    }
+
+
     .carousel {
       width: 110%;
       margin-left: -5%;
@@ -215,6 +228,16 @@ body.posts.show .body {
   .photoCredit::selection {
       color: white;
       background: $mid-grey;
+  }
+  .title{
+    @include width-breakdown;
+    @include padding-breakdown;
+    font-size: 3em;
+    text-align: left;
+    //margin-top: 30px !important;
+    padding-top: 25px;
+    font-family: $jose;
+    color: $black;
   }
   .authors {
     font-family: $jose;
