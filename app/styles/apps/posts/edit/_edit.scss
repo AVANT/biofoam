@@ -1,1 +1,36 @@
-// style me please!!
+.edit {
+	h1 {
+		font-family: $jose;
+		font-weight: bold;
+	}
+	label {
+		font-size: 1.5em;
+	}
+	input {
+		font-size: 1.5em;
+		padding-top: 0.2em;
+	}
+	#dragPad {
+		font-size: 1.5em;
+	}
+	.js-submit {font-size: 1.5em;}
+	.js-delete {font-size: 1.5em;}
+}
+
+.new {
+	h1 {
+		font-family: $jose;
+		font-weight: bold;
+	}
+	label {
+		font-size: 1.5em;
+	}
+	input {
+		font-size: 1.5em;
+		padding-top: 0.2em;
+	}
+	#dragPad {
+		font-size: 1.5em;
+	}
+	.js-submit {font-size: 1.5em;}
+}

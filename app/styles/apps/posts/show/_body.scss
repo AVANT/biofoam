@@ -41,14 +41,15 @@ body.posts.show {
       }
     }
     .fa-stack {
-      margin-top: -12px;
+      margin-top: -13px;
       height: auto;
       width: 17px;
       margin-right: -8px;
       margin-left: 8px;
     }
     .fa-stop {
-      font-size: 12px;
+      font-size: 13px;
+      margin-top: -1px;
     }
     .fa-facebook {
       margin-left: 1px;
@@ -57,7 +58,7 @@ body.posts.show {
       color: $black;
       @include transition( color .25s ease-in-out );
       //margin-top: 10px;
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 
@@ -85,12 +86,12 @@ body.posts.show {
       display: inline;
       color: $grey;
       //margin-left: 2px;
-      margin-top: 10px;
       margin-right: -2px;
-      font-size: 13px;
+      font-size: 14px;
       width: 170px;
       height: 30px;
       text-align: center;
+      vertical-align: -1px;
     }
 
   }
@@ -109,77 +110,6 @@ body.posts.show {
       }
       position: relative;
       display: block;
-    }
-
-
-    .carousel {
-      width: 110%;
-      margin-left: -5%;
-    @media (max-width: $screen-sm-min) {
-      width: 100%;
-      margin-left: 0%;
-    }
-    .carousel-caption {
-      height: 175px;
-      background-color: white;
-      text-shadow: none;
-      font-family: $quat;
-      color: $black;
-      text-align: left;
-      width: 100%;
-      padding: 0 20px;
-      margin: none;
-      padding: none;
-      padding-bottom: 23px;
-      margin-left: -20%;
-      @media (max-width: $screen-sm-min) {
-        margin-left: -15%;
-      }
-      margin-top: 0px;
-      position: relative;
-    }
-    .carousel-indicators {
-      bottom: 30px;
-      li {
-        border: solid 1px $black;
-      }
-    }
-    .carousel-indicators .active {
-      background: $black;
-      width: 10px;
-      height: 10px;
-      margin: 1px;
-    }
-    .carousel-control {
-      text-shadow: none;
-      font-size: 1.5em;
-      color: $black;
-      opacity: 1;
-      &:hover {
-        color: $vvv-blue;
-        @include transition( color .25s ease-in-out );
-      }
-    }
-    .chevron{
-        width:30%;
-        position:absolute;
-        top:40%;
-        @media (max-width: $screen-sm-min) {
-          top: 38%;
-        }
-      }
-      .chevron-left{
-        left:-33%;
-        @media (max-width: $screen-sm-min) {
-          left: -38%;
-        }
-      }
-      .chevron-right{
-        right:-33%;
-        @media (max-width: $screen-sm-min) {
-          right: -38%;
-        }
-      }
     }
   }
 }
@@ -224,10 +154,10 @@ body.posts.show .body {
     font-size: 0.9em;
     font-weight: bold;
     color: $mid-grey;
-  }
-  .photoCredit::selection {
+    ::selection {
       color: white;
       background: $mid-grey;
+    }
   }
   .title{
     @include width-breakdown;

@@ -1,8 +1,80 @@
-.carousel {
+body.posts.show {
+
 	.carousel-control.right {
 		background-image: none;
 	}
 	.carousel-control.left {
 		background-image: none;
+	}
+
+	.carousel {
+    	width: 110%;
+    	margin-left: -5%;
+    	@media (max-width: $screen-sm-min) {
+    		width: 100%;
+    		margin-left: 0%;
+    	}
+
+	    .carousel-caption {
+	    	height: 175px;
+	    	background-color: white;
+	    	text-shadow: none;
+	    	font-family: $quat;
+	    	color: $black;
+	    	text-align: left;
+	    	width: 100%;
+	    	padding: 0 20px;
+	    	margin: none;
+	    	padding: none;
+	    	padding-bottom: 23px;
+	    	margin-left: -20%;
+	    	@media (max-width: $screen-sm-min) {
+	        	margin-left: -15%;
+	      	}
+	    	margin-top: 0px;
+	    	position: relative;
+	    }
+	    .carousel-indicators {
+	    	bottom: 30px;
+	    	li {
+	    		border: solid 1px $black;
+	      	}
+	    }
+	    .carousel-indicators .active {
+	    	background: $black;
+	    	width: 10px;
+	    	height: 10px;
+	    	margin: 1px;
+	    }
+	    .carousel-control {
+	    	text-shadow: none;
+	    	font-size: 1.5em;
+	    	color: $black;
+	    	opacity: 1;
+	    	&:hover {
+	        	color: $vvv-blue;
+	        	@include transition( color .25s ease-in-out );
+	      	}
+	    }
+	    .chevron{
+	        width:30%;
+	        position:absolute;
+	        top:40%;
+	        @media (max-width: $screen-sm-min) {
+	        	top: 38%;
+	        }
+	    }
+	    .chevron-left{
+	    	left:-33%;
+	        @media (max-width: $screen-sm-min) {
+	        	left: -38%;
+	        }
+	   	}
+		.chevron-right{
+			right:-33%;
+		   	@media (max-width: $screen-sm-min) {
+		   		right: -38%;
+	   		}
+	    }
 	}
 }
