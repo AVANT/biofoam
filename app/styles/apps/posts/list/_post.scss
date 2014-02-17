@@ -69,18 +69,12 @@ body.posts.list .post {
     font-weight: bold;
     color: $vvv-blue;
     letter-spacing: 0.05em;
+    font-size: 1.8em;
   }
   .title {
     font-family: $jose;
     width: 100%;
   }
-
-  //-webkit-transition: box-shadow .2s linear;
-  //-moz-transition: box-shadow .2s linear;
-  //-ms-transition: box-shadow .2s linear;
-  //-o-transition: box-shadow .2s linear;
-  //transition: box-shadow .2s linear;
-  //margin-top: 1px;
 
    .post-hi {
       padding-top: 0px;
@@ -119,7 +113,7 @@ body.posts.list .post {
     padding: 0 20px;
 
     .title{
-      font-size: 3em;
+      font-size: 2.8em;
       margin-bottom: 10px;
       @include transition( color .4s ease-in-out );
     }
