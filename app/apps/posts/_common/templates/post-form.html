@@ -29,6 +29,13 @@
   </div>
 
   <div class="form-group">
+    <label for="post-authors" class="form-label">
+      Authors:
+    </label>
+    <input id="post-authors" name="authors" type="text" value="{{ authorsArray }}">
+  </div>
+
+  <div class="form-group">
     <label for="post-image" class="form-label">
       Post Main Image:
     </label>
@@ -41,6 +48,13 @@
       Body:
     </label>
     <div id="redactor-region"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="post-published" class="form-label">
+      Published State?:
+    </label>
+    <input id="post-published" name="published" type="checkbox">
   </div>
 
   <button class="js-submit">{{ submitText }}</button>

@@ -29,6 +29,22 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
         onSet: function(value) {
           return value.split(',');
         }
+      },
+      '#post-authors': {
+        observe: 'authorsArray',
+        // onGet: function(values){
+        //   var authorsStr = '';
+        //   _.each(values, function(value){
+        //     authorsStr = authorsStr + ',' + value['fullName'];
+        //   });
+        //   return authorsStr;
+        // },
+        onSet: function(value){
+          return value.split(',');
+        }
+      },
+      '#post-published': {
+        observe: 'published'
       }
       // '#post-tags': 'tags' // explode and strip whitespace
       // '#image-current-container': 'image', // in the imageUpload view

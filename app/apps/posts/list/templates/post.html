@@ -4,7 +4,11 @@
   </div>
   <div class="content-wrapper">
     <h2 class="title">{{title}}</h2>
-    <p class="authors">{{ authors }}</p>
+    <ul class="authors">
+      {{#each authorsArray}}
+      <li>{{ this }}</li>
+      {{/each}}
+    </ul>
     <p class="date">{{ date }}</p>
     <p class="excerpt">{{excerpt}}</p>
     <ul class="tags">

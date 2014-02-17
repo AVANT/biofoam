@@ -41,7 +41,7 @@ return Moonrakr.module('Entities', function(Entities){
 
       obj.date = this.parseDate( resp );
       // obj.tags = this.parseTags( resp );
-      obj.authors = this.parseAuthors( resp );
+      // obj.authors = this.parseAuthors( resp );
 
       _.extend(resp, obj);
 
