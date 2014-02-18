@@ -91,7 +91,7 @@ return Moonrakr.module('Entities', function(Entities){
     url: function(){
       if(this.unpublishedFlag){
         console.log('unpublishedFlag');
-        return Moonrakr.Config.api + '/posts/unpublished';
+        return Moonrakr.Config.api + '/posts?status=unpublished';
       } else {
         console.log('published');
         return Moonrakr.Config.api + '/posts';
