@@ -44,7 +44,11 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
         }
       },
       '#post-published': {
-        observe: 'published'
+        observe: 'status',
+        onSet: function(val){
+          console.log('val', val);
+          return val;
+        }
       }
       // '#post-tags': 'tags' // explode and strip whitespace
       // '#image-current-container': 'image', // in the imageUpload view
