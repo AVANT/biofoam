@@ -8,7 +8,7 @@ require('apps/posts/list/views/cms_panel');
 return Moonrakr.module('Posts.List', function(List){
   List.Controller = {
     // api calls
-    listPosts: function(){
+    listPosts: function(unpublishedFlag){
 
       // set loading class on body
       Moonrakr.execute('add:body:class', 'loading');
@@ -18,7 +18,7 @@ return Moonrakr.module('Posts.List', function(List){
       // refactor to bring logic into this controller ?
       var authGranted = Moonrakr.Common.Controller.helper.getAuthFlag( List.CMSPanel );
 
-      var fetchingPosts = Moonrakr.request('post:entities');
+      var fetchingPosts = Moonrakr.request('post:entities', unpublishedFlag);
 
       var postsListLayout = new List.Layout();
       var postsListPanel = authGranted ? new List.CMSPanel() : null;
