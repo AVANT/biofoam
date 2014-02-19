@@ -35,20 +35,30 @@ return Moonrakr.module('Posts',function(Posts){
   routeHash[ 'sponsorship(/)' ] = 'sponsorshipPage';
 
   Posts.Router = Marionette.AppRouter.extend({
-    appRoutes: routeHash,
-    initalize: function(){
-      this.bind('route', this.trackPageview, this);
-    },
-    trackPageview: function (){
+    appRoutes: routeHash
+    // initalize: function(){
+    //   this.bind('route', this.trackPageview, this);
+    // },
+    // trackPageview: function (){
+    //   var url = Backbone.history.getFragment();
+    //   //prepend slash
+    //   if (!/^\//.test(url) && url != "")
+    //   {
+    //       url = "/" + url;
+    //   }
+    //   _gaq.push(['_trackPageview', url]);
+    // }
+  });
+
+  function trackPageview(){
       var url = Backbone.history.getFragment();
       //prepend slash
       if (!/^\//.test(url) && url != "")
       {
           url = "/" + url;
       }
-      _gaq.push(['_trackPageview', url]);
+      window.ga('send', 'pageview', url);
     }
-  });
 
   var API = {
     listPosts: function(){
@@ -56,6 +66,7 @@ return Moonrakr.module('Posts',function(Posts){
       Moonrakr.execute('add:body:class', 'posts list');
 
       Posts.List.Controller.listPosts();
+      trackPageview();
       // Moonrakr.execute('set:active:header', 'posts');
       // Moonrakr.execute('header:set:title', 'Posts');
     },
@@ -71,6 +82,7 @@ return Moonrakr.module('Posts',function(Posts){
       Moonrakr.execute('add:body:class', 'posts show');
 
       Posts.Show.Controller.showPost(id);
+      trackPageview();
       // Moonrakr.execute('set:active:header', 'posts');
     },
     editPost: function(id){
@@ -91,12 +103,15 @@ return Moonrakr.module('Posts',function(Posts){
     // 'Static' page hacks
     aboutPage: function(){
       Moonrakr.trigger('post:about');
+      trackPageview();
     },
     privacyPage: function(){
       Moonrakr.trigger('post:privacy');
+      trackPageview();
     },
     sponsorshipPage: function(){
       Moonrakr.trigger('post:sponsorship');
+      trackPageview();
     }
 
   };

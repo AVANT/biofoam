@@ -5,6 +5,11 @@ body.posts.show {
     }
   }
 
+  // just for the special carousel magic
+  .selected img {
+    opacity:0.5;
+  }
+
 
   .share-buttons {
     margin-bottom: 5em;
@@ -24,7 +29,7 @@ body.posts.show {
     margin-left: 12px;
     margin-top: -3px;
     color: $grey;
-    
+
   }
 
 

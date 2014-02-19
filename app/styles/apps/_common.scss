@@ -1,3 +1,7 @@
+// always have scroll bar on so that there is not a
+// jump when the content loads
+html { overflow-y: scroll; }
+
 body {
   background-color: $grey;
 }

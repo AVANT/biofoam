@@ -20,6 +20,36 @@ return Moonrakr.module('Posts.Show', function(Show){
     initialize: function(){
       this.model.on('change', this.render, this);
     },
+    onRender:function () {
+      this.startCarousel();
+      this.addCarouselHandlers();
+    },
+    startCarousel: function(){
+      this.$el.find('#myCarousel').carousel({
+        interval: 0
+      });
+    },
+    addCarouselHandlers:function () {
+      var _this = this;
+      // handles the carousel thumbnails
+      _this.$el.find('[id^=carousel-selector-]').on('click', function(){
+        var id_selector = $(this).attr('id');
+        var id = id_selector.substr(id_selector.length -1);
+        id = parseInt(id);
+        console.log('here with this id', id );
+        _this.$el.find('#myCarousel').carousel(id);
+        _this.$el.find('[id^=carousel-selector-]').removeClass('selected');
+        $(this).addClass('selected');
+      });
+
+      // when the carousel slides, auto update
+      _this.$el.find('#myCarousel').on('slid.bs.carousel', function (e) {
+        var id = _this.$el.find('.item.active')[1].dataset.slideNumber;
+        id = parseInt(id);
+        _this.$el.find('[id^=carousel-selector-]').removeClass('selected');
+        _this.$el.find('[id^=carousel-selector-'+id+']').addClass('selected');
+      });
+    },
     templateHelpers: {
       getHeaderImageUrl: function(){
         // return this.headerImage.filelink;
@@ -61,17 +91,17 @@ return Moonrakr.module('Posts.Show', function(Show){
             return t.substring(1, 100) + '...';
           }
 
-          return t;
+          return encodeURIComponent(t);
 
         }(this.title)
 
         var baseUrl = 'http://twitter.com/share?';
 
-        // var text = 'text={{ concatTitle }}';
         var url = '&url=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
-        var hashtags = '&hashtags=vvvnt';
+        var text = '&text=' + concatTitle;
+        var via = '&via=VVVNTmag';
 
-        var toReturn = baseUrl + url + hashtags;
+        var toReturn = baseUrl + text + url + via;
 
         // console.log('twitter', toReturn);
 
