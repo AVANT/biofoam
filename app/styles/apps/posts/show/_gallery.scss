@@ -11,18 +11,10 @@ body.posts.show {
 	}
 
 	.carousel {
-    	width: 166%;
-    	margin-left: -33%;
+    	width: 120%;
+    	margin-left: -10%;
     	&:hover {
     		.carousel-control { opacity: 0.5;}
-    	}
-    	@media (max-width: $screen-lg-min) {
-    		width: 130%;
-    		margin-left: -15%;
-    	}
-    	@media (max-width: $screen-md-min) {
-    		width: 110%;
-    		margin-left: -5%;
     	}
     	@media (max-width: $screen-sm-min) {
     		width: 100%;

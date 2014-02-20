@@ -30,6 +30,7 @@ body.posts.list .post {
   background: white;
 
   .date {
+    display: inline;
     font-family: $jose;
     font-weight: bold;
     color: $mid-grey;
@@ -54,8 +55,8 @@ body.posts.list .post {
       margin-right: 3px;
       margin-left: 0px;
       line-height: 1.9em;
-      @include transition( border .25s ease-in-out );
-      @include transition( color .25s ease-in-out );
+      //@include transition( border .25s ease-in-out );
+      //@include transition( color .25s ease-in-out );
       &:hover {
         
         border: solid 1px $vvv-blue;
@@ -65,7 +66,8 @@ body.posts.list .post {
     list-style-type: none;
   }
   .authors {
-    li {display: inline;}
+    display: inline;
+    li {display: inline; margin-right: 12px;}
     list-style-type: none;
     padding-left: 0px;
     font-family: $jose;
@@ -73,13 +75,16 @@ body.posts.list .post {
     color: $vvv-blue;
     letter-spacing: 0.05em;
     font-size: 2em;
+    margin-top: 2px;
   }
   .title {
     font-family: $jose;
     width: 100%;
   }
   .excerpt {
-    font-size: 2em;
+    font-size: 1.9em;
+    margin-bottom: 13px;
+    margin-top: 8px;
   }
 
    .post-hi {

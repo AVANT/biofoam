@@ -58,7 +58,7 @@ body.posts.show {
     }
     .fa-facebook {
       margin-left: 1px;
-      margin-top: -14px;
+      margin-top: -17px;
       display: inline;
       color: $black;
       @include transition( color .25s ease-in-out );
@@ -124,7 +124,7 @@ body.posts.show .body {
   max-width: $global-max-width;
   //@include padding-breakdown;
   font-family: $quat;
-  font-size: 1.7em;
+  font-size: 1.9em;
   font-weight: lighter;
   letter-spacing: 0.01em;
   line-height: 2em;
@@ -181,10 +181,19 @@ body.posts.show .body {
     //@media (max-width: $screen-md-min) {
     //  width: 85%;
     //}
-    font-size: 2.8em;
+    font-size: 2.6em;
     //@include transition( all .25s ease-in-out );
+
+    @media (max-width: $screen-sm-min) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     @media (max-width: $screen-md-min) {
       font-size: 2.3em;
+    }
+    @media (max-width: $screen-lg-min) {
+      padding-left: 0px;
+      padding-right: 0px;
     }
     text-align: left;
     //margin-top: 30px !important;
@@ -199,10 +208,10 @@ body.posts.show .body {
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
-    font-size: 1.6em;
+    font-size: 1.4em;
     //@include transition( all .25s ease-in-out );
     @media (max-width: $screen-md-min) {
-      font-size: 1.3em;
+      font-size: 1.4em;
     }
     display: inline;
   }
