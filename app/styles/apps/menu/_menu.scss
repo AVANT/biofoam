@@ -13,7 +13,7 @@ nav.nav .nav-viewport{
   .nav-logo {
     display: block;
     margin: 0px auto;
-    margin-top: 12px;
+    margin-top: 15px;
     padding-left: 8px;
     text-align:center;
     float: center;
@@ -34,7 +34,7 @@ nav.nav .nav-viewport{
       font-size: 2.5em;
       color: $black;
       letter-spacing: .5em;
-      padding-right: 7px;
+      padding-right: 8px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
@@ -52,15 +52,18 @@ nav.nav .nav-viewport{
       }
     }
     .logo-circle {
-      width: 48px;
-      height: 48px;
-      margin-top:-7px;
+      width: 34px;
+      height: 34px;
+      margin-top:-6px;
       display: inline;
       text-align: center;
       position: relative;
       margin-left: -20px;
       font-size: 4.9em;
       text-align: left;
+      @media (max-width: $screen-sm-min){
+      margin-top:-3px;
+      }
     }
   }
 
