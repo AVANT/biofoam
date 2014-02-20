@@ -21,14 +21,14 @@
 @mixin width-breakdown {
   max-width: $global-max-width;
   @media (min-width: $screen-sm-min) {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
   @media (min-width: $screen-md-min) {
-    width: 85%;
+    width: 90%;
   }
   @media (min-width: $screen-lg-min) {
-    width: 85%;
+    width: 90%;
   }
 }
 

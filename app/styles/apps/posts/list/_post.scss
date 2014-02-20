@@ -65,15 +65,21 @@ body.posts.list .post {
     list-style-type: none;
   }
   .authors {
+    li {display: inline;}
+    list-style-type: none;
+    padding-left: 0px;
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
     letter-spacing: 0.05em;
-    font-size: 1.8em;
+    font-size: 2em;
   }
   .title {
     font-family: $jose;
     width: 100%;
+  }
+  .excerpt {
+    font-size: 2em;
   }
 
    .post-hi {

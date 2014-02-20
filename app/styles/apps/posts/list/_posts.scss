@@ -79,6 +79,7 @@ body.posts.list #splash-region{
 				}
 			}
 			.authors {
+				list-style-type: none;
 				color: white;
 				padding-top: 0px;
 				top: 150px;
@@ -88,6 +89,13 @@ body.posts.list #splash-region{
 					padding-top: inherit;
 					font-size: 1.8em;
 					color: $vvv-blue;
+				}
+			}
+			.excerpt {
+				font-size: 2em;
+				display: none;
+				@media (max-width: $screen-sm-min){
+					display: block;
 				}
 			}
 			.date {

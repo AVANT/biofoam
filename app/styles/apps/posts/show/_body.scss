@@ -122,7 +122,7 @@ body.posts.show {
 body.posts.show .body {
 
   max-width: $global-max-width;
-  @include padding-breakdown;
+  //@include padding-breakdown;
   font-family: $quat;
   font-size: 1.7em;
   font-weight: lighter;
@@ -131,7 +131,6 @@ body.posts.show .body {
   padding-top: 0px !important;
 
   img {
-    //@include padding-breakdown;
     width: 100%;
     max-height: 600px;
     overflow: hidden;
@@ -150,11 +149,22 @@ body.posts.show .body {
     padding-top: 0.6em;
     font-size: 0.8em;
     color: $mid-grey;
+    // em {
+    //   ::selection{
+    //   color: white;
+    //   background: $mid-grey;
+    //   }
+    // }
+  //  :selection{
+  //     color: white;
+  //     background: $mid-grey;
+  // } 
   }
-  .footnote::selection {
+  .footnote::selection{
       color: white;
       background: $mid-grey;
   }
+      
   .photoCredit {
     font-family: $jose;
     font-size: 0.9em;
@@ -171,18 +181,21 @@ body.posts.show .body {
     //@media (max-width: $screen-md-min) {
     //  width: 85%;
     //}
-    font-size: 3em;
+    font-size: 2.8em;
     //@include transition( all .25s ease-in-out );
     @media (max-width: $screen-md-min) {
       font-size: 2.3em;
     }
     text-align: left;
     //margin-top: 30px !important;
-    padding-top: 25px;
     font-family: $jose;
     color: $black;
+    padding-top: 30px !important;
   }
   .authors {
+    li {display: inline;}
+    padding-left: 0px;
+    list-style-type: none;
     font-family: $jose;
     font-weight: bold;
     color: $vvv-blue;
@@ -225,6 +238,7 @@ body.posts.show .body {
     color: $mid-grey;
     font-size: 0.9em;
     margin-bottom: 10px;
+    margin-top: 10px;
     }
   .date::selection {
     color: white;
@@ -253,10 +267,10 @@ body.posts.show .body {
     margin: 0 auto;
   }
   @media (min-width: $screen-md-min) {
-    width: 60%;
+    width: 70%;
   }
-  @media (min-width: $screen-lg-min) {
-    width: 640px;
-  }
+  //@media (min-width: $screen-lg-min) {
+  //  width: 640px;
+  //}
 
 }

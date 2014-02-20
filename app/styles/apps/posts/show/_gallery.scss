@@ -1,5 +1,8 @@
 body.posts.show {
 
+
+	.list-inline {text-align: center; margin-top: 10px;}
+
 	.carousel-control.right {
 		background-image: none;
 	}
@@ -27,8 +30,6 @@ body.posts.show {
     	}
 
 	    .carousel-caption {
-	    	height: 175px;
-	    	background-color: white;
 	    	text-shadow: none;
 	    	font-family: $quat;
 	    	color: $black;
@@ -64,10 +65,10 @@ body.posts.show {
 	    	color: $grey;
 	    	opacity: 0;
 	    	@include transition( opacity .4s ease-in-out );
-	    	&:hover {
-	        	color: $mid-grey;
+	    	//&:hover {
+	        //	color: $mid-grey;
 	        	//@include transition( color .4s ease-in-out );
-	      	}
+	      	//}
 	    }
 	    .chevron{
 	        width:30%;
@@ -78,7 +79,7 @@ body.posts.show {
 	    .chevron-left{
 	    	//left:-33%;
 	    	font-size: 1.3em;
-	    	margin-top: 200%;
+	    	margin-top: 150%;
 	        @media (max-width: $screen-sm-min) {
 	        	left: -38%;
 	        }
@@ -86,7 +87,7 @@ body.posts.show {
 		.chevron-right{
 			//right:-33%;
 			font-size: 1.3em;
-			margin-top: 200%;
+			margin-top: 150%;
 		   	@media (max-width: $screen-sm-min) {
 		   		right: -38%;
 	   		}
