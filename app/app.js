@@ -7,7 +7,7 @@ define(function(require){
   // var Moonrakr = new Marionette.Application();
 
   var config = {
-    api: '/api',
+    api: 'http://192.168.33.130/api',
     postsSlug: 'media/',
     reservedSlugs: ['about', 'privacy', 'sponsorship']
   };
