@@ -42,6 +42,9 @@ return Moonrakr.module('Entities', function(Entities){
       obj.date = this.parseDate( resp );
       // obj.tags = this.parseTags( resp );
       obj.authors = this.parseAuthors( resp );
+      // obj.authors = resp.authorsArray;
+
+      console.log('obj.authors', obj.authors);
 
       _.extend(resp, obj);
 
@@ -74,14 +77,8 @@ return Moonrakr.module('Entities', function(Entities){
     },
 
     parseAuthors: function( resp ){
-      var toReturn = '';
-      _.each( resp.authors, function( author, i ){
-        if( i === 0){
-          toReturn = author.fullName;
-        } else {
-          toReturn = toReturn + ', ' + author.fullName;
-        }
-      });
+      var toReturn = resp.authorsArray;
+      toReturn = toReturn.toString().replace(",",", ");
       return toReturn;
     }
 
