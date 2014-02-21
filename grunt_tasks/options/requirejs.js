@@ -20,8 +20,8 @@ module.exports = {
   dist: {
     options: {
       baseUrl: '<%= dist %>/js',
-      // optimize: 'uglify',
-      // preserveLicenseComments: true,
+      optimize: 'none',
+      preserveLicenseComments: false,
       // useStrict: false,
       // inlineText: true,
       removeCombined: true,
