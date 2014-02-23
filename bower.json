@@ -45,7 +45,7 @@
     "time-js": "*",
     "moment": "~2.5.0",
     "jquery-fittext.js": "*",
-    "salvattore": "~1.0.4"
+    "salvattore": "cdc57510a19c254ada130e3ae2e7353321551d14"
   },
   "devDependencies": {
     "sinon-chai": "~2.4.0"
