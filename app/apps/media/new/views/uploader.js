@@ -44,7 +44,10 @@ return Moonrakr.module('Media.New', function(New){
     },
 
     displayUrl: function( url ){
-      this.loadImage( url, this );
+      //api will give you back "" here so you have to check for it
+      if ( url !== ""){
+        this.loadImage( url, this );
+      }
     },
 
     loadImageEvent: function(e, self){
