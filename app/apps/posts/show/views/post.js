@@ -43,7 +43,7 @@ return Moonrakr.module('Posts.Show', function(Show){
       });
 
       // when the carousel slides, auto update
-      _this.$el.find('#myCarousel').on('slid.bs.carousel', function (e) {
+      _this.$el.find('#myCarousel').on('slid.bs.carousel', function () {
         var id = _this.$el.find('.item.active')[1].dataset.slideNumber;
         id = parseInt(id);
         _this.$el.find('[id^=carousel-selector-]').removeClass('selected');
@@ -61,7 +61,7 @@ return Moonrakr.module('Posts.Show', function(Show){
         var baseUrl = 'https://www.facebook.com/dialog/feed?';
         // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?';
 
-        var appId = 'app_id=630547413679417';
+        var appId = 'app_id=624628847586856';
         var display = '&display=popup';
         var name = '&name=' + encodeURIComponent(this.title);
         var caption = '&caption=' + encodeURIComponent(this.excerpt);
@@ -93,7 +93,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
           return encodeURIComponent(t);
 
-        }(this.title)
+        }(this.title);
 
         var baseUrl = 'http://twitter.com/share?';
 
