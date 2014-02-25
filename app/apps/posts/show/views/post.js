@@ -97,7 +97,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
         var baseUrl = 'http://twitter.com/share?';
 
-        var url = '&url=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
+        var url = '&url=' + encodeURIComponent(window.location.href); // + /media/ + this.slug;
         var text = '&text=' + concatTitle;
         var via = '&via=VVVNTmag';
 
