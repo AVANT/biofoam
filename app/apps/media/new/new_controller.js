@@ -26,15 +26,19 @@ return Moonrakr.module('Media.New', function(New){
       var controller = this;
       this.view.on('media:new:submit', function(){
 
+        controller.view.setLoading();
+
         this.model.save(null,{
           success: function(data){
             console.log('success', data);
             controller.view.trigger('media:save:success', controller.model);
+            controller.view.removeLoading();
           },
           error: function(){
             console.log('error');
           }
         });
+
       });
     }
 

@@ -12,6 +12,7 @@ return Moonrakr.module('Media.New', function(New){
   New.Uploader = Marionette.ItemView.extend({
     template: Handlebars.compile( _imageuploadView ),
     imagePreviewed: false,
+    className: 'uploader-new',
     ui: {
       submitButton: 'button.js-image-submit',
       cropButton: 'button.js-crop',
@@ -215,6 +216,13 @@ return Moonrakr.module('Media.New', function(New){
     submitClicked: function(e){
       e.preventDefault();
       this.trigger('media:new:submit');
+    },
+
+    setLoading: function () {
+      this.$el.addClass('loading');
+    },
+    removeLoading: function () {
+      this.$el.removeClass('loading');
     }
   });
 

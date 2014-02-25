@@ -1,0 +1,19 @@
+.uploader-new {
+	position: relative;
+	.loading-icon{
+		display: none;
+	}
+}
+
+.uploader-new.loading .loading-icon{
+	display: block;
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	background-color: rgba(black, 0.5);
+	font-size: 20rem;
+	i {
+		position: absolute;
+		left: 50%;
+		margin-left: -85px;
+	}
+}
