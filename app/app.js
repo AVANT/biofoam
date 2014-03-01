@@ -1,17 +1,12 @@
 define(function(require){
 
   var Marionette = require('marionette');
-  // var config = require('config');
+  var config = require('config');
 
   window.Moonrakr = new Marionette.Application();
   // var Moonrakr = new Marionette.Application();
 
-  Moonrakr.Config = {
-    api: '/api',
-    // api: 'http://192.168.33.130/api',
-    postsSlug: 'media/',
-    reservedSlugs: ['about', 'privacy', 'sponsorship']
-  };
+  Moonrakr.Config = config;
 
   Moonrakr.addRegions({
     headerRegion: '#header',

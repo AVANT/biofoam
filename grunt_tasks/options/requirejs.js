@@ -26,7 +26,7 @@ module.exports = {
       // inlineText: true,
       removeCombined: true,
 
-      mainConfigFile: '<%= dist %>/js/require_config.js',
+      mainConfigFile: '<%= dist %>/js/require_config.production.js',
       findNestedDependencies: true,
       name: 'main',
       out: '<%= dist %>/js/main.optimized.js',
