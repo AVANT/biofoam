@@ -23,20 +23,26 @@
     position: relative;
     height: 55px;
     clear: both;
-
     // taking care of some weird width issues from the social buttons
     overflow: hidden;
+    @media (max-width: $screen-md-min) {
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
 
     .twitter {
-      width: 60px;
-      display: inline-block;
+      text-align: center;
+      //width: 60px;
+      display: block;
 
     }
     .fb-follow{
-      display: inline-block;
+      text-align: left;
+      display: block;
       @media (max-width: $screen-md-min) {
-        top: -5px;
-        padding-left: 15px;
+        text-align: center;
+        top: 10px;
+        //padding-left: 15px;
       }
     }
 
