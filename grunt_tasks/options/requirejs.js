@@ -28,7 +28,7 @@ module.exports = {
 
       mainConfigFile: '<%= dist %>/js/require_config.js',
       findNestedDependencies: true,
-      name: 'main',
+      name: 'main.production',
       out: '<%= dist %>/js/main.optimized.js',
       // waitSeconds: 3,
       // logLevel: 0

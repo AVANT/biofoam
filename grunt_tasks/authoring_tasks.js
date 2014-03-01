@@ -70,12 +70,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     'build',
-    'shell:deployDev',
+    'shell:deployDev'
   ]);
 
   grunt.registerTask('deploy:production', [
     'build',
-    'shell:deployProduction',
+    'shell:deployProduction'
   ]);
 
 };
