@@ -17,7 +17,23 @@ body {
 
 .fa-dark { color: $black; }
 
+pullquote{
 
+  border-top: 8px solid $black;
+  border-bottom: 8px solid $black;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  line-height: 1.3em;
+  font-weight: 600;
+  font-family: $jose;
+  float: right;
+  width: 40%;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+}
 h1,
 h2,
 h3 {  font-size: 3em;
