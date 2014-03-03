@@ -60,7 +60,7 @@ return Moonrakr.module('Entities', function(Entities){
     },
 
     parseDate: function(resp){
-      var date = new Date( resp.updatedAt );
+      var date = new Date( resp.publishedAt );
       return moment( date.toString() ).format('MMMM Do YYYY');
     },
 
