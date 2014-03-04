@@ -177,7 +177,7 @@ body.posts.show .body {
   }
   .title{
     text-align: center;
-    @include width-breakdown;
+    //@include width-breakdown;
     @include padding-breakdown;
     //@media (max-width: $screen-md-min) {
     //  width: 85%;
