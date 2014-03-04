@@ -176,6 +176,7 @@ body.posts.show .body {
     background: $mid-grey;
   }
   .title{
+    text-align: center;
     @include width-breakdown;
     @include padding-breakdown;
     //@media (max-width: $screen-md-min) {
@@ -195,7 +196,7 @@ body.posts.show .body {
       padding-left: 0px;
       padding-right: 0px;
     }
-    text-align: left;
+    //text-align: left;
     //margin-top: 30px !important;
     font-family: $jose;
     color: $black;

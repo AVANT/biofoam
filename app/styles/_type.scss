@@ -18,7 +18,6 @@ body {
 .fa-dark { color: $black; }
 
 pullquote{
-
   border-top: 8px solid $black;
   border-bottom: 8px solid $black;
   font-size: 1.3em;
@@ -29,10 +28,23 @@ pullquote{
   float: right;
   width: 40%;
   margin-left: 1em;
-  margin-top: 1em;
+  margin-top: 1.2em;
   padding-top: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   padding-bottom: 0.5em;
+}
+initial{
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-family: $jose;
+  color: $vvv-blue;
+  float: left;
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 5em;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px $vvv-blue;
 }
 h1,
 h2,
