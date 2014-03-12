@@ -34,18 +34,20 @@ pullquote{
   padding-bottom: 0.5em;
 }
 initial{
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  font-family: $jose;
-  color: $vvv-blue;
-  float: left;
-  margin-top: 0.4em;
-  margin-right: 0.05em;
-  margin-bottom: 0.01em;
-  font-size: 6.6em;
-  font-weight: bold;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px $vvv-blue;
+  @media (min-width: $screen-sm-min) {
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-family: $jose;
+    color: $vvv-blue;
+    float: left;
+    margin-top: 0.4em;
+    margin-right: 0.05em;
+    margin-bottom: 0.01em;
+    font-size: 6.6em;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px $vvv-blue;
+  }
 }
 h1,
 h2,
