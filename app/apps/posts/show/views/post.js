@@ -58,22 +58,30 @@ return Moonrakr.module('Posts.Show', function(Show){
 
       facebookURL: function  () {
 
-        var baseUrl = 'https://www.facebook.com/dialog/feed?';
-        // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?';
+        // var baseUrl = 'https://www.facebook.com/dialog/feed?';
+        // // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?';
 
-        var appId = 'app_id=624628847586856';
-        var display = '&display=popup';
-        var name = '&name=' + encodeURIComponent(this.title);
-        var caption = '&caption=' + encodeURIComponent(this.excerpt);
-        var link = '&link=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
-        var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
-        var picture = '&picture=' + encodeURIComponent(this.headerImageUrl);
+        // var appId = 'app_id=624628847586856';
+        // var display = '&display=popup';
+        // var name = '&name=' + encodeURIComponent(this.title);
+        // var caption = '&caption=' + encodeURIComponent(this.excerpt);
+        // var link = '&link=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
+        // var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
+        // var picture = '&picture=' + encodeURIComponent(this.headerImageUrl);
 
-        var toReturn = baseUrl + appId + display + name + caption + link + redirect_uri + picture;
+        // var toReturn = baseUrl + appId + display + name + caption + link + redirect_uri + picture;
 
         // console.log('facebook', toReturn);
 
-        // return toReturn;
+
+        var baseUrl = 'https://www.facebook.com/sharer/sharer.php?u=';
+        var link = encodeURIComponent(document.URL);
+        console.log('link', link);
+
+        var toReturn = baseUrl + link;
+
+        console.log('toReturn', toReturn);
+
         return toReturn;
 
       },
