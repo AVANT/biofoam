@@ -24,16 +24,6 @@ body.posts.list #splash-region{
 			padding-bottom: 20px !important;
 		}
 	}
-	&:hover {
-		.splash .content-wrapper .title {
-			@media (min-width: $screen-sm-min){
-				color: $black;
-			}
-			@media (max-width: $screen-sm-min){
-				-webkit-text-fill-color: $mid-grey;
-			}
-		}
-	}
 	.splash {
 
 		.post-image-wrapper {
@@ -75,7 +65,7 @@ body.posts.list #splash-region{
 					font-size: 30px;
 				}
 				@media (min-width: $screen-sm-min){
-					color: $black;
+					color: white;
 					margin-bottom: 10px;
 				}
 			}
@@ -119,12 +109,14 @@ body.posts.list #splash-region{
 				}
 			}
 			.tags {
+				margin-top: 20px;
 				padding-top: 0px;
 				color: white;
 				li {
 					border: solid 1px white;
 				}
 				@media (max-width: $screen-sm-min){
+					margin-top: 0px;
 					font-family: $jose;
 				    font-weight: bold;
 				    color: $vvv-blue;
