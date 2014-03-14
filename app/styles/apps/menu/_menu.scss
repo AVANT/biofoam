@@ -29,9 +29,9 @@ nav.nav .nav-viewport{
     }
 
     .AV {
-      vertical-align:-14%;
+      vertical-align:-15%;
       display: inline;
-      font-size: 2.5em;
+      font-size: 2.6em;
       color: $black;
       letter-spacing: .5em;
       padding-right: 7px;
@@ -40,25 +40,25 @@ nav.nav .nav-viewport{
       }
     }
     .NT {
-      vertical-align:-14%;
+      vertical-align:-15%;
       display: inline;
-      font-size: 2.5em;
+      font-size: 2.6em;
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      margin-left: 1px;
+      margin-left: 3px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
     .logo-circle {
-      width: 34px;
-      height: 34px;
+      width: 31px;
+      height: 31px;
       margin-top:-6px;
       display: inline;
       text-align: center;
       position: relative;
-      margin-left: -19px;
+      margin-left: -17px;
       font-size: 4.9em;
       text-align: left;
       @media (max-width: $screen-sm-min){
