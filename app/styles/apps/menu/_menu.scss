@@ -13,8 +13,8 @@ nav.nav .nav-viewport{
   .nav-logo {
     display: block;
     margin: 0px auto;
-    margin-top: 15px;
-    padding-left: 11px;
+    margin-top: -23px;
+    //padding-left: 11px;
     text-align:center;
     float: center;
     &:hover {
@@ -24,31 +24,40 @@ nav.nav .nav-viewport{
     @media (max-width: $screen-sm-min) {
     width: 180px;
     position: absolute;
-    left: 18px;
+    //left: 18px;
     text-align: left;
     }
 
-    .AV {
-      vertical-align:-15%;
+    #AV {
+      vertical-align:13%;
       display: inline;
-      font-size: 2.6em;
+      font-size: 2.7em;
       color: $black;
       letter-spacing: .5em;
-      padding-right: 7px;
+      padding-left: 12px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
-    .NT {
-      vertical-align:-15%;
+    #NT {
+      vertical-align:13%;
       display: inline;
-      font-size: 2.6em;
+      font-size: 2.7em;
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      margin-left: 3px;
+      //margin-left: 0px;
       @media (max-width: $screen-sm-min){
         display: none;
+      }
+    }
+    #A-circle {
+      color: $black;
+      font-family: VVVNT;
+      font-size: 6.2em;
+      margin-left:-12px;
+      @media (max-width: $screen-sm-min){
+        margin-left: 14px;
       }
     }
     .logo-circle {
