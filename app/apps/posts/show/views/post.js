@@ -9,6 +9,9 @@ return Moonrakr.module('Posts.Show', function(Show){
   Show.Post = Marionette.ItemView.extend({
     tagName: 'article',
     className: 'post',
+    events: {
+      'click .fbook-share': 'facebookClicked'
+    },
     // hack to get different template rendering for static pages
     getTemplate: function(){
       if (this.model.get('id') == 'about' || this.model.get('id') == 'privacy' || this.model.get('id') == 'sponsorship'){
@@ -50,6 +53,26 @@ return Moonrakr.module('Posts.Show', function(Show){
         _this.$el.find('[id^=carousel-selector-'+id+']').addClass('selected');
       });
     },
+    facebookClicked: function () {
+      var _this = this;
+      var params = {
+        method: 'feed',
+       name: _this.model.get('title'),
+       caption: _this.model.get('excerpt'),
+       link: document.URL,
+       picture: _this.model.get('headerImageUrl')
+      };
+
+      function fbCallback (response) {
+        if (response && response.post_id) {
+          console('Post was published.');
+        } else {
+          console('Post was not published.');
+        }
+      }
+
+      FB.ui( params, fbCallback );
+    },
     templateHelpers: {
       getHeaderImageUrl: function(){
         // return this.headerImage.filelink;
@@ -57,6 +80,24 @@ return Moonrakr.module('Posts.Show', function(Show){
       },
 
       facebookURL: function  () {
+        var _this = this;
+
+        FB.ui(
+          {
+           method: 'feed',
+           name: _this.model.get('title'),
+           caption: _this.model.get('excerpt'),
+           link: document.URL,
+           picture: _this.model.get('headerImageUrl')
+          },
+          function(response) {
+            if (response && response.post_id) {
+              console('Post was published.');
+            } else {
+              console('Post was not published.');
+            }
+          }
+        );
 
         // var baseUrl = 'https://www.facebook.com/dialog/feed?';
         // // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?';
@@ -74,15 +115,15 @@ return Moonrakr.module('Posts.Show', function(Show){
         // console.log('facebook', toReturn);
 
 
-        var baseUrl = 'https://www.facebook.com/sharer/sharer.php?u=';
-        var link = encodeURIComponent(document.URL);
-        console.log('link', link);
+        // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?u=';
+        // var link = encodeURIComponent(document.URL);
+        // console.log('link', link);
 
-        var toReturn = baseUrl + link;
+        // var toReturn = baseUrl + link;
 
-        console.log('toReturn', toReturn);
+        // console.log('toReturn', toReturn);
 
-        return toReturn;
+        // return toReturn;
 
       },
 

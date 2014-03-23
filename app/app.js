@@ -37,7 +37,7 @@ define(function(require){
     // async load facebook sdk
     window.fbAsyncInit = function() {
       FB.init({
-        appId      : '{your-app-id}',
+        appId      : '624628847586856',
         status     : true,
         xfbml      : true
       });
