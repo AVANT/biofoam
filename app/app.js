@@ -25,21 +25,6 @@ define(function(require){
     return Backbone.history.fragment;
   };
 
-  // Moonrakr.getCurrentTrigger = function(){
-  //   var routeStr = Backbone.history.fragment;
-  // };
-
-  // HACKED A FIX ON FOR LOCALSTORAGE DEVING (?)
-  // extend backbone sync
-  // var backboneSync = Backbone.sync;
-  // Backbone.sync = function (method, model, options){
-  //   options = _.extend(options, {
-  //     url: Moonrakr.Config.api + _.isFunction(model.url) ? function(){ console.log( model.url() );} : model.url // HACKED
-  //     // url: config.api.url + _.isFunction(model.url) ? model.url() : model.url
-  //   });
-  //   backboneSync(method, model, options);
-  // };
-
   Moonrakr.on('initialize:after', function(){
     console.log('Moonrakr started');
     if(Backbone.history){
@@ -49,6 +34,21 @@ define(function(require){
         Moonrakr.trigger('posts:list');
       }
     }
+    // async load facebook sdk
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{your-app-id}',
+        status     : true,
+        xfbml      : true
+      });
+    };
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
   });
 
 
