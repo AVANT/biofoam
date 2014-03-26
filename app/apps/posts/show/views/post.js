@@ -58,16 +58,17 @@ return Moonrakr.module('Posts.Show', function(Show){
       var params = {
         method: 'feed',
        name: _this.model.get('title'),
-       caption: _this.model.get('excerpt'),
+       caption: 'www.vvvnt.com',
+       description: _this.model.get('excerpt'),
        link: document.URL,
        picture: _this.model.get('headerImageUrl')
       };
 
       function fbCallback (response) {
         if (response && response.post_id) {
-          console('Post was published.');
+          console.log('Post was published.');
         } else {
-          console('Post was not published.');
+          console.log('Post was not published.');
         }
       }
 
@@ -82,19 +83,24 @@ return Moonrakr.module('Posts.Show', function(Show){
       facebookURL: function  () {
         var _this = this;
 
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+        console.log('whats up');
+
+        console.log('_this.model.get("excerpt")', _this.model.get('excerpt'));
+
         FB.ui(
           {
            method: 'feed',
            name: _this.model.get('title'),
            caption: _this.model.get('excerpt'),
            link: document.URL,
-           picture: _this.model.get('headerImageUrl')
+           // picture: _this.model.get('headerImageUrl')
           },
           function(response) {
             if (response && response.post_id) {
-              console('Post was published.');
+              console.log('Post was published.');
             } else {
-              console('Post was not published.');
+              console.log('Post was not published.');
             }
           }
         );
