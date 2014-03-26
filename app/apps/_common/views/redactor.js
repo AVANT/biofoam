@@ -61,6 +61,9 @@ return Moonrakr.module('Common.Views', function(Views){
       this.$('.redactor').redactor({
         imageUpload: fileUploadUrl,
         fileUpload: fileUploadUrl,
+        convertDivs: false,
+        maxHeight: 600,
+        paragraphy: false,
         changeCallback: function(html){
           that.$('.redactor').html(html);
           that.$('.redactor').trigger('change');
