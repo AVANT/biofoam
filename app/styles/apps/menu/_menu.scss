@@ -6,7 +6,6 @@ nav.nav .nav-viewport{
   height: $collapsed-nav;
 
   background: $grey;
-  // color: $grey;
 
   border-bottom: 1px solid $black;
   a {text-decoration: none;}
@@ -14,7 +13,6 @@ nav.nav .nav-viewport{
     display: block;
     margin: 0px auto;
     margin-top: -23px;
-    //padding-left: 11px;
     text-align:center;
     float: center;
     &:hover {
@@ -24,7 +22,6 @@ nav.nav .nav-viewport{
     @media (max-width: $screen-sm-min) {
     width: 180px;
     position: absolute;
-    //left: 18px;
     text-align: left;
     }
 
@@ -46,7 +43,6 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      //margin-left: 0px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
@@ -58,20 +54,6 @@ nav.nav .nav-viewport{
       margin-left:-12px;
       @media (max-width: $screen-sm-min){
         margin-left: 14px;
-      }
-    }
-    .logo-circle {
-      width: 31px;
-      height: 31px;
-      margin-top:-6px;
-      display: inline;
-      text-align: center;
-      position: relative;
-      margin-left: -17px;
-      font-size: 4.9em;
-      text-align: left;
-      @media (max-width: $screen-sm-min){
-      margin-top:0px;
       }
     }
   }
@@ -136,7 +118,6 @@ nav.nav .nav-viewport{
     padding-top: 2px;
     display: inline;
     font-family: $jose;
-    // text-transform: uppercase;
     text-decoration: none;
     &:hover{
       color: $vvv-blue;

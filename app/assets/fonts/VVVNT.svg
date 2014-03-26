@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+<metadata>
+Created by FontForge 20110222 at Tue Mar 25 18:26:55 2014
+ By Orthosie Webhosting
+copyright missing
+</metadata>
+<defs>
+<font id="VVVNT-Regular" horiz-adv-x="600" >
+  <font-face 
+    font-family="VVVNT"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 5 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    cap-height="491"
+    bbox="0 0 542 700"
+    underline-thickness="50"
+    underline-position="-50"
+    unicode-range="U+0020-007A"
+  />
+    <missing-glyph />
+    <glyph glyph-name=".notdef" horiz-adv-x="500" 
+d="M0 0v700h500v-700h-500zM250 395l170 255h-340zM280 350l170 -255v510zM80 50h340l-170 255zM50 605v-510l170 255z" />
+    <glyph glyph-name="A" unicode="A" 
+d="M542 250c0 -134 -108 -242 -242 -242s-242 108 -242 242s108 241 242 241s242 -107 242 -241zM526 250c0 124 -102 225 -226 225s-226 -101 -226 -225s102 -226 226 -226s226 102 226 226zM213 383l47 -113h80l46 113h52l-138 -327l-138 327h51zM300 98l114 269h-18
+l-46 -113h-100l-47 113h-17zM343 239l-43 -101l-44 101h87zM300 178l19 45h-39z" />
+    <glyph glyph-name="B" unicode="B" 
+ />
+    <glyph glyph-name="C" unicode="C" 
+ />
+    <glyph glyph-name="D" unicode="D" 
+ />
+    <glyph glyph-name="E" unicode="E" 
+ />
+    <glyph glyph-name="F" unicode="F" 
+ />
+    <glyph glyph-name="G" unicode="G" 
+ />
+    <glyph glyph-name="H" unicode="H" 
+ />
+    <glyph glyph-name="I" unicode="I" 
+ />
+    <glyph glyph-name="J" unicode="J" 
+ />
+    <glyph glyph-name="K" unicode="K" 
+ />
+    <glyph glyph-name="L" unicode="L" 
+ />
+    <glyph glyph-name="M" unicode="M" 
+ />
+    <glyph glyph-name="N" unicode="N" 
+ />
+    <glyph glyph-name="O" unicode="O" 
+ />
+    <glyph glyph-name="P" unicode="P" 
+ />
+    <glyph glyph-name="Q" unicode="Q" 
+ />
+    <glyph glyph-name="R" unicode="R" 
+ />
+    <glyph glyph-name="S" unicode="S" 
+ />
+    <glyph glyph-name="T" unicode="T" 
+ />
+    <glyph glyph-name="U" unicode="U" 
+ />
+    <glyph glyph-name="V" unicode="V" 
+ />
+    <glyph glyph-name="W" unicode="W" 
+ />
+    <glyph glyph-name="X" unicode="X" 
+ />
+    <glyph glyph-name="Y" unicode="Y" 
+ />
+    <glyph glyph-name="Z" unicode="Z" 
+ />
+    <glyph glyph-name="a" unicode="a" 
+d="M535 251c0 129 -104 234 -234 234c-129 0 -233 -105 -233 -234s104 -234 233 -234c130 0 234 105 234 234zM209 376l48 -113h89l48 113h33l-126 -297l-125 297h33zM301 160l31 71h-61z" />
+    <glyph glyph-name="b" unicode="b" 
+ />
+    <glyph glyph-name="c" unicode="c" 
+ />
+    <glyph glyph-name="d" unicode="d" 
+ />
+    <glyph glyph-name="e" unicode="e" 
+ />
+    <glyph glyph-name="f" unicode="f" 
+ />
+    <glyph glyph-name="g" unicode="g" 
+ />
+    <glyph glyph-name="h" unicode="h" 
+ />
+    <glyph glyph-name="i" unicode="i" 
+ />
+    <glyph glyph-name="j" unicode="j" 
+ />
+    <glyph glyph-name="k" unicode="k" 
+ />
+    <glyph glyph-name="l" unicode="l" 
+ />
+    <glyph glyph-name="m" unicode="m" 
+ />
+    <glyph glyph-name="n" unicode="n" 
+ />
+    <glyph glyph-name="o" unicode="o" 
+ />
+    <glyph glyph-name="p" unicode="p" 
+ />
+    <glyph glyph-name="q" unicode="q" 
+ />
+    <glyph glyph-name="r" unicode="r" 
+ />
+    <glyph glyph-name="s" unicode="s" 
+ />
+    <glyph glyph-name="t" unicode="t" 
+ />
+    <glyph glyph-name="u" unicode="u" 
+ />
+    <glyph glyph-name="v" unicode="v" 
+ />
+    <glyph glyph-name="w" unicode="w" 
+ />
+    <glyph glyph-name="x" unicode="x" 
+ />
+    <glyph glyph-name="y" unicode="y" 
+ />
+    <glyph glyph-name="z" unicode="z" 
+ />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="newGlyph" 
+ />
+  </font>
+</defs></svg>
