@@ -6,15 +6,13 @@ nav.nav .nav-viewport{
   height: $collapsed-nav;
 
   background: $grey;
-  // color: $grey;
 
   border-bottom: 1px solid $black;
   a {text-decoration: none;}
   .nav-logo {
     display: block;
     margin: 0px auto;
-    margin-top: 15px;
-    padding-left: 11px;
+    margin-top: -23px;
     text-align:center;
     float: center;
     &:hover {
@@ -24,45 +22,38 @@ nav.nav .nav-viewport{
     @media (max-width: $screen-sm-min) {
     width: 180px;
     position: absolute;
-    left: 18px;
     text-align: left;
     }
 
-    .AV {
-      vertical-align:-15%;
+    #AV {
+      vertical-align:13%;
       display: inline;
-      font-size: 2.6em;
+      font-size: 2.7em;
       color: $black;
       letter-spacing: .5em;
-      padding-right: 7px;
+      padding-left: 12px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
-    .NT {
-      vertical-align:-15%;
+    #NT {
+      vertical-align:13%;
       display: inline;
-      font-size: 2.6em;
+      font-size: 2.7em;
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      margin-left: 3px;
       @media (max-width: $screen-sm-min){
         display: none;
       }
     }
-    .logo-circle {
-      width: 31px;
-      height: 31px;
-      margin-top:-6px;
-      display: inline;
-      text-align: center;
-      position: relative;
-      margin-left: -17px;
-      font-size: 4.9em;
-      text-align: left;
+    #A-circle {
+      color: $black;
+      font-family: VVVNT;
+      font-size: 6.2em;
+      margin-left:-12px;
       @media (max-width: $screen-sm-min){
-      margin-top:0px;
+        margin-left: 14px;
       }
     }
   }
@@ -127,7 +118,6 @@ nav.nav .nav-viewport{
     padding-top: 2px;
     display: inline;
     font-family: $jose;
-    // text-transform: uppercase;
     text-decoration: none;
     &:hover{
       color: $vvv-blue;
