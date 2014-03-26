@@ -60,8 +60,8 @@ return Moonrakr.module('Posts.Show', function(Show){
        name: _this.model.get('title'),
        caption: 'www.vvvnt.com',
        description: _this.model.get('excerpt'),
-       link: document.URL,
-       picture: _this.model.get('headerImageUrl')
+       link: document.URL
+       // picture: _this.model.get('headerImageUrl')
       };
 
       function fbCallback (response) {
