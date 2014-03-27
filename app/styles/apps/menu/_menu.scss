@@ -10,6 +10,11 @@ nav.nav .nav-viewport{
   border-bottom: 1px solid $black;
   a {text-decoration: none;}
   .nav-logo {
+    -webkit-animation: fadein 0.75s; /* Safari and Chrome */
+    -moz-animation: fadein 0.75s; /* Firefox */
+    -ms-animation: fadein 0.75s; /* Internet Explorer */
+    -o-animation: fadein 0.75s; /* Opera */
+    animation: fadein 0.75s;
     display: block;
     margin: 0px auto;
     margin-top: -23px;
@@ -57,6 +62,7 @@ nav.nav .nav-viewport{
       }
     }
   }
+
 
   .social-links {
 
