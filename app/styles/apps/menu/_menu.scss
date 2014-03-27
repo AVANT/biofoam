@@ -66,6 +66,7 @@ nav.nav .nav-viewport{
     #A-circle {
       @media (min-width: $screen-sm-min){
         left:50%;
+        margin-left: -18px;
       }
 
       top: 10px;
