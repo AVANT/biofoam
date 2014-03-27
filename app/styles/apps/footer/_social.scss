@@ -19,14 +19,14 @@
   .social-list {
     text-align: center;
     margin: auto;
-    width: 180px;
+    width: 365px;
     position: relative;
     height: 55px;
     clear: both;
     // taking care of some weird width issues from the social buttons
     overflow: hidden;
     @media (max-width: $screen-md-min) {
-      margin-top: -15px;
+      margin-top: 5px;
       margin-bottom: 15px;
     }
 
@@ -34,15 +34,21 @@
       text-align: center;
       //width: 60px;
       display: block;
+      @media (max-width: $screen-md-min) {
+        display: inline;
+        line-height: 1em;
 
+      }
     }
     .fb-follow{
       text-align: left;
       display: block;
       @media (max-width: $screen-md-min) {
         text-align: center;
-        top: 10px;
-        //padding-left: 15px;
+        display: inline;
+        top: -5px;
+        margin-left: 30px;
+        line-height: 1em;
       }
     }
 
@@ -59,18 +65,9 @@
       left: 0px;
       top: 35px;
     }
-    .facebook{
-      padding-left: 0px;
-      display: block;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-    }
 
   }
-
-  }
-
+}
 }
 
 body.loading .footer .social-list .fb-follow span iframe {
