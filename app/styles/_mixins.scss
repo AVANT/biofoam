@@ -40,18 +40,18 @@
 }
 
 @keyframes fadein {
-    from { opacity: 0; color: $grey; }
-    to   { opacity: 1; color: $black; }
+    from { opacity: 0;}
+    to   { opacity: 1;}
 }
 
 /* Firefox */
 @-moz-keyframes fadein {
-    from { opacity: 0; color: $grey; }
-    to   { opacity: 1; color: $black; }
+    from { opacity: 0;}
+    to   { opacity: 1;}
 }
 
 /* Safari and Chrome */
 @-webkit-keyframes fadein {
-    from { opacity: 0; color: $grey; }
-    to   { opacity: 1; color: $black; }
+    from { opacity: 0;}
+    to   { opacity: 1;}
 }

@@ -9,11 +9,6 @@ nav.nav .nav-viewport{
   a {text-decoration: none;}
 
   .nav-logo {
-    -webkit-animation: fadein 0.75s; /* Safari and Chrome */
-    -moz-animation: fadein 0.75s; /* Firefox */
-    -ms-animation: fadein 0.75s; /* Internet Explorer */
-    -o-animation: fadein 0.75s; /* Opera */
-    animation: fadein 0.75s;
     display: block;
     margin: 0px auto;
     margin-top: -23px;
@@ -36,6 +31,13 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 12px;
+
+      -webkit-animation: fadein 3s; /* Safari and Chrome */
+      -moz-animation: fadein 3s; /* Firefox */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+      -o-animation: fadein 3s; /* Opera */
+      animation: fadein 3s;
+
       @media (max-width: $screen-sm-min){
         display: none;
       }
@@ -48,6 +50,13 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
+
+      -webkit-animation: fadein 3s; /* Safari and Chrome */
+      -moz-animation: fadein 3s; /* Firefox */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+      -o-animation: fadein 3s; /* Opera */
+      animation: fadein 3s;
+
       @media (max-width: $screen-sm-min){
         display: none;
       }
@@ -58,6 +67,13 @@ nav.nav .nav-viewport{
       font-family: VVVNT;
       font-size: 6.2em;
       margin-left:-12px;
+
+      -webkit-animation: fadein 1.75s; /* Safari and Chrome */
+      -moz-animation: fadein 1.75s; /* Firefox */
+      -ms-animation: fadein 1.75s; /* Internet Explorer */
+      -o-animation: fadein 1.75s; /* Opera */
+      animation: fadein 1.75s;
+
       @media (max-width: $screen-sm-min){
         margin-left: 14px;
       }
