@@ -76,6 +76,7 @@ nav.nav .nav-viewport{
       line-height: 20px;
       margin-left:18px;
 
+      @include transition( all .25s ease-in-out );
       -webkit-animation: fadein 1.75s; /* Safari and Chrome */
       -moz-animation: fadein 1.75s; /* Firefox */
       -ms-animation: fadein 1.75s; /* Internet Explorer */
