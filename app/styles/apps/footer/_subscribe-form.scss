@@ -1,5 +1,5 @@
 .footer .subscribe-wrapper{
-  padding-top: 10px;
+  padding-top: 23px;
   max-width: 350px;
   font-family: $jose;
   font-size: 1.8em;
@@ -7,6 +7,10 @@
   color: $black;
   letter-spacing: 0.05em;
   text-align: center;
+  margin: auto;
+  @media (max-width: $screen-sm-min) {
+    padding-top: 10px;
+  }
   h3 {
     font-family: $jose;
     font-size: 1.1em;
@@ -71,7 +75,4 @@
       }
     }
   }
-  text-align: center;
-  margin: auto;
-  // cats go three up
 }

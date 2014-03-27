@@ -6,22 +6,10 @@ body.loading .footer {
 .footer {
   visibility: visible;
   border-top: 1px solid $black;
+  height: 165px;
   @media (max-width: $screen-sm-min) {
   	margin-top: -20px;
+  	height: 250px;
   }
   position: relative; // for the kiddies
-}
-
-.license {
-	margin: auto;
-	text-align: center;
-	display: block;
-	margin-bottom: 50px;
-
-	@media (min-width: $screen-md-min) {
-	    position: absolute;
-	    text-align: left;
-	    top: 110px;
-	    left: 18px;
-  }
 }

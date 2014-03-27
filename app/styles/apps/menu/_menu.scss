@@ -1,14 +1,13 @@
 nav.nav .nav-viewport{
+
   position: fixed;
   z-index: 9;
-
   width: calc(100% - 40px);
   height: $collapsed-nav;
-
   background: $grey;
-
   border-bottom: 1px solid $black;
   a {text-decoration: none;}
+
   .nav-logo {
     -webkit-animation: fadein 0.75s; /* Safari and Chrome */
     -moz-animation: fadein 0.75s; /* Firefox */
@@ -25,9 +24,9 @@ nav.nav .nav-viewport{
     }
 
     @media (max-width: $screen-sm-min) {
-    width: 180px;
-    position: absolute;
-    text-align: left;
+      width: 180px;
+      position: absolute;
+      text-align: left;
     }
 
     #AV {
@@ -41,6 +40,7 @@ nav.nav .nav-viewport{
         display: none;
       }
     }
+
     #NT {
       vertical-align:13%;
       display: inline;
@@ -52,6 +52,7 @@ nav.nav .nav-viewport{
         display: none;
       }
     }
+
     #A-circle {
       color: $black;
       font-family: VVVNT;
@@ -61,61 +62,7 @@ nav.nav .nav-viewport{
         margin-left: 14px;
       }
     }
-  }
 
-
-  .social-links {
-
-    float: right;
-    padding-right: 10px;
-    margin-right: 20px;
-    .fa-stack {
-      &:hover{
-      .fa-stop {
-        color: #3b5998;
-        }
-      }
-    }
-
-    .fa-twitter {
-    position: absolute;
-    top: 24px;
-    font-size: 17px;
-    color: $black;
-    @include transition( color .25s ease-in-out );
-    margin-left: -52px;
-    &:hover{
-      color: #55acee;
-    }
-    }
-    .fa-stack {
-    position: absolute;
-    margin-left: -30px;
-    top: 24px;
-    }
-    .fa-stop {
-    font-size: 15px;
-    color: $black;
-    padding-right: 4px;
-    @include transition( color .25s ease-in-out );
-    }
-    .fa-facebook {
-    font-size: 12px;
-    margin-left:-1px;
-    margin-top: -3px;
-    color: $grey;
-    }
-    .fa-rss {
-    margin-left: 0px;
-    position: absolute;
-    top: 24px;
-    font-size: 15px;
-    color: $black;
-    @include transition( color .25s ease-in-out );
-    &:hover{
-      color: #F0B14D;
-    }
-    }
   }
 
   .title{
@@ -134,16 +81,8 @@ nav.nav .nav-viewport{
   .menu {
     float: right;
     padding-right: 20px;
-
-    a {
-      color: $black;
-      &:hover{}
-    }
+    a {color: $black;}
   }
-
-  //@media (min-width: $screen-sm-min) {
-  //  width: 100%;
-  //}
 
   @media (min-width: $screen-lg-min) {
     width: 80%;

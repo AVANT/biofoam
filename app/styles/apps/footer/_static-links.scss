@@ -1,32 +1,25 @@
 .footer .static-links-wrapper {
-  line-height: 3em;
-  text-align: center;
-  clear: both;
-  padding-bottom: 2.5em;
+  line-height: 3.3em;
+  width: 150px;
+  position: absolute;
+  text-align: right;
+  bottom: 23px;
+  right: 18px;
 
   a {
     display: inline-block;
     width: 90px; // hard coded to the width of sponsorship
-
     font-family: $jose;
     font-size: 1.8em;
     font-weight: 600;
     color: $black;
     letter-spacing: 0.05em;
-
     text-decoration: none;
 
     &:hover{
       color: $vvv-blue;
       @include transition( color .25s ease-in-out );
     }
-  }
-
-  @media (min-width: $screen-md-min) {
-    width: 10%;
-    position: absolute;
-    text-align: right;
-    top: 35px;
-    right: 18px;
+    
   }
 }
