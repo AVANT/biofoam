@@ -19,7 +19,6 @@ return Moonrakr.module('Menu', function(Menu){
   });
 
 
-
   Moonrakr.commands.setHandler('set:active:header', function(name){
     Moonrakr.Menu.Show.Controller.setActiveHeader(name);
   });

@@ -39,19 +39,6 @@
   }
 }
 
-@keyframes fadein {
-    from { opacity: 0;}
-    to   { opacity: 1;}
-}
-
-/* Firefox */
-@-moz-keyframes fadein {
-    from { opacity: 0;}
-    to   { opacity: 1;}
-}
-
-/* Safari and Chrome */
-@-webkit-keyframes fadein {
-    from { opacity: 0;}
-    to   { opacity: 1;}
-}
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
