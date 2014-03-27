@@ -94,10 +94,13 @@ body.posts.list #splash-region{
 			}
 			.excerpt {
 				font-size: 1.9em;
+				@include transition( font-size .25s ease-in-out );
+  				@media (max-width: $screen-sm-min) {
+      				font-size: 1.7em;
+  				}
 				display: none;
 				@media (max-width: $screen-sm-min){
 					display: block;
-					font-size: 2em;
     				margin-bottom: 13px;
     				margin-top: 8px;
 				}

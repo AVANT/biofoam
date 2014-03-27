@@ -85,6 +85,10 @@ body.posts.list .post {
   }
   .excerpt {
     font-size: 1.9em;
+    @include transition( font-size .25s ease-in-out );
+    @media (max-width: $screen-sm-min) {
+      font-size: 1.7em;
+    }
     margin-bottom: 13px;
     margin-top: 8px;
   }

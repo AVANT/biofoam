@@ -126,6 +126,10 @@ body.posts.show .body {
   //@include padding-breakdown;
   font-family: $quat;
   font-size: 1.9em;
+  @include transition( font-size .25s ease-in-out );
+  @media (max-width: $screen-sm-min) {
+      font-size: 1.7em;
+  }
   font-weight: lighter;
   letter-spacing: 0.01em;
   line-height: 2em;
