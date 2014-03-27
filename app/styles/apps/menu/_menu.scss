@@ -11,9 +11,6 @@ nav.nav .nav-viewport{
   .nav-logo {
     display: block;
     margin: 0px auto;
-    margin-top: 15px;
-    text-align:center;
-    float: center;
     &:hover {
       cursor: pointer;
     }
@@ -25,9 +22,11 @@ nav.nav .nav-viewport{
     }
 
     #AV {
-      vertical-align:13%;
-      display: inline;
+      left:50%;
+      margin-left:-85px;
+      position: absolute;
       font-size: 2.7em;
+      top: 15px;
       color: $black;
       letter-spacing: .5em;
       padding-left: 12px;
@@ -44,9 +43,11 @@ nav.nav .nav-viewport{
     }
 
     #NT {
-      vertical-align:13%;
-      display: inline;
+      left:50%;
+      margin-left:30px;
+      position: absolute;
       font-size: 2.7em;
+      top: 15px;
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
@@ -63,11 +64,14 @@ nav.nav .nav-viewport{
     }
 
     #A-circle {
+      left:50%;
+      top: 15px;
+      position: absolute;
       color: $black;
       font-family: VVVNT;
       font-size: 6.2em;
       line-height: 20px;
-      margin-left:-12px;
+      margin-left:-20px;
 
       -webkit-animation: fadein 1.75s; /* Safari and Chrome */
       -moz-animation: fadein 1.75s; /* Firefox */
