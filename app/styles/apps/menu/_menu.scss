@@ -30,7 +30,7 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 12px;
-      @include transition( all .25s ease-in-out );
+
       -webkit-animation: fadein 3s; /* Safari and Chrome */
       -moz-animation: fadein 3s; /* Firefox */
       -ms-animation: fadein 3s; /* Internet Explorer */
@@ -51,7 +51,7 @@ nav.nav .nav-viewport{
       color: $black;
       letter-spacing: .5em;
       padding-left: 0px;
-      @include transition( all .25s ease-in-out );
+
       -webkit-animation: fadein 3s; /* Safari and Chrome */
       -moz-animation: fadein 3s; /* Firefox */
       -ms-animation: fadein 3s; /* Internet Explorer */
@@ -77,16 +77,11 @@ nav.nav .nav-viewport{
       line-height: 20px;
       margin-left:18px;
 
-      @include transition( all .25s ease-in-out );
       -webkit-animation: fadein 1.75s; /* Safari and Chrome */
       -moz-animation: fadein 1.75s; /* Firefox */
       -ms-animation: fadein 1.75s; /* Internet Explorer */
       -o-animation: fadein 1.75s; /* Opera */
       animation: fadein 1.75s;
-
-      @media (max-width: $screen-sm-min){
-        margin-left: 14px;
-      }
     }
 
   }
