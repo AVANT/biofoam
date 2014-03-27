@@ -19,7 +19,6 @@
   .social-list {
     text-align: center;
     margin: auto;
-    width: 365px;
     position: relative;
     height: 55px;
     clear: both;
@@ -31,6 +30,7 @@
     }
 
     .twitter {
+      width: 80px;
       text-align: center;
       //width: 60px;
       display: block;
@@ -41,6 +41,7 @@
       }
     }
     .fb-follow{
+      width: 80px;
       text-align: left;
       display: block;
       @media (max-width: $screen-md-min) {
