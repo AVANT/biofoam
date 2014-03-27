@@ -35,7 +35,7 @@ body.posts.list .post {
     font-weight: bold;
     color: $mid-grey;
     letter-spacing: 0.05em;
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
   .tags {
     font-family: $jose;
@@ -54,6 +54,7 @@ body.posts.list .post {
       padding-bottom: 2px;
       margin-right: 3px;
       margin-left: 0px;
+      margin-bottom:4px;
       line-height: 2.2em;
       //@include transition( border .25s ease-in-out );
       //@include transition( color .25s ease-in-out );

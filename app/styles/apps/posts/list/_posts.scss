@@ -74,7 +74,7 @@ body.posts.list #splash-region{
 				color: white;
 				padding-top: 0px;
 				top: 150px;
-				font-size: 2em;
+				font-size: 2.2em;
 				padding-right: 0px;
 				@media (max-width: $screen-sm-min){
 					top: auto;
@@ -103,6 +103,7 @@ body.posts.list #splash-region{
 				}
 			}
 			.date {
+				font-size: 1.6em;
 				display: none;
 				@media (max-width: $screen-sm-min){
 					display: inline;
