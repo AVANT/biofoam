@@ -110,6 +110,8 @@ body.posts.list #splash-region{
 				display: none;
 				@media (max-width: $screen-sm-min){
 					display: inline;
+					    width:150px;
+    					white-space: nowrap;
 				}
 			}
 			.tags {
@@ -118,6 +120,7 @@ body.posts.list #splash-region{
 				color: white;
 				li {
 					border: solid 1px white;
+  					white-space: nowrap;
 				}
 				@media (max-width: $screen-sm-min){
 					margin-top: 0px;

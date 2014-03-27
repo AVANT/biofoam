@@ -36,6 +36,8 @@ body.posts.list .post {
     color: $mid-grey;
     letter-spacing: 0.05em;
     font-size: 1.6em;
+    width:150px;
+    white-space: nowrap;
   }
   .tags {
     font-family: $jose;
@@ -46,6 +48,7 @@ body.posts.list .post {
     margin-bottom: 0px;
     padding-left: 0px;
     li {
+      white-space: nowrap;
       display: inline;
       border: solid 1px $vvv-blue;
       padding: 3px;
@@ -134,10 +137,6 @@ body.posts.list .post {
       margin-bottom: 10px;
       @include transition( color .4s ease-in-out );
     }
-    .author{}
-    .date{width:150px;white-space: nowrap;}
-    .tags{}
-    .excerpt{}
     .more-cta{
       text-transform: uppercase;
       font-size: 1.3em;
