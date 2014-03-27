@@ -135,8 +135,7 @@ body.posts.list .post {
       @include transition( color .4s ease-in-out );
     }
     .author{}
-    .datediv{display:inline;}
-    .date{}
+    .date{width:150px;white-space: nowrap;}
     .tags{}
     .excerpt{}
     .more-cta{
