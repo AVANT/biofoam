@@ -13,10 +13,10 @@ $jose: "Josefin Sans", sans-serif;
   font-family: "VVVNT";
   src: url("VVVNT.eot"); /* IE9 Compat Modes */
   src: local("VVVNT"),
-       url("VVVNT.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("VVVNT.eot") format("embedded-opentype"), /* IE6-IE8 */
        url("VVVNT.woff") format("woff"), /* Modern Browsers */
        url("VVVNT.ttf") format("truetype"), /* Safari, Android, iOS */
-       url("VVVNT.svg#svgFontName") format("svg"); /* Legacy iOS */
+       url("VVVNT.svg") format("svg"); /* Legacy iOS */
 }
 
 body {
