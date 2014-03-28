@@ -6,25 +6,15 @@
 //$quat: 'Fanwood Text', serif;
 $quat: 'Crimson', serif;
 $jose: "Josefin Sans", sans-serif;
-// @font-face { font-family: VVVNT; src: url("/fonts/VVVNT.otf"); }
 
-
-// @font-face {
-//   font-family: "VVVNT";
-//   src: url("VVVNT.eot"); /* IE9 Compat Modes */
-//   src: local("VVVNT"),
-//        url("VVVNT.woff") format("woff"), /* Modern Browsers */
-//        url("VVVNT.ttf") format("truetype"), /* Safari, Android, iOS */
-//        url("VVVNT.svg") format("svg"); /* Legacy iOS */
-// }
-
+@font-face { font-family: VVVNT; src: url("/fonts/VVVNT.otf"); }
 @font-face {
-    font-family: 'VVVNT';
-    src: url('VVVNT.eot');
-    src: local('VVVNT'), 
-         local('VVVNT'), 
-         url('VVVNT.ttf') format('truetype'),
-         url('VVVNT.svg#font') format('svg'); 
+  font-family: "VVVNT";
+  src: url("VVVNT.eot"); /* IE9 Compat Modes */
+  src: local("VVVNT"),
+       url("VVVNT.woff") format("woff"), /* Modern Browsers */
+       url("VVVNT.ttf") format("truetype"), /* Safari, Android, iOS */
+       url("VVVNT.svg") format("svg"); /* Legacy iOS */
 }
 
 
