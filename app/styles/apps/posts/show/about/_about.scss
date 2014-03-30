@@ -1,0 +1,40 @@
+body.posts.show .staff-container{
+	@include flexbox();
+	flex-flow: wrap;
+	// flex-justify: space-around;
+	@include clearfix;
+
+	margin-bottom: 30px;
+
+	.staff {
+		// @include flex(0 0 auto);
+		text-align: center;
+
+		width: 100%;
+		margin: 10px 0;
+		padding: 20px;
+
+
+		border: 1px solid grey;
+		background-color: white;
+
+		img {
+			border-radius: 100%;
+
+			width: 100%;
+			max-width: 140px;
+
+			margin: 0 auto 20px auto;
+		}
+
+		.text {}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.staff {
+			width: 48%;
+			float: left;
+			margin: 5px;
+		}
+	}
+}

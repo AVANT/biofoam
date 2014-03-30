@@ -9,6 +9,7 @@
 @import "vendor/normalize";
 @import "vendor/redactor";
 @import "vendor/jquery.jcrop";
+@import "../../bower_components/bourbon/dist/addons/clearfix";
 
 
 // Variables and Config Imports
@@ -52,6 +53,9 @@
 @import "apps/posts/show/body";
 @import "apps/posts/show/header";
 @import "apps/posts/show/gallery";
+
+/////// ABOUT
+@import "apps/posts/show/about/about";
 
 //// Author Imports
 @import "apps/authors/content";
