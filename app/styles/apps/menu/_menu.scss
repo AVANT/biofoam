@@ -19,11 +19,11 @@ nav.nav .nav-viewport{
     -webkit-animation:fadeIn 1000ms cubic-bezier(1.000, 0.035, 0.965, 0.625) 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
     -moz-animation:fadeIn 1000ms cubic-bezier(1.000, 0.035, 0.965, 0.625) 1;
     animation:fadeIn 1000ms cubic-bezier(1.000, 0.035, 0.965, 0.625) 1;
- 
+
     -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
     -moz-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
- 
+
     -webkit-animation-duration:1s;
     -moz-animation-duration:1s;
     animation-duration:1s;
@@ -77,7 +77,7 @@ nav.nav .nav-viewport{
       top: 11px;
       position: absolute;
       color: $black;
-      font-family: VVVNT;
+      font-family: $vvvnt;
       font-size: 6.2em;
       line-height: 20px;
       margin-left:18px;
