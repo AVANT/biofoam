@@ -8,33 +8,50 @@ body.posts.show .staff-container{
 
 	.staff {
 		// @include flex(0 0 auto);
-		text-align: center;
+		text-align: left;
 
 		width: 100%;
 		margin: 10px 0;
 		padding: 20px;
 
 
-		border: 1px solid grey;
+		border: 0px solid grey;
 		background-color: white;
 
 		img {
+			float: left;
 			border-radius: 100%;
-
 			width: 100%;
-			max-width: 140px;
+			max-width: 100px;
+			margin-right: 15px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			display: inline;
+			
+			@media (max-width: $screen-sm-min) {
+				max-width: 88px;
+				margin-top: 5px;
+			}
 
-			margin: 0 auto 20px auto;
 		}
 
-		.text {}
+		.role {
+			display: table-cell;
+			vertical-align: middle;
+			height:100px;
+
+		}
+		.bod {
+			display:inline-block;
+			//margin-top: 15px;
+		}
 	}
 
 	@media (min-width: $screen-sm-min) {
 		.staff {
-			width: 48%;
+			width: 46%;
 			float: left;
-			margin: 5px;
+			margin: 1%;
 		}
 	}
 }
