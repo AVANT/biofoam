@@ -22,14 +22,14 @@ body.posts.show .staff-container{
 			float: left;
 			border-radius: 100%;
 			width: 100%;
-			max-width: 100px;
+			max-width: 97px;
 			margin-right: 15px;
 			margin-bottom: 5px;
 			margin-top: 5px;
 			display: inline;
 			
 			@media (max-width: $screen-sm-min) {
-				max-width: 88px;
+				max-width: 86px;
 				margin-top: 5px;
 			}
 
@@ -39,7 +39,7 @@ body.posts.show .staff-container{
 			display: table-cell;
 			vertical-align: middle;
 			height:100px;
-
+			margin-top: 5px;
 		}
 		.bod {
 			display:inline-block;
