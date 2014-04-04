@@ -27,6 +27,14 @@ body {
 
 .fa-dark { color: $black; }
 
+hr {
+  color: $mid-grey;
+  background-color: $mid-grey;
+  height:1px;
+  border: 0;
+  width: 100%;
+}
+
 pullquote{
   border-top: 8px solid $black;
   border-bottom: 8px solid $black;

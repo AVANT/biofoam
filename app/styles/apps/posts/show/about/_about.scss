@@ -11,11 +11,11 @@ body.posts.show .staff-container{
 
 		width: 100%;
 		margin: 10px 0;
-		padding: 20px;
+		padding: 0px;
 
 
 		border: 0px solid grey;
-		background-color: white;
+		//background-color: white;
 
 		img {
 			float: left;
@@ -40,6 +40,7 @@ body.posts.show .staff-container{
 		.bod {
 			display:inline-block;
 			margin-bottom: 0px;
+			padding-top: 5px;
 		}
 	}
 
@@ -47,7 +48,7 @@ body.posts.show .staff-container{
 		.staff {
 			width: 100%;
 			float: left;
-			margin-bottom: 20px;;
+			//margin-bottom: 20px;;
 		}
 	}
 }
