@@ -37,29 +37,23 @@
 
   <div class="form-group">
     <label for="post-image" class="form-label">
-      Post Main Image:
+      Cover Image:
     </label>
     <div id="image-upload-region">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="post-body" class="form-label">
-      Body:
-    </label>
     <div id="redactor-region"></div>
   </div>
 
-  <div class="form-group">
-    <label for="post-published" class="form-label">
-      Published State:
-    </label>
+  <div class="form-group pubbox">
     <select id="post-published" name="status">
       <option value="published">Published</option>
       <option value="unpublished" selected>Not Published</option>
     </select>
   </div>
 
-  <button class="js-submit">{{ submitText }}</button>
-  <button class="js-delete">Delete</button>
+  <button id="sub" class="js-submit">{{ submitText }}</button>
+  <button id="del" class="js-delete">Delete</button>
 </form>
