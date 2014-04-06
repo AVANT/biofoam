@@ -1,10 +1,11 @@
 body.posts.show .staff-container{
-	@include flexbox();
-	flex-flow: wrap;
+	//@include flexbox();
+	//flex-flow: wrap;
 	// flex-justify: space-around;
-	@include clearfix;
+	//@include clearfix;
+	
 	width: 100%;
-	margin-bottom: 30px;
+	margin-bottom: 460px;
 	.staff {
 		// @include flex(0 0 auto);
 		text-align: left;
@@ -33,7 +34,7 @@ body.posts.show .staff-container{
 		}
 
 		.role {
-			display: table-cell;
+			//display: table-cell;
 			vertical-align: middle;
 			height:100px;
 		}
