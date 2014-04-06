@@ -3,9 +3,12 @@ body.posts.show .staff-container{
 	//flex-flow: wrap;
 	// flex-justify: space-around;
 	//@include clearfix;
-	
+
 	width: 100%;
 	margin-bottom: 460px;
+	@media (max-width: $screen-sm-min) {
+		margin-bottom: 50px;
+	}
 	.staff {
 		// @include flex(0 0 auto);
 		text-align: left;
