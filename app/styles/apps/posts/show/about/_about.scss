@@ -7,7 +7,7 @@ body.posts.show .staff-container{
 	width: 100%;
 	margin-bottom: 460px;
 	@media (max-width: $screen-sm-min) {
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 	}
 	.staff {
 		// @include flex(0 0 auto);
@@ -15,6 +15,7 @@ body.posts.show .staff-container{
 
 		width: 100%;
 		margin: 10px 0;
+		margin-bottom: 20px;
 		padding: 0px;
 
 
