@@ -1,32 +1,8 @@
-/*
-
-<article class="post">
-
-  <div class="post-image-wrapper">
-    <img class="post-img" src="#" alt="">
-  </div>
-
-  <div class="content-wrapper">
-    <h2 class="title"></h2>
-    <p class="authors"></p>
-    <p class="date"></p>
-    <p class="tags"></p>
-    <p class="excerpt"></p>
-    <a class="more-cta" href="#">Read More ›</a>
-  </div>
-
-</article>
-
-*/
-
-// body.posts.list .posts .post {
 body.posts.list .post {
   width: 100%;
   cursor: pointer;
-
   margin-bottom: 20px; // reveal black background
   padding-bottom: 16px;
-
   background: white;
 
   .date {
@@ -47,6 +23,7 @@ body.posts.list .post {
     font-size: 1.4em;
     margin-bottom: 0px;
     padding-left: 0px;
+    list-style-type: none;
     li {
       white-space: nowrap;
       display: inline;
@@ -59,15 +36,8 @@ body.posts.list .post {
       margin-left: 0px;
       margin-bottom:4px;
       line-height: 2.2em;
-      //@include transition( border .25s ease-in-out );
-      //@include transition( color .25s ease-in-out );
-      &:hover {
-        
-        border: solid 1px $vvv-blue;
-        
-      }
+      &:hover {border: solid 1px $vvv-blue;}
     }
-    list-style-type: none;
   }
   .authors {
     display: inline;
@@ -82,18 +52,20 @@ body.posts.list .post {
     margin-top: 2px;
     padding-right: 10px;
   }
+
   .title {
     font-family: $jose;
     width: 100%;
   }
+
+  &:hover .title { color: $mid-grey; }
+
   .excerpt {
     font-size: 1.9em;
-    @include transition( font-size .25s ease-in-out );
-    @media (max-width: $screen-sm-min) {
-      font-size: 1.7em;
-    }
     margin-bottom: 13px;
     margin-top: 8px;
+    @include transition( font-size .25s ease-in-out );
+    @media (max-width: $screen-sm-min) {font-size: 1.7em;}
   }
 
    .post-hi {
@@ -105,27 +77,19 @@ body.posts.list .post {
       -webkit-box-shadow: inset 0 5px 0px 0px $grey;
    }
 
-  &:hover{
-    .post-hi {
+  &:hover .post-hi {
       box-shadow: inset 0 5px 0px 0px $mid-grey;
       -moz-box-shadow: inset 0 5px 0px 0px $mid-grey;
       -webkit-box-shadow: inset 0 5px 0px 0px $mid-grey;
       padding-top: 2px;
       margin-bottom: 0px;
-    }
-    .title {
-      color: $mid-grey;
-    }
   }
-
 
   .post-image-wrapper{
     width: 100%;
     max-height: 200px; // the image cannot be taller than the screen
     overflow: hidden;
-    img{
-      width: 100%;
-    }
+    img{ width: 100%; }
 
   }
 
@@ -137,25 +101,162 @@ body.posts.list .post {
       margin-bottom: 10px;
       @include transition( color .4s ease-in-out );
     }
+
     .more-cta{
       text-transform: uppercase;
       font-size: 1.3em;
-      &:hover{
-        text-decoration: none;
-      }
+      &:hover{text-decoration: none;}
+    }
+  }
+}
+
+  /////////////////////
+ //  SPLASH REGION  //
+/////////////////////
+
+body.posts.list #splash-region{
+
+  .post {
+    padding-bottom: 0px !important;
+    .post-hi {
+      @media (min-width: $screen-sm-min){
+        padding-top: 0px;
+            margin-bottom:0px;
+            @include transition( all .25s ease-in-out );
+            box-shadow: inset 0 0px 0px 0px $grey;
+            -moz-box-shadow: inset 0 0px 0px 0px $grey;
+            -webkit-box-shadow: inset 0 0px 0px 0px $grey;
+          }
+    }
+    @media (max-width: $screen-sm-min){
+      padding-bottom: 20px !important;
     }
   }
 
-  // @media (min-width: $screen-xs-min){}
+  .splash {
+    .post-image-wrapper {
+      max-height: 400px;
+      overflow: hidden;
+      @media (max-width: $screen-sm-min){max-height: 200px;}
+    }
 
-  // @media (min-width: $screen-sm-min){
-  //   width: 50%;
-  //   float: left;
-  // }
-  // @media (min-width: $screen-md-min){
-  //   width: 33.333333%;
-  // }
-  // @media (min-width: $screen-lg-min){
-  //   width: 25%;
-  // }
+    .content-wrapper {
+      position: absolute;
+      top: 100px;
+      text-align: right;
+      width: 80%;
+      left: 9%;
+      @media (max-width: $screen-sm-min){
+        position: relative;
+        top: auto;
+        text-align: left;
+        width: auto;
+        left: auto;
+      }
+      @media (max-width: $screen-md-min){
+        left: 2%;
+        width: 96%;
+      }
+
+      .title {
+        width: 100%;
+        font-size: 5em;
+        font-weight: bold;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px white;
+        @media (max-width: $screen-sm-min){
+          -webkit-text-fill-color: $black;
+          -webkit-text-stroke: 0px;
+          font-weight: 600;
+          font-size: 30px;
+        }
+        @media (min-width: $screen-sm-min){
+          color: white;
+          margin-bottom: 10px;
+        }
+      }
+
+      .authors {
+        list-style-type: none;
+        color: white;
+        padding-top: 0px;
+        top: 150px;
+        font-size: 2.2em;
+        padding-right: 0px;
+        @media (max-width: $screen-sm-min){
+          top: auto;
+          padding-top: inherit;
+            display: inline;
+            li {display: inline; margin-right: 12px;}
+            list-style-type: none;
+            padding-left: 0px;
+            font-family: $jose;
+            font-weight: bold;
+            color: $vvv-blue;
+            letter-spacing: 0.05em;
+            font-size: 2em;
+            margin-top: 2px;
+            padding-right: 10px;
+        }
+      }
+
+      .excerpt {
+        font-size: 1.9em;
+        @include transition( font-size .25s ease-in-out );
+          @media (max-width: $screen-sm-min) {
+              font-size: 1.7em;
+          }
+        display: none;
+        @media (max-width: $screen-sm-min){
+          display: block;
+            margin-bottom: 13px;
+            margin-top: 8px;
+        }
+      }
+
+      .date {
+        font-size: 1.6em;
+        display: none;
+        @media (max-width: $screen-sm-min){
+          display: inline;
+          width:150px;
+            white-space: nowrap;
+        }
+      }
+
+      .tags {
+        margin-top: 20px;
+        padding-top: 0px;
+        color: white;
+        li {
+          border: solid 1px white;
+            white-space: nowrap;
+        }
+        @media (max-width: $screen-sm-min){
+          margin-top: 0px;
+          font-family: $jose;
+            font-weight: bold;
+          color: $vvv-blue;
+            letter-spacing: 0.05em;
+            font-size: 1.4em;
+            margin-bottom: 0px;
+            padding-left: 0px;
+            list-style-type: none;
+            li {
+              display: inline;
+              border: solid 1px $vvv-blue;
+            padding: 3px;
+              padding-right: 5px;
+              padding-left: 5px;
+              padding-bottom: 2px;
+              margin-right: 3px;
+              margin-left: 0px;
+              margin-bottom:4px;
+              line-height: 2.2em;
+              &:hover {border: solid 1px $vvv-blue;}
+            }
+        }
+      }
+    }
+  }
 }

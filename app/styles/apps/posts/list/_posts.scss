@@ -1,185 +1,14 @@
-/*
-
-  div#posts-region
-    div.posts
-
-*/
-
-
-body.posts.list #splash-region{
-
-	.post {
-		padding-bottom: 0px !important;
-		.post-hi {
-			@media (min-width: $screen-sm-min){
-				padding-top: 0px;
-	      		margin-bottom:0px;
-	      		@include transition( all .25s ease-in-out );
-	      		box-shadow: inset 0 0px 0px 0px $grey;
-	      		-moz-box-shadow: inset 0 0px 0px 0px $grey;
-	      		-webkit-box-shadow: inset 0 0px 0px 0px $grey;
-      		}
-		}
-		@media (max-width: $screen-sm-min){
-			padding-bottom: 20px !important;
-		}
-	}
-	.splash {
-
-		.post-image-wrapper {
-			max-height: 400px;
-			overflow: hidden;
-			@media (max-width: $screen-sm-min){
-				max-height: 200px;
-			}
-		}
-
-		.content-wrapper {
-			position: absolute;
-			top: 100px;
-			text-align: right;
-			width: 80%;
-			left: 9%;
-			@media (max-width: $screen-sm-min){
-				position: relative;
-				top: auto;
-				text-align: left;
-				width: auto;
-				left: auto;
-			}
-			@media (max-width: $screen-md-min){
-			left: 2%;
-			width: 96%;
-			}
-
-			.title {
-				width: 100%;
-				font-size: 5em;
-				font-weight: bold;
-				-webkit-text-fill-color: transparent;
-				-webkit-text-stroke: 1px white;
-				@media (max-width: $screen-sm-min){
-					-webkit-text-fill-color: $black;
-					-webkit-text-stroke: 0px;
-					font-weight: 600;
-					font-size: 30px;
-				}
-				@media (min-width: $screen-sm-min){
-					color: white;
-					margin-bottom: 10px;
-				}
-			}
-			.authors {
-				list-style-type: none;
-				color: white;
-				padding-top: 0px;
-				top: 150px;
-				font-size: 2.2em;
-				padding-right: 0px;
-				@media (max-width: $screen-sm-min){
-					top: auto;
-					padding-top: inherit;
-    				display: inline;
-				    li {display: inline; margin-right: 12px;}
-				    list-style-type: none;
-				    padding-left: 0px;
-				    font-family: $jose;
-				    font-weight: bold;
-				    color: $vvv-blue;
-				    letter-spacing: 0.05em;
-				    font-size: 2em;
-				    margin-top: 2px;
-				    padding-right: 10px;
-				}
-			}
-			.excerpt {
-				font-size: 1.9em;
-				@include transition( font-size .25s ease-in-out );
-  				@media (max-width: $screen-sm-min) {
-      				font-size: 1.7em;
-  				}
-				display: none;
-				@media (max-width: $screen-sm-min){
-					display: block;
-    				margin-bottom: 13px;
-    				margin-top: 8px;
-				}
-			}
-			.date {
-				font-size: 1.6em;
-				display: none;
-				@media (max-width: $screen-sm-min){
-					display: inline;
-					    width:150px;
-    					white-space: nowrap;
-				}
-			}
-			.tags {
-				margin-top: 20px;
-				padding-top: 0px;
-				color: white;
-				li {
-					border: solid 1px white;
-  					white-space: nowrap;
-				}
-				@media (max-width: $screen-sm-min){
-					margin-top: 0px;
-					font-family: $jose;
-				    font-weight: bold;
-				    color: $vvv-blue;
-				    letter-spacing: 0.05em;
-				    font-size: 1.4em;
-				    margin-bottom: 0px;
-				    padding-left: 0px;
-				    li {
-				      display: inline;
-				      border: solid 1px $vvv-blue;
-				      padding: 3px;
-				      padding-right: 5px;
-				      padding-left: 5px;
-				      padding-bottom: 2px;
-				      margin-right: 3px;
-				      margin-left: 0px;
-				      line-height: 1.9em;
-				      //@include transition( border .25s ease-in-out );
-				      //@include transition( color .25s ease-in-out );
-				      &:hover {
-				        
-				        border: solid 1px $vvv-blue;
-				        
-				      }
-				    }
-				    list-style-type: none;
-				}
-			}
-
-		}
-
-	}
-}
-
 body.posts.list #posts-region{
-  @media (min-width: $screen-sm-min){
-    //padding-top: 1vw; // TOP
-    padding-top: 0px;
-  }
-
+	@media (min-width: $screen-sm-min){ padding-top: 0px; }
 }
 
 body.posts.list .posts {
-  width: 100%;
- 	margin: 0 auto;
-  overflow: auto;  // @include padding-breakdown;
-
+	width: 100%;
+	margin: 0 auto;
+	overflow: auto;
 }
 
 body.posts.list{
-	// Goodies for salvattore
-	// .js-salvattore[data-columns]::before {
-	// 	content: '1 .column.size-1of1';
-	// }
-
-	/* Also, don't forget to add this: */
 	[data-columns]::before { 
 	    visibility: hidden;
 	    border: 0;
@@ -191,13 +20,10 @@ body.posts.list{
 	    position: absolute;
 	    width: 1px;
 	}
-
-	/* Again, you're free to use and define the classes: */
 	.column { float: left; }
 	.size-1of1 { width: 100%; }
 	.size-1of2 { width: 50%; }
 	.size-1of3 { width: 33.333%; }
-	// .size-1of4 { width: 25%; }
 
 	@media screen and (max-width: $screen-xs-max){
 		.js-salvattore[data-columns]::before {
@@ -205,8 +31,8 @@ body.posts.list{
 		}
 	}
 
-  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
-    .js-salvattore[data-columns]::before {
+	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+		.js-salvattore[data-columns]::before {
 			content: '2 .column.size-1of2';
 		}
 		.column:nth-child(1) {
@@ -215,10 +41,9 @@ body.posts.list{
 		.column:nth-child(2) {
 			padding-left: 10px;
 		}
-  }
-  // @media (min-width: $screen-md-min) and (max-width: $screen-md-max){
-  @media (min-width: $screen-md-min) {
-    .js-salvattore[data-columns]::before {
+  	}
+	@media (min-width: $screen-md-min) {
+    	.js-salvattore[data-columns]::before {
 			content: '3 .column.size-1of3';
 		}
 		.column:nth-child(1) {
@@ -231,26 +56,7 @@ body.posts.list{
 		.column:nth-child(3) {
 			padding-left: 10px;
 		}
-  }
-  // @media (min-width: $screen-lg-min){
-  //   .js-salvattore[data-columns]::before {
-		// 	content: '4 .column.size-1of4';
-		// }
-		// .column:nth-child(1) {
-		// 	padding-right: 10px;
-		// }
-		// .column:nth-child(2) {
-		// 	padding-left: 10px;
-		// 	padding-right: 10px;
-		// }
-		// .column:nth-child(3) {
-		// 	padding-left: 10px;
-		// 	padding-right: 10px;
-		// }
-		// .column:nth-child(4) {
-		// 	padding-left: 10px;
-		// }
-  // }
+  	}
 }
 
 
