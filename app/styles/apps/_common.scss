@@ -62,3 +62,29 @@ input {
     cursor: pointer;
   }
 }
+button {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    border-radius: 0px;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+    margin-right: 25px;
+    text-align: center;
+    height: 1.7em;
+    vertical-align: middle;
+    border: solid 0px $grey;
+    color: white;
+    background-color: $black;
+    font-size: 16px;
+    @include transition( background-color .25s ease-in-out );
+    &:hover {
+      background-color: $vvv-blue;
+    }
+    &:focus {
+      background-color: $black;
+      outline: none;
+    }
+}
