@@ -65,7 +65,7 @@ body.posts.list .post {
     margin-bottom: 13px;
     margin-top: 8px;
     @include transition( font-size .25s ease-in-out );
-    @media (max-width: $screen-sm-max) {font-size: 1.7em;}
+    @media (max-width: $screen-xs-max) {font-size: 1.7em;}
   }
 
    .post-hi {
@@ -119,7 +119,7 @@ body.posts.list #splash-region{
   .post {
     padding-bottom: 0px !important;
     .post-hi {
-      @media (min-width: $screen-sm-min){
+      @media (min-width: $screen-xs-min){
         padding-top: 0px;
             margin-bottom:0px;
             @include transition( all .25s ease-in-out );
@@ -128,7 +128,7 @@ body.posts.list #splash-region{
             -webkit-box-shadow: inset 0 0px 0px 0px $grey;
           }
     }
-    @media (max-width: $screen-sm-max){
+    @media (max-width: $screen-xs-max){
       padding-bottom: 20px !important;
     }
   }
@@ -137,7 +137,7 @@ body.posts.list #splash-region{
     .post-image-wrapper {
       max-height: 400px;
       overflow: hidden;
-      @media (max-width: $screen-sm-max){max-height: 200px;}
+      @media (max-width: $screen-xs-max){max-height: 200px;}
     }
 
     .content-wrapper {
@@ -146,7 +146,7 @@ body.posts.list #splash-region{
       text-align: right;
       width: 80%;
       left: 9%;
-      @media (max-width: $screen-sm-max){
+      @media (max-width: $screen-xs-max){
         position: relative;
         top: auto;
         text-align: left;
@@ -164,13 +164,13 @@ body.posts.list #splash-region{
         font-weight: bold;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 1px white;
-        @media (max-width: $screen-sm-max){
+        @media (max-width: $screen-xs-max){
           -webkit-text-fill-color: $black;
           -webkit-text-stroke: 0px;
           font-weight: 600;
           font-size: 30px;
         }
-        @media (min-width: $screen-sm-min){
+        @media (min-width: $screen-xs-min){
           color: white;
           margin-bottom: 10px;
         }
@@ -183,7 +183,7 @@ body.posts.list #splash-region{
         top: 150px;
         font-size: 2.2em;
         padding-right: 0px;
-        @media (max-width: $screen-sm-max){
+        @media (max-width: $screen-xs-max){
           top: auto;
           padding-top: inherit;
             display: inline;
@@ -203,11 +203,11 @@ body.posts.list #splash-region{
       .excerpt {
         font-size: 1.9em;
         @include transition( font-size .25s ease-in-out );
-          @media (max-width: $screen-sm-max) {
+          @media (max-width: $screen-xs-max) {
               font-size: 1.7em;
           }
         display: none;
-        @media (max-width: $screen-sm-max){
+        @media (max-width: $screen-xs-max){
           display: block;
             margin-bottom: 13px;
             margin-top: 8px;
@@ -217,7 +217,7 @@ body.posts.list #splash-region{
       .date {
         font-size: 1.6em;
         display: none;
-        @media (max-width: $screen-sm-max){
+        @media (max-width: $screen-xs-max){
           display: inline;
           width:150px;
             white-space: nowrap;
@@ -232,7 +232,7 @@ body.posts.list #splash-region{
           border: solid 1px white;
             white-space: nowrap;
         }
-        @media (max-width: $screen-sm-max){
+        @media (max-width: $screen-xs-max){
           margin-top: 0px;
           font-family: $jose;
             font-weight: bold;
