@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel='alternate' type='application/rss+xml' title='RSS' href='http://feeds.feedburner.com/vvvnt'>
   <title>VVVNT</title>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
   <!--<link href='http://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic' rel='stylesheet' type='text/css'> -->
@@ -16,20 +17,17 @@
 
   <link rel="stylesheet" href="/css/main.css">
 
-  <link rel=”apple-touch-icon” href=”/homescreen_icon.png”/>
-  <link rel=”apple-touch-icon-precomposed” href=”/homescreen_icon.png”/>
-
-<script type="text/javascript"> 
-var $buoop = {vs:{i:10,f:25,o:17,s:6,n:9}}; 
-$buoop.ol = window.onload; 
-window.onload=function(){ 
- try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
- var e = document.createElement("script"); 
- e.setAttribute("type", "text/javascript"); 
- e.setAttribute("src", "//browser-update.org/update.js"); 
- document.body.appendChild(e); 
-} 
-</script> 
+<script type="text/javascript">
+var $buoop = {vs:{i:10,f:25,o:17,s:6,n:9}};
+$buoop.ol = window.onload;
+window.onload=function(){
+ try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+ var e = document.createElement("script");
+ e.setAttribute("type", "text/javascript");
+ e.setAttribute("src", "//browser-update.org/update.js");
+ document.body.appendChild(e);
+}
+</script>
 
 </head>
 
@@ -53,6 +51,7 @@ window.onload=function(){
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-46800316-1', 'vvvnt.com');
+    ga('require', 'displayfeatures');
     ga('send', 'pageview');
   </script>
 
