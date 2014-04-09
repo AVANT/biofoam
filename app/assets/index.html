@@ -16,20 +16,17 @@
 
   <link rel="stylesheet" href="/css/main.css">
 
-  <link rel=”apple-touch-icon” href=”/homescreen_icon.png”/>
-  <link rel=”apple-touch-icon-precomposed” href=”/homescreen_icon.png”/>
-
-<script type="text/javascript"> 
-var $buoop = {vs:{i:10,f:25,o:17,s:6,n:9}}; 
-$buoop.ol = window.onload; 
-window.onload=function(){ 
- try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
- var e = document.createElement("script"); 
- e.setAttribute("type", "text/javascript"); 
- e.setAttribute("src", "//browser-update.org/update.js"); 
- document.body.appendChild(e); 
-} 
-</script> 
+<script type="text/javascript">
+var $buoop = {vs:{i:10,f:25,o:17,s:6,n:9}};
+$buoop.ol = window.onload;
+window.onload=function(){
+ try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+ var e = document.createElement("script");
+ e.setAttribute("type", "text/javascript");
+ e.setAttribute("src", "//browser-update.org/update.js");
+ document.body.appendChild(e);
+}
+</script>
 
 </head>
 
@@ -53,6 +50,7 @@ window.onload=function(){
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-46800316-1', 'vvvnt.com');
+    ga('require', 'displayfeatures');
     ga('send', 'pageview');
   </script>
 
