@@ -6,7 +6,7 @@ body.posts.show .staff-container{
 
 	width: 100%;
 	margin-bottom: 460px;
-	@media (max-width: $screen-sm-min) {
+	@media (max-width: $screen-sm-max) {
 		margin-bottom: 0px;
 	}
 	.staff {
@@ -31,7 +31,7 @@ body.posts.show .staff-container{
 			margin-bottom: 10px;
 			display: inline;
 			
-			@media (max-width: $screen-sm-min) {
+			@media (max-width: $screen-sm-max) {
 				max-width: 87px;
 			}
 
