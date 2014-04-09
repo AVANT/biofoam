@@ -11,6 +11,10 @@
   @media (max-width: $screen-sm-min) {
     padding-top: 10px;
   }
+  input {  //fixes iphone rounded button
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
   h3 {
     font-family: $jose;
     font-size: 1.1em;
