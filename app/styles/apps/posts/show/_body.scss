@@ -230,6 +230,7 @@ body.posts.show .body {
     margin-bottom: 30px;
     cursor: default;
     li {
+      white-space: nowrap;
       display: inline;
       border: solid 1px $vvv-blue;
       padding: 5px;
