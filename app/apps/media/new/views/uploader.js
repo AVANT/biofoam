@@ -31,11 +31,11 @@ return Moonrakr.module('Media.New', function(New){
     },
 
     initialize:function(){
-      // called in posts.edit.controller
       this.on('display', this.displayUrl, this);
     },
 
-    padClicked: function(){
+    padClicked: function(e){
+      e.preventDefault();
       this.$el.find('.image-input').trigger('click');
     },
 
@@ -46,7 +46,7 @@ return Moonrakr.module('Media.New', function(New){
 
     displayUrl: function( url ){
       //api will give you back "" here so you have to check for it
-      if ( url !== ""){
+      if ( url !== ''){
         this.loadImage( url, this );
       }
     },
