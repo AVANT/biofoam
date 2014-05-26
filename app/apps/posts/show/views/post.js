@@ -27,6 +27,38 @@ return Moonrakr.module('Posts.Show', function(Show){
       this.startCarousel();
       this.addCarouselHandlers();
     },
+    onShow: function onShow () {
+      this.addModuleStyles();
+      this.addModuleMarkdown();
+      this.addModuleScripts();
+    },
+    onClose: function onClose () {
+      // clean up styles
+      $('head').find('.moduleStyles').remove();
+      // clean up scripts
+      $('head').find('.moduleScripts').remove();
+    },
+    addModuleStyles: function addModuleStyles () {
+      // append css to head tag
+      var moduleStyles = $('<style>', {
+        class: 'moduleStyles',
+        text: this.model.get('cssData')
+      });
+      $('head').append( moduleStyles );
+    },
+    addModuleMarkdown: function addModuleMarkdown () {
+      // append html to module container
+      var moduleHTML = this.model.get('htmlData');
+      this.$el.find('.moduleContainer').html(moduleHTML);
+    },
+    addModuleScripts: function addModuleaddModuleScriptsStyles () {
+      // insert javascript as a script tag? or call it if it is a function?
+      var moduleScripts = $('<script>', {
+        class: 'moduleScripts',
+        text: this.model.get('javascriptData')
+      });
+      this.$el.find('.moduleContainer').append(moduleScripts);
+    },
     startCarousel: function(){
       this.$el.find('#myCarousel').carousel({
         interval: 0
@@ -83,11 +115,6 @@ return Moonrakr.module('Posts.Show', function(Show){
       facebookURL: function  () {
         var _this = this;
 
-        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-        console.log('whats up');
-
-        console.log('_this.model.get("excerpt")', _this.model.get('excerpt'));
-
         FB.ui(
           {
            method: 'feed',
@@ -104,50 +131,15 @@ return Moonrakr.module('Posts.Show', function(Show){
             }
           }
         );
-
-        // var baseUrl = 'https://www.facebook.com/dialog/feed?';
-        // // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?';
-
-        // var appId = 'app_id=624628847586856';
-        // var display = '&display=popup';
-        // var name = '&name=' + encodeURIComponent(this.title);
-        // var caption = '&caption=' + encodeURIComponent(this.excerpt);
-        // var link = '&link=' + encodeURIComponent(window.location.origin); // + /media/ + this.slug;
-        // var redirect_uri = '&redirect_uri=' + encodeURIComponent(window.location.origin);
-        // var picture = '&picture=' + encodeURIComponent(this.headerImageUrl);
-
-        // var toReturn = baseUrl + appId + display + name + caption + link + redirect_uri + picture;
-
-        // console.log('facebook', toReturn);
-
-
-        // var baseUrl = 'https://www.facebook.com/sharer/sharer.php?u=';
-        // var link = encodeURIComponent(document.URL);
-        // console.log('link', link);
-
-        // var toReturn = baseUrl + link;
-
-        // console.log('toReturn', toReturn);
-
-        // return toReturn;
-
       },
 
       twitterURL: function  () {
 
-        // 'http://twitter.com/share?
-        // text=text goes here
-        // &url=http://url goes here
-        // &hashtags=hashtag1,hashtag2,hashtag3'
-
         var concatTitle = function (t) {
-
           if( t.length > 100 ){
             return t.substring(1, 100) + '...';
           }
-
           return encodeURIComponent(t);
-
         }(this.title);
 
         var baseUrl = 'http://twitter.com/share?';
@@ -158,9 +150,6 @@ return Moonrakr.module('Posts.Show', function(Show){
 
         var toReturn = baseUrl + text + url + via;
 
-        // console.log('twitter', toReturn);
-
-        // return toReturn;
         return toReturn;
 
       }
