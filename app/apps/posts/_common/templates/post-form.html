@@ -47,10 +47,41 @@
     <div id="redactor-region"></div>
   </div>
 
-  <div class="form-group pubbox">
+  <hr>
+
+  <h3>Javascript Tools</h3>
+
+  <div class="form-group dropdown jsbox">
+    <label>Javascript Enabled:<input id="post-module" type="checkbox" name="checkbox" value="true"></label>
+  </div>
+
+  <div class="form-group">
+    <label for="post-html" class="form-label">
+      Markup:
+    </label>
+    <textarea id="post-html" class="code"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="post-javascript" class="form-label">
+      Scripts:
+    </label>
+    <textarea id="post-javascript" class="code"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="post-css" class="form-label">
+      Styles:
+    </label>
+    <textarea id="post-css" class="code"></textarea>
+  </div>
+
+  <hr>
+
+  <div class="form-group dropdown pubbox">
     <select id="post-published" name="status">
-      <option value="published">published</option>
       <option value="unpublished" selected>not published</option>
+      <option value="published">published</option>
     </select>
   </div>
 
