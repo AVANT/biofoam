@@ -71,15 +71,43 @@
         	outline: none;
       	}
 	}
-	.pubbox {
+	.dropdown {
 		margin-top: 10px;
 		display: inline-block;
 		margin-bottom: 50px;
 		width: 150px;
-		#post-published {
+		select {
 			font-size: 16px;
-      		letter-spacing: 0.03em;
+      letter-spacing: 0.03em;
 		}
+    // #post-published {
+    //     overflow:hidden; /* this hides the select's drop button */
+    //     padding-left: 6px;
+    //     padding-right: 6px;
+    //     padding-top: 2px;
+    //     padding-bottom: 3px;
+    //     margin:0;
+    //     background: white url(formelements-select.png) no-repeat bottom right;
+    //     /* this is the new drop button, in image form */
+    //     width:8em; border-radius:0px;
+    //     //box-shadow: 0 0px 0px rgba(0,0,0,0.2);
+    //     //border: solid 1px #ccc;
+    //     border-radius: 0px 0;
+    // }
 
+    // #post-published select {
+    //     width:115% /* this percentage effectively extends the drop down button out of view */;
+    //     background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    //     background-image:none;
+    //     -webkit-appearance: none /* this is required for Webkit browsers */;
+    //     border:none;
+    //     box-shadow:none;
+    //     padding:0.3em 0.5em; /* padding should be added to the select, not the div */
+    // }
 	}
+  textarea.code {
+    font-family: $code;
+    font-size: 1.4em;
+    width: 100%;
+  }
 }
