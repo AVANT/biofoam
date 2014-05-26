@@ -32,26 +32,15 @@ return Moonrakr.module('Posts.Common.Views', function(Views){
       },
       '#post-authors': {
         observe: 'authorsArray',
-        // onGet: function(values){
-        //   var authorsStr = '';
-        //   _.each(values, function(value){
-        //     authorsStr = authorsStr + ',' + value['fullName'];
-        //   });
-        //   return authorsStr;
-        // },
         onSet: function(value){
           return value.split(',');
         }
       },
-      '#post-published': {
-        observe: 'status',
-        onSet: function(val){
-          console.log('val', val);
-          return val;
-        }
-      }
-      // '#post-tags': 'tags' // explode and strip whitespace
-      // '#image-current-container': 'image', // in the imageUpload view
+      '#post-module': 'moduleEnabled',
+      '#post-html': 'htmlData',
+      '#post-javascript': 'javascriptData',
+      '#post-css': 'cssData',
+      '#post-published': 'status'
     },
 
     initialize: function(){
