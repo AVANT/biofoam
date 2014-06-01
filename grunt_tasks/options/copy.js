@@ -73,6 +73,7 @@ module.exports = {
                 'moment/moment.js',
                 'requirejs/require.js',
                 'salvattore/dist/salvattore.js',
+                'slick-carousel/slick/slick.min.js',
                 'spinjs/spin.js',
                 'text/text.js',
                 'underscore/underscore.js'
@@ -157,6 +158,7 @@ module.exports = {
                 'requirejs/require.js',
                 'spinjs/spin.js',
                 'salvattore/dist/salvattore.js',
+                'slick-carousel/slick/slick.min.js',
                 'text/text.js',
                 'underscore/underscore.js'
             ],

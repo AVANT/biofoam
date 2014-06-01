@@ -16,6 +16,7 @@ require.config({
     'backbone.picky': 'vendor/backbone.picky',
     bootstrap: 'vendor/bootstrap',
     bootbox: 'vendor/bootbox',
+    slick: 'vendor/slick.min',
 
     salvattore: 'vendor/salvattore',
     // masonry: 'vendor/masonry.pkgd',

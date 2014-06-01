@@ -1,6 +1,9 @@
 require('app');
 require('handlebars');
 
+// HACKY HACKY
+require('slick');
+
 var _post = require('text!apps/posts/show/templates/post.html');
 var _static_page = require('text!apps/posts/show/templates/static_page.html');
 
