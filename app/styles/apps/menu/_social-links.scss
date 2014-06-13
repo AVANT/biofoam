@@ -3,59 +3,35 @@ nav.nav .nav-viewport{
 	.social-links {
 
 	    float: right;
-	    padding-right: 10px;
-	    margin-right: 20px;
+	    margin-top: 25px;
+	    margin-right: 18px;
 
-	    .fa-stack {
-	      	&:hover{
-		      .fa-stop {
-		        color: #3b5998;
-		        }
-	      	}
+	    #menu-twitter {
+	    	font-size: 1.3em;
+	    	color: $black;
+	    	padding-left: 10px;
+	    	@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #55acee;
+    		}
 	    }
-
-	    .fa-twitter {
-		    position: absolute;
-		    top: 24px;
-		    font-size: 16px;
-		    color: $black;
-		    @include transition( color .25s ease-in-out );
-		    margin-left: -52px;
-		    &:hover{
-		      color: #55acee;
-		    }
-	    }
-
-	    .fa-stack {
-		    position: absolute;
-		    margin-left: -30px;
-		    top: 24px;
-	    }
-
-	    .fa-stop {
-		    font-size: 15px;
-		    color: $black;
-		    padding-right: 4px;
-		    @include transition( color .25s ease-in-out );
-	    }
-
-	    .fa-facebook {
-		    font-size: 12px;
-		    margin-left:-1px;
-		    margin-top: -3px;
-		    color: $grey;
-	    }
-
-	    .fa-rss {
-		    margin-left: 0px;
-		    position: absolute;
-		    top: 25px;
-		    font-size: 15px;
-		    color: $black;
-		    @include transition( color .25s ease-in-out );
-		    &:hover{
-		      color: #F0B14D;
-		    }
-	    }
+		#menu-facebook {
+			font-size: 1.3em;
+			color: $black;
+			padding-left: 10px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #4964a1;
+    		}
+		}
+		#menu-rss {
+			font-size: 1.3em;
+			color: $black;
+			padding-left: 10px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #faab49;
+    		}
+		}	
   	}
 }
