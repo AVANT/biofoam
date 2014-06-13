@@ -19,18 +19,23 @@
       <div class="vanillaContainer">{{{ body }}}</div>
       <div class="moduleContainer"></div>
     </div>
+
     <div class="share-buttons">
 
       <div class="fbook-share">
-        <span class="post-share fa-stack fa-lg">
-          <i class="fa fa-stop fa-stack-2x"></i>
-          <i class="fa fa-facebook fa-stack-1x fa-inverse pull-right"></i>
-        </span>
-        <p class="share-wrapper">SHARE<i class="share-out fa fa-share"></i></p>
+        <span class="share-facebook share-child el-icon-facebook"></span>
+        <p class="share-child share-text">SHARE</p>
+        <span class="share-share share-child el-icon-share-alt"></span>
       </div>
 
-      <div class="twitter-share"><a target="_blank" onclick="window.open(this.href, 'mywin',
-  'left=20,top=20,width=500,height=250,toolbar=1,resizable=0'); return false;" href='{{{ twitterURL }}}'><i class="post-share fa fa-twitter"></i><p class="share-wrapper">TWEET<i class="share-out fa fa-share"></i></p></a></div>
+      <div target="_blank" onclick="window.open(this.href, 'mywin',
+  'left=20,top=20,width=500,height=250,toolbar=1,resizable=0'); return false;" href='{{{ twitterURL }}}' class="twitter-share">
+        <span class="share-twitter share-child el-icon-twitter"></span>
+        <p class="share-child share-text">TWEET</p>
+        <span class="share-share share-child el-icon-share-alt"></span>
+      </div>
+
     </div>
+
   </div>
 </div>

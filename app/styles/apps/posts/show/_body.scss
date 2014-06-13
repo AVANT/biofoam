@@ -14,94 +14,79 @@ body.posts.show {
   .share-buttons {
     margin-bottom: 5em;
     text-align: center;
-  }
-  .body .share-wrapper {
-    text-decoration: none;
-    font-family: $jose;
-    letter-spacing: 0.1em;
-    color: $grey;
-    font-weight: 500;
-    font-size: 12px;
-    display: inline;
-    padding: 10px;
-  }
-  .post-share {
-    margin-left: 12px;
-    margin-top: -3px;
-    color: $grey;
-
-  }
-
 
   .fbook-share {
-    padding-left: 8px;
+    margin-left: 3px;
+    padding-top: 6px;
+    padding-bottom: 0px;
+    padding-right: 12px;
+    padding-left: 12px;
     a {text-decoration: none;}
-    background: $black;
-    //padding-top: 5px;
-    @include transition( background .25s ease-in-out );
+    border: 1px solid #4964a1;
+    @include transition( all .25s ease-in-out );
     display: inline-block;
     &:hover {
-      background: $vvv-blue;
-      .fa-facebook {
-        color: $vvv-blue;
+      border: 1px solid #4964a1;
+      background: #4964a1;
+      .share-child {
+        color: $grey;
       }
     }
-    .fa-stack {
-      margin-top: -13px;
-      height: auto;
-      width: 17px;
-      margin-right: -8px;
-      margin-left: 8px;
+    .share-facebook {
+      font-size: 0.8em;
     }
-    .fa-stop {
-      font-size: 13px;
-      margin-top: -1px;
+    .share-text {
+      font-family: $jose;
+      font-weight: bold;
+      margin-bottom: 0px;
+      margin-left: 4px;
     }
-    .fa-facebook {
-      margin-left: 1px;
-      margin-top: -17px;
+    .share-share {
+      font-size: 0.8em;
+      margin-left: 4px;
+    }
+    .share-child {
       display: inline;
-      color: $black;
-      @include transition( color .25s ease-in-out );
-      //margin-top: 10px;
-      font-size: 12px;
+      color: #4964a1;
     }
   }
-
-  .share-out {
-    margin-left: 8px;
-    margin-right:1px;
-    padding-top: 5px;
-    font-size: 11px;
-  }
-
-
 
   .twitter-share {
+    padding-top: 6px;
+    padding-bottom: 0px;
+    padding-right: 12px;
+    padding-left: 12px;
     a {text-decoration: none;}
     margin-left: 7px;
-    background: $black;
-    @include transition( background .25s ease-in-out );
-    //padding-top: 5px;
-    &:hover {
-      background: $vvv-blue;
-    }
+    border: 1px solid #55acee;
     display: inline-block;
-
-    .fa-twitter {
-      display: inline;
-      color: $grey;
-      //margin-left: 2px;
-      margin-right: -2px;
-      font-size: 14px;
-      width: 170px;
-      height: 30px;
-      text-align: center;
-      vertical-align: -1px;
+    @include transition( all .25s ease-in-out );
+    &:hover {
+      border: 1px solid #55acee;
+      background: #55acee;
+      .share-child {
+        color: $grey;
+      }
     }
-
+    .share-twitter {
+      font-size: 0.8em;
+    }
+    .share-text {
+      font-family: $jose;
+      font-weight: bold;
+      margin-bottom: 0px;
+      margin-left: 4px;
+    }
+    .share-share {
+      font-size: 0.8em;
+      margin-left: 4px;
+    }
+    .share-child {
+      display: inline;
+      color: #55acee;
+    }
   }
-
+}
 
 
 
