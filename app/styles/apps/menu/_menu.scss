@@ -46,6 +46,9 @@ nav.nav .nav-viewport{
       position: absolute;
       font-size: 2.7em;
       top: 9px;
+      @-moz-document url-prefix() {
+        top: 10px;
+      }
       color: $black;
       letter-spacing: .5em;
       padding-left: 12px;
