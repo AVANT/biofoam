@@ -62,3 +62,8 @@
 @import "apps/authors/content";
 
 @import "apps/media/new/uploader";
+@-moz-document url-prefix() {
+  nav.nav .nav-viewport .nav-logo #A{
+    top: 10px !important;
+  }
+}
