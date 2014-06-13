@@ -46,5 +46,15 @@
   "scripts": {
     "install": "./node_modules/bower/bin/bower install",
     "postinstall": "./node_modules/.bin/grunt build"
-  }
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "613613705d26c47aec47ccadf402544880fe2cdf",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:vvnt/vvvnt-frontend.git"
+  },
+  "license": "BSD"
 }

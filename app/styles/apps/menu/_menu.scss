@@ -38,9 +38,26 @@ nav.nav .nav-viewport{
       text-align: left;
     }
 
-    #AV {
+    #A {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
       left:50%;
       margin-left:-87px;
+      position: absolute;
+      font-size: 2.7em;
+      top: 9px;
+      color: $black;
+      letter-spacing: .5em;
+      padding-left: 12px;
+
+      @media (max-width: $screen-xs-max){
+        display: none;
+      }
+    }
+
+    #V {
+      left:50%;
+      margin-left:-54px;
       position: absolute;
       font-size: 2.7em;
       top: 16px;
