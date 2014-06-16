@@ -16,11 +16,12 @@ body.posts.show {
     text-align: center;
 
   .fbook-share {
+    height: 32px;
     margin-left: 3px;
-    padding-top: 6px;
+    padding-top: 0px;
     padding-bottom: 0px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 11px;
+    padding-left: 11px;
     a {text-decoration: none;}
     border: 1px solid #4964a1;
     @include transition( all .25s ease-in-out );
@@ -33,16 +34,17 @@ body.posts.show {
       }
     }
     .share-facebook {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
     .share-text {
+      font-size: 0.8em;
       font-family: $jose;
       font-weight: bold;
       margin-bottom: 0px;
       margin-left: 4px;
     }
     .share-share {
-      font-size: 0.8em;
+      font-size: 0.7em;
       margin-left: 4px;
     }
     .share-child {
@@ -52,10 +54,11 @@ body.posts.show {
   }
 
   .twitter-share {
-    padding-top: 6px;
+    height: 32px;
+    padding-top: 0px;
     padding-bottom: 0px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 11px;
+    padding-left: 11px;
     a {text-decoration: none;}
     margin-left: 7px;
     border: 1px solid #55acee;
@@ -69,16 +72,17 @@ body.posts.show {
       }
     }
     .share-twitter {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
     .share-text {
+      font-size: 0.8em;
       font-family: $jose;
       font-weight: bold;
       margin-bottom: 0px;
       margin-left: 4px;
     }
     .share-share {
-      font-size: 0.8em;
+      font-size: 0.7em;
       margin-left: 4px;
     }
     .share-child {
