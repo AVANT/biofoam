@@ -18,14 +18,14 @@ body.posts.show {
   .fbook-share {
     height: 32px;
     margin-left: 3px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 9px;
+    padding-bottom: 5px;
     padding-right: 11px;
     padding-left: 11px;
     a {text-decoration: none;}
     border: 1px solid #4964a1;
     @include transition( all .25s ease-in-out );
-    display: inline-block;
+    display: inline;
     &:hover {
       border: 1px solid #4964a1;
       background: #4964a1;
@@ -34,17 +34,17 @@ body.posts.show {
       }
     }
     .share-facebook {
-      font-size: 0.7em;
+      font-size: 14px;
     }
     .share-text {
-      font-size: 0.8em;
+      font-size: 16px;
       font-family: $jose;
       font-weight: bold;
       margin-bottom: 0px;
       margin-left: 4px;
     }
     .share-share {
-      font-size: 0.7em;
+      font-size: 14px;
       margin-left: 4px;
     }
     .share-child {
@@ -55,14 +55,14 @@ body.posts.show {
 
   .twitter-share {
     height: 32px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 9px;
+    padding-bottom: 5px;
     padding-right: 11px;
     padding-left: 11px;
     a {text-decoration: none;}
-    margin-left: 7px;
+    margin-left: 10px;
     border: 1px solid #55acee;
-    display: inline-block;
+    display: inline;
     @include transition( all .25s ease-in-out );
     &:hover {
       border: 1px solid #55acee;
@@ -72,17 +72,17 @@ body.posts.show {
       }
     }
     .share-twitter {
-      font-size: 0.7em;
+      font-size: 14px;
     }
     .share-text {
-      font-size: 0.8em;
+      font-size: 16px;
       font-family: $jose;
       font-weight: bold;
       margin-bottom: 0px;
       margin-left: 4px;
     }
     .share-share {
-      font-size: 0.7em;
+      font-size: 14px;
       margin-left: 4px;
     }
     .share-child {
