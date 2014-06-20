@@ -16,6 +16,7 @@ body.posts.show {
     text-align: center;
 
   .fbook-share {
+    &:hover {cursor:pointer;}
     height: 32px;
     margin-left: 3px;
     padding-top: 9px;
@@ -54,6 +55,7 @@ body.posts.show {
   }
 
   .twitter-share {
+    &:hover {cursor:pointer;}
     height: 32px;
     padding-top: 9px;
     padding-bottom: 5px;
