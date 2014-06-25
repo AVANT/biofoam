@@ -1,7 +1,7 @@
 require('app');
 require('handlebars');
 
-// HACKY HACKY
+// HACK
 require('slick');
 
 var _post = require('text!apps/posts/show/templates/post.html');
@@ -13,7 +13,8 @@ return Moonrakr.module('Posts.Show', function(Show){
     tagName: 'article',
     className: 'post',
     events: {
-      'click .fbook-share': 'facebookClicked'
+      'click .fbook-share': 'facebookClicked',
+      'click .twitter-share': 'twitterClicked'
     },
     // hack to get different template rendering for static pages
     getTemplate: function(){
@@ -109,54 +110,35 @@ return Moonrakr.module('Posts.Show', function(Show){
 
       FB.ui( params, fbCallback );
     },
+    twitterClicked: function (e) {
+      var windowFormat = 'left=20,top=20,width=500,height=250,toolbar=1,resizable=0';
+      e.preventDefault();
+      window.open(this.twitterURLCreator(), '_blank', windowFormat);
+    },
+
+    // TODO: move this into a service
+    twitterURLCreator: function () {
+      var baseUrl = 'http://twitter.com/share?';
+      var shortTitle = this.shortenTitle(this.model.get('title'));
+      var url = '&url=' + encodeURIComponent(window.location.href);
+      var text = '&text=' + encodeURIComponent(shortTitle);
+      var via = '&via=VVVNTmag';
+      return baseUrl + text + url + via;
+    },
+
+    shortenTitle: function (t) {
+      var shortTitle = t;
+      if( t.length > 100 ){
+        shortTitle = t.substring(1, 100) + '...';
+      }
+      return shortTitle;
+    },
+
     templateHelpers: {
       getHeaderImageUrl: function(){
         // return this.headerImage.filelink;
         return this.media[0].filelink;
-      },
-
-      facebookURL: function  () {
-        var _this = this;
-
-        FB.ui(
-          {
-           method: 'feed',
-           name: _this.model.get('title'),
-           caption: _this.model.get('excerpt'),
-           link: document.URL,
-           // picture: _this.model.get('headerImageUrl')
-          },
-          function(response) {
-            if (response && response.post_id) {
-              console.log('Post was published.');
-            } else {
-              console.log('Post was not published.');
-            }
-          }
-        );
-      },
-
-      twitterURL: function  () {
-
-        var concatTitle = function (t) {
-          if( t.length > 100 ){
-            return t.substring(1, 100) + '...';
-          }
-          return encodeURIComponent(t);
-        }(this.title);
-
-        var baseUrl = 'http://twitter.com/share?';
-
-        var url = '&url=' + encodeURIComponent(window.location.href); // + /media/ + this.slug;
-        var text = '&text=' + concatTitle;
-        var via = '&via=VVVNTmag';
-
-        var toReturn = baseUrl + text + url + via;
-
-        return toReturn;
-
       }
-
     }
   });
 
