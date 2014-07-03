@@ -163,7 +163,7 @@ body.posts.list #splash-region{
         font-size: 5em;
         font-weight: bold;
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px $vvv-blue; //white;
+        -webkit-text-stroke: yellow; //white;
         @media (max-width: $screen-xs-max){
           -webkit-text-fill-color: $black;
           -webkit-text-stroke: 0px;
@@ -178,7 +178,7 @@ body.posts.list #splash-region{
 
       .authors {
         list-style-type: none;
-        color: $vvv-blue; //white;
+        color: yellow; //white;
         padding-top: 0px;
         top: 150px;
         font-size: 2.2em;
@@ -227,9 +227,9 @@ body.posts.list #splash-region{
       .tags {
         margin-top: 20px;
         padding-top: 0px;
-        color: $vvv-blue; //white;
+        color: yellow; //white;
         li {
-          border: solid 1px $vvv-blue; //white;
+          border: solid 1px yellow; //white;
             white-space: nowrap;
         }
         @media (max-width: $screen-xs-max){
