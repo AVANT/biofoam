@@ -164,6 +164,7 @@ body.posts.list #splash-region{
         font-weight: bold;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 1px red; //white;
+        color: $black;
         @media (max-width: $screen-xs-max){
           -webkit-text-fill-color: $black;
           -webkit-text-stroke: 0px;
@@ -171,9 +172,12 @@ body.posts.list #splash-region{
           font-size: 30px;
         }
         @media (min-width: $screen-xs-min){
-          color: white;
           margin-bottom: 10px;
         }
+        @media (min-width: $screen-sm-min){
+          color: red;
+        }
+
       }
 
       .authors {
