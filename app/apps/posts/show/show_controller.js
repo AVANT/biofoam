@@ -58,6 +58,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
           // update facebook social meta tags
           // HACK: move this into a service or something sane
+          $('meta[property="og:url"]').attr('content', window.location.href);
           $('meta[property="og:title"]').attr('content', post.get('title'));
           $('meta[property="og:description"]').attr('content', post.get('excerpt'));
           $('meta[property="og:image"]').attr('content', post.get('headerImageUrl'));
