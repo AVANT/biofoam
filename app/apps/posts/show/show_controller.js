@@ -56,6 +56,14 @@ return Moonrakr.module('Posts.Show', function(Show){
 
           Moonrakr.execute('header:set:title', 'Posts: ' + post.get('title'));
 
+          // update facebook social meta tags
+          // HACK: move this into a service or something sane
+          $('meta[property="og:url"]').attr('content', window.location.href);
+          $('meta[property="og:title"]').attr('content', post.get('title'));
+          $('meta[property="og:description"]').attr('content', post.get('excerpt'));
+          $('meta[property="og:image"]').attr('content', post.get('headerImageUrl'));
+
+
           // will eventually need to pass a comments/for/:id value with this request
           // var commentsView = Moonrakr.request('comments:listforpost');
 
