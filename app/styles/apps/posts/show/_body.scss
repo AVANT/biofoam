@@ -10,9 +10,16 @@ body.posts.show {
     opacity:0.5;
   }
 
+  .share-top {
+    float: right;
+    margin-bottom: 0px;
+  }
+
+  .share-bottom {
+    margin-bottom: 5em;
+  }
 
   .share-buttons {
-    margin-bottom: 5em;
     text-align: center;
 
   .fbook-share {
