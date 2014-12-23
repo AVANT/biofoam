@@ -162,8 +162,8 @@ body.posts.list #splash-region{
         width: 100%;
         font-size: 5em;
         font-weight: bold;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px red; //white;
+        -webkit-text-fill-color: white; //transparent
+        -webkit-text-stroke: 1px white; //white;
         color: $black;
         @media (max-width: $screen-xs-max){
           -webkit-text-fill-color: $black;
@@ -175,14 +175,14 @@ body.posts.list #splash-region{
           margin-bottom: 10px;
         }
         @media (min-width: $screen-sm-min){
-          color: red; //white
+          color: white; //white
         }
 
       }
 
       .authors {
         list-style-type: none;
-        color: red; //white;
+        color: $black; //white;
         padding-top: 0px;
         top: 150px;
         font-size: 2.2em;
@@ -231,9 +231,9 @@ body.posts.list #splash-region{
       .tags {
         margin-top: 20px;
         padding-top: 0px;
-        color: red; //white;
+        color: $black; //white;
         li {
-          border: solid 1px red; //white;
+          border: solid 1px $black; //white;
             white-space: nowrap;
         }
         @media (max-width: $screen-xs-max){
