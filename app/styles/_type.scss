@@ -1033,6 +1033,7 @@ h4 {
 
 a {
     color: $vvv-blue;
+    outline: none;
     @include transition( color .25s ease-in-out );
     &:hover {
       color: $mid-grey;
@@ -1040,6 +1041,13 @@ a {
     }
     text-decoration: none;
   }
+
+a:active {
+    outline: none;
+}
+a:focus {
+    outline: none;
+}
 
 p {
     font-family: $quat;
