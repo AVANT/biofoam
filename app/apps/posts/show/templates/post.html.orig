@@ -30,7 +30,7 @@
 
 <<<<<<< HEAD
       <div target="_blank" onclick="window.open(this.href, 'mywin',
-  'left=200,top=200,width=500,height=250,toolbar=1,resizable=0'); return false;" href='{{{ twitterURL }}}' class="twitter-share">
+  'left=500,top=500,width=500,height=250,toolbar=1,resizable=0'); return false;" href='{{{ twitterURL }}}' class="twitter-share">
 =======
       <div class="twitter-share">
 >>>>>>> b3a8475ebcba8b5206445a0d97418ba5c228989d
