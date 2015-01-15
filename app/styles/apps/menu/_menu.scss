@@ -15,6 +15,7 @@ nav.nav .nav-viewport{
 
   .nav-logo {
     display: block;
+    text-align: center;
     margin: 0px auto;
     &:hover {
       cursor: pointer;
@@ -43,47 +44,14 @@ nav.nav .nav-viewport{
       text-align: left;
     }
 
-    #A {
-      -webkit-transform: rotateX(180deg);
-      transform: rotateX(180deg);
-      left:50%;
-      margin-left:-87px;
-      position: absolute;
+    #AVANT {
+      margin: 0 auto;
+      position: relative;
       font-size: 2.7em;
-      top: 9px;
+      top: 13px;
       color: $black;
       letter-spacing: .5em;
       padding-left: 12px;
-
-      @media (max-width: $screen-xs-max){
-        display: none;
-      }
-    }
-
-    #V {
-      left:50%;
-      margin-left:-54px;
-      position: absolute;
-      font-size: 2.7em;
-      top: 16px;
-      color: $black;
-      letter-spacing: .5em;
-      padding-left: 12px;
-
-      @media (max-width: $screen-xs-max){
-        display: none;
-      }
-    }
-
-    #NT {
-      left:50%;
-      margin-left:23px;
-      position: absolute;
-      font-size: 2.7em;
-      top: 16px;
-      color: $black;
-      letter-spacing: .5em;
-      padding-left: 0px;
 
       @media (max-width: $screen-xs-max){
         display: none;
@@ -102,6 +70,7 @@ nav.nav .nav-viewport{
       @media (min-width: $screen-sm-min){
         left:50%;
         margin-left: -18px;
+        display: none;
       }
     }
   }
