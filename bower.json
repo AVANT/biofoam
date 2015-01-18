@@ -7,7 +7,7 @@
   "description": "Frontend application for the web app project code named 'moonrakr'",
   "main": "app/main.js",
   "license": "MIT",
-  "homepage": "www.vvvnt.com",
+  "homepage": "avant.org",
   "private": true,
   "ignore": [
     "**/.*",

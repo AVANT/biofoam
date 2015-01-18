@@ -1,6 +1,6 @@
 {
   "name": "Moonrakr",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Thick Javascript Application for web project code named 'Moonrakr'",
   "author": "B. Cedric Cogell",
   "main": "Gruntfile.js",
