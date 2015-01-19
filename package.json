@@ -1,7 +1,7 @@
 {
-  "name": "Moonrakr",
+  "name": "Biofoam",
   "version": "0.0.2",
-  "description": "Single Page App for AVANT.org",
+  "description": "Frontend for AVANT.org",
   "author": "B. Cedric Cogell",
   "main": "_src/app.js",
   "dependencies": {
