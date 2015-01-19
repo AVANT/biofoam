@@ -31,13 +31,9 @@
     "postinstall": "./node_modules/.bin/gulp build"
   },
   "readmeFilename": "README.md",
-  "gitHead": "613613705d26c47aec47ccadf402544880fe2cdf",
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:vvnt/vvvnt-frontend.git"
+    "url": "git@github.com:AVANT/biofoam.git"
   },
-  "license": "BSD"
+  "license": "CC BY-NC-SA"
 }
