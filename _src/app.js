@@ -8,6 +8,8 @@ define(function(require){
 
   Moonrakr.Config = config;
 
+  Moonrakr.TestJenkins = 'hi jenkins';
+
   Moonrakr.addRegions({
     headerRegion: '#header',
     mainRegion: '#main',
