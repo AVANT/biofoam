@@ -14,6 +14,7 @@
 
   // Relaxing
   "globalstrict": false, // true: Allow global "use strict" (also enables 'strict')
+  "node": true,
 
     // CUSTOM GLOBAL VARIABLES
   "globals": {

@@ -9,28 +9,6 @@ module.exports = {
     port: 8000,
     hostname: 'localhost'
   },
-  jsdocs: {
-    options: {
-      middleware: function(connect) {
-        return [
-          mountFolder(connect, 'jsdocs')
-        ];
-      }
-    }
-  },
-  styleguide: {
-    options: {
-      port: 8003,
-      middleware: function(connect) {
-        return [
-          mountFolder(connect, 'bower_components'),
-          mountFolder(connect, 'styleguide'),
-          mountFolder(connect, '.tmp/css/'),
-          mountFolder(connect, '.tmp/'),
-        ];
-      }
-    }
-  },
   tmp: {
     options: {
       port: 8000,
@@ -82,4 +60,4 @@ module.exports = {
       }
     }
   }
-}
+};

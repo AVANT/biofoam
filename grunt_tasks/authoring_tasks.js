@@ -1,19 +1,5 @@
 module.exports = function(grunt) {
 
-  grunt.registerTask('jsdocs',[
-    'yuidoc:compile',
-    'connect:jsdocs',
-    'open:server',
-    'watch'
-  ]);
-
-  grunt.registerTask('styleguide',[
-    'dev',
-    'connect:styleguide',
-    'open:styleguide',
-    'watch'
-  ]);
-
   grunt.registerTask('dev',[
     'clean:tmp',
     'concurrent:devCompile',

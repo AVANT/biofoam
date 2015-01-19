@@ -1,13 +1,3 @@
-# MOONRAKR SPECIFIC #
-#####################
-.tmp
-dist
-node_modules
-.sass-cache
-jsdocs
-bower_components
-.grunt
-
 # Compiled source #
 ###################
 *.com
@@ -46,7 +36,17 @@ bower_components
 ehthumbs.db
 Thumbs.db
 
-
 # Vagrant #
 ###########
 .vagrant/
+
+# Project #
+#####################
+.tmp
+dist
+_dist
+node_modules
+.sass-cache
+jsdocs
+bower_components
+.grunt
