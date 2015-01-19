@@ -1,4 +1,5 @@
-# Biofoam: Frontend of AVANT.org
+# Biofoam
+Frontend of AVANT.org
 
 ## Getting Started
 - uses nodejs with gulp and bower for development and package management
