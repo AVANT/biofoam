@@ -11,6 +11,20 @@ module.exports = {
     dest: dest + '/css'
   },
 
+  // TODO: figure out how to remove all the combined scripts
+  requirejs: {
+    rjs: {
+      baseUrl: dest + '/js',
+      optimize: 'none',
+      removeCombined: true, // doesnt work
+      mainConfigFile: dest + '/js/require_config.production.js',
+      findNestedDependencies: true,
+      name: 'main',
+      out: 'main.optimized.js'
+    },
+    dest: dest + '/js'
+  },
+
   // TODO: implement handlebars pre-rendering
   handlebars: {}, // NOT USED YET
 

@@ -7,3 +7,10 @@ gulp.task( taskname, ['clean'], function (cb) {
   runSequence(['sass', 'copy', 'wrap'], cb);
 
 });
+
+// consider alt using command flags
+gulp.task( taskname + ':prod', ['build'], function (cb) {
+
+  runSequence('requirejs', cb);
+
+});
