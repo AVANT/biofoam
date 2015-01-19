@@ -1,4 +1,4 @@
-var src          = 'app';
+var src          = '_src';
 var dest         = '_dist';
 var venderLoader = 'bower_components';
 
