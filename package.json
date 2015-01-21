@@ -1,5 +1,5 @@
 {
-  "name": "@AVANT/Biofoam",
+  "name": "Biofoam",
   "version": "0.0.2",
   "description": "Frontend for AVANT.org",
   "author": "B. Cedric Cogell",
@@ -17,7 +17,6 @@
     "gulp-sass": "^1.3.2",
     "gulp-wrap": "^0.10.0",
     "lodash.map": "^2.4.1",
-    "matchdep": "~0.3.0",
     "merge-stream": "^0.1.7",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2"
@@ -35,6 +34,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:AVANT/biofoam.git"
+  },
+  "config": {
+    "unsafe-perm":true
   },
   "private": "true",
   "license": "CC BY-NC-SA"
