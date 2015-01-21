@@ -94,7 +94,7 @@ return Moonrakr.module('Posts.Show', function(Show){
       var params = {
         method: 'feed',
        name: _this.model.get('title'),
-       caption: 'www.vvvnt.com',
+       caption: 'www.avant.org',
        description: _this.model.get('excerpt'),
        link: document.URL,
        picture: _this.model.get('headerImageUrl')
@@ -122,7 +122,7 @@ return Moonrakr.module('Posts.Show', function(Show){
       var shortTitle = this.shortenTitle(this.model.get('title'));
       var url = '&url=' + encodeURIComponent(window.location.href);
       var text = '&text=' + encodeURIComponent(shortTitle);
-      var via = '&via=VVVNTmag';
+      var via = '&via=avantdotorg';
       return baseUrl + text + url + via;
     },
 
