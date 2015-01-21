@@ -7,7 +7,7 @@ error(){
 }
 
 usage() {
-  echo "$(basename $0) [dev|package]"
+  echo "Usage: $(basename $0) [dev|package]"
   exit 0
 }
 
@@ -22,6 +22,13 @@ package() {
   tar czf dist.latest.tar.gz /biofoam/_dist || error "tar failed"
   aws s3 cp dist.latest.tar.gz s3://fanny-pack/frontend/releases/dist.latest.tar.gz || error "aws push failed"
 }
+
+###
+## MAIN
+#
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $(dirname $DIR)
 
 case $1 in
 
