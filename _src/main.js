@@ -14,6 +14,7 @@ require(['require_config'],function(){
 
     'apps/media/media_app',
     'apps/posts/posts_app',
+    'apps/threads/threads',
     'apps/menu/menu',
     'apps/footer/footer',
     // 'apps/pages/pages_app',

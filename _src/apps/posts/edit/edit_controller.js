@@ -1,4 +1,5 @@
 require('app');
+
 require('apps/_common/views/redactor');
 require('apps/posts/edit/edit_views');
 
