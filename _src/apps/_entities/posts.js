@@ -44,8 +44,6 @@ return Moonrakr.module('Entities', function(Entities){
       obj.authors = this.parseAuthors( resp );
       // obj.authors = resp.authorsArray;
 
-      console.log('obj.authors', obj.authors);
-
       _.extend(resp, obj);
 
       return resp;
@@ -85,12 +83,10 @@ return Moonrakr.module('Entities', function(Entities){
   });
 
   Entities.Posts = Backbone.Collection.extend({
-    url: function(){
+    url: function () {
       if(this.unpublishedFlag){
-        console.log('unpublishedFlag');
         return Moonrakr.Config.api + '/posts?status=unpublished';
       } else {
-        console.log('published');
         return Moonrakr.Config.api + '/posts';
       }
     },
@@ -128,23 +124,27 @@ return Moonrakr.module('Entities', function(Entities){
 
   var API = {
     getPostEntities: function(unpublishedFlag){
-      console.log('here is unpublishedFlag', unpublishedFlag);
+
       if(unpublishedFlag){
-        unpublishedFlag = true
+        unpublishedFlag = true;
       } else {
-        unpublishedFlag = false
+        unpublishedFlag = false;
       }
+
       var posts = new Entities.Posts({
         unpublishedFlag: unpublishedFlag
       });
+
       var defer = $.Deferred();
-      console.log('fire request to server in next line');
+
       posts.fetch({
         success: function(data){
           defer.resolve(data);
         }
       });
+
       var promise = defer.promise();
+
       $.when(promise).done(function(posts){
         if(posts.length === 0){
           // if we dont have any posts yet, create some for convenience
@@ -152,8 +152,10 @@ return Moonrakr.module('Entities', function(Entities){
           // posts.reset(models);
         }
       });
+
       return promise;
     },
+
     getPostEntity: function(postId){
       var post = new Entities.Post({ id: postId});
       var defer = $.Deferred();
