@@ -16,6 +16,8 @@ return Moonrakr.module('Posts.Show', function(Show){
       'click .fbook-share': 'facebookClicked',
       'click .twitter-share': 'twitterClicked'
     },
+
+    // LIFE CYCLE FUNCTIONS //
     // hack to get different template rendering for static pages
     getTemplate: function(){
       if (this.model.get('id') == 'about' || this.model.get('id') == 'privacy' || this.model.get('id') == 'sponsorship'){
@@ -42,6 +44,8 @@ return Moonrakr.module('Posts.Show', function(Show){
       // clean up scripts
       $('head').find('.moduleScripts').remove();
     },
+
+    // ADMIN-MODULE HANDLING //
     addModuleStyles: function addModuleStyles () {
       // append css to head tag
       var moduleStyles = $('<style>', {
@@ -63,6 +67,8 @@ return Moonrakr.module('Posts.Show', function(Show){
       });
       this.$el.find('.moduleContainer').append(moduleScripts);
     },
+
+    // CAROUSEL HANDLING //
     startCarousel: function(){
       this.$el.find('#myCarousel').carousel({
         interval: 0
@@ -89,6 +95,8 @@ return Moonrakr.module('Posts.Show', function(Show){
         _this.$el.find('[id^=carousel-selector-'+id+']').addClass('selected');
       });
     },
+
+    // SOCIAL HANDLING //
     facebookClicked: function () {
       var _this = this;
       var params = {
