@@ -1,16 +1,14 @@
 require('app');
-require('handlebars');
+
 var salvattore = require('salvattore');
 require('apps/posts/list/views/post');
 
 return Moonrakr.module('Posts.List', function(List){
 
   List.Posts = Marionette.CollectionView.extend({
-    tagName: 'div',
     className: 'posts js-salvattore',
     itemView: List.Post,
-    // temp
-    count: 0,
+    count: 0, // make private
     onShow:function(){
       this.$el.attr('data-columns', '');
       salvattore.register_grid( this.$el[0] );
@@ -18,7 +16,7 @@ return Moonrakr.module('Posts.List', function(List){
 
     // use this method to pull out the splash article
     onBeforeItemAdded: function(itemView){
-      if (this.count == 0){
+      if (this.count === 0){
         this.count += 1;
         this.trigger('post:splash', itemView.model);
 
