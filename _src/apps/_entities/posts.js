@@ -1,5 +1,4 @@
 require('app');
-// require('backbone.validation');
 require('moment');
 
 return Moonrakr.module('Entities', function(Entities){
@@ -19,38 +18,17 @@ return Moonrakr.module('Entities', function(Entities){
     defaults:{
       'body': ''
     },
-    // validation: {
-    //   title: {
-    //     rangeLength: [1, 200],
-    //     msg: 'Title must be between 1 and 100 characters'
-    //   },
-    //   excerpt: {
-    //     rangeLength: [1, 200],
-    //     msg: 'Excerpt must be between 1 and 100 characters'
-    //   },
-    //   // body: {
-    //   //   rangeLength: [1, 40],
-    //   //   msg: 'Body must be between 1 and 40 characters'
-    //   // }
-    // },
-    parse: function( resp, options ){
-
+    parse: function( resp ){
       var obj = {};
 
       obj.headerImageUrl = this.parseHeaderImg( resp );
-
       obj.date = this.parseDate( resp );
-      // obj.tags = this.parseTags( resp );
       obj.authors = this.parseAuthors( resp );
-      // obj.authors = resp.authorsArray;
 
-      _.extend(resp, obj);
-
-      return resp;
+      return _.extend({}, resp, obj);
     },
 
     parseHeaderImg: function(resp){
-
       if (resp.headerImage) {
         return resp.headerImage.filelink;
       }
@@ -98,7 +76,7 @@ return Moonrakr.module('Entities', function(Entities){
       this.on('add', this.removeReserved, this);
     },
 
-    removeReserved: function (m, c, opts) {
+    removeReserved: function (m) {
       var that = this;
       Moonrakr.Config.reservedSlugs.some(function(reserved){
         if ( m.get('id') === reserved ) {
@@ -109,20 +87,20 @@ return Moonrakr.module('Entities', function(Entities){
 
   });
 
-  var initializePosts = function(){
+  // API Helper Functions //
+  function filterPostsByThread (posts) {
 
-    var posts = new Entities.Posts([
-      {id: 1, title: 'made up title number one', excerpt: 'short thingy here', body: 'here is some body text'},
-      {id: 2, title: 'made up title number two', excerpt: 'short thingy here', body: 'here is some body text'},
-      {id: 3, title: 'made up title number three', excerpt: 'short thingy here', body: 'here is some body text'},
-    ]);
-    posts.forEach(function(post){
-      post.save();
-    });
-    return posts.models;
-  };
+  }
 
   var API = {
+    getPostEntitiesByThread: function (threadQuery) {
+      // return this.getPostEntities(true).then(function(posts){
+      //   return _.filter(posts, function(post){
+      //     post.met
+      //   });
+      // });
+      return this.getPostEntities(true);
+    },
     getPostEntities: function(unpublishedFlag){
 
       if(unpublishedFlag){
@@ -173,12 +151,16 @@ return Moonrakr.module('Entities', function(Entities){
     }
   };
 
-  Moonrakr.reqres.setHandler('post:entities', function(unpublishedFlag){
-    return API.getPostEntities(unpublishedFlag);
+  Moonrakr.reqres.setHandler('post:entities:byThread', function ( threadQuery ) {
+    return API.getPostEntitiesByThread( threadQuery );
   });
 
-  Moonrakr.reqres.setHandler('post:entity', function(id){
-    return API.getPostEntity(id);
+  Moonrakr.reqres.setHandler('post:entities', function (unpublishedFlag) {
+    return API.getPostEntities( unpublishedFlag );
+  });
+
+  Moonrakr.reqres.setHandler('post:entity', function (id) {
+    return API.getPostEntity( id );
   });
 
 });
