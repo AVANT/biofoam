@@ -14,9 +14,9 @@ return Moonrakr.module('Threads.Edit', function (Edit) {
 
     checkboxClicked: function () {
       if ( this.isChecked() ) {
-        this.addThreadProp();
+        this.addThreadProp(); // replace with message to model
       } else {
-        this.removeThreadProp();
+        this.removeThreadProp(); // replace with message to model
       }
     },
 
@@ -44,11 +44,10 @@ return Moonrakr.module('Threads.Edit', function (Edit) {
       }
 
       this.model.set('meta', threadArray);
-
-      console.log('bool:', bool);
-      console.log('threadID:', threadID);
-      console.log('threadArray:', threadArray);
-      console.log('this post meta:', this.model.get('meta'));
+      this.model.save().done(function(data){
+        console.log('save done. data:', data);
+      });
+      console.log('model meta:', this.model.get('meta') );
     },
 
     getThreadID: function () {

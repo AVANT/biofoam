@@ -35,6 +35,7 @@ return Moonrakr.module('Threads.Edit', function (Edit) {
 
   function getPostsView () {
     return getPosts().then(function(posts){
+      console.log('posts: ', posts);
       return new Edit.Posts({
         collection: posts
       });
