@@ -27,7 +27,7 @@ module.exports = {
   },
 
   // TODO: implement handlebars pre-rendering
-  handlebars: {}, // NOT USED YET
+  handlebars: {},
 
   wrap: {
     src: src + '/apps/**/*.js',
