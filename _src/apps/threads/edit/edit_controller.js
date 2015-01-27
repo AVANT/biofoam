@@ -16,7 +16,7 @@ return Moonrakr.module('Threads.Edit', function (Edit) {
   }
 
   function isTransmedialeID (id) {
-    return id === 'test' ? true : false;
+    return id === 'capture-all' ? true : false;
   }
 
   function getPosts () {
