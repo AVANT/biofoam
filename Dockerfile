@@ -16,5 +16,3 @@ ADD gulpfile.js $SRC/gulpfile.js
 # add our entrypoint script
 ENTRYPOINT ["npm"]
 CMD ["start"]
-
-
