@@ -50,3 +50,6 @@ node_modules
 jsdocs
 bower_components
 .grunt
+.deploy
+.env
+

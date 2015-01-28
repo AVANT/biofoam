@@ -25,4 +25,5 @@ VOLUME /biofoam
 EXPOSE 3000
 
 WORKDIR /biofoam
-ENTRYPOINT scripts/entrypoint.sh
+ENTRYPOINT ["scripts/entrypoint.sh"]
+
