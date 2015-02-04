@@ -40,13 +40,19 @@ Thumbs.db
 ###########
 .vagrant/
 
-# Project #
+# Vendor Artifacts #
+####################
+node_modules
+bower_components
+
+# Project Artifacts #
 #####################
-.tmp
 dist
 _dist
-node_modules
 .sass-cache
-jsdocs
-bower_components
-.grunt
+
+# Secrets #
+############
+.deploy
+.env
+
