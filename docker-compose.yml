@@ -1,7 +1,19 @@
 package:
   build: .
   command: package
-  volumes:
-    - .:/biofoam
+  volumes_from:
+    - data
   env_file: ./.env
+  # entrypoint: /bin/bash
 
+# TODO: make dev box
+# dev:
+#   build: .
+#   command: dev
+#   volumes_from:
+#     - data
+
+data:
+  image: busybox
+  volumes:
+    - ./:/biofoam
