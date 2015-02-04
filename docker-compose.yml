@@ -1,0 +1,7 @@
+package:
+  build: .
+  command: dev
+  volumes:
+    - .:/biofoam
+  env_file: ./.env
+
