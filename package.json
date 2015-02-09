@@ -27,7 +27,7 @@
   "scripts": {
     "prestart": "./scripts/set_node_env.sh && npm install",
     "start": "./node_modules/.bin/gulp watch",
-    "prepublish": "./node_modules/.bin/gulp build:prod",
+    "build": "./node_modules/.bin/gulp build:prod",
     "install": "./node_modules/bower/bin/bower install"
   },
   "readmeFilename": "README.md",

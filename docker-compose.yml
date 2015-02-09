@@ -1,19 +1,25 @@
-package:
+base:
   build: .
-  command: package
-  volumes_from:
-    - data
-  env_file: ./.env
-  # entrypoint: /bin/bash
 
-# TODO: make dev box
-# dev:
-#   build: .
-#   command: dev
+package:
+  image: biofoam_base
+  # volumes_from:
+  #   - data
+  env_file: ./.env
+  # command: package
+  # entrypoint: ls
+  entrypoint: /bin/bash
+
+# start:
+#   image: biofoam_base
 #   volumes_from:
 #     - data
+#   env_file: ./.env
+#   ports:
+#     - "3000:3000"
+#   command: dev
 
 data:
-  image: busybox
+  image: biofoam_base
   volumes:
     - ./:/biofoam
