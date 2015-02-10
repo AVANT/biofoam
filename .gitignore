@@ -56,4 +56,5 @@ _dist
 .deploy-production
 .deploy
 .env
+env/
 

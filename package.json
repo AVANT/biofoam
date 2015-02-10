@@ -25,10 +25,9 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "prestart": "./scripts/set_node_env.sh && npm install",
     "start": "./node_modules/.bin/gulp watch",
     "build": "./node_modules/.bin/gulp build:prod",
-    "install": "./node_modules/bower/bin/bower install"
+    "install": "./node_modules/bower/bin/bower --allow-root install"
   },
   "readmeFilename": "README.md",
   "repository": {

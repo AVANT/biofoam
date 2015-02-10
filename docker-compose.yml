@@ -1,25 +1,32 @@
 base:
   build: .
 
-package:
-  image: biofoam_base
-  # volumes_from:
-  #   - data
-  env_file: ./.env
-  # command: package
-  # entrypoint: ls
-  entrypoint: /bin/bash
-
-# start:
+# package:
 #   image: biofoam_base
 #   volumes_from:
 #     - data
 #   env_file: ./.env
-#   ports:
-#     - "3000:3000"
-#   command: dev
+#   # command: package
+#   # entrypoint: ls
+#   entrypoint: /bin/bash
+
+start:
+  image: biofoam_base
+  volumes_from:
+    - data
+  env_file: ./.env
+  ports:
+    - "49300:3000"
+  command: dev
+  # entrypoint: /bin/bash
 
 data:
   image: biofoam_base
   volumes:
-    - ./:/biofoam
+    - ./_src/:/biofoam/_src
+    - ./vendor/:/biofoam/vendor
+    - ./gulp/:/biofoam/gulp
+  entrypoint: true
+
+
+

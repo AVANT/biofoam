@@ -5,12 +5,15 @@ ENV SRC /biofoam
 
 WORKDIR $SRC
 
-# this is cached unless package.json changes
+# add dependency tracking files
 ADD package.json $SRC/package.json
-RUN npm install
+ADD bower.json $SRC/bower.json
+RUN npm install --unsafe-perm
 
-# ENV PATH $PATH:/$SRC/node_modules
+# cause gulpfile has to live in root
+ADD gulpfile.js $SRC/gulpfile.js
 
+# add our entrypoint script
 ADD ./scripts/docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
