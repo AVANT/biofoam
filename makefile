@@ -9,8 +9,7 @@ prod: upload
 build: clean
 	boot2docker up
 	docker-compose build
-	docker-compose start &
-	echo $?
+	docker-compose scale data=1
 	docker-compose run dev run build
 
 upload: package loadEnv
