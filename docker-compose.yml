@@ -1,14 +1,13 @@
 base:
   build: .
 
-# package:
-#   image: biofoam_base
-#   volumes_from:
-#     - data
-#   env_file: ./.env
-#   # command: package
-#   # entrypoint: ls
-#   entrypoint: /bin/bash
+build:
+  image: biofoam_base
+  volumes_from:
+    - data
+  env_file: ./.env
+  command: package
+  # entrypoint: /bin/bash
 
 dev:
   image: biofoam_base
