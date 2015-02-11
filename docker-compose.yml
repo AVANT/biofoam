@@ -10,7 +10,7 @@ base:
 #   # entrypoint: ls
 #   entrypoint: /bin/bash
 
-start:
+dev:
   image: biofoam_base
   volumes_from:
     - data
