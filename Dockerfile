@@ -14,7 +14,7 @@ RUN npm install --unsafe-perm
 ADD gulpfile.js $SRC/gulpfile.js
 
 # add our entrypoint script
-ADD ./scripts/docker-entrypoint.sh /docker-entrypoint.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["npm"]
+CMD ["start"]
 
 
