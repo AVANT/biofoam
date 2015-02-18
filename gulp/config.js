@@ -88,6 +88,6 @@ module.exports = {
   },
 
   clean: {
-    delete: [ dest ]
+    delete: [ dest + '/**' ]
   }
 };

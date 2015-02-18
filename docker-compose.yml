@@ -4,6 +4,7 @@ dev:
     - data
   ports:
     - "49300:3000"
+  # entrypoint: bash
 
 data:
   image: busybox
@@ -11,4 +12,5 @@ data:
     - ./_src/:/biofoam/_src
     - ./vendor/:/biofoam/vendor
     - ./gulp/:/biofoam/gulp
+    - ./_dist/:/biofoam/_dist
   entrypoint: true
