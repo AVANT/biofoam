@@ -4,17 +4,20 @@
 IGNORE := $(shell bash -c "cat .env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
 include .makeenv
 
+dev: docker_host
+	docker-compose up data dev
+
 staging: upload
 	ssh -o StrictHostKeyChecking=no -i ${AVANT_KEY_PATH} ${AVANT_USER}@${AVANT_STAGING_URL} sudo /usr/local/bin/update-vvvnt.sh frontend
 
 prod: upload
 	ssh -o StrictHostKeyChecking=no -i ${AVANT_KEY_PATH} ${AVANT_USER}@{AVANT_PRODUCTION_URL} sudo /usr/local/bin/update-vvvnt.sh frontend
 
-build: clean
+build: docker_host
+	docker-compose up data build
+
+docker_host: clean
 	boot2docker up
-	docker-compose build
-	docker-compose scale data=1
-	docker-compose run dev run build
 
 upload: package
 	aws s3 cp dist.latest.tar.gz s3://fanny-pack/frontend/releases/dist.latest.tar.gz

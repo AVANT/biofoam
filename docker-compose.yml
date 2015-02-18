@@ -1,10 +1,15 @@
+build:
+  build: .
+  volumes_from:
+    - data
+  command: run build
+
 dev:
   build: .
   volumes_from:
     - data
   ports:
     - "49300:3000"
-  # entrypoint: bash
 
 data:
   image: busybox

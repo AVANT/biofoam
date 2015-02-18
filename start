@@ -1,0 +1,3 @@
+#!/bin/bash
+boot2docker up
+docker-compose up data dev
