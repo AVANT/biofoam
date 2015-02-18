@@ -4,8 +4,9 @@
 IGNORE := $(shell bash -c "cat .env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
 include .makeenv
 
-dev: docker_host
-	docker-compose up data dev
+dev:
+	npm install
+	npm start
 
 staging: upload
 	ssh -o StrictHostKeyChecking=no -i ${AVANT_KEY_PATH} ${AVANT_USER}@${AVANT_STAGING_URL} sudo /usr/local/bin/update-vvvnt.sh frontend
