@@ -18,10 +18,6 @@ Frontend of AVANT.org
 - download docker-compose (formally fig) with brew **NOT IN BREW YET**
   - can get the docker-compose binary [here](https://github.com/docker/fig/releases)
 
-### Setup Docker Host VM
-- from anywhere in bash `boot2docker init`
-- run `./scripts/forward-49xxx-ports.sh`
-
 ### Start Up VM and Containers
 - from anywhere in bash `boot2docker up`
 - from root folder in bash `docker-compose up`

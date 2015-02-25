@@ -6,11 +6,14 @@ dev:
 	npm install
 	npm start
 
+dev-exp:
+	docker-compose up data dev
+
 staging: upload
 	ssh -o StrictHostKeyChecking=no -i $(AVANT_KEY_PATH) $(AVANT_USER)@$(AVANT_STAGING_URL) sudo /usr/local/bin/update-vvvnt.sh frontend
 
 prod: upload
-	ssh -o StrictHostKeyChecking=no -i $(AVANT_KEY_PATH) $(AVANT_USER)@(AVANT_PRODUCTION_URL) sudo /usr/local/bin/update-vvvnt.sh frontend
+	ssh -o StrictHostKeyChecking=no -i $(AVANT_KEY_PATH) $(AVANT_USER)@$(AVANT_PRODUCTION_URL) sudo /usr/local/bin/update-vvvnt.sh frontend
 
 build: docker_host
 	docker-compose up data build
