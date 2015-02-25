@@ -14,7 +14,7 @@ return Marionette.CompositeView.extend({
   },
 
   events:{
-    'click .js-submit': 'submitClicked',
+    // 'click .js-submit': 'submitClicked',
     'click .js-about': 'aboutClicked',
     'click .js-privacy': 'privacyClicked',
     'click .js-sponsorship': 'sponsorshipClicked'
