@@ -51,6 +51,10 @@ dist
 _dist
 .sass-cache
 
+# Editor Artifacts #
+####################
+.idea
+
 # Secrets #
 ############
 .env

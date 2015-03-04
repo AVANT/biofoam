@@ -22,4 +22,9 @@ Frontend of AVANT.org
 - from anywhere in bash `boot2docker up`
 - from root folder in bash `docker-compose up`
 
+## Deploying
+- need awscli tools `brew install awscli`
+- need to create a `.env` file at the root with all the necessary creds
+- commands `make staging` and `make prod` deploy to their respective environments
+
 ## TODOs
