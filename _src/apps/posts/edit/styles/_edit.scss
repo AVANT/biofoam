@@ -13,7 +13,7 @@
 		padding-top: 0.2em;
 		height: 1.7em;
     	border: solid 1px $black;
-      	background-color: $grey;
+      	background-color: $white;
       	@include transition( background-color .25s ease-in-out );
       	padding: 2px;
       	vertical-align: middle;
@@ -38,13 +38,13 @@
       	text-align: center;
       	height: 1.7em;
       	vertical-align: middle;
-      	border: solid 0px $grey;
+      	border: solid 0px $white;
       	color: white;
       	background-color: $black;
       	font-size: 16px;
       	@include transition( background-color .25s ease-in-out );
 		&:hover {
-        	background-color: $vvv-blue;
+        	background-color: $avant-blue;
       	}
       	&:focus {
         	background-color: $black;
@@ -58,13 +58,13 @@
       	text-align: center;
       	height: 1.7em;
       	vertical-align: middle;
-      	border: solid 0px $grey;
+      	border: solid 0px $white;
       	color: white;
       	background-color: $black;
       	font-size: 16px;
       	@include transition( background-color .25s ease-in-out );
       	&:hover {
-        	background-color: $vvv-blue;
+        	background-color: $avant-blue;
       	}
       	&:focus {
         	background-color: $black;

@@ -17,7 +17,7 @@
     text-decoration: none;
 
     &:hover{
-      color: $vvv-blue;
+      color: $avant-blue;
       @include transition( color .25s ease-in-out );
     }
     

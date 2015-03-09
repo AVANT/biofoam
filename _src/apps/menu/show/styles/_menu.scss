@@ -9,7 +9,7 @@ nav.nav .nav-viewport{
   z-index: 9;
   width: calc(100% - 40px);
   height: $collapsed-nav;
-  background: $grey;
+  background: $white;
   border-bottom: 1px solid $black;
   a {text-decoration: none;}
 
@@ -66,7 +66,7 @@ nav.nav .nav-viewport{
     font-family: $jose;
     text-decoration: none;
     &:hover{
-      color: $vvv-blue;
+      color: $avant-blue;
       @include transition( color .25s ease-in-out );
     }
   }
