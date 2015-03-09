@@ -121,7 +121,6 @@ body.posts.show {
 body.posts.show .body {
 
   max-width: $global-max-width;
-  //@include padding-breakdown;
   font-family: $quat;
   font-size: 1.9em;
   @include transition( font-size .25s ease-in-out );
@@ -152,16 +151,6 @@ body.posts.show .body {
     padding-top: 0.6em;
     font-size: 0.85em;
     color: $mid-grey;
-    // em {
-    //   ::selection{
-    //   color: white;
-    //   background: $mid-grey;
-    //   }
-    // }
-  //  :selection{
-  //     color: white;
-  //     background: $mid-grey;
-  // } 
   }
   .footnote::selection{
       color: white;
@@ -180,14 +169,8 @@ body.posts.show .body {
   }
   .title{
     text-align: center;
-    //@include width-breakdown;
     @include padding-breakdown;
-    //@media (max-width: $screen-md-min) {
-    //  width: 85%;
-    //}
     font-size: 2.6em;
-    //@include transition( all .25s ease-in-out );
-
     @media (max-width: $screen-sm-min) {
       padding-left: 20px;
       padding-right: 20px;
@@ -199,8 +182,6 @@ body.posts.show .body {
       padding-left: 0px;
       padding-right: 0px;
     }
-    //text-align: left;
-    //margin-top: 30px !important;
     font-family: $jose;
     color: $black;
     padding-top: 30px !important;
@@ -213,7 +194,6 @@ body.posts.show .body {
     font-weight: bold;
     color: $vvv-blue;
     font-size: 1.4em;
-    //@include transition( all .25s ease-in-out );
     @media (max-width: $screen-md-min) {
       font-size: 1.4em;
     }
@@ -239,7 +219,6 @@ body.posts.show .body {
       margin-left: 0px;
       line-height: 1.5em;
       &:hover {
-        //color: $vvv-blue;
         @include transition( color .25s ease-in-out );
         border: solid 1px $vvv-blue;
         @include transition( border .25s ease-in-out );
@@ -283,8 +262,5 @@ body.posts.show .body {
   @media (min-width: $screen-md-min) {
     width: 70%;
   }
-  //@media (min-width: $screen-lg-min) {
-  //  width: 640px;
-  //}
 
 }

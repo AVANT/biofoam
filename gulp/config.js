@@ -7,9 +7,9 @@ module.exports = {
   dest: dest,
 
   sass: {
-    src: src + '/styles/main.scss',
+    src: src + '/apps/_common/styles/main.scss',
     dest: dest + '/css',
-    watchGlob: src + '/styles/**/*'
+    watchGlob: src + '/apps/**/*.scss'
   },
 
   // TODO: figure out how to remove all the combined scripts
