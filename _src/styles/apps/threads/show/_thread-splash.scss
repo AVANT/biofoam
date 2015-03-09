@@ -3,6 +3,9 @@
 /////////////////////
 
 .thread {
+  .meta-content {
+    text-align: center;
+  }
   .header-image {
     width:100%;
   }
@@ -11,8 +14,33 @@
     overflow: hidden;
   }
   .title {
-    font-family: $jose
+    font-family: $jose;
+    font-size: 49px;
+  }
+  .thread-curator {
+    li {display: inline;}
+    padding-left: 0px;
+    list-style-type: none;
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+    font-size: 26px;
+    @media (max-width: $screen-md-min) {
+      font-size: 1.4em;
+    }
+    display: inline;
+  }
+  .thread-sponsor {
+    li {display: inline;}
+    padding-left: 0px;
+    list-style-type: none;
+    font-family: $jose;
+    font-weight: bold;
+    color: $vvv-blue;
+    font-size: 26px;
+    @media (max-width: $screen-md-min) {
+      font-size: 1.4em;
+    }
+    display: inline;
   }
 }
-
-
