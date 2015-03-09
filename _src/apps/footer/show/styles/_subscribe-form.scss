@@ -23,7 +23,7 @@
     letter-spacing: 0.05em;
   }
   #mc_embed_signup {
-  background-color: $grey;
+  background-color: $white;
   height: 100%; // to include child error messages
   margin: 20px;
   margin-top: 10px;
@@ -46,7 +46,7 @@
       float: right;
       padding: 2px;
       vertical-align: middle;
-      border: solid 1px $grey;
+      border: solid 1px $white;
       border-left: none;
       color: white;
       background-color: $black;
@@ -54,7 +54,7 @@
       @include transition( background-color .25s ease-in-out );
 
       &:hover {
-        background-color: $vvv-blue;
+        background-color: $avant-blue;
       }
       &:focus {
         background-color: $black;
@@ -64,8 +64,8 @@
 
     input[type="text"], input[type="email"] {
       height: 1.8em;
-      border: solid 1px $grey;
-      background-color: $grey;
+      border: solid 1px $white;
+      background-color: $white;
       @include transition( background-color .25s ease-in-out );
       padding: 2px;
       vertical-align: middle;

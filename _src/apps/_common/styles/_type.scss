@@ -3,8 +3,8 @@
   Raleway: 400, 100
 
 */
-//$quat: 'Fanwood Text', serif;
-$quat: 'Crimson', serif;
+//$crimson: 'Fanwood Text', serif;
+$crimson: 'Crimson', serif;
 $jose: 'Josefin Sans', sans-serif;
 $avant: 'AVANT', sans-serif;
 $code: 'Source Code Pro', sans-serif;
@@ -57,8 +57,8 @@ body {
 .fa-dark { color: $black; }
 
 hr {
-  color: $mid-grey;
-  background-color: $mid-grey;
+  color: $grey;
+  background-color: $grey;
   height:1px;
   border: 0;
   width: 100%;
@@ -93,7 +93,7 @@ initial{
     letter-spacing: 0.05em;
     font-weight: 600;
     font-family: $jose;
-    color: $vvv-blue;
+    color: $avant-blue;
     float: left;
     margin-top: 0.4em;
     margin-right: 0.05em;
@@ -101,7 +101,7 @@ initial{
     font-size: 6.6em;
     font-weight: bold;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px $vvv-blue;
+    -webkit-text-stroke: 1px $avant-blue;
   }
 }
 
@@ -134,11 +134,11 @@ h4 {
 }
 
 a {
-    color: $vvv-blue;
+    color: $avant-blue;
     outline: none;
     @include transition( color .25s ease-in-out );
     &:hover {
-      color: $mid-grey;
+      color: $grey;
       text-decoration: none;
     }
     text-decoration: none;
@@ -152,7 +152,7 @@ a:focus {
 }
 
 p {
-    font-family: $quat;
+    font-family: $crimson;
     font-size: 2.4em;
     font-weight: lighter;
     letter-spacing: 0.03em;

@@ -1,4 +1,88 @@
 .content{
 	font-size:19px;
-	font-family:$quat;
+	font-family:$crimson;
+	margin-top:20px;
+	margin-bottom:40px;
+}
+
+.share-buttons {
+text-align: center;
+
+.fbook-share {
+  &:hover {cursor:pointer;}
+  height: 32px;
+  margin-left: 3px;
+  padding-top: 11px;
+  padding-bottom: 5px;
+  padding-right: 11px;
+  padding-left: 11px;
+  a {text-decoration: none;}
+  border: 1px solid #4964a1;
+  @include transition( all .25s ease-in-out );
+  display: inline;
+  &:hover {
+    border: 1px solid #4964a1;
+    background: #4964a1;
+    .share-child {
+      color: $white;
+    }
+  }
+  .share-facebook {
+    font-size: 14px;
+  }
+  .share-text {
+    font-size: 16px;
+    font-family: $jose;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-left: 4px;
+  }
+  .share-share {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .share-child {
+    display: inline;
+    color: #4964a1;
+  }
+}
+
+.twitter-share {
+  &:hover {cursor:pointer;}
+  height: 32px;
+  padding-top: 11px;
+  padding-bottom: 5px;
+  padding-right: 11px;
+  padding-left: 11px;
+  a {text-decoration: none;}
+  margin-left: 10px;
+  border: 1px solid #55acee;
+  display: inline;
+  @include transition( all .25s ease-in-out );
+  &:hover {
+    border: 1px solid #55acee;
+    background: #55acee;
+    .share-child {
+      color: $white;
+    }
+  }
+  .share-twitter {
+    font-size: 14px;
+  }
+  .share-text {
+    font-size: 16px;
+    font-family: $jose;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-left: 4px;
+  }
+  .share-share {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .share-child {
+    display: inline;
+    color: #55acee;
+  }
+}
 }

@@ -23,7 +23,7 @@ body.posts.show {
 
 	    .carousel-caption {
 	    	text-shadow: none;
-	    	font-family: $quat;
+	    	font-family: $crimson;
 	    	color: $black;
 	    	text-align: left;
 	    	width: 100%;
@@ -42,11 +42,11 @@ body.posts.show {
 	    	//z-index: 99;
 	    	//top: 540px;
 	    	li {
-	    		border: solid 1px $mid-grey;
+	    		border: solid 1px $grey;
 	      	}
 	    }
 	    .carousel-indicators .active {
-	    	background: $mid-grey;
+	    	background: $grey;
 	    	width: 10px;
 	    	height: 10px;
 	    	margin: 1px;
@@ -54,11 +54,11 @@ body.posts.show {
 	    .carousel-control {
 	    	text-shadow: none;
 	    	font-size: 1.5em;
-	    	color: $grey;
+	    	color: $white;
 	    	opacity: 0;
 	    	@include transition( opacity .4s ease-in-out );
 	    	//&:hover {
-	        //	color: $mid-grey;
+	        //	color: $grey;
 	        	//@include transition( color .4s ease-in-out );
 	      	//}
 	    }

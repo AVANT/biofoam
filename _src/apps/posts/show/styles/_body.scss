@@ -21,92 +21,92 @@ body.posts.show {
 
   .share-buttons {
     text-align: center;
-
-  .fbook-share {
-    &:hover {cursor:pointer;}
-    height: 32px;
-    margin-left: 3px;
-    padding-top: 9px;
-    padding-bottom: 5px;
-    padding-right: 11px;
-    padding-left: 11px;
-    a {text-decoration: none;}
-    border: 1px solid #4964a1;
-    @include transition( all .25s ease-in-out );
-    display: inline;
-    &:hover {
+    
+    .fbook-share {
+      &:hover {cursor:pointer;}
+      height: 32px;
+      margin-left: 3px;
+      padding-top: 9px;
+      padding-bottom: 5px;
+      padding-right: 11px;
+      padding-left: 11px;
+      a {text-decoration: none;}
       border: 1px solid #4964a1;
-      background: #4964a1;
+      @include transition( all .25s ease-in-out );
+      display: inline;
+      &:hover {
+        border: 1px solid #4964a1;
+        background: #4964a1;
+        .share-child {
+          color: $white;
+        }
+      }
+      .share-facebook {
+        font-size: 14px;
+      }
+      .share-text {
+        font-size: 16px;
+        font-family: $jose;
+        font-weight: bold;
+        margin-bottom: 0px;
+        margin-left: 4px;
+      }
+      .share-share {
+        font-size: 14px;
+        margin-left: 4px;
+      }
       .share-child {
-        color: $grey;
+        display: inline;
+        color: #4964a1;
       }
     }
-    .share-facebook {
-      font-size: 14px;
-    }
-    .share-text {
-      font-size: 16px;
-      font-family: $jose;
-      font-weight: bold;
-      margin-bottom: 0px;
-      margin-left: 4px;
-    }
-    .share-share {
-      font-size: 14px;
-      margin-left: 4px;
-    }
-    .share-child {
-      display: inline;
-      color: #4964a1;
-    }
-  }
 
-  .twitter-share {
-    &:hover {cursor:pointer;}
-    height: 32px;
-    padding-top: 9px;
-    padding-bottom: 5px;
-    padding-right: 11px;
-    padding-left: 11px;
-    a {text-decoration: none;}
-    margin-left: 10px;
-    border: 1px solid #55acee;
-    display: inline;
-    @include transition( all .25s ease-in-out );
-    &:hover {
+    .twitter-share {
+      &:hover {cursor:pointer;}
+      height: 32px;
+      padding-top: 9px;
+      padding-bottom: 5px;
+      padding-right: 11px;
+      padding-left: 11px;
+      a {text-decoration: none;}
+      margin-left: 10px;
       border: 1px solid #55acee;
-      background: #55acee;
+      display: inline;
+      @include transition( all .25s ease-in-out );
+      &:hover {
+        border: 1px solid #55acee;
+        background: #55acee;
+        .share-child {
+          color: $white;
+        }
+      }
+      .share-twitter {
+        font-size: 14px;
+      }
+      .share-text {
+        font-size: 16px;
+        font-family: $jose;
+        font-weight: bold;
+        margin-bottom: 0px;
+        margin-left: 4px;
+      }
+      .share-share {
+        font-size: 14px;
+        margin-left: 4px;
+      }
       .share-child {
-        color: $grey;
+        display: inline;
+        color: #55acee;
       }
     }
-    .share-twitter {
-      font-size: 14px;
-    }
-    .share-text {
-      font-size: 16px;
-      font-family: $jose;
-      font-weight: bold;
-      margin-bottom: 0px;
-      margin-left: 4px;
-    }
-    .share-share {
-      font-size: 14px;
-      margin-left: 4px;
-    }
-    .share-child {
-      display: inline;
-      color: #55acee;
-    }
   }
-}
 
 
 
   #post-region {
     .body-wrapper {
       margin-top: -20px;
-      background-color: $grey;
+      background-color: $white;
       z-index: 1;
       margin-top: 400px;
       @media (max-width: $screen-sm-min) {
@@ -121,7 +121,7 @@ body.posts.show {
 body.posts.show .body {
 
   max-width: $global-max-width;
-  font-family: $quat;
+  font-family: $crimson;
   font-size: 1.9em;
   @include transition( font-size .25s ease-in-out );
   @media (max-width: $screen-sm-min) {
@@ -145,27 +145,27 @@ body.posts.show .body {
     line-height: 2em;
   }
   .footnote {
-    border-top: solid 1px $mid-grey;
+    border-top: solid 1px $grey;
     margin-top: 5em;
     margin-bottom: 3em;
     padding-top: 0.6em;
     font-size: 0.85em;
-    color: $mid-grey;
+    color: $grey;
   }
   .footnote::selection{
       color: white;
-      background: $mid-grey;
+      background: $grey;
   }
       
   .photoCredit {
     font-family: $jose;
     font-size: 0.9em;
     font-weight: bold;
-    color: $mid-grey;
+    color: $grey;
   }
   .photoCredit::selection {
     color: white;
-    background: $mid-grey;
+    background: $grey;
   }
   .title{
     text-align: center;
@@ -192,7 +192,7 @@ body.posts.show .body {
     list-style-type: none;
     font-family: $jose;
     font-weight: bold;
-    color: $vvv-blue;
+    color: $avant-blue;
     font-size: 1.4em;
     @media (max-width: $screen-md-min) {
       font-size: 1.4em;
@@ -202,7 +202,7 @@ body.posts.show .body {
   .tags {
     font-family: $jose;
     font-weight: bold;
-    color: $vvv-blue;
+    color: $avant-blue;
     font-size: 0.9em;
     margin-left: -40px;
     margin-bottom: 30px;
@@ -210,7 +210,7 @@ body.posts.show .body {
     li {
       white-space: nowrap;
       display: inline;
-      border: solid 1px $vvv-blue;
+      border: solid 1px $avant-blue;
       padding: 5px;
       padding-right: 6px;
       padding-left: 6px;
@@ -220,7 +220,7 @@ body.posts.show .body {
       line-height: 1.5em;
       &:hover {
         @include transition( color .25s ease-in-out );
-        border: solid 1px $vvv-blue;
+        border: solid 1px $avant-blue;
         @include transition( border .25s ease-in-out );
       }
     }
@@ -228,14 +228,14 @@ body.posts.show .body {
   .date {
     font-family: $jose;
     font-weight: bold;
-    color: $mid-grey;
+    color: $grey;
     font-size: 0.9em;
     margin-bottom: 10px;
     margin-top: 0px;
     }
   .date::selection {
     color: white;
-    background: $mid-grey;
+    background: $grey;
   }
 
   blockquote {
@@ -251,7 +251,7 @@ body.posts.show .body {
     margin-left: 0;
     padding-left: 1.6em;
     margin-top: 0;
-    border-left: double 8px $mid-grey;
+    border-left: double 8px $grey;
     border-radius: 0px;
   }
 
