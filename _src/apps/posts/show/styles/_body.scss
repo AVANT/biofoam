@@ -144,29 +144,6 @@ body.posts.show .body {
     font-size: 1em;
     line-height: 2em;
   }
-  .footnote {
-    border-top: solid 1px $grey;
-    margin-top: 5em;
-    margin-bottom: 3em;
-    padding-top: 0.6em;
-    font-size: 0.85em;
-    color: $grey;
-  }
-  .footnote::selection{
-      color: white;
-      background: $grey;
-  }
-      
-  .photoCredit {
-    font-family: $jose;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: $grey;
-  }
-  .photoCredit::selection {
-    color: white;
-    background: $grey;
-  }
   .title{
     text-align: center;
     @include padding-breakdown;
