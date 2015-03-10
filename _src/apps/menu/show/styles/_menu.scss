@@ -3,10 +3,19 @@
     top: 10.5px !important;
   }
 }
+.nav-back{
+  left:0px;
+  position:fixed;
+  background: $white;
+  height: $collapsed-nav;
+  width:100%;
+  z-index: 1054;
+}
 nav.nav .nav-viewport{
 
   position: fixed;
-  z-index: 9;
+  margin: auto;
+  z-index: 1055;
   width: calc(100% - 40px);
   height: $collapsed-nav;
   background: $white;
