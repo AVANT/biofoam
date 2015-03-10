@@ -84,7 +84,6 @@ pullquote{
     margin-left: 0;
     margin-bottom: 28px;
     margin-top: 0px;
-    //margin-top: -0.2em;
   }
 }
 
@@ -103,6 +102,25 @@ initial{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px $avant-blue;
   }
+}
+
+.footnote {
+  border-top: solid 1px $grey;
+  margin-top: 5em;
+  margin-bottom: 3em;
+  padding-top: 0.6em;
+  font-size: 0.85em;
+  color: $grey;
+}
+.footnote::selection{
+    color: white;
+    background: $grey;
+}
+    
+.photoCredit {
+  font-family: $crimson;
+  font-size: 16px !important;
+  color: $grey;
 }
 
 h1 {
@@ -143,7 +161,6 @@ a {
     }
     text-decoration: none;
   }
-
 a:active {
     outline: none;
 }
