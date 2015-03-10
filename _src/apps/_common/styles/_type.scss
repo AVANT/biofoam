@@ -109,12 +109,11 @@ initial{
   margin-top: 5em;
   margin-bottom: 3em;
   padding-top: 0.6em;
-  font-size: 0.85em;
+  font-size: 16px !important;
   color: $grey;
 }
 .footnote::selection{
-    color: white;
-    background: $grey;
+    background: $avant-blue;
 }
     
 .photoCredit {
