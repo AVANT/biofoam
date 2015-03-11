@@ -11,7 +11,7 @@ return Moonrakr.module('Posts.Show', function(Show){
 
   Show.Post = Marionette.ItemView.extend({
     tagName: 'article',
-    className: 'post',
+    className: 'post-article',
     events: {
       'click .fbook-share': 'facebookClicked',
       'click .twitter-share': 'twitterClicked'
