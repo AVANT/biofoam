@@ -64,6 +64,8 @@ return Moonrakr.module('Common.Views', function(Views){
       var img = this.$('canvas').get(0);
 
       this.ui.imagePreview.find('canvas').Jcrop({
+        boxWidth: 960,
+        boxHeight: 540,
         setSelect: [40, 40, img.width - 40, img.height - 40],
         onChange: function(coords){
           that.updateCoords(coords, that);

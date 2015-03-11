@@ -72,7 +72,7 @@ return Moonrakr.module('Media.New', function(New){
           self.initJcrop();
         },
         { // options
-          maxWidth: 1500,
+          maxWidth: 1000,
           contain: true,
           canvas: true,
           crossOrigin: 'Anonymous'
