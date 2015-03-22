@@ -1,6 +1,6 @@
 define(function(){
 	return {
-		api: '/api',
+		api: 'http://staging.moonrakr.co/api',
 		postsSlug: 'media/',
 		reservedSlugs: ['about', 'privacy', 'sponsorship']
 	};
