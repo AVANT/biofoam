@@ -14,10 +14,6 @@ body{
 	padding-left: 20px;
 	padding-right: 20px;
 
-	//@media (min-width: $screen-sm-min){
-	//	padding: 0;
-	//}
-
   @media (min-width: $screen-lg-min){
     padding: 0 10%;
   }
@@ -53,10 +49,6 @@ body{
 }
 .btn[disabled] {pointer-events: auto;
   color:white;
-  //opacity: 1;
-  //&:hover{
-  //  cursor: pointer;
-  //}
 }
 button {
     padding-left: 6px;
