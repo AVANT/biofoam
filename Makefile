@@ -1,6 +1,6 @@
-.PHONY: staging upload clean package clean build loadEnv
+.PHONY: staging upload clean package clean build loadEnv echo
 
-include $(readlink .env)
+include $(shell readlink .env)
 
 dev:
 	npm install
