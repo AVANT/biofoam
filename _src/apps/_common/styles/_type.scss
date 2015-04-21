@@ -111,12 +111,42 @@ initial{
   padding-top: 0.6em;
   font-size: 16px !important;
   color: $grey;
+  a {
+    outline: none;
+    color: $grey;
+    text-decoration: underline;
+    @include transition( color .25s ease-in-out );
+    &:hover {
+      color: $black;
+    }
+  }
+  a:active focus {
+    outline: none;
+  }
+  a:focus {
+    outline: none;
+  }
 }
     
 .photoCredit {
   font-family: $crimson;
   font-size: 16px !important;
   color: $grey;
+  a {
+    outline: none;
+    color: $grey;
+    text-decoration: underline;
+    @include transition( color .25s ease-in-out );
+    &:hover {
+      color: $black;
+    }
+  }
+  a:active focus {
+    outline: none;
+  }
+  a:focus {
+    outline: none;
+  }
 }
 
 h1 {
@@ -148,16 +178,15 @@ h4 {
 }
 
 a {
-    color: $avant-blue;
     outline: none;
+    color: $black;
+    text-decoration: underline;
     @include transition( color .25s ease-in-out );
     &:hover {
       color: $grey;
-      text-decoration: none;
     }
-    text-decoration: none;
   }
-a:active {
+a:active focus {
     outline: none;
 }
 a:focus {
