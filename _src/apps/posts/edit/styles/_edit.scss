@@ -1,3 +1,14 @@
+.edit #main {
+  @include transition( width .25s ease-in-out );
+  @media (min-width: $screen-sm-min) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 70%;
+  }
+}
+
 .jsbox {
   margin-bottom:0px !important;
 }
