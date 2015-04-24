@@ -1,4 +1,4 @@
-.PHONY: staging upload clean package clean build loadEnv echo
+.PHONY: staging upload clean package clean build cloudflare_devmode
 
 include $(shell readlink .env)
 
@@ -29,4 +29,12 @@ package: build
 
 clean:
 	rm -fr _dist
+
+cloudflare_devmode:
+	curl https://www.cloudflare.com/api_json.html \
+		-d 'a=devmode' \
+		-d 'tkn=$(CLOUDFLARE_API_KEY)' \
+		-d 'email=$(CLOUDFLARE_USER)' \
+		-d 'z=$(CLOUDFLARE_DOMAIN)' \
+		-d 'v=1'
 
