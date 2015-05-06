@@ -63,6 +63,7 @@ return Moonrakr.module('Common.Views', function(Views){
         fileUpload: fileUploadUrl,
         convertDivs: false,
         maxHeight: 600,
+        replaceDivs: false,
         paragraphy: false,
         changeCallback: function(html){
           that.$('.redactor').html(html);
