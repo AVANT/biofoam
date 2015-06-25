@@ -9,7 +9,7 @@ nav.nav .nav-viewport{
 	    #menu-twitter {
 	    	font-size: 1.3em;
 	    	color: $black;
-	    	padding-left: 10px;
+	    	padding-left: 16x;
 	    	@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #55acee;
@@ -18,16 +18,25 @@ nav.nav .nav-viewport{
 		#menu-facebook {
 			font-size: 1.3em;
 			color: $black;
-			padding-left: 10px;
+			padding-left: 16px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #4964a1;
     		}
 		}
+		#menu-instagram {
+			font-size: 1.3em;
+			color: $black;
+			padding-left: 16px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #085885;
+    		}
+		}
 		#menu-rss {
 			font-size: 1.3em;
 			color: $black;
-			padding-left: 10px;
+			padding-left: 16px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #faab49;
