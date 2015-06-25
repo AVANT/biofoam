@@ -1,4 +1,4 @@
-<div class="post-hi">
+<!-- <div class="post-hi">
 
   <div class="post-image-wrapper">
     <img class="post-img" src="{{ headerImageUrl }}" alt="">
@@ -19,4 +19,23 @@
   
   </div>
 
+</div> -->
+
+<div class="card-outer essay">
+  <div class="card">
+    <p class="date">{{ date }}</p>
+    <div class="post-image-wrapper">
+      <img class="post-img" src="{{ headerImageUrl }}" alt="">
+    </div>
+    <ul class="tags">
+      {{#each tags}}
+      <li>{{ this }}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="card-bottom">
+    <h2 class="title">{{ title }}</h2>
+    <p class="authors">{{ authors }}</p>
+    <p class="excerpt">{{ excerpt }}</p>
+  </div>
 </div>
