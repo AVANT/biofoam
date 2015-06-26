@@ -3,44 +3,98 @@ nav.nav .nav-viewport{
 	.social-links {
 
 	    position: absolute;
-	    top: 25px;
-	    right: 23px;
+	    top: 23px;
+	    right: 20px;
+
+	    .menu-sub{
+	    	opacity:0;
+	    	@include transition( all .25s ease-in-out );
+	    	padding-right:-20px;
+	    	color: $black;
+	    }
 
 	    #menu-twitter {
-	    	font-size: 1.3em;
-	    	color: $black;
-	    	padding-left: 16x;
+	    	font-size: 1.4em;
+	    	padding-left: 13px;
 	    	@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #55acee;
     		}
 	    }
 		#menu-facebook {
-			font-size: 1.3em;
-			color: $black;
-			padding-left: 16px;
+			font-size: 1.4em;
+			padding-left: 13px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #4964a1;
     		}
 		}
 		#menu-instagram {
-			font-size: 1.3em;
-			color: $black;
-			padding-left: 16px;
+			font-size: 1.4em;
+			padding-left: 13px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
-      			color: #085885;
+      			color: #517fa4;
+    		}
+		}
+		#menu-soundcloud {
+			font-size: 1.6em;
+			padding-left: 12px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #f50;
+    		}
+		}
+		#menu-vimeo {
+			font-size: 1.4em;
+			padding-left: 12px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #45bbff;
+    		}
+		}
+		#menu-youtube {
+			font-size: 1.4em;
+			padding-left: 13px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #bb0000;
+    		}
+		}
+		#menu-github {
+			font-size: 1.5em;
+			padding-left: 12px;
+			@include transition( color .25s ease-in-out );
+	    	&:hover{
+      			color: #4183c4;
     		}
 		}
 		#menu-rss {
-			font-size: 1.3em;
-			color: $black;
-			padding-left: 16px;
+			font-size: 1.4em;
+			padding-left: 13px;
+			padding-right: 13px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #faab49;
     		}
-		}	
+		}
+		#menu-plus {
+			font-size: 1.5em;
+			color: $black;
+			top:22px;
+			@include transition( all .25s ease-in-out );
+		}
+
   	}
+ 	.social-links:hover {
+		.menu-sub{
+    		opacity:1;
+    	}
+    	#menu-plus {
+    		display: inline-block;
+      		-ms-transform: rotate(90deg); /* IE 9 */
+   			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    		transform: rotate(90deg);
+    	}
+   	}
 }
