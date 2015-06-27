@@ -7,8 +7,8 @@ body.loading .footer {
   visibility: visible;
   border-top: 1px solid $black;
   height: 165px;
+  margin-top: -16px;
   @media (max-width: $screen-sm-min) {
-  	margin-top: -20px;
   	height: 250px;
   }
   position: relative; // for the kiddies

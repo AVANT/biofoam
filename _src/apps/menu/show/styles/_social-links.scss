@@ -3,8 +3,8 @@ nav.nav .nav-viewport{
 	.social-links {
 
 	    position: absolute;
-	    top: 23px;
-	    right: 00px;
+	    top: 22px;
+	    right: 0px;
 
 	    .menu-sub{
 	    	opacity:0;
@@ -17,7 +17,7 @@ nav.nav .nav-viewport{
 
 	    #menu-twitter {
 	    	font-size: 1.4em;
-	    	padding-left: 13px;
+	    	padding-left: 11px;
 	    	@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #55acee;
@@ -25,7 +25,7 @@ nav.nav .nav-viewport{
 	    }
 		#menu-facebook {
 			font-size: 1.4em;
-			padding-left: 13px;
+			padding-left: 11px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #4964a1;
@@ -33,7 +33,7 @@ nav.nav .nav-viewport{
 		}
 		#menu-instagram {
 			font-size: 1.4em;
-			padding-left: 13px;
+			padding-left: 11px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #517fa4;
@@ -41,7 +41,7 @@ nav.nav .nav-viewport{
 		}
 		#menu-soundcloud {
 			font-size: 1.6em;
-			padding-left: 12px;
+			padding-left: 10px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #f50;
@@ -49,7 +49,7 @@ nav.nav .nav-viewport{
 		}
 		#menu-vimeo {
 			font-size: 1.4em;
-			padding-left: 12px;
+			padding-left: 10px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #45bbff;
@@ -57,7 +57,7 @@ nav.nav .nav-viewport{
 		}
 		#menu-youtube {
 			font-size: 1.4em;
-			padding-left: 13px;
+			padding-left: 11px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #bb0000;
@@ -65,7 +65,7 @@ nav.nav .nav-viewport{
 		}
 		#menu-github {
 			font-size: 1.5em;
-			padding-left: 12px;
+			padding-left: 10px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #4183c4;
@@ -73,8 +73,8 @@ nav.nav .nav-viewport{
 		}
 		#menu-rss {
 			font-size: 1.4em;
-			padding-left: 13px;
-			padding-right: 13px;
+			padding-left: 11px;
+			padding-right: 11px;
 			@include transition( color .25s ease-in-out );
 	    	&:hover{
       			color: #faab49;
@@ -92,26 +92,28 @@ nav.nav .nav-viewport{
 	    	display: inline-block;
 		}
 	    .menu-plus-wrapper {
-    		padding-right:20px;
+    		padding-right:0px;
     		padding-top: 20px;
     		padding-bottom: 20px;
     	}
   	}
- 	.social-links:hover {
-		.menu-sub{
-    		opacity:1;
-    	}
-    	.el-icon-plus-sign {
-      		-ms-transform: rotate(90deg); /* IE 9 */
-   			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-   			-moz-transform: rotate(90deg); /* Mozilla */
-    		transform: rotate(90deg);
-    		color: $avant-blue;
-    	}
-    	.menu-plus-wrapper {
-    		cursor:pointer;
-    	}
-   	}
+	@media (min-width: $screen-xs-min) {
+		.social-links:hover {
+			.menu-sub{
+				opacity:1;
+			}
+			.el-icon-plus-sign {
+		  		-ms-transform: rotate(90deg); /* IE 9 */
+				-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+				-moz-transform: rotate(90deg); /* Mozilla */
+				transform: rotate(90deg);
+				color: $avant-blue;
+			}
+			.menu-plus-wrapper {
+				cursor:pointer;
+			}
+		}
+   }
    	.social-links {
 		.menu-sub-press{
 			opacity:1;
