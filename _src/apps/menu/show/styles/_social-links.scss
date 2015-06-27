@@ -4,13 +4,15 @@ nav.nav .nav-viewport{
 
 	    position: absolute;
 	    top: 23px;
-	    right: 20px;
+	    right: 00px;
 
 	    .menu-sub{
 	    	opacity:0;
 	    	@include transition( all .25s ease-in-out );
 	    	padding-right:-20px;
 	    	color: $black;
+	    	padding-top:19px;
+	    	padding-bottom:19px;
 	    }
 
 	    #menu-twitter {
@@ -78,23 +80,43 @@ nav.nav .nav-viewport{
       			color: #faab49;
     		}
 		}
-		#menu-plus {
+		.el-icon-plus-sign {
 			font-size: 1.5em;
 			color: $black;
 			top:22px;
-			@include transition( all .25s ease-in-out );
+			@include transition( all .10s ease-in-out );
+			-ms-transform-origin: 49.5% 49.5%; /* IE 9 */
+			-webkit-transform-origin: 49.5% 49.5%; /* Chrome, Safari, Opera */
+			-moz-transform-origin: 49.5% 49.5%; /* Mozilla */
+			transform-origin: 49.5% 49.5%;
+	    	display: inline-block;
 		}
-
+	    .menu-plus-wrapper {
+    		padding-right:20px;
+    	}
   	}
  	.social-links:hover {
 		.menu-sub{
     		opacity:1;
     	}
-    	#menu-plus {
-    		display: inline-block;
+    	.el-icon-plus-sign {
       		-ms-transform: rotate(90deg); /* IE 9 */
    			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+   			-moz-transform: rotate(90deg); /* Mozilla */
     		transform: rotate(90deg);
+    		color: $avant-blue;
+    	}
+   	}
+   	.social-links {
+		.menu-sub-press{
+			opacity:1;
+		}
+    	.menu-plus-press {
+      		-ms-transform: rotate(90deg) !important; /* IE 9 */
+   			-webkit-transform: rotate(90deg) !important; /* Chrome, Safari, Opera */
+   			-moz-transform: rotate(90deg) !important; /* Mozilla */
+    		transform: rotate(90deg) !important;
+    		color: $avant-blue !important;
     	}
    	}
 }

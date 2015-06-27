@@ -15,6 +15,13 @@ return Moonrakr.module('Menu.Show', function(Show){
 
       Moonrakr.headerRegion.show( this.view );
 
+      $(function() {                                //run when the DOM is ready
+        $(".menu-plus-wrapper").click(function() {          //use a class, since your ID gets mangled
+          $(".el-icon-plus-sign").toggleClass("menu-plus-press");   //add the class to the clicked element
+          $(".menu-sub").toggleClass("menu-sub-press");
+        });
+      });
+
     },
     attachHandlers:function(){
 
@@ -27,7 +34,6 @@ return Moonrakr.module('Menu.Show', function(Show){
         var trigger = model.get('navigationTrigger');
         // var navString = model.get('navigationString') || null;
         Moonrakr.trigger( trigger );
-
       });
 
     }
