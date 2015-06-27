@@ -217,8 +217,9 @@ $spacing: 10px;
 
 .essay.card-outer {
   //width: 300px;
-  height:320px;
+  height:300px;
   //height: auto;
+  display:block;
 }
 
 .essay .card {height: 200px;}
@@ -242,10 +243,12 @@ $spacing: 10px;
 }
 
 .title {
+  width:100%;
   padding-left:12px;
+  padding-right:12px;
+  padding-top:12px;
   font-size: 25px !important;
   opacity: 1;
-  position: absolute;
   margin-top: 10px;
   z-index: 2 !important;
   line-height: 1.1em;
@@ -253,20 +256,22 @@ $spacing: 10px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $black;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .authors {
-  position: absolute;
+  display:block;
+  width:100%;
+  padding-top: 10px;
   z-index: 3;
   transition: opacity $time;
   line-height: 1.5em;
   max-width: 50%;
-  font-weight: bold;  
+  font-weight: bold;
   color: #000;
-  bottom: 0px;
-  margin-bottom: -5px;
-  right: 15px;
-  text-align: right;
+  text-align: center;
+  margin: 0 auto;
   font-size: 14px;
   &:hover {
     text-decoration: none;
@@ -288,34 +293,33 @@ $spacing: 10px;
   letter-spacing: 1.3px;
 }
 .card-bottom {
-  position: relative;
   padding-bottom: 0px;
+  text-align: center;
+  margin: 0 auto;
+  display:block;
 }
 .essay .card-bottom {
   position: absolute;
   top: 200px;
   width: 100%;
-  height: 110px;
+  height: 50px;
   background-color: white;
+  display:block;
 }
 
 .excerpt {
   margin-bottom: 0;
   margin-left: 5px;
-  margin-top: 0px;
+  margin-top: -100px;
   padding: 5px 10px 10px 10px;
   line-height: 2rem;
   clear: both;
   opacity: 0;
-  z-index: 5;
-  position: absolute;
+  z-index: 100;
   transition: opacity $time;
   font-size: 14px;
   color: $black;
   display: block !important;
-}
-.essay .excerpt {
-  @extend %vertical-align;
 }
 
 .tags {
