@@ -1,3 +1,53 @@
+  /////////////////////
+ //  SPLASH REGION  //
+/////////////////////
+
+.thread {
+  .meta-content {
+    text-align: center;
+  }
+  .header-image {
+    width:100%;
+  }
+  .post-image-wrapper {
+    max-height:400px;
+    overflow: hidden;
+  }
+  .title {
+    font-family: $jose;
+    font-size: 49px;
+  }
+  .thread-curator {
+    li {display: inline;}
+    padding-left: 0px;
+    list-style-type: none;
+    font-family: $jose;
+    font-weight: bold;
+    color: $avant-blue;
+    font-size: 26px;
+    @media (max-width: $screen-md-min) {
+      font-size: 26px;
+    }
+    display: inline;
+  }
+  .thread-sponsor {
+    padding-left: 0px;
+    list-style-type: none;
+    font-family: $crimson;
+    color: $black;
+    font-size: 19px;
+    margin-bottom:20px;
+    @media (max-width: $screen-md-min) {
+      font-size: 19px;
+    }
+  }
+}
+.excerpt {
+  @media (min-width: $screen-sm-min) {
+    display: none;
+  }
+}
+
 .content{
 	font-size:19px;
 	font-family:$crimson;

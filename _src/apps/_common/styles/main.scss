@@ -1,70 +1,55 @@
 // God's Box Sizing Model
 *, *::before, *::after {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
+// Vendor Imports
+@import "vendor/normalize";
+@import "vendor/redactor";
+@import "vendor/jquery.jcrop";
+@import "vendor/slick";
+@import "../../../../bower_components/bourbon/dist/addons/clearfix";
 
-// // Vendor Imports
- @import "vendor/normalize";
- @import "vendor/redactor";
- @import "vendor/jquery.jcrop";
- @import "vendor/slick";
- @import "../../../../bower_components/bourbon/dist/addons/clearfix";
+// Variables and Config Imports
+@import "colors";
+@import "breakpoints";
+@import "measurements";
+@import "mixins";
+@import "type";
+@import "elusive";
+@import "redactor-extension";
 
+// App Parent Imports
+@import "common";
 
-// // Variables and Config Imports
- @import "colors";
- @import "breakpoints";
- @import "measurements";
- @import "mixins";
- @import "type";
- @import "elusive";
- @import "redactor-extension";
+// Menu Imports
+@import "../../menu/show/styles/menu";
+@import "../../menu/show/styles/menu-card-extra";
+@import "../../menu/show/styles/social-links";
 
-// // App Imports
- @import "common";
-
-
-// //// Persistant Module Imports
-// ////// Menu App Imports
- @import "../../menu/show/styles/menu";
- @import "../../menu/show/styles/menu-card-extra";
- @import "../../menu/show/styles/social-links";
-// ////// Footer Imports
+// Footer Imports
  @import "../../footer/show/styles/footer";
  @import "../../footer/show/styles/subscribe-form";
  @import "../../footer/show/styles/static-links";
  @import "../../footer/show/styles/social";
 
+// Post Imports
+@import "../../posts/list/styles/posts-list";
+@import "../../posts/edit/styles/posts-edit";
+@import "../../posts/show/styles/posts-show";
 
-// //// Dynamic Module Imports
-// ////// Post App Imports
- @import "../../posts/list/styles/list";
- @import "../../posts/list/styles/post";
- @import "../../posts/list/styles/post-splash";
- @import "../../posts/list/styles/post-text-focus";
- @import "../../posts/list/styles/post-image-focus";
- @import "../../posts/list/styles/post-callout";
+// Thread Imports
+@import "../../threads/show/styles/threads-show";
 
- @import "../../posts/edit/styles/edit";
+// About Imports
+@import "../../posts/about/styles/about";
 
- @import "../../posts/show/styles/show";
- @import "../../posts/show/styles/body";
- @import "../../posts/show/styles/header";
- @import "../../posts/show/styles/gallery";
-
- @import "../../threads/show/styles/thread";
- @import "../../threads/show/styles/thread-splash";
-
-// /////// ABOUT
- @import "../../posts/about/styles/about";
-
-// //// Author Imports
-// @import "../../users/_common/styles/authors";
-
-// //// Media Imports
+// Media Imports
  @import "../../media/new/styles/uploader";
+
+// Author Imports
+// @import "../../users/_common/styles/authors";
 
 @-moz-document url-prefix() {
   nav.nav .nav-viewport .nav-logo #A{
