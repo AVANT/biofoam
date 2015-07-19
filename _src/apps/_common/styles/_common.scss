@@ -1,89 +1,97 @@
-// always have scroll bar on so that there is not a
-// jump when the content loads
-html { overflow-y: scroll; }
+////////////
+// PARENT //
+////////////
+
+html { overflow-y: scroll; }  // always have scroll bar on to avoid jump on content load
+::selection{ background: #DBDBDB !important; }
+
+//////////
+// BODY //
+//////////
 
 body {
   background-color: $white;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media ( min-width: $screen-lg-min ) { padding: 0 10%; }
+}
+body #main { padding-top: $collapsed-nav; }
+
+////////////////
+// EDIT PAGES //
+////////////////
+
+.edit .code {
+  min-height:250px;
 }
 
-body #main{
-  padding-top: $collapsed-nav;
-}
-
-body{
-	padding-left: 20px;
-	padding-right: 20px;
-
-  @media (min-width: $screen-lg-min){
-    padding: 0 10%;
-  }
-}
+/////////////////
+// UI ELEMENTS //
+/////////////////
 
 .btn {
   opacity: 1;
   pointer-events: auto;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 2px;
-    padding-bottom: 3px;
-    border-radius: 0px;
-    font-size: 16px;
-    letter-spacing: 0.03em;
-    text-transform: lowercase;
-    margin-right: 25px;
-    text-align: center;
-    height: 1.7em;
-    vertical-align: middle;
-    border: solid 0px $white;
-    color: white;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  border-radius: 0px;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  margin-right: 25px;
+  text-align: center;
+  height: 1.7em;
+  vertical-align: middle;
+  border: solid 0px $white;
+  color: white;
+  background-color: $black;
+  font-size: 16px;
+  @include transition( background-color .25s ease-in-out );
+  &:hover {
+    background-color: $avant-blue;
+  }
+  &:focus {
     background-color: $black;
-    font-size: 16px;
-    @include transition( background-color .25s ease-in-out );
-    &:hover {
-      background-color: $avant-blue;
-    }
-    &:focus {
-      background-color: $black;
-      outline: none;
-    }
+    outline: none;
+  }
 }
-.btn[disabled] {pointer-events: auto;
+.btn[disabled] {
+  pointer-events: auto;
   color:white;
 }
 button {
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 2px;
-    padding-bottom: 3px;
-    border-radius: 0px;
-    font-size: 16px;
-    letter-spacing: 0.03em;
-    text-transform: lowercase;
-    margin-right: 25px;
-    text-align: center;
-    height: 1.7em;
-    vertical-align: middle;
-    border: solid 0px $white;
-    color: white;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  border-radius: 0px;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  margin-right: 25px;
+  text-align: center;
+  height: 1.7em;
+  vertical-align: middle;
+  border: solid 0px $white;
+  color: white;
+  background-color: $black;
+  font-size: 16px;
+  @include transition( background-color .25s ease-in-out );
+  &:hover {
+    background-color: $avant-blue;
+  }
+  &:focus {
     background-color: $black;
-    font-size: 16px;
-    @include transition( background-color .25s ease-in-out );
-    &:hover {
-      background-color: $avant-blue;
-    }
-    &:focus {
-      background-color: $black;
-      outline: none;
-    }
+    outline: none;
+  }
 }
 
-.ie7 select#post-published {border:none; }
+.ie7 select#post-published { border:none; }
 .ie7 select#post-published select {
-    width:100%;
-    background-color:white;
-    border: solid 1px #ccc;
-    padding:0.3em 0.5em;
-}
-.edit .code {
-  min-height:250px;
+  width: 100%;
+  background-color: white;
+  border: solid 1px #ccc;
+  padding: 0.3em 0.5em;
 }

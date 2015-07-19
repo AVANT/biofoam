@@ -2,15 +2,6 @@
 // PARENT //
 ////////////
 
-body.posts.show{
-
-  width: 100%; // fix menu not taking full width
-
-  @media (min-width: $screen-sm){}
-  @media (min-width: $screen-md){}
-
-}
-
 ////////////
 // HEADER //
 ////////////
@@ -36,14 +27,9 @@ body.posts.show header{
       top: 60px;
     }
   }
-
-  @media (min-width: $screen-md-min) {}
-
 }
 
-blockquote {
-    border-left: solid 8px #DEDEDE;
-}
+blockquote { border-left: solid 8px #DEDEDE; }
 
 pre {
   background: none;
@@ -60,15 +46,9 @@ pre {
 
 body.posts.show {
 
+	.list-inline { text-align: center; margin-top: 10px; }
 
-	.list-inline {text-align: center; margin-top: 10px;}
-
-	.carousel-control.right {
-		background-image: none;
-	}
-	.carousel-control.left {
-		background-image: none;
-	}
+	.carousel-control.right, .carousel-control.left { background-image: none; }
 
 	.carousel {
     	width: 120%;
@@ -92,18 +72,12 @@ body.posts.show {
 	    	padding: none;
 	    	padding-bottom: 23px;
 	    	margin-left: -20%;
-	    	@media (max-width: $screen-sm-min) {
-	        	margin-left: -15%;
-	      	}
+	    	@media ( max-width: $screen-sm-min ) { margin-left: -15%; }
 	    	margin-top: 0px;
 	    	position: relative;
 	    }
 	    .carousel-indicators {
-	    	//z-index: 99;
-	    	//top: 540px;
-	    	li {
-	    		border: solid 1px $grey;
-	      	}
+	    	li { border: solid 1px $grey; }
 	    }
 	    .carousel-indicators .active {
 	    	background: $grey;
@@ -117,16 +91,10 @@ body.posts.show {
 	    	color: $white;
 	    	opacity: 0;
 	    	@include transition( opacity .4s ease-in-out );
-	    	//&:hover {
-	        //	color: $grey;
-	        	//@include transition( color .4s ease-in-out );
-	      	//}
 	    }
 	    .chevron{
 	        width:30%;
-	        @media (max-width: $screen-sm-min) {
-	        	top: 38%;
-	        }
+	        @media ( max-width: $screen-sm-min ) { top: 38%; }
 	    }
 	    .chevron-left{
 	    	//left:-33%;
@@ -159,18 +127,14 @@ body.posts.show {
   }
 
   // just for the special carousel magic
-  .selected img {
-    opacity:0.5;
-  }
+  .selected img { opacity:0.5; }
 
   .share-top {
     float: right;
     margin-bottom: 0px;
   }
 
-  .share-bottom {
-    margin-bottom: 5em;
-  }
+  .share-bottom { margin-bottom: 5em; }
 
   .share-buttons {
     text-align: center;
@@ -273,13 +237,18 @@ body.posts.show {
 
 body.posts.show .body {
 
+  @media (min-width: $screen-sm-min) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (min-width: $screen-md-min) { width: 70%; }
+
+
   max-width: $global-max-width;
   font-family: $crimson;
   font-size: 1.9em;
   @include transition( font-size .25s ease-in-out );
-  @media (max-width: $screen-sm-min) {
-      font-size: 1.7em;
-  }
+  @media ( max-width: $screen-sm-min ) { font-size: 1.7em; }
   font-weight: lighter;
   letter-spacing: 0.01em;
   line-height: 2em;
@@ -383,14 +352,6 @@ body.posts.show .body {
     margin-top: 0;
     border-left: double 8px $grey;
     border-radius: 0px;
-  }
-
-  @media (min-width: $screen-sm-min) {
-    width: 80%;
-    margin: 0 auto;
-  }
-  @media (min-width: $screen-md-min) {
-    width: 70%;
   }
 
 }

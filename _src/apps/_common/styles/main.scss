@@ -50,13 +50,3 @@
 
 // Author Imports
 // @import "../../users/_common/styles/authors";
-
-@-moz-document url-prefix() {
-  nav.nav .nav-viewport .nav-logo #A{
-    top: 10px !important;
-  }
-}
-
-::selection{
-    background: #DBDBDB !important;
-}
